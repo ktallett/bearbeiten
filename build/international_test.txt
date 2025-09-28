@@ -1,0 +1,23 @@
+International Character Test File
+=====================================
+
+Chinese (Simplified): 你好世界
+Chinese (Traditional): 你好世界
+Japanese Hiragana: こんにちは
+Japanese Katakana: コンニチハ
+Japanese Kanji: 今日は
+Korean: 안녕하세요
+
+Cyrillic (Russian): Привет мир
+Cyrillic (Bulgarian): Здравей свят
+Cyrillic (Serbian): Здраво свете
+Cyrillic (Ukrainian): Привіт світ
+
+Mixed script example:
+Hello 世界 Мир 안녕 こんにちは
+
+Emoji support test: 🌍 🚀 💻 📝 ✨
+
+Special characters:
+áéíóú àèìòù âêîôû ãñõ äëïöü çşğ
+ÁÉÍÓÚ ÀÈÌÒÙ ÂÊÎÔÛ ÃÑÕ ÄËÏÖÜ ÇŞĞ

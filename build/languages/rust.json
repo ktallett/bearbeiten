@@ -1,0 +1,100 @@
+{
+  "name": "Rust",
+  "displayName": "Rust",
+  "fileExtensions": [".rs"],
+  "colors": {
+    "keywords": "#0000FF",
+    "strings": "#A31515",
+    "comments": "#008000",
+    "numbers": "#FF8C00",
+    "functions": "#00008B",
+    "classes": "#800080",
+    "operators": "#8B0000",
+    "preprocessor": "#808080"
+  },
+  "styles": {
+    "keywords": {
+      "bold": true,
+      "italic": false
+    },
+    "strings": {
+      "bold": false,
+      "italic": false
+    },
+    "comments": {
+      "bold": false,
+      "italic": true
+    },
+    "numbers": {
+      "bold": false,
+      "italic": false
+    },
+    "functions": {
+      "bold": true,
+      "italic": false
+    },
+    "classes": {
+      "bold": true,
+      "italic": false
+    },
+    "operators": {
+      "bold": true,
+      "italic": false
+    },
+    "preprocessor": {
+      "bold": true,
+      "italic": false
+    }
+  },
+  "patterns": {
+    "keywords": [
+      "\\bfn\\b", "\\blet\\b", "\\bmut\\b", "\\bif\\b", "\\belse\\b",
+      "\\bfor\\b", "\\bwhile\\b", "\\bloop\\b", "\\bmatch\\b", "\\bstruct\\b",
+      "\\benum\\b", "\\bimpl\\b", "\\btrait\\b", "\\bmod\\b", "\\buse\\b",
+      "\\bpub\\b", "\\bstatic\\b", "\\bconst\\b", "\\bunsafe\\b", "\\bextern\\b",
+      "\\breturn\\b", "\\bbreak\\b", "\\bcontinue\\b", "\\bwhere\\b", "\\bSelf\\b",
+      "\\bself\\b", "\\btrue\\b", "\\bfalse\\b", "\\bSome\\b", "\\bNone\\b",
+      "\\bOk\\b", "\\bErr\\b", "\\bOption\\b", "\\bResult\\b", "\\bVec\\b",
+      "\\bi8\\b", "\\bi16\\b", "\\bi32\\b", "\\bi64\\b", "\\bi128\\b",
+      "\\bu8\\b", "\\bu16\\b", "\\bu32\\b", "\\bu64\\b", "\\bu128\\b",
+      "\\bf32\\b", "\\bf64\\b", "\\bbool\\b", "\\bchar\\b", "\\bstr\\b"
+    ],
+    "strings": [
+      "\"[^\"]*\"",
+      "'[^']*'",
+      "r\"[^\"]*\"",
+      "r#\"[\\s\\S]*?\"#"
+    ],
+    "comments": [
+      "//[^\\n]*",
+      "///[^\\n]*"
+    ],
+    "numbers": [
+      "\\b\\d+(\\.\\d+)?([eE][+-]?\\d+)?[fF]?\\b",
+      "\\b0x[0-9a-fA-F]+\\b",
+      "\\b0b[01]+\\b",
+      "\\b0o[0-7]+\\b"
+    ],
+    "functions": [
+      "\\bfn\\s+(\\w+)",
+      "\\b(\\w+)!"
+    ],
+    "classes": [
+      "\\bstruct\\s+(\\w+)",
+      "\\benum\\s+(\\w+)",
+      "\\btrait\\s+(\\w+)"
+    ],
+    "operators": [
+      "[+\\-*/=<>!&|^~%]",
+      "->|=>|::|\\.\\.\\.|\\.\\.=?"
+    ],
+    "preprocessor": [
+      "#\\[.*?\\]",
+      "#!\\[.*?\\]"
+    ]
+  },
+  "multilineComments": {
+    "start": "/*",
+    "end": "*/"
+  }
+}

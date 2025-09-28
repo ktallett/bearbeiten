@@ -1,0 +1,145 @@
+{
+  "name": "Markdown",
+  "displayName": "Markdown",
+  "fileExtensions": [".md", ".markdown", ".mdown", ".mkd", ".mkdn", ".mdx"],
+  "colors": {
+    "keywords": "#0000FF",
+    "strings": "#A31515",
+    "comments": "#008000",
+    "numbers": "#FF8C00",
+    "functions": "#00008B",
+    "classes": "#800080",
+    "operators": "#8B0000",
+    "preprocessor": "#808080",
+    "headings": "#0000FF",
+    "bold": "#000000",
+    "italic": "#000000",
+    "code": "#8B0000",
+    "links": "#0000FF",
+    "lists": "#800080"
+  },
+  "styles": {
+    "keywords": {
+      "bold": true,
+      "italic": false
+    },
+    "strings": {
+      "bold": false,
+      "italic": false
+    },
+    "comments": {
+      "bold": false,
+      "italic": true
+    },
+    "numbers": {
+      "bold": false,
+      "italic": false
+    },
+    "functions": {
+      "bold": true,
+      "italic": false
+    },
+    "classes": {
+      "bold": true,
+      "italic": false
+    },
+    "operators": {
+      "bold": false,
+      "italic": false
+    },
+    "preprocessor": {
+      "bold": true,
+      "italic": false
+    },
+    "headings": {
+      "bold": true,
+      "italic": false
+    },
+    "bold": {
+      "bold": true,
+      "italic": false
+    },
+    "italic": {
+      "bold": false,
+      "italic": true
+    },
+    "code": {
+      "bold": false,
+      "italic": false
+    },
+    "links": {
+      "bold": false,
+      "italic": false
+    },
+    "lists": {
+      "bold": false,
+      "italic": false
+    }
+  },
+  "patterns": {
+    "headings": [
+      "^#{1,6}\\s+.*$",
+      "^.*\\n===+$",
+      "^.*\\n---+$"
+    ],
+    "bold": [
+      "\\*\\*[^*]+\\*\\*",
+      "__[^_]+__"
+    ],
+    "italic": [
+      "\\*[^*]+\\*",
+      "_[^_]+_"
+    ],
+    "code": [
+      "`[^`]+`",
+      "```[\\s\\S]*?```",
+      "~~~[\\s\\S]*?~~~",
+      "^    .*$",
+      "^\t.*$"
+    ],
+    "links": [
+      "\\[[^\\]]*\\]\\([^)]*\\)",
+      "\\[[^\\]]*\\]\\[[^\\]]*\\]",
+      "<[^>]+>",
+      "https?://[^\\s)]+",
+      "ftp://[^\\s)]+",
+      "mailto:[^\\s)]+"
+    ],
+    "lists": [
+      "^\\s*[-*+]\\s+",
+      "^\\s*\\d+\\.\\s+"
+    ],
+    "keywords": [
+      "\\[\\^[^\\]]+\\]:",
+      "^\\[.*\\]:\\s*.*$"
+    ],
+    "strings": [
+      "\"[^\"]*\"",
+      "'[^']*'"
+    ],
+    "comments": [
+      "<!--[\\s\\S]*?-->"
+    ],
+    "numbers": [
+      "\\b\\d+\\b"
+    ],
+    "functions": [],
+    "classes": [],
+    "operators": [
+      "\\|",
+      ":",
+      "-{3,}",
+      "={3,}",
+      "\\*{3,}",
+      "_{3,}"
+    ],
+    "preprocessor": [
+      "^---[\\s\\S]*?^---",
+      "^\\+\\+\\+[\\s\\S]*?^\\+\\+\\+"
+    ]
+  },
+  "multilineComments": {
+    "start": "<!--",
+    "end": "-->"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "name": "LaTeX",
+  "displayName": "LaTeX",
+  "fileExtensions": [".tex", ".latex", ".cls", ".sty", ".dtx", ".ins"],
+  "colors": {
+    "keywords": "#0000FF",
+    "strings": "#A31515",
+    "comments": "#008000",
+    "numbers": "#FF8C00",
+    "functions": "#00008B",
+    "classes": "#800080",
+    "operators": "#8B0000",
+    "preprocessor": "#808080",
+    "commands": "#0000FF",
+    "environments": "#800080",
+    "mathmode": "#8B008B",
+    "parameters": "#FF6347"
+  },
+  "styles": {
+    "keywords": {
+      "bold": true,
+      "italic": false
+    },
+    "strings": {
+      "bold": false,
+      "italic": false
+    },
+    "comments": {
+      "bold": false,
+      "italic": true
+    },
+    "numbers": {
+      "bold": false,
+      "italic": false
+    },
+    "functions": {
+      "bold": true,
+      "italic": false
+    },
+    "classes": {
+      "bold": true,
+      "italic": false
+    },
+    "operators": {
+      "bold": false,
+      "italic": false
+    },
+    "preprocessor": {
+      "bold": true,
+      "italic": false
+    },
+    "commands": {
+      "bold": true,
+      "italic": false
+    },
+    "environments": {
+      "bold": true,
+      "italic": false
+    },
+    "mathmode": {
+      "bold": false,
+      "italic": true
+    },
+    "parameters": {
+      "bold": false,
+      "italic": false
+    }
+  },
+  "patterns": {
+    "keywords": [
+      "\\\\documentclass\\b", "\\\\usepackage\\b", "\\\\begin\\b", "\\\\end\\b",
+      "\\\\section\\b", "\\\\subsection\\b", "\\\\subsubsection\\b", "\\\\paragraph\\b",
+      "\\\\chapter\\b", "\\\\part\\b", "\\\\title\\b", "\\\\author\\b", "\\\\date\\b",
+      "\\\\maketitle\\b", "\\\\tableofcontents\\b", "\\\\listoffigures\\b", "\\\\listoftables\\b",
+      "\\\\bibliography\\b", "\\\\bibliographystyle\\b", "\\\\cite\\b", "\\\\ref\\b", "\\\\label\\b",
+      "\\\\newcommand\\b", "\\\\renewcommand\\b", "\\\\newenvironment\\b", "\\\\renewenvironment\\b"
+    ],
+    "commands": [
+      "\\\\[a-zA-Z]+\\*?",
+      "\\\\[^a-zA-Z\\s]"
+    ],
+    "environments": [
+      "\\\\begin\\{([^}]+)\\}",
+      "\\\\end\\{([^}]+)\\}"
+    ],
+    "mathmode": [
+      "\\$[^\\$]*\\$",
+      "\\$\\$[\\s\\S]*?\\$\\$",
+      "\\\\\\[[\\s\\S]*?\\\\\\]",
+      "\\\\\\([\\s\\S]*?\\\\\\)"
+    ],
+    "parameters": [
+      "\\{[^}]*\\}",
+      "\\[[^\\]]*\\]"
+    ],
+    "strings": [
+      "\"[^\"]*\"",
+      "'[^']*'"
+    ],
+    "comments": [
+      "%[^\\n]*"
+    ],
+    "numbers": [
+      "\\b\\d+(\\.\\d+)?\\b"
+    ],
+    "functions": [
+      "\\\\(def|let|newcommand|renewcommand|newenvironment|renewenvironment)\\b"
+    ],
+    "classes": [
+      "\\\\documentclass\\{([^}]+)\\}",
+      "\\\\usepackage\\{([^}]+)\\}"
+    ],
+    "operators": [
+      "[+\\-*/=<>!&|^~%]",
+      "\\\\[a-zA-Z]*(?:eq|ne|le|ge|lt|gt|sim|approx|equiv|subset|supset|in|ni|cup|cap|vee|wedge|oplus|otimes|cdot|times|div)\\b"
+    ],
+    "preprocessor": [
+      "\\\\input\\b",
+      "\\\\include\\b",
+      "\\\\includeonly\\b"
+    ]
+  },
+  "multilineComments": {}
+}

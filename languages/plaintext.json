@@ -1,0 +1,60 @@
+{
+  "name": "PlainText",
+  "displayName": "Plain Text",
+  "fileExtensions": [".txt", ".text", ".md", ".markdown", ".log", ".readme", ".changelog", ".license"],
+  "colors": {
+    "keywords": "#000000",
+    "strings": "#000000",
+    "comments": "#000000",
+    "numbers": "#000000",
+    "functions": "#000000",
+    "classes": "#000000",
+    "operators": "#000000",
+    "preprocessor": "#000000"
+  },
+  "styles": {
+    "keywords": {
+      "bold": false,
+      "italic": false
+    },
+    "strings": {
+      "bold": false,
+      "italic": false
+    },
+    "comments": {
+      "bold": false,
+      "italic": false
+    },
+    "numbers": {
+      "bold": false,
+      "italic": false
+    },
+    "functions": {
+      "bold": false,
+      "italic": false
+    },
+    "classes": {
+      "bold": false,
+      "italic": false
+    },
+    "operators": {
+      "bold": false,
+      "italic": false
+    },
+    "preprocessor": {
+      "bold": false,
+      "italic": false
+    }
+  },
+  "patterns": {
+    "keywords": [],
+    "strings": [],
+    "comments": [],
+    "numbers": [],
+    "functions": [],
+    "classes": [],
+    "operators": [],
+    "preprocessor": []
+  },
+  "multilineComments": {}
+}

@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_bearbeiten_FILE /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten)
+set(__QT_DEPLOY_TARGET_bearbeiten_TYPE EXECUTABLE)

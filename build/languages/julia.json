@@ -1,0 +1,127 @@
+{
+  "name": "Julia",
+  "displayName": "Julia",
+  "fileExtensions": [".jl"],
+  "colors": {
+    "keywords": "#0000FF",
+    "strings": "#A31515",
+    "comments": "#008000",
+    "numbers": "#FF8C00",
+    "functions": "#00008B",
+    "classes": "#800080",
+    "operators": "#8B0000",
+    "preprocessor": "#808080",
+    "macros": "#8B008B",
+    "types": "#2E8B57"
+  },
+  "styles": {
+    "keywords": {
+      "bold": true,
+      "italic": false
+    },
+    "strings": {
+      "bold": false,
+      "italic": false
+    },
+    "comments": {
+      "bold": false,
+      "italic": true
+    },
+    "numbers": {
+      "bold": false,
+      "italic": false
+    },
+    "functions": {
+      "bold": true,
+      "italic": false
+    },
+    "classes": {
+      "bold": true,
+      "italic": false
+    },
+    "operators": {
+      "bold": true,
+      "italic": false
+    },
+    "preprocessor": {
+      "bold": true,
+      "italic": false
+    },
+    "macros": {
+      "bold": true,
+      "italic": false
+    },
+    "types": {
+      "bold": true,
+      "italic": false
+    }
+  },
+  "patterns": {
+    "keywords": [
+      "\\bfunction\\b", "\\bend\\b", "\\bif\\b", "\\belseif\\b", "\\belse\\b",
+      "\\bfor\\b", "\\bwhile\\b", "\\btry\\b", "\\bcatch\\b", "\\bfinally\\b",
+      "\\breturn\\b", "\\busing\\b", "\\bimport\\b", "\\bmodule\\b", "\\bstruct\\b",
+      "\\bmutable\\b", "\\babstract\\b", "\\bprimitive\\b", "\\btype\\b",
+      "\\btrue\\b", "\\bfalse\\b", "\\bnothing\\b", "\\bmacro\\b", "\\blet\\b",
+      "\\bglobal\\b", "\\blocal\\b", "\\bconst\\b", "\\bdo\\b", "\\bbegin\\b",
+      "\\bquote\\b", "\\bbreak\\b", "\\bcontinue\\b", "\\bexport\\b", "\\bin\\b",
+      "\\bisa\\b", "\\btypeof\\b", "\\bwhere\\b", "\\bcatch\\b", "\\bthrow\\b"
+    ],
+    "types": [
+      "\\bInt8\\b", "\\bInt16\\b", "\\bInt32\\b", "\\bInt64\\b", "\\bInt128\\b",
+      "\\bUInt8\\b", "\\bUInt16\\b", "\\bUInt32\\b", "\\bUInt64\\b", "\\bUInt128\\b",
+      "\\bFloat16\\b", "\\bFloat32\\b", "\\bFloat64\\b", "\\bBool\\b", "\\bChar\\b",
+      "\\bString\\b", "\\bArray\\b", "\\bVector\\b", "\\bMatrix\\b", "\\bDict\\b",
+      "\\bSet\\b", "\\bTuple\\b", "\\bComplex\\b", "\\bRational\\b", "\\bBigInt\\b",
+      "\\bBigFloat\\b", "\\bAny\\b", "\\bUnion\\b", "\\bNothing\\b", "\\bMissing\\b"
+    ],
+    "strings": [
+      "\"[^\"]*\"",
+      "'[^']*'",
+      "\"\"\"[\\s\\S]*?\"\"\"",
+      "r\"[^\"]*\"",
+      "raw\"[^\"]*\""
+    ],
+    "comments": [
+      "#[^\\n]*"
+    ],
+    "numbers": [
+      "\\b\\d+(\\.\\d+)?([eE][+-]?\\d+)?[fF]?\\b",
+      "\\b0x[0-9a-fA-F]+\\b",
+      "\\b0b[01]+\\b",
+      "\\b0o[0-7]+\\b",
+      "\\b\\d+//\\d+\\b"
+    ],
+    "functions": [
+      "\\bfunction\\s+(\\w+)",
+      "\\b(\\w+)\\s*\\(",
+      "\\b(\\w+)!"
+    ],
+    "classes": [
+      "\\bstruct\\s+(\\w+)",
+      "\\babstract\\s+type\\s+(\\w+)",
+      "\\bprimitive\\s+type\\s+(\\w+)",
+      "\\bmutable\\s+struct\\s+(\\w+)"
+    ],
+    "operators": [
+      "[+\\-*/=<>!&|^~%]",
+      "\\+=|-=|\\*=|/=|//=|\\\\=|^=|÷=|%=|&=|\\|=|⊻=|>>>=|>>=|<<=",
+      "&&|\\|\\||==|!=|≠|<=|≤|>=|≥|<:|>:|∈|∉|∋|∌|⊆|⊈|⊊|⊇|⊉|⊋",
+      "\\.\\.\\.|\\.\\.|\\.\\+|\\.-|\\.\\*|\\./|\\.//|\\.\\\\|\\.\\^|\\.%",
+      "->|=>|\\|>|<\\||∘|∀|∃|∇|∂|∫|∮|∑|∏|√|∛|∜"
+    ],
+    "macros": [
+      "@\\w+"
+    ],
+    "preprocessor": [
+      "\\busing\\b",
+      "\\bimport\\b",
+      "\\bexport\\b",
+      "\\binclude\\b"
+    ]
+  },
+  "multilineComments": {
+    "start": "#=",
+    "end": "=#"
+  }
+}
