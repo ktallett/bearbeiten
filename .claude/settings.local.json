@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(./bearbeiten --version)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(timeout:*)"
     ],
     "deny": [],
     "ask": []

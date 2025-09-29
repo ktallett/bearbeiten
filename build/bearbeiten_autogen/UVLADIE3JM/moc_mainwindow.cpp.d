@@ -448,6 +448,9 @@
   /usr/include/qt6/QtCore/qyieldcpu.h \
   /usr/include/qt6/QtGui/QAction \
   /usr/include/qt6/QtGui/QFileSystemModel \
+  /usr/include/qt6/QtGui/QGuiApplication \
+  /usr/include/qt6/QtGui/QResizeEvent \
+  /usr/include/qt6/QtGui/QScreen \
   /usr/include/qt6/QtGui/QSyntaxHighlighter \
   /usr/include/qt6/QtGui/QTextCharFormat \
   /usr/include/qt6/QtGui/QTextCursor \

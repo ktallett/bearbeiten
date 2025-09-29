@@ -2,7 +2,7 @@
 #include <QPainter>
 #include <QTextBlock>
 
-CodeEditor::CodeEditor(QWidget *parent) : QPlainTextEdit(parent)
+CodeEditor::CodeEditor(QWidget *parent) : QPlainTextEdit(parent), compactMode(false)
 {
     lineNumberArea = new LineNumberArea(this);
 
@@ -41,7 +41,7 @@ int CodeEditor::lineNumberAreaWidth()
     }
 
     int space = 3 + fontMetrics().horizontalAdvance(QLatin1Char('9')) * digits;
-    return space + 10; // Add some padding
+    return space + (compactMode ? 4 : 10); // Less padding in compact mode
 }
 
 void CodeEditor::updateLineNumberAreaWidth(int /* newBlockCount */)
@@ -110,4 +110,15 @@ void CodeEditor::lineNumberAreaPaintEvent(QPaintEvent *event)
         bottom = top + qRound(blockBoundingRect(block).height());
         ++blockNumber;
     }
+}
+
+void CodeEditor::setCompactMode(bool compact)
+{
+    compactMode = compact;
+
+    // Adjust tab stop distance for compact mode
+    setTabStopDistance(compact ? 30 : 40);
+
+    // Update line number area width
+    updateLineNumberAreaWidth(0);
 }

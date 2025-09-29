@@ -3,20 +3,23 @@
 #include <QStringConverter>
 #include <QStandardPaths>
 #include <QToolBar>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), mainSplitter(nullptr), editorSplitter(nullptr), leftTabWidget(nullptr), rightTabWidget(nullptr),
       tabWidget(nullptr), projectPanel(nullptr), mainToolBar(nullptr), languageComboBox(nullptr), syntaxHighlighter(nullptr),
       lineCountLabel(nullptr), wordCountLabel(nullptr), characterCountLabel(nullptr),
       activeTabInfoMap(nullptr), currentViewMode(ViewMode::Single), focusedTabWidget(nullptr),
-      projectPanelVisible(false), autoSaveTimer(nullptr), autoSaveEnabled(true), autoSaveInterval(30), autoSaveAction(nullptr),
+      projectPanelVisible(false), isSmallScreen(false), autoSaveTimer(nullptr), autoSaveEnabled(true), autoSaveInterval(30), autoSaveAction(nullptr),
       findDialog(nullptr)
 {
+    detectScreenSize();
     setupEditor();
     setupMenus();
     setupToolBar();
     setupStatusBar();
     setupAutoSave();
+    setupResponsiveUI();
     loadSettings();
 
     setWindowTitle(tr("Bearbeiten"));
@@ -433,6 +436,17 @@ void MainWindow::onLanguageChanged(int index)
 void MainWindow::createNewTab(const QString &fileName)
 {
     CodeEditor *editor = new CodeEditor();
+
+    // Apply responsive settings based on screen size
+    QFont font = editor->font();
+    if (isSmallScreen) {
+        font.setPointSize(9);
+        editor->setCompactMode(true);
+    } else {
+        font.setPointSize(11);
+        editor->setCompactMode(false);
+    }
+    editor->setFont(font);
 
     // Create syntax highlighter for this tab
     JsonSyntaxHighlighter *highlighter = new JsonSyntaxHighlighter(editor->document());
@@ -1166,4 +1180,140 @@ void MainWindow::updateStatusBar()
     lineCountLabel->setText(tr("Lines: %1").arg(lineCount));
     wordCountLabel->setText(tr("Words: %1").arg(wordCount));
     characterCountLabel->setText(tr("Characters: %1").arg(charCount));
+}
+
+// Responsive UI Methods
+
+void MainWindow::detectScreenSize()
+{
+    QScreen *screen = QGuiApplication::primaryScreen();
+    if (screen) {
+        QSize screenSize = screen->availableSize();
+        int screenWidth = screenSize.width();
+        int screenHeight = screenSize.height();
+
+        // Consider small screen if width < 1366 or height < 800
+        // MNT Pocket Reform: 1920x1200 but physically 7 inches
+        // Also check physical size if available
+        qreal physicalWidth = screen->physicalSize().width(); // in mm
+
+        // Small screen criteria:
+        // 1. Width < 1366px OR height < 800px (typical small laptop threshold)
+        // 2. OR physical width < 200mm (about 8 inches)
+        isSmallScreen = (screenWidth < 1366 || screenHeight < 800 ||
+                        (physicalWidth > 0 && physicalWidth < 200));
+
+        qDebug() << "Screen size:" << screenWidth << "x" << screenHeight;
+        qDebug() << "Physical width:" << physicalWidth << "mm";
+        qDebug() << "Small screen mode:" << isSmallScreen;
+    }
+}
+
+void MainWindow::setupResponsiveUI()
+{
+    if (isSmallScreen) {
+        adaptUIForSmallScreen();
+    } else {
+        adaptUIForLargeScreen();
+    }
+}
+
+void MainWindow::adaptUIForSmallScreen()
+{
+    // Start with project panel hidden on small screens
+    projectPanelVisible = false;
+    if (projectPanel) {
+        projectPanel->hide();
+    }
+
+    // Use smaller window size
+    resize(1000, 700);
+
+    // Smaller toolbar with more compact layout
+    if (mainToolBar) {
+        mainToolBar->setToolButtonStyle(Qt::ToolButtonIconOnly);
+        mainToolBar->setIconSize(QSize(16, 16));
+    }
+
+    // More compact language combo box
+    if (languageComboBox) {
+        languageComboBox->setMinimumWidth(80);
+        languageComboBox->setMaximumWidth(120);
+    }
+
+    // More compact status bar
+    if (statusBar()) {
+        statusBar()->setSizeGripEnabled(false);
+    }
+
+    // Set smaller default font for editor
+    if (tabWidget && tabWidget->count() > 0) {
+        CodeEditor *editor = getCurrentEditor();
+        if (editor) {
+            QFont font = editor->font();
+            font.setPointSize(9); // Smaller font for small screens
+            editor->setFont(font);
+            editor->setCompactMode(true);
+        }
+    }
+
+    // Smaller margins and spacing
+    if (centralWidget()) {
+        if (QLayout *layout = centralWidget()->layout()) {
+            layout->setContentsMargins(2, 2, 2, 2);
+            layout->setSpacing(2);
+        }
+    }
+}
+
+void MainWindow::adaptUIForLargeScreen()
+{
+    // Default settings for larger screens
+    resize(1200, 800);
+
+    if (mainToolBar) {
+        mainToolBar->setToolButtonStyle(Qt::ToolButtonTextOnly);
+        mainToolBar->setIconSize(QSize(24, 24));
+    }
+
+    // Normal language combo box size
+    if (languageComboBox) {
+        languageComboBox->setMinimumWidth(100);
+        languageComboBox->setMaximumWidth(QWIDGETSIZE_MAX);
+    }
+
+    if (statusBar()) {
+        statusBar()->setSizeGripEnabled(true);
+    }
+
+    // Normal font size
+    if (tabWidget && tabWidget->count() > 0) {
+        CodeEditor *editor = getCurrentEditor();
+        if (editor) {
+            QFont font = editor->font();
+            font.setPointSize(11);
+            editor->setFont(font);
+            editor->setCompactMode(false);
+        }
+    }
+
+    // Normal margins and spacing
+    if (centralWidget()) {
+        if (QLayout *layout = centralWidget()->layout()) {
+            layout->setContentsMargins(4, 4, 4, 4);
+            layout->setSpacing(4);
+        }
+    }
+}
+
+void MainWindow::resizeEvent(QResizeEvent *event)
+{
+    QMainWindow::resizeEvent(event);
+
+    // Auto-hide project panel if window becomes too narrow
+    if (isSmallScreen && event->size().width() < 800) {
+        if (projectPanelVisible) {
+            toggleProjectPanel();
+        }
+    }
 }
