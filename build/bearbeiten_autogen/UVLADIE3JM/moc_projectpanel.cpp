@@ -51,7 +51,6 @@ template <> constexpr inline auto ProjectPanel::qt_create_metaobjectdata<qt_meta
         "onItemDoubleClicked",
         "QModelIndex",
         "index",
-        "onItemClicked",
         "showContextMenu",
         "point"
     };
@@ -75,13 +74,9 @@ template <> constexpr inline auto ProjectPanel::qt_create_metaobjectdata<qt_meta
         QtMocHelpers::SlotData<void(const QModelIndex &)>(9, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { 0x80000000 | 10, 11 },
         }}),
-        // Slot 'onItemClicked'
-        QtMocHelpers::SlotData<void(const QModelIndex &)>(12, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 10, 11 },
-        }}),
         // Slot 'showContextMenu'
-        QtMocHelpers::SlotData<void(const QPoint &)>(13, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QPoint, 14 },
+        QtMocHelpers::SlotData<void(const QPoint &)>(12, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QPoint, 13 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -112,8 +107,7 @@ void ProjectPanel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 3: _t->closeProject(); break;
         case 4: _t->refreshProject(); break;
         case 5: _t->onItemDoubleClicked((*reinterpret_cast< std::add_pointer_t<QModelIndex>>(_a[1]))); break;
-        case 6: _t->onItemClicked((*reinterpret_cast< std::add_pointer_t<QModelIndex>>(_a[1]))); break;
-        case 7: _t->showContextMenu((*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[1]))); break;
+        case 6: _t->showContextMenu((*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[1]))); break;
         default: ;
         }
     }
@@ -144,14 +138,14 @@ int ProjectPanel::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 7;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 8;
+        _id -= 7;
     }
     return _id;
 }

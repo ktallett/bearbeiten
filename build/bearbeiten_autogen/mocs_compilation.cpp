@@ -4,4 +4,3 @@
 #include "UVLADIE3JM/moc_jsonsyntaxhighlighter.cpp"
 #include "UVLADIE3JM/moc_mainwindow.cpp"
 #include "UVLADIE3JM/moc_projectpanel.cpp"
-#include "UVLADIE3JM/moc_syntaxhighlighter.cpp"

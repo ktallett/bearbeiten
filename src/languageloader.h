@@ -28,8 +28,6 @@ struct LanguageDefinition {
     // Multiline comment support
     QString multilineCommentStart;
     QString multilineCommentEnd;
-    QString alternateMultilineCommentStart;
-    QString alternateMultilineCommentEnd;
 
     bool isValid() const { return !name.isEmpty(); }
 };

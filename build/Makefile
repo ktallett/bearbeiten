@@ -423,30 +423,6 @@ src/projectpanel.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.s
 .PHONY : src/projectpanel.cpp.s
 
-src/syntaxhighlighter.o: src/syntaxhighlighter.cpp.o
-.PHONY : src/syntaxhighlighter.o
-
-# target to build an object file
-src/syntaxhighlighter.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/syntaxhighlighter.cpp.o
-.PHONY : src/syntaxhighlighter.cpp.o
-
-src/syntaxhighlighter.i: src/syntaxhighlighter.cpp.i
-.PHONY : src/syntaxhighlighter.i
-
-# target to preprocess a source file
-src/syntaxhighlighter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/syntaxhighlighter.cpp.i
-.PHONY : src/syntaxhighlighter.cpp.i
-
-src/syntaxhighlighter.s: src/syntaxhighlighter.cpp.s
-.PHONY : src/syntaxhighlighter.s
-
-# target to generate assembly for a file
-src/syntaxhighlighter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/syntaxhighlighter.cpp.s
-.PHONY : src/syntaxhighlighter.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -489,9 +465,6 @@ help:
 	@echo "... src/projectpanel.o"
 	@echo "... src/projectpanel.i"
 	@echo "... src/projectpanel.s"
-	@echo "... src/syntaxhighlighter.o"
-	@echo "... src/syntaxhighlighter.i"
-	@echo "... src/syntaxhighlighter.s"
 .PHONY : help
 
 

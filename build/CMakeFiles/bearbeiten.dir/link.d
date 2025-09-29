@@ -6,7 +6,6 @@ bearbeiten: \
   CMakeFiles/bearbeiten.dir/src/main.cpp.o \
   CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.o \
   CMakeFiles/bearbeiten.dir/src/codeeditor.cpp.o \
-  CMakeFiles/bearbeiten.dir/src/syntaxhighlighter.cpp.o \
   CMakeFiles/bearbeiten.dir/src/languageloader.cpp.o \
   CMakeFiles/bearbeiten.dir/src/jsonsyntaxhighlighter.cpp.o \
   CMakeFiles/bearbeiten.dir/src/finddialog.cpp.o \
@@ -91,8 +90,6 @@ CMakeFiles/bearbeiten.dir/src/main.cpp.o:
 CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.o:
 
 CMakeFiles/bearbeiten.dir/src/codeeditor.cpp.o:
-
-CMakeFiles/bearbeiten.dir/src/syntaxhighlighter.cpp.o:
 
 CMakeFiles/bearbeiten.dir/src/languageloader.cpp.o:
 

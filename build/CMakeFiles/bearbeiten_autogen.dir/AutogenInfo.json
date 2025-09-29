@@ -499,12 +499,6 @@
 			"MU",
 			"UVLADIE3JM/moc_projectpanel.cpp",
 			null
-		],
-		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/syntaxhighlighter.h",
-			"MU",
-			"UVLADIE3JM/moc_syntaxhighlighter.cpp",
-			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -600,11 +594,6 @@
 		],
 		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/syntaxhighlighter.cpp",
 			"MU",
 			null
 		]

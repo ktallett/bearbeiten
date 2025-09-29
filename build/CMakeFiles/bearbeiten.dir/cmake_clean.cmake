@@ -22,8 +22,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.o"
   "CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.o.d"
-  "CMakeFiles/bearbeiten.dir/src/syntaxhighlighter.cpp.o"
-  "CMakeFiles/bearbeiten.dir/src/syntaxhighlighter.cpp.o.d"
   "bearbeiten"
   "bearbeiten.pdb"
   "bearbeiten_autogen/mocs_compilation.cpp"

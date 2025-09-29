@@ -435,9 +435,6 @@ CMakeFiles/bearbeiten.dir/src/main.cpp.o: \
  /usr/include/qt6/QtGui/qtextcursor.h \
  /usr/include/qt6/QtCore/QRegularExpression \
  /usr/include/qt6/QtCore/qregularexpression.h \
- /usr/include/qt6/QtWidgets/QToolBar \
- /usr/include/qt6/QtWidgets/qtoolbar.h /usr/include/qt6/QtGui/QIcon \
- /usr/include/qt6/QtGui/qicon.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.h \
  /usr/include/qt6/QtGui/QSyntaxHighlighter \
  /usr/include/qt6/QtGui/qsyntaxhighlighter.h \
