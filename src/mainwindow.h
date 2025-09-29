@@ -23,6 +23,9 @@
 #include <QSettings>
 #include <QTextCursor>
 #include <QRegularExpression>
+#include <QScreen>
+#include <QGuiApplication>
+#include <QResizeEvent>
 #include "jsonsyntaxhighlighter.h"
 #include "finddialog.h"
 #include "projectpanel.h"
@@ -47,6 +50,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+protected:
+    void resizeEvent(QResizeEvent *event) override;
 
 private slots:
     void newFile();
@@ -131,6 +137,12 @@ private:
     // Status bar methods
     void updateStatusBar();
 
+    // Responsive UI methods
+    void detectScreenSize();
+    void setupResponsiveUI();
+    void adaptUIForSmallScreen();
+    void adaptUIForLargeScreen();
+
     // Main widgets
     QSplitter *mainSplitter;
     QSplitter *editorSplitter;
@@ -156,6 +168,7 @@ private:
     ViewMode currentViewMode;
     QTabWidget *focusedTabWidget;
     bool projectPanelVisible;
+    bool isSmallScreen;
 
     // Auto-save components
     QTimer *autoSaveTimer;

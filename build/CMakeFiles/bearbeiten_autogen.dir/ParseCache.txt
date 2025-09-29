@@ -2396,6 +2396,9 @@
  mdp:/usr/include/qt6/QtCore/qyieldcpu.h
  mdp:/usr/include/qt6/QtGui/QAction
  mdp:/usr/include/qt6/QtGui/QFileSystemModel
+ mdp:/usr/include/qt6/QtGui/QGuiApplication
+ mdp:/usr/include/qt6/QtGui/QResizeEvent
+ mdp:/usr/include/qt6/QtGui/QScreen
  mdp:/usr/include/qt6/QtGui/QSyntaxHighlighter
  mdp:/usr/include/qt6/QtGui/QTextCharFormat
  mdp:/usr/include/qt6/QtGui/QTextCursor

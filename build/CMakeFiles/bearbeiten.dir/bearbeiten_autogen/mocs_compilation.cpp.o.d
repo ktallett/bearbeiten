@@ -470,7 +470,10 @@ CMakeFiles/bearbeiten.dir/bearbeiten_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtWidgets/qsplitter.h /usr/include/qt6/QtCore/QTimer \
  /usr/include/qt6/QtCore/qtimer.h /usr/include/qt6/QtCore/QSettings \
  /usr/include/qt6/QtCore/qsettings.h /usr/include/qt6/QtGui/QTextCursor \
- /usr/include/qt6/QtGui/qtextcursor.h \
+ /usr/include/qt6/QtGui/qtextcursor.h /usr/include/qt6/QtGui/QScreen \
+ /usr/include/qt6/QtGui/qscreen.h /usr/include/qt6/QtGui/QGuiApplication \
+ /usr/include/qt6/QtGui/qguiapplication.h \
+ /usr/include/qt6/QtGui/QResizeEvent /usr/include/qt6/QtGui/qevent.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/jsonsyntaxhighlighter.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/finddialog.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/projectpanel.h \
