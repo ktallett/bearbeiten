@@ -470,9 +470,7 @@ CMakeFiles/bearbeiten.dir/bearbeiten_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtWidgets/qsplitter.h /usr/include/qt6/QtCore/QTimer \
  /usr/include/qt6/QtCore/qtimer.h /usr/include/qt6/QtCore/QSettings \
  /usr/include/qt6/QtCore/qsettings.h /usr/include/qt6/QtGui/QTextCursor \
- /usr/include/qt6/QtGui/qtextcursor.h /usr/include/qt6/QtWidgets/QToolBar \
- /usr/include/qt6/QtWidgets/qtoolbar.h /usr/include/qt6/QtGui/QIcon \
- /usr/include/qt6/QtGui/qicon.h \
+ /usr/include/qt6/QtGui/qtextcursor.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/jsonsyntaxhighlighter.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/finddialog.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/projectpanel.h \
@@ -485,6 +483,4 @@ CMakeFiles/bearbeiten.dir/bearbeiten_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtCore/qdir.h /usr/include/qt6/QtWidgets/QHeaderView \
  /usr/include/qt6/QtWidgets/qheaderview.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/moc_projectpanel.cpp \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/projectpanel.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/moc_syntaxhighlighter.cpp \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/syntaxhighlighter.h
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/projectpanel.h

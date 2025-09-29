@@ -18,7 +18,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/main.cpp" "CMakeFiles/bearbeiten.dir/src/main.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/main.cpp.o.d"
   "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/mainwindow.cpp" "CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.o.d"
   "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.cpp" "CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.o.d"
-  "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/syntaxhighlighter.cpp" "CMakeFiles/bearbeiten.dir/src/syntaxhighlighter.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/syntaxhighlighter.cpp.o.d"
   "" "bearbeiten" "gcc" "CMakeFiles/bearbeiten.dir/link.d"
   )
 

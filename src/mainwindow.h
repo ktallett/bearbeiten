@@ -23,8 +23,6 @@
 #include <QSettings>
 #include <QTextCursor>
 #include <QRegularExpression>
-#include <QToolBar>
-#include <QIcon>
 #include "jsonsyntaxhighlighter.h"
 #include "finddialog.h"
 #include "projectpanel.h"

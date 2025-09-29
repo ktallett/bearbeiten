@@ -122,8 +122,6 @@ LanguageDefinition LanguageLoader::loadLanguageFromFile(const QString &filePath)
     if (!multilineComments.isEmpty()) {
         langDef.multilineCommentStart = multilineComments["start"].toString();
         langDef.multilineCommentEnd = multilineComments["end"].toString();
-        langDef.alternateMultilineCommentStart = multilineComments["alternateStart"].toString();
-        langDef.alternateMultilineCommentEnd = multilineComments["alternateEnd"].toString();
     }
 
     return langDef;

@@ -57,7 +57,6 @@ void ProjectPanel::setupUI()
     treeView->hideColumn(3); // Date Modified
 
     connect(treeView, &QTreeView::doubleClicked, this, &ProjectPanel::onItemDoubleClicked);
-    connect(treeView, &QTreeView::clicked, this, &ProjectPanel::onItemClicked);
     connect(treeView, &QTreeView::customContextMenuRequested, this, &ProjectPanel::showContextMenu);
 
     mainLayout->addWidget(treeView);
@@ -130,12 +129,6 @@ void ProjectPanel::onItemDoubleClicked(const QModelIndex &index)
     }
 }
 
-void ProjectPanel::onItemClicked(const QModelIndex &index)
-{
-    if (!index.isValid()) return;
-
-    // Single click could be used for selection/preview in the future
-}
 
 void ProjectPanel::showContextMenu(const QPoint &point)
 {

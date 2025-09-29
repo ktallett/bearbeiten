@@ -14,8 +14,6 @@ set(SOURCES
     src/mainwindow.h
     src/codeeditor.cpp
     src/codeeditor.h
-    src/syntaxhighlighter.cpp
-    src/syntaxhighlighter.h
     src/languageloader.cpp
     src/languageloader.h
     src/jsonsyntaxhighlighter.cpp

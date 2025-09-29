@@ -448,7 +448,6 @@
   /usr/include/qt6/QtCore/qyieldcpu.h \
   /usr/include/qt6/QtGui/QAction \
   /usr/include/qt6/QtGui/QFileSystemModel \
-  /usr/include/qt6/QtGui/QIcon \
   /usr/include/qt6/QtGui/QSyntaxHighlighter \
   /usr/include/qt6/QtGui/QTextCharFormat \
   /usr/include/qt6/QtGui/QTextCursor \
@@ -526,7 +525,6 @@
   /usr/include/qt6/QtWidgets/QStatusBar \
   /usr/include/qt6/QtWidgets/QTabBar \
   /usr/include/qt6/QtWidgets/QTabWidget \
-  /usr/include/qt6/QtWidgets/QToolBar \
   /usr/include/qt6/QtWidgets/QTreeView \
   /usr/include/qt6/QtWidgets/QVBoxLayout \
   /usr/include/qt6/QtWidgets/QWidget \
@@ -567,7 +565,6 @@
   /usr/include/qt6/QtWidgets/qtabbar.h \
   /usr/include/qt6/QtWidgets/qtabwidget.h \
   /usr/include/qt6/QtWidgets/qtextedit.h \
-  /usr/include/qt6/QtWidgets/qtoolbar.h \
   /usr/include/qt6/QtWidgets/qtreeview.h \
   /usr/include/qt6/QtWidgets/qtwidgets-config.h \
   /usr/include/qt6/QtWidgets/qtwidgetsexports.h \

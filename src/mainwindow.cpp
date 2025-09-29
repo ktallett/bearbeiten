@@ -2,6 +2,7 @@
 #include <QTextStream>
 #include <QStringConverter>
 #include <QStandardPaths>
+#include <QToolBar>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), mainSplitter(nullptr), editorSplitter(nullptr), leftTabWidget(nullptr), rightTabWidget(nullptr),

@@ -36,7 +36,6 @@ signals:
 
 private slots:
     void onItemDoubleClicked(const QModelIndex &index);
-    void onItemClicked(const QModelIndex &index);
     void showContextMenu(const QPoint &point);
 
 private:
