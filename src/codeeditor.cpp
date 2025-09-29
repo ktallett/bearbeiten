@@ -75,7 +75,7 @@ void CodeEditor::highlightCurrentLine()
     if (!isReadOnly()) {
         QTextEdit::ExtraSelection selection;
 
-        QColor lineColor = QColor(200, 230, 255, 80); // Light blue with low opacity
+        QColor lineColor = QColor(255, 140, 50, 25); // Low opacity orange like Numworks
 
         selection.format.setBackground(lineColor);
         selection.format.setProperty(QTextFormat::FullWidthSelection, true);
@@ -90,7 +90,7 @@ void CodeEditor::highlightCurrentLine()
 void CodeEditor::lineNumberAreaPaintEvent(QPaintEvent *event)
 {
     QPainter painter(lineNumberArea);
-    painter.fillRect(event->rect(), QColor(240, 240, 240));
+    painter.fillRect(event->rect(), QColor(248, 248, 248)); // Light grey
 
     QTextBlock block = firstVisibleBlock();
     int blockNumber = block.blockNumber();
@@ -100,7 +100,7 @@ void CodeEditor::lineNumberAreaPaintEvent(QPaintEvent *event)
     while (block.isValid() && top <= event->rect().bottom()) {
         if (block.isVisible() && bottom >= event->rect().top()) {
             QString number = QString::number(blockNumber + 1);
-            painter.setPen(QColor(120, 120, 120));
+            painter.setPen(QColor(140, 140, 140)); // Medium grey
             painter.drawText(0, top, lineNumberArea->width() - 5, fontMetrics().height(),
                            Qt::AlignRight, number);
         }

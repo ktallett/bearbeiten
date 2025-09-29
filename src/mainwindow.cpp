@@ -388,13 +388,13 @@ void MainWindow::setCurrentFile(const QString &fileName)
 
 void MainWindow::setupStatusBar()
 {
-    // Create status bar with better styling
+    // Create status bar with Numworks-inspired styling
     statusBar()->showMessage(tr("Ready"));
     statusBar()->setStyleSheet(
         "QStatusBar {"
-        "    background-color: #f0f0f0;"
-        "    border-top: 1px solid #d0d0d0;"
-        "    color: #333333;"
+        "    background-color: #f5f5f5;"
+        "    border-top: 1px solid #e0e0e0;"
+        "    color: #4a4a4a;"
         "}"
         "QStatusBar::item {"
         "    border: none;"
