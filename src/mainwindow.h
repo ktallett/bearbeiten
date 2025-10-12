@@ -101,6 +101,7 @@ private:
     void setupEditor();
     void setupStatusBar();
     void setupToolBar();
+    void loadStyleSheet();
     bool maybeSave();
     bool maybeSaveTab(int tabIndex);
     bool saveDocument(const QString &fileName);

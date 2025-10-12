@@ -15,9 +15,9 @@ CodeEditor::CodeEditor(QWidget *parent) : QPlainTextEdit(parent), compactMode(fa
 
     setTabStopDistance(40);
 
-    // Set font with international character support
+    // Set font using design spec monospace stack
     QFont font;
-    QStringList fontFamilies = {"Noto Sans Mono", "DejaVu Sans Mono", "Liberation Mono", "Consolas", "Courier New"};
+    QStringList fontFamilies = {"JetBrains Mono", "SF Mono", "Consolas", "Monaco", "Liberation Mono", "Courier New"};
 
     for (const QString &family : fontFamilies) {
         font.setFamily(family);
@@ -26,7 +26,7 @@ CodeEditor::CodeEditor(QWidget *parent) : QPlainTextEdit(parent), compactMode(fa
         }
     }
 
-    font.setPointSize(11);
+    font.setPointSize(14); // Design spec font size for code
     font.setStyleHint(QFont::Monospace);
     setFont(font);
 }
@@ -75,7 +75,8 @@ void CodeEditor::highlightCurrentLine()
     if (!isReadOnly()) {
         QTextEdit::ExtraSelection selection;
 
-        QColor lineColor = QColor(255, 140, 50, 25); // Low opacity orange like Numworks
+        // Subtle highlight using accent color with low opacity (design spec inspired)
+        QColor lineColor = QColor(68, 130, 180, 20); // rgba(68, 130, 180, 0.08)
 
         selection.format.setBackground(lineColor);
         selection.format.setProperty(QTextFormat::FullWidthSelection, true);
@@ -90,7 +91,8 @@ void CodeEditor::highlightCurrentLine()
 void CodeEditor::lineNumberAreaPaintEvent(QPaintEvent *event)
 {
     QPainter painter(lineNumberArea);
-    painter.fillRect(event->rect(), QColor(248, 248, 248)); // Light grey
+    // Use design spec color for line number area background
+    painter.fillRect(event->rect(), QColor(250, 250, 250)); // --color-bg-secondary: #FAFAFA
 
     QTextBlock block = firstVisibleBlock();
     int blockNumber = block.blockNumber();
@@ -100,7 +102,8 @@ void CodeEditor::lineNumberAreaPaintEvent(QPaintEvent *event)
     while (block.isValid() && top <= event->rect().bottom()) {
         if (block.isVisible() && bottom >= event->rect().top()) {
             QString number = QString::number(blockNumber + 1);
-            painter.setPen(QColor(140, 140, 140)); // Medium grey
+            // Use design spec color for line numbers: --color-fg-secondary: #696D79
+            painter.setPen(QColor(105, 109, 121));
             painter.drawText(0, top, lineNumberArea->width() - 5, fontMetrics().height(),
                            Qt::AlignRight, number);
         }

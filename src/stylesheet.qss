@@ -1,0 +1,585 @@
+/* Universal Design System Stylesheet for Bearbeiten
+   Based on NumWorks, Torso T-1, and elementary OS design principles
+   Optimized for MNT Pocket Reform (1920x1200, 7" display)
+
+   Design Tokens Reference:
+   - Backgrounds: #FFFFFF (primary), #FAFAFA (secondary), #F0F0F0 (tertiary)
+   - Foreground: #000000 (primary), #696D79 (secondary), #A0A0A0 (tertiary)
+   - Borders: #E8E8E8 (light), #E0E0E0 (medium), #D0D0D0 (dark)
+   - Accent: #4482B4 (primary blue), #FF9C5C (secondary orange)
+   - Semantic: #4CAF50 (success), #FFA726 (warning), #EF5350 (error)
+*/
+
+/* ============================================================================
+   MAIN WINDOW
+   ============================================================================ */
+
+QMainWindow {
+    background-color: #FFFFFF;
+}
+
+QMainWindow::separator {
+    background-color: #E0E0E0;
+    width: 2px;
+    height: 2px;
+}
+
+/* ============================================================================
+   MENU BAR
+   ============================================================================ */
+
+QMenuBar {
+    background-color: #FAFAFA;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 4px 6px;
+    font-family: "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    color: #000000;
+}
+
+QMenuBar::item {
+    padding: 6px 12px;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+QMenuBar::item:selected {
+    background-color: #F0F0F0;
+}
+
+QMenuBar::item:pressed {
+    background-color: #E0E0E0;
+}
+
+/* ============================================================================
+   MENUS
+   ============================================================================ */
+
+QMenu {
+    background-color: #FFFFFF;
+    border: 2px solid #E0E0E0;
+    border-radius: 6px;
+    padding: 4px;
+    font-family: "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+}
+
+QMenu::item {
+    padding: 8px 24px 8px 12px;
+    border-radius: 4px;
+    color: #000000;
+}
+
+QMenu::item:selected {
+    background-color: #F0F0F0;
+    color: #4482B4;
+}
+
+QMenu::separator {
+    height: 1px;
+    background-color: #E8E8E8;
+    margin: 4px 8px;
+}
+
+/* ============================================================================
+   TOOLBAR
+   ============================================================================ */
+
+QToolBar {
+    background-color: #FAFAFA;
+    border: none;
+    border-bottom: 2px solid #E0E0E0;
+    spacing: 6px;
+    padding: 6px;
+}
+
+QToolBar::separator {
+    background-color: #E0E0E0;
+    width: 1px;
+    margin: 4px 8px;
+}
+
+QToolButton {
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-family: "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+}
+
+QToolButton:hover {
+    background-color: #F0F0F0;
+    border-color: #4482B4;
+}
+
+QToolButton:pressed {
+    background-color: #E0E0E0;
+}
+
+QToolButton:checked {
+    background-color: #4482B4;
+    color: #FFFFFF;
+}
+
+/* ============================================================================
+   STATUS BAR
+   ============================================================================ */
+
+QStatusBar {
+    background-color: #FAFAFA;
+    border-top: 2px solid #E0E0E0;
+    color: #696D79;
+    font-family: "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    padding: 4px 12px;
+}
+
+QStatusBar::item {
+    border: none;
+}
+
+QStatusBar QLabel {
+    color: #696D79;
+    font-family: "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    padding: 0 6px;
+}
+
+/* ============================================================================
+   TAB WIDGET
+   ============================================================================ */
+
+QTabWidget::pane {
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    top: -2px;
+}
+
+QTabBar::tab {
+    background-color: transparent;
+    color: #696D79;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 12px 20px;
+    font-family: "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 80px;
+}
+
+QTabBar::tab:hover {
+    color: #000000;
+    background-color: #FAFAFA;
+}
+
+QTabBar::tab:selected {
+    color: #4482B4;
+    border-bottom-color: #4482B4;
+    font-weight: 600;
+}
+
+QTabBar::close-button {
+    image: url(none);
+    subcontrol-position: right;
+    margin: 4px;
+}
+
+QTabBar::close-button:hover {
+    background-color: #EF5350;
+    border-radius: 3px;
+}
+
+/* ============================================================================
+   COMBO BOX (DROPDOWNS)
+   ============================================================================ */
+
+QComboBox {
+    background-color: #FFFFFF;
+    border: 2px solid #E0E0E0;
+    border-radius: 6px;
+    padding: 8px 32px 8px 12px;
+    min-height: 22px;
+    font-family: "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    color: #000000;
+}
+
+QComboBox:hover {
+    border-color: #4482B4;
+}
+
+QComboBox:focus {
+    border-color: #4482B4;
+    outline: none;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 24px;
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+}
+
+QComboBox::down-arrow {
+    image: none;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid #696D79;
+    margin-right: 8px;
+}
+
+QComboBox::down-arrow:hover {
+    border-top-color: #4482B4;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    border: 2px solid #E0E0E0;
+    border-radius: 6px;
+    selection-background-color: #F0F0F0;
+    selection-color: #4482B4;
+    padding: 4px;
+}
+
+QComboBox QAbstractItemView::item {
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #F0F0F0;
+}
+
+/* ============================================================================
+   BUTTONS
+   ============================================================================ */
+
+QPushButton {
+    background-color: #4482B4;
+    color: #FFFFFF;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-family: "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 20px;
+}
+
+QPushButton:hover {
+    background-color: #3574A0;
+}
+
+QPushButton:pressed {
+    background-color: #2A5F8A;
+}
+
+QPushButton:disabled {
+    background-color: #F0F0F0;
+    color: #A0A0A0;
+}
+
+/* Secondary Button */
+QPushButton[class="secondary"] {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 2px solid #E0E0E0;
+}
+
+QPushButton[class="secondary"]:hover {
+    background-color: #FAFAFA;
+    border-color: #4482B4;
+}
+
+/* Ghost Button */
+QPushButton[class="ghost"] {
+    background-color: transparent;
+    color: #696D79;
+    border: 2px solid transparent;
+}
+
+QPushButton[class="ghost"]:hover {
+    background-color: #F0F0F0;
+}
+
+/* Danger Button */
+QPushButton[class="danger"] {
+    background-color: #EF5350;
+    color: #FFFFFF;
+    border: 2px solid transparent;
+}
+
+QPushButton[class="danger"]:hover {
+    background-color: #E53935;
+}
+
+/* ============================================================================
+   TEXT EDIT / PLAIN TEXT EDIT (CODE EDITOR)
+   ============================================================================ */
+
+QPlainTextEdit {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    selection-background-color: rgba(68, 130, 180, 0.3);
+    selection-color: #000000;
+    font-family: "JetBrains Mono", "SF Mono", "Consolas", "Monaco", "Liberation Mono", "Courier New", monospace;
+    font-size: 14px;
+    padding: 12px;
+}
+
+QTextEdit {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    selection-background-color: rgba(68, 130, 180, 0.3);
+    selection-color: #000000;
+    font-family: "JetBrains Mono", "SF Mono", "Consolas", "Monaco", "Liberation Mono", "Courier New", monospace;
+    font-size: 14px;
+    padding: 12px;
+}
+
+/* ============================================================================
+   INPUT FIELDS
+   ============================================================================ */
+
+QLineEdit {
+    background-color: #FFFFFF;
+    border: 2px solid #E0E0E0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-family: "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    color: #000000;
+}
+
+QLineEdit:focus {
+    border-color: #4482B4;
+    outline: none;
+}
+
+QLineEdit:disabled {
+    background-color: #F0F0F0;
+    color: #A0A0A0;
+}
+
+/* ============================================================================
+   SPIN BOX
+   ============================================================================ */
+
+QSpinBox, QDoubleSpinBox {
+    background-color: #FFFFFF;
+    border: 2px solid #E0E0E0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-family: "JetBrains Mono", "SF Mono", "Consolas", "Monaco", "Liberation Mono", "Courier New", monospace;
+    font-size: 14px;
+    color: #000000;
+}
+
+QSpinBox:focus, QDoubleSpinBox:focus {
+    border-color: #4482B4;
+}
+
+/* ============================================================================
+   SCROLL BAR
+   ============================================================================ */
+
+QScrollBar:vertical {
+    background-color: #FAFAFA;
+    width: 12px;
+    border: none;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #D0D0D0;
+    border-radius: 6px;
+    min-height: 30px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #4482B4;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar:horizontal {
+    background-color: #FAFAFA;
+    height: 12px;
+    border: none;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: #D0D0D0;
+    border-radius: 6px;
+    min-width: 30px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background-color: #4482B4;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    width: 0px;
+}
+
+/* ============================================================================
+   SPLITTER
+   ============================================================================ */
+
+QSplitter::handle {
+    background-color: #E0E0E0;
+}
+
+QSplitter::handle:hover {
+    background-color: #4482B4;
+}
+
+QSplitter::handle:horizontal {
+    width: 2px;
+}
+
+QSplitter::handle:vertical {
+    height: 2px;
+}
+
+/* ============================================================================
+   GROUP BOX / CARDS
+   ============================================================================ */
+
+QGroupBox {
+    background-color: #FAFAFA;
+    border: 2px solid #E8E8E8;
+    border-radius: 8px;
+    padding: 18px;
+    margin-top: 12px;
+    font-family: "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4482B4;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 6px;
+    color: #4482B4;
+}
+
+/* ============================================================================
+   DIALOG
+   ============================================================================ */
+
+QDialog {
+    background-color: #FFFFFF;
+    border: 2px solid #E0E0E0;
+    border-radius: 12px;
+}
+
+/* ============================================================================
+   MESSAGE BOX
+   ============================================================================ */
+
+QMessageBox {
+    background-color: #FFFFFF;
+    font-family: "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+}
+
+QMessageBox QLabel {
+    color: #000000;
+    font-size: 14px;
+}
+
+/* ============================================================================
+   LABELS
+   ============================================================================ */
+
+QLabel {
+    color: #000000;
+    font-family: "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* ============================================================================
+   PROGRESS BAR
+   ============================================================================ */
+
+QProgressBar {
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    background-color: #F0F0F0;
+    height: 8px;
+    text-align: center;
+}
+
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #4482B4, stop:1 #FF9C5C);
+    border-radius: 6px;
+}
+
+/* ============================================================================
+   CHECK BOX
+   ============================================================================ */
+
+QCheckBox {
+    spacing: 8px;
+    font-family: "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    color: #000000;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #E0E0E0;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+}
+
+QCheckBox::indicator:hover {
+    border-color: #4482B4;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #4482B4;
+    border-color: #4482B4;
+}
+
+/* ============================================================================
+   RADIO BUTTON
+   ============================================================================ */
+
+QRadioButton {
+    spacing: 8px;
+    font-family: "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    color: #000000;
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #E0E0E0;
+    border-radius: 9px;
+    background-color: #FFFFFF;
+}
+
+QRadioButton::indicator:hover {
+    border-color: #4482B4;
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4482B4;
+    border-color: #4482B4;
+}

@@ -4,6 +4,7 @@
 #include <QStandardPaths>
 #include <QToolBar>
 #include <QDebug>
+#include <QFile>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), mainSplitter(nullptr), editorSplitter(nullptr), leftTabWidget(nullptr), rightTabWidget(nullptr),
@@ -14,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
       findDialog(nullptr)
 {
     detectScreenSize();
+    loadStyleSheet();
     setupEditor();
     setupMenus();
     setupToolBar();
@@ -386,25 +388,34 @@ void MainWindow::setCurrentFile(const QString &fileName)
     }
 }
 
+void MainWindow::loadStyleSheet()
+{
+    // Load the universal design system stylesheet
+    QFile styleFile(":/src/stylesheet.qss");
+    if (!styleFile.exists()) {
+        // Try relative path for development
+        styleFile.setFileName("src/stylesheet.qss");
+    }
+
+    if (styleFile.open(QFile::ReadOnly | QFile::Text)) {
+        QString styleSheet = QString::fromUtf8(styleFile.readAll());
+        qApp->setStyleSheet(styleSheet);
+        styleFile.close();
+    } else {
+        qWarning() << "Failed to load stylesheet:" << styleFile.fileName();
+    }
+}
+
 void MainWindow::setupStatusBar()
 {
-    // Create status bar with Numworks-inspired styling
+    // Create status bar - styling is handled by the stylesheet
     statusBar()->showMessage(tr("Ready"));
-    statusBar()->setStyleSheet(
-        "QStatusBar {"
-        "    background-color: #f5f5f5;"
-        "    border-top: 1px solid #e0e0e0;"
-        "    color: #4a4a4a;"
-        "}"
-        "QStatusBar::item {"
-        "    border: none;"
-        "}"
-    );
 
     // Create line and word count widget
     QWidget *statusWidget = new QWidget();
     QHBoxLayout *statusLayout = new QHBoxLayout(statusWidget);
     statusLayout->setContentsMargins(0, 0, 0, 0);
+    statusLayout->setSpacing(6);
 
     lineCountLabel = new QLabel(tr("Lines: 1"));
     wordCountLabel = new QLabel(tr("Words: 0"));
