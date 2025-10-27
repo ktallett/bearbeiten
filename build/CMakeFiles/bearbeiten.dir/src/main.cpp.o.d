@@ -474,6 +474,7 @@ CMakeFiles/bearbeiten.dir/src/main.cpp.o: \
  /usr/include/qt6/QtWidgets/qgridlayout.h \
  /usr/include/qt6/QtWidgets/QGroupBox \
  /usr/include/qt6/QtWidgets/qgroupbox.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/minimap.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h \
  /usr/include/qt6/QtWidgets/QListWidget \

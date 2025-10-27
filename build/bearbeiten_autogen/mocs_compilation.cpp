@@ -4,6 +4,7 @@
 #include "UVLADIE3JM/moc_gotolinedialog.cpp"
 #include "UVLADIE3JM/moc_jsonsyntaxhighlighter.cpp"
 #include "UVLADIE3JM/moc_mainwindow.cpp"
+#include "UVLADIE3JM/moc_minimap.cpp"
 #include "UVLADIE3JM/moc_outlinepanel.cpp"
 #include "UVLADIE3JM/moc_projectpanel.cpp"
 #include "UVLADIE3JM/moc_symbolsearchdialog.cpp"

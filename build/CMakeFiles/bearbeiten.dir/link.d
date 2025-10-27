@@ -14,6 +14,7 @@ bearbeiten: \
   CMakeFiles/bearbeiten.dir/src/symbolextractor.cpp.o \
   CMakeFiles/bearbeiten.dir/src/outlinepanel.cpp.o \
   CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.o \
+  CMakeFiles/bearbeiten.dir/src/minimap.cpp.o \
   CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o \
   CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.o \
   /usr/lib64/libQt6Widgets.so.6.9.2 \
@@ -111,6 +112,8 @@ CMakeFiles/bearbeiten.dir/src/symbolextractor.cpp.o:
 CMakeFiles/bearbeiten.dir/src/outlinepanel.cpp.o:
 
 CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.o:
+
+CMakeFiles/bearbeiten.dir/src/minimap.cpp.o:
 
 CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o:
 

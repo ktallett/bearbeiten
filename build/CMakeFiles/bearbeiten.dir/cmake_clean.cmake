@@ -25,6 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/bearbeiten.dir/src/main.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.o"
   "CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.o.d"
+  "CMakeFiles/bearbeiten.dir/src/minimap.cpp.o"
+  "CMakeFiles/bearbeiten.dir/src/minimap.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/outlinepanel.cpp.o"
   "CMakeFiles/bearbeiten.dir/src/outlinepanel.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.o"

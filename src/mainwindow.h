@@ -28,6 +28,7 @@
 #include <QResizeEvent>
 #include "jsonsyntaxhighlighter.h"
 #include "finddialog.h"
+#include "minimap.h"
 #include "gotolinedialog.h"
 #include "symbolsearchdialog.h"
 #include "symbolextractor.h"
@@ -42,9 +43,11 @@ enum class ViewMode {
 struct TabInfo {
     QString filePath;
     JsonSyntaxHighlighter *highlighter;
+    Minimap *minimap;
 
-    TabInfo() : highlighter(nullptr) {}
-    TabInfo(const QString &path, JsonSyntaxHighlighter *hl) : filePath(path), highlighter(hl) {}
+    TabInfo() : highlighter(nullptr), minimap(nullptr) {}
+    TabInfo(const QString &path, JsonSyntaxHighlighter *hl, Minimap *mm = nullptr)
+        : filePath(path), highlighter(hl), minimap(mm) {}
 };
 
 class MainWindow : public QMainWindow
@@ -118,6 +121,9 @@ private slots:
     void unfoldCurrentBlock();
     void foldAll();
     void unfoldAll();
+
+    // Minimap slots
+    void toggleMinimap();
 
     // Find/Replace slots
     void performFind(const QString &text, bool forward, bool caseSensitive, bool wholeWords, bool useRegex);
@@ -228,6 +234,10 @@ private:
     QAction *wordWrapAction;
     QAction *columnRulerAction;
     QAction *wrapIndicatorAction;
+
+    // Minimap components
+    bool minimapEnabled;
+    QAction *minimapAction;
 
     // Find/Replace components
     FindDialog *findDialog;

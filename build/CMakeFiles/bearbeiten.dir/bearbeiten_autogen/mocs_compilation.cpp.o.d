@@ -479,6 +479,7 @@ CMakeFiles/bearbeiten.dir/bearbeiten_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtGui/QResizeEvent /usr/include/qt6/QtGui/qevent.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/jsonsyntaxhighlighter.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/finddialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/minimap.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/gotolinedialog.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/symbolsearchdialog.h \
  /usr/include/qt6/QtWidgets/QListWidget \
@@ -500,6 +501,8 @@ CMakeFiles/bearbeiten.dir/bearbeiten_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtGui/qfilesystemmodel.h /usr/include/qt6/QtCore/QDir \
  /usr/include/qt6/QtCore/qdir.h /usr/include/qt6/QtWidgets/QHeaderView \
  /usr/include/qt6/QtWidgets/qheaderview.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/moc_minimap.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/minimap.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/moc_outlinepanel.cpp \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/outlinepanel.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/moc_projectpanel.cpp \

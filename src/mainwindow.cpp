@@ -14,7 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
       activeTabInfoMap(nullptr), currentViewMode(ViewMode::Single), focusedTabWidget(nullptr),
       projectPanelVisible(false), outlinePanelVisible(false), isSmallScreen(false), autoSaveTimer(nullptr), autoSaveEnabled(true), autoSaveInterval(30), autoSaveAction(nullptr),
       isDarkTheme(false), themeAction(nullptr), lineWrapEnabled(true), wordWrapMode(true), showColumnRuler(false), showWrapIndicator(true), wrapColumn(80),
-      lineWrapAction(nullptr), wordWrapAction(nullptr), columnRulerAction(nullptr), wrapIndicatorAction(nullptr), findDialog(nullptr), goToLineDialog(nullptr), symbolSearchDialog(nullptr)
+      lineWrapAction(nullptr), wordWrapAction(nullptr), columnRulerAction(nullptr), wrapIndicatorAction(nullptr),
+      minimapEnabled(false), minimapAction(nullptr), findDialog(nullptr), goToLineDialog(nullptr), symbolSearchDialog(nullptr)
 {
     detectScreenSize();
 
@@ -309,6 +310,15 @@ void MainWindow::setupMenus()
     connect(unfoldAllAction, &QAction::triggered, this, &MainWindow::unfoldAll);
     viewMenu->addAction(unfoldAllAction);
 
+    viewMenu->addSeparator();
+
+    minimapAction = new QAction(tr("Show &Minimap"), this);
+    minimapAction->setCheckable(true);
+    minimapAction->setChecked(minimapEnabled);
+    minimapAction->setToolTip(tr("Show document minimap sidebar"));
+    connect(minimapAction, &QAction::triggered, this, &MainWindow::toggleMinimap);
+    viewMenu->addAction(minimapAction);
+
     // Tools menu for auto-save
     QMenu *toolsMenu = menuBar()->addMenu(tr("&Tools"));
 
@@ -582,11 +592,24 @@ void MainWindow::createNewTab(const QString &fileName)
     highlighter->loadLanguages("languages");
     highlighter->setTheme(isDarkTheme);
 
+    // Create minimap for this tab
+    Minimap *minimap = new Minimap(editor);
+    minimap->setVisible(minimapEnabled);
+
+    // Create container widget with editor and minimap
+    QWidget *container = new QWidget();
+    QHBoxLayout *layout = new QHBoxLayout(container);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setSpacing(0);
+    layout->addWidget(editor);
+    layout->addWidget(minimap);
+    container->setLayout(layout);
+
     QString tabTitle = fileName.isEmpty() ? tr("Untitled") : QFileInfo(fileName).fileName();
-    int index = tabWidget->addTab(editor, tabTitle);
+    int index = tabWidget->addTab(container, tabTitle);
 
     // Store tab information
-    (*activeTabInfoMap)[index] = TabInfo(fileName, highlighter);
+    (*activeTabInfoMap)[index] = TabInfo(fileName, highlighter, minimap);
 
     // Connect text changed signal for this editor
     connect(editor, &CodeEditor::textChanged, [this, index]() {
@@ -656,12 +679,34 @@ void MainWindow::closeAllTabs()
 
 CodeEditor* MainWindow::getCurrentEditor()
 {
-    return qobject_cast<CodeEditor*>(tabWidget->currentWidget());
+    QWidget *container = tabWidget->currentWidget();
+    if (!container) {
+        return nullptr;
+    }
+
+    // The container has a layout with the editor as the first widget
+    QLayout *layout = container->layout();
+    if (layout && layout->count() > 0) {
+        return qobject_cast<CodeEditor*>(layout->itemAt(0)->widget());
+    }
+
+    return nullptr;
 }
 
 CodeEditor* MainWindow::getEditorAt(int index)
 {
-    return qobject_cast<CodeEditor*>(tabWidget->widget(index));
+    QWidget *container = tabWidget->widget(index);
+    if (!container) {
+        return nullptr;
+    }
+
+    // The container has a layout with the editor as the first widget
+    QLayout *layout = container->layout();
+    if (layout && layout->count() > 0) {
+        return qobject_cast<CodeEditor*>(layout->itemAt(0)->widget());
+    }
+
+    return nullptr;
 }
 
 QString MainWindow::getFilePathAt(int index)
@@ -1258,6 +1303,29 @@ void MainWindow::unfoldAll()
     }
 }
 
+void MainWindow::toggleMinimap()
+{
+    minimapEnabled = !minimapEnabled;
+    if (minimapAction) {
+        minimapAction->setChecked(minimapEnabled);
+    }
+
+    // Apply to all open editors
+    for (auto it = leftTabInfoMap.begin(); it != leftTabInfoMap.end(); ++it) {
+        if (it.value().minimap) {
+            it.value().minimap->setVisible(minimapEnabled);
+        }
+    }
+
+    for (auto it = rightTabInfoMap.begin(); it != rightTabInfoMap.end(); ++it) {
+        if (it.value().minimap) {
+            it.value().minimap->setVisible(minimapEnabled);
+        }
+    }
+
+    saveSettings();
+}
+
 void MainWindow::saveSettings()
 {
     QSettings settings;
@@ -1269,6 +1337,7 @@ void MainWindow::saveSettings()
     settings.setValue("showColumnRuler", showColumnRuler);
     settings.setValue("showWrapIndicator", showWrapIndicator);
     settings.setValue("wrapColumn", wrapColumn);
+    settings.setValue("minimapEnabled", minimapEnabled);
 }
 
 void MainWindow::loadSettings()
@@ -1281,6 +1350,7 @@ void MainWindow::loadSettings()
     showColumnRuler = settings.value("showColumnRuler", false).toBool();
     showWrapIndicator = settings.value("showWrapIndicator", true).toBool();
     wrapColumn = settings.value("wrapColumn", 80).toInt();
+    minimapEnabled = settings.value("minimapEnabled", false).toBool();
     // isDarkTheme already loaded in constructor before stylesheet
 
     if (autoSaveAction) {
@@ -1301,6 +1371,10 @@ void MainWindow::loadSettings()
 
     if (columnRulerAction) {
         columnRulerAction->setChecked(showColumnRuler);
+    }
+
+    if (minimapAction) {
+        minimapAction->setChecked(minimapEnabled);
     }
 
     if (wrapIndicatorAction) {

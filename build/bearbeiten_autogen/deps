@@ -16,6 +16,8 @@ bearbeiten_autogen/timestamp: \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/main.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/mainwindow.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/mainwindow.h \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/minimap.cpp \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/minimap.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.cpp \

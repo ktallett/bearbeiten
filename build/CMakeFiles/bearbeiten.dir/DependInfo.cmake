@@ -19,6 +19,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.cpp" "CMakeFiles/bearbeiten.dir/src/languageloader.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/languageloader.cpp.o.d"
   "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/main.cpp" "CMakeFiles/bearbeiten.dir/src/main.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/main.cpp.o.d"
   "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/mainwindow.cpp" "CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.o.d"
+  "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/minimap.cpp" "CMakeFiles/bearbeiten.dir/src/minimap.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/minimap.cpp.o.d"
   "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.cpp" "CMakeFiles/bearbeiten.dir/src/outlinepanel.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/outlinepanel.cpp.o.d"
   "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.cpp" "CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.o.d"
   "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.cpp" "CMakeFiles/bearbeiten.dir/src/symbolextractor.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/symbolextractor.cpp.o.d"

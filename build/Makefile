@@ -447,6 +447,30 @@ src/mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.s
 .PHONY : src/mainwindow.cpp.s
 
+src/minimap.o: src/minimap.cpp.o
+.PHONY : src/minimap.o
+
+# target to build an object file
+src/minimap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/minimap.cpp.o
+.PHONY : src/minimap.cpp.o
+
+src/minimap.i: src/minimap.cpp.i
+.PHONY : src/minimap.i
+
+# target to preprocess a source file
+src/minimap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/minimap.cpp.i
+.PHONY : src/minimap.cpp.i
+
+src/minimap.s: src/minimap.cpp.s
+.PHONY : src/minimap.s
+
+# target to generate assembly for a file
+src/minimap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/minimap.cpp.s
+.PHONY : src/minimap.cpp.s
+
 src/outlinepanel.o: src/outlinepanel.cpp.o
 .PHONY : src/outlinepanel.o
 
@@ -588,6 +612,9 @@ help:
 	@echo "... src/mainwindow.o"
 	@echo "... src/mainwindow.i"
 	@echo "... src/mainwindow.s"
+	@echo "... src/minimap.o"
+	@echo "... src/minimap.i"
+	@echo "... src/minimap.s"
 	@echo "... src/outlinepanel.o"
 	@echo "... src/outlinepanel.i"
 	@echo "... src/outlinepanel.s"

@@ -502,6 +502,12 @@
 			null
 		],
 		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/minimap.h",
+			"MU",
+			"UVLADIE3JM/moc_minimap.cpp",
+			null
+		],
+		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.h",
 			"MU",
 			"UVLADIE3JM/moc_outlinepanel.cpp",
@@ -620,6 +626,11 @@
 		],
 		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/minimap.cpp",
 			"MU",
 			null
 		],

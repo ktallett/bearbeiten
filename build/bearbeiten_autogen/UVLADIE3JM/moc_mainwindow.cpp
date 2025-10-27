@@ -88,6 +88,7 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "unfoldCurrentBlock",
         "foldAll",
         "unfoldAll",
+        "toggleMinimap",
         "performFind",
         "text",
         "forward",
@@ -202,31 +203,33 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(47, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'unfoldAll'
         QtMocHelpers::SlotData<void()>(48, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'toggleMinimap'
+        QtMocHelpers::SlotData<void()>(49, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'performFind'
-        QtMocHelpers::SlotData<void(const QString &, bool, bool, bool, bool)>(49, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 50 }, { QMetaType::Bool, 51 }, { QMetaType::Bool, 52 }, { QMetaType::Bool, 53 },
-            { QMetaType::Bool, 54 },
+        QtMocHelpers::SlotData<void(const QString &, bool, bool, bool, bool)>(50, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 51 }, { QMetaType::Bool, 52 }, { QMetaType::Bool, 53 }, { QMetaType::Bool, 54 },
+            { QMetaType::Bool, 55 },
         }}),
         // Slot 'performReplace'
-        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(55, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 56 }, { QMetaType::QString, 57 }, { QMetaType::Bool, 52 }, { QMetaType::Bool, 53 },
-            { QMetaType::Bool, 54 },
+        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(56, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 57 }, { QMetaType::QString, 58 }, { QMetaType::Bool, 53 }, { QMetaType::Bool, 54 },
+            { QMetaType::Bool, 55 },
         }}),
         // Slot 'performReplaceAll'
-        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(58, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 56 }, { QMetaType::QString, 57 }, { QMetaType::Bool, 52 }, { QMetaType::Bool, 53 },
-            { QMetaType::Bool, 54 },
+        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(59, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 57 }, { QMetaType::QString, 58 }, { QMetaType::Bool, 53 }, { QMetaType::Bool, 54 },
+            { QMetaType::Bool, 55 },
         }}),
         // Slot 'performGoToLine'
-        QtMocHelpers::SlotData<void(int)>(59, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 32 },
-        }}),
-        // Slot 'updateLinePreview'
         QtMocHelpers::SlotData<void(int)>(60, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 32 },
         }}),
-        // Slot 'performSymbolJump'
+        // Slot 'updateLinePreview'
         QtMocHelpers::SlotData<void(int)>(61, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 32 },
+        }}),
+        // Slot 'performSymbolJump'
+        QtMocHelpers::SlotData<void(int)>(62, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 32 },
         }}),
     };
@@ -296,12 +299,13 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 39: _t->unfoldCurrentBlock(); break;
         case 40: _t->foldAll(); break;
         case 41: _t->unfoldAll(); break;
-        case 42: _t->performFind((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
-        case 43: _t->performReplace((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
-        case 44: _t->performReplaceAll((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
-        case 45: _t->performGoToLine((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 46: _t->updateLinePreview((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 47: _t->performSymbolJump((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 42: _t->toggleMinimap(); break;
+        case 43: _t->performFind((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
+        case 44: _t->performReplace((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
+        case 45: _t->performReplaceAll((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
+        case 46: _t->performGoToLine((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 47: _t->updateLinePreview((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 48: _t->performSymbolJump((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
@@ -326,14 +330,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 48)
+        if (_id < 49)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 48;
+        _id -= 49;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 48)
+        if (_id < 49)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 48;
+        _id -= 49;
     }
     return _id;
 }
