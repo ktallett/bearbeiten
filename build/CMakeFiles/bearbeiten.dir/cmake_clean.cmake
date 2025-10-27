@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   ".qt/rcc/qrc_bearbeiten_translations.cpp"
+  ".qt/rcc/qrc_resources.cpp"
   "CMakeFiles/bearbeiten.dir/link.d"
   "CMakeFiles/bearbeiten_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/bearbeiten_autogen.dir/ParseCache.txt"
@@ -8,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/bearbeiten.dir/bearbeiten_autogen/mocs_compilation.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.o"
   "CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.o.d"
+  "CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o"
+  "CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/codeeditor.cpp.o"
   "CMakeFiles/bearbeiten.dir/src/codeeditor.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/finddialog.cpp.o"

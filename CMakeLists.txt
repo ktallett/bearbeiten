@@ -24,11 +24,14 @@ set(SOURCES
     src/projectpanel.h
 )
 
-set(RESOURCES
-    resources.qrc
-)
+qt6_add_executable(bearbeiten ${SOURCES})
 
-qt6_add_executable(bearbeiten ${SOURCES} ${RESOURCES})
+qt6_add_resources(bearbeiten "resources"
+    PREFIX "/"
+    FILES
+        src/stylesheet.qss
+        src/stylesheet-dark.qss
+)
 
 target_link_libraries(bearbeiten PRIVATE Qt6::Core Qt6::Widgets)
 

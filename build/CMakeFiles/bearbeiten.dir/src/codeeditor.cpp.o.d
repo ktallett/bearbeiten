@@ -356,5 +356,7 @@ CMakeFiles/bearbeiten.dir/src/codeeditor.cpp.o: \
  /usr/include/qt6/QtGui/qglyphrun.h /usr/include/qt6/QtGui/qrawfont.h \
  /usr/include/qt6/QtGui/qfontdatabase.h \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
+ /usr/include/qt6/QtCore/QSet /usr/include/qt6/QtCore/qset.h \
  /usr/include/qt6/QtGui/QPainter /usr/include/qt6/QtGui/qpainter.h \
- /usr/include/qt6/QtGui/QTextBlock /usr/include/qt6/QtGui/qtextobject.h
+ /usr/include/qt6/QtGui/QTextBlock /usr/include/qt6/QtGui/qtextobject.h \
+ /usr/include/qt6/QtGui/QMouseEvent /usr/include/qt6/QtGui/qevent.h

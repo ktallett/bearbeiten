@@ -279,6 +279,7 @@
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QRect \
   /usr/include/qt6/QtCore/QRegularExpression \
+  /usr/include/qt6/QtCore/QSet \
   /usr/include/qt6/QtCore/QSettings \
   /usr/include/qt6/QtCore/QSize \
   /usr/include/qt6/QtCore/QSizeF \

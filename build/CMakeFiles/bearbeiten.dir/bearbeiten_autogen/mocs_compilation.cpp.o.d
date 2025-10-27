@@ -357,6 +357,7 @@ CMakeFiles/bearbeiten.dir/bearbeiten_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtGui/qglyphrun.h /usr/include/qt6/QtGui/qrawfont.h \
  /usr/include/qt6/QtGui/qfontdatabase.h \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
+ /usr/include/qt6/QtCore/QSet /usr/include/qt6/QtCore/qset.h \
  /usr/include/qt6/QtCore/qtmochelpers.h \
  /usr/include/qt6/QtCore/qtmocconstants.h \
  /usr/include/qt6/QtCore/q20algorithm.h \

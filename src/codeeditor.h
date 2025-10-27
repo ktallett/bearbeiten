@@ -3,6 +3,7 @@
 
 #include <QPlainTextEdit>
 #include <QWidget>
+#include <QSet>
 
 class LineNumberArea;
 
@@ -17,6 +18,18 @@ public:
     int lineNumberAreaWidth();
     void setCompactMode(bool compact);
 
+    // Code folding
+    void toggleFold(int lineNumber);
+    bool isFoldable(int lineNumber);
+    void foldAll();
+    void unfoldAll();
+
+    // Public accessors for protected methods (for LineNumberArea)
+    QTextBlock getFirstVisibleBlock() const;
+    QRectF getBlockBoundingGeometry(const QTextBlock &block) const;
+    QRectF getBlockBoundingRect(const QTextBlock &block) const;
+    QPointF getContentOffset() const;
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
@@ -24,10 +37,29 @@ private slots:
     void updateLineNumberAreaWidth(int newBlockCount);
     void highlightCurrentLine();
     void updateLineNumberArea(const QRect &rect, int dy);
+    void matchBrackets();
 
 private:
     QWidget *lineNumberArea;
     bool compactMode;
+
+    struct BracketInfo {
+        QChar character;
+        int position;
+    };
+
+    BracketInfo findMatchingBracket(QChar bracket, int position, bool forward);
+    bool isOpeningBracket(QChar c);
+    bool isClosingBracket(QChar c);
+    QChar getMatchingBracket(QChar c);
+
+    // Code folding helpers
+    int getIndentLevel(const QString &text);
+    int findFoldEndLine(int startLine);
+    void setBlockVisible(int lineNumber, bool visible);
+    bool isBlockFolded(int lineNumber);
+
+    QSet<int> foldedBlocks;  // Track which lines are folded
 };
 
 class LineNumberArea : public QWidget
@@ -46,6 +78,8 @@ protected:
     {
         codeEditor->lineNumberAreaPaintEvent(event);
     }
+
+    void mousePressEvent(QMouseEvent *event) override;
 
 private:
     CodeEditor *codeEditor;

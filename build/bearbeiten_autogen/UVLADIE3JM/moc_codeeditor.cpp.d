@@ -268,6 +268,7 @@
   /usr/include/qt6/QtCore/QList \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QRect \
+  /usr/include/qt6/QtCore/QSet \
   /usr/include/qt6/QtCore/QSize \
   /usr/include/qt6/QtCore/QSizeF \
   /usr/include/qt6/QtCore/q17memory.h \

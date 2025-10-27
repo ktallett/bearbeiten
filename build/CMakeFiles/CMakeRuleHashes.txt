@@ -1,5 +1,6 @@
 # Hashes of file build rules.
 356d53500df6792ebd58f564bfa4c923 .qt/rcc/qrc_bearbeiten_translations.cpp
+3a52161397b30cc21c8096d94098c7ef .qt/rcc/qrc_resources.cpp
 65446e2f307890d46ead2353bb0657fd CMakeFiles/bearbeiten_autogen
 65446e2f307890d46ead2353bb0657fd CMakeFiles/bearbeiten_lrelease
 0b1bedfe84a1f1faae7db1a4747a9614 CMakeFiles/bearbeiten_lupdate

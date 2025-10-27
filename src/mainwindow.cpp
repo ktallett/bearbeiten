@@ -12,9 +12,14 @@ MainWindow::MainWindow(QWidget *parent)
       lineCountLabel(nullptr), wordCountLabel(nullptr), characterCountLabel(nullptr),
       activeTabInfoMap(nullptr), currentViewMode(ViewMode::Single), focusedTabWidget(nullptr),
       projectPanelVisible(false), isSmallScreen(false), autoSaveTimer(nullptr), autoSaveEnabled(true), autoSaveInterval(30), autoSaveAction(nullptr),
-      findDialog(nullptr)
+      isDarkTheme(false), themeAction(nullptr), lineWrapEnabled(true), lineWrapAction(nullptr), findDialog(nullptr)
 {
     detectScreenSize();
+
+    // Load theme preference early (before loading stylesheet)
+    QSettings settings;
+    isDarkTheme = settings.value("isDarkTheme", false).toBool();
+
     loadStyleSheet();
     setupEditor();
     setupMenus();
@@ -206,6 +211,46 @@ void MainWindow::setupMenus()
     connect(toggleProjectAction, &QAction::triggered, this, &MainWindow::toggleProjectPanel);
     viewMenu->addAction(toggleProjectAction);
 
+    viewMenu->addSeparator();
+
+    themeAction = new QAction(tr("&Dark Theme"), this);
+    themeAction->setShortcut(QKeySequence("Ctrl+Shift+T"));
+    themeAction->setCheckable(true);
+    themeAction->setChecked(isDarkTheme);
+    connect(themeAction, &QAction::triggered, this, &MainWindow::toggleTheme);
+    viewMenu->addAction(themeAction);
+
+    viewMenu->addSeparator();
+
+    lineWrapAction = new QAction(tr("&Line Wrap"), this);
+    lineWrapAction->setShortcut(QKeySequence("Alt+Z"));
+    lineWrapAction->setCheckable(true);
+    lineWrapAction->setChecked(lineWrapEnabled);
+    connect(lineWrapAction, &QAction::triggered, this, &MainWindow::toggleLineWrap);
+    viewMenu->addAction(lineWrapAction);
+
+    viewMenu->addSeparator();
+
+    QAction *foldAction = new QAction(tr("&Fold Block"), this);
+    foldAction->setShortcut(QKeySequence("Ctrl+Shift+["));
+    connect(foldAction, &QAction::triggered, this, &MainWindow::foldCurrentBlock);
+    viewMenu->addAction(foldAction);
+
+    QAction *unfoldAction = new QAction(tr("&Unfold Block"), this);
+    unfoldAction->setShortcut(QKeySequence("Ctrl+Shift+]"));
+    connect(unfoldAction, &QAction::triggered, this, &MainWindow::unfoldCurrentBlock);
+    viewMenu->addAction(unfoldAction);
+
+    QAction *foldAllAction = new QAction(tr("Fold &All"), this);
+    foldAllAction->setShortcut(QKeySequence("Ctrl+K, Ctrl+0"));
+    connect(foldAllAction, &QAction::triggered, this, &MainWindow::foldAll);
+    viewMenu->addAction(foldAllAction);
+
+    QAction *unfoldAllAction = new QAction(tr("Unfold A&ll"), this);
+    unfoldAllAction->setShortcut(QKeySequence("Ctrl+K, Ctrl+J"));
+    connect(unfoldAllAction, &QAction::triggered, this, &MainWindow::unfoldAll);
+    viewMenu->addAction(unfoldAllAction);
+
     // Tools menu for auto-save
     QMenu *toolsMenu = menuBar()->addMenu(tr("&Tools"));
 
@@ -390,11 +435,13 @@ void MainWindow::setCurrentFile(const QString &fileName)
 
 void MainWindow::loadStyleSheet()
 {
-    // Load the universal design system stylesheet
-    QFile styleFile(":/src/stylesheet.qss");
+    // Choose stylesheet based on theme
+    QString styleFileName = isDarkTheme ? ":/src/stylesheet-dark.qss" : ":/src/stylesheet.qss";
+    QFile styleFile(styleFileName);
+
     if (!styleFile.exists()) {
         // Try relative path for development
-        styleFile.setFileName("src/stylesheet.qss");
+        styleFile.setFileName(isDarkTheme ? "src/stylesheet-dark.qss" : "src/stylesheet.qss");
     }
 
     if (styleFile.open(QFile::ReadOnly | QFile::Text)) {
@@ -458,6 +505,11 @@ void MainWindow::createNewTab(const QString &fileName)
         editor->setCompactMode(false);
     }
     editor->setFont(font);
+
+    // Apply line wrap setting
+    QPlainTextEdit::LineWrapMode wrapMode = lineWrapEnabled ?
+        QPlainTextEdit::WidgetWidth : QPlainTextEdit::NoWrap;
+    editor->setLineWrapMode(wrapMode);
 
     // Create syntax highlighter for this tab
     JsonSyntaxHighlighter *highlighter = new JsonSyntaxHighlighter(editor->document());
@@ -925,11 +977,99 @@ void MainWindow::toggleAutoSave()
     saveSettings();
 }
 
+void MainWindow::toggleTheme()
+{
+    isDarkTheme = !isDarkTheme;
+    if (themeAction) {
+        themeAction->setChecked(isDarkTheme);
+    }
+
+    loadStyleSheet();
+    saveSettings();
+}
+
+void MainWindow::toggleLineWrap()
+{
+    lineWrapEnabled = !lineWrapEnabled;
+    if (lineWrapAction) {
+        lineWrapAction->setChecked(lineWrapEnabled);
+    }
+
+    // Apply to all open editors
+    QPlainTextEdit::LineWrapMode mode = lineWrapEnabled ?
+        QPlainTextEdit::WidgetWidth : QPlainTextEdit::NoWrap;
+
+    // Update left tab widget editors
+    for (int i = 0; i < leftTabWidget->count(); ++i) {
+        CodeEditor *editor = qobject_cast<CodeEditor*>(leftTabWidget->widget(i));
+        if (editor) {
+            editor->setLineWrapMode(mode);
+        }
+    }
+
+    // Update right tab widget editors (if in split view)
+    for (int i = 0; i < rightTabWidget->count(); ++i) {
+        CodeEditor *editor = qobject_cast<CodeEditor*>(rightTabWidget->widget(i));
+        if (editor) {
+            editor->setLineWrapMode(mode);
+        }
+    }
+
+    saveSettings();
+}
+
+void MainWindow::setLineWrapMode(int mode)
+{
+    // This method allows for future expansion to support different wrap modes
+    // For now, we just toggle between wrap and no-wrap
+    lineWrapEnabled = (mode != 0);
+    toggleLineWrap();
+}
+
+void MainWindow::foldCurrentBlock()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (!editor) {
+        return;
+    }
+
+    // Get the current line number
+    QTextCursor cursor = editor->textCursor();
+    int lineNumber = cursor.blockNumber();
+
+    // Toggle fold at current line
+    editor->toggleFold(lineNumber);
+}
+
+void MainWindow::unfoldCurrentBlock()
+{
+    // Same as fold - toggleFold handles both
+    foldCurrentBlock();
+}
+
+void MainWindow::foldAll()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (editor) {
+        editor->foldAll();
+    }
+}
+
+void MainWindow::unfoldAll()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (editor) {
+        editor->unfoldAll();
+    }
+}
+
 void MainWindow::saveSettings()
 {
     QSettings settings;
     settings.setValue("autoSaveEnabled", autoSaveEnabled);
     settings.setValue("autoSaveInterval", autoSaveInterval);
+    settings.setValue("isDarkTheme", isDarkTheme);
+    settings.setValue("lineWrapEnabled", lineWrapEnabled);
 }
 
 void MainWindow::loadSettings()
@@ -937,9 +1077,19 @@ void MainWindow::loadSettings()
     QSettings settings;
     autoSaveEnabled = settings.value("autoSaveEnabled", true).toBool();
     autoSaveInterval = settings.value("autoSaveInterval", 30).toInt();
+    lineWrapEnabled = settings.value("lineWrapEnabled", true).toBool();
+    // isDarkTheme already loaded in constructor before stylesheet
 
     if (autoSaveAction) {
         autoSaveAction->setChecked(autoSaveEnabled);
+    }
+
+    if (themeAction) {
+        themeAction->setChecked(isDarkTheme);
+    }
+
+    if (lineWrapAction) {
+        lineWrapAction->setChecked(lineWrapEnabled);
     }
 
     if (autoSaveEnabled) {

@@ -91,6 +91,19 @@ private slots:
     void onTextChanged();
     void toggleAutoSave();
 
+    // Theme slots
+    void toggleTheme();
+
+    // Line wrap slots
+    void toggleLineWrap();
+    void setLineWrapMode(int mode);
+
+    // Code folding slots
+    void foldCurrentBlock();
+    void unfoldCurrentBlock();
+    void foldAll();
+    void unfoldAll();
+
     // Find/Replace slots
     void performFind(const QString &text, bool forward, bool caseSensitive, bool wholeWords, bool useRegex);
     void performReplace(const QString &findText, const QString &replaceText, bool caseSensitive, bool wholeWords, bool useRegex);
@@ -176,6 +189,14 @@ private:
     bool autoSaveEnabled;
     int autoSaveInterval; // in seconds
     QAction *autoSaveAction;
+
+    // Theme components
+    bool isDarkTheme;
+    QAction *themeAction;
+
+    // Line wrap components
+    bool lineWrapEnabled;
+    QAction *lineWrapAction;
 
     // Find/Replace components
     FindDialog *findDialog;

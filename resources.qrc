@@ -2,5 +2,6 @@
 <RCC version="1.0">
     <qresource>
         <file>src/stylesheet.qss</file>
+        <file>src/stylesheet-dark.qss</file>
     </qresource>
 </RCC>

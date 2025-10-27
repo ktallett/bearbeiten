@@ -413,6 +413,7 @@
 		"/usr/lib64/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake",
 		"/usr/share/cmake/Modules/CMakeParseArguments.cmake",
 		"/usr/share/cmake/Modules/GNUInstallDirs.cmake",
+		"/usr/lib64/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
 		"/usr/lib64/cmake/Qt6/Qt6ConfigVersion.cmake",
 		"/usr/lib64/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
 		"/usr/lib64/cmake/Qt6/Qt6Config.cmake",
@@ -550,7 +551,8 @@
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : 
 	[
-		"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_bearbeiten_translations.cpp"
+		"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_bearbeiten_translations.cpp",
+		"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_resources.cpp"
 	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 6,
@@ -602,7 +604,8 @@
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : 
 	[
-		"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_bearbeiten_translations.cpp"
+		"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_bearbeiten_translations.cpp",
+		"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_resources.cpp"
 	],
 	"UIC_UI_FILES" : [],
 	"USE_BETTER_GRAPH" : true,

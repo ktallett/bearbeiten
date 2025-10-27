@@ -361,6 +361,7 @@ CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.o: \
  /usr/include/qt6/QtGui/qglyphrun.h /usr/include/qt6/QtGui/qrawfont.h \
  /usr/include/qt6/QtGui/qfontdatabase.h \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
+ /usr/include/qt6/QtCore/QSet /usr/include/qt6/QtCore/qset.h \
  /usr/include/qt6/QtWidgets/QMenuBar \
  /usr/include/qt6/QtWidgets/qmenubar.h /usr/include/qt6/QtWidgets/qmenu.h \
  /usr/include/qt6/QtWidgets/QFileDialog \

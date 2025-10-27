@@ -255,6 +255,30 @@ build/.qt/rcc/qrc_bearbeiten_translations.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.s
 .PHONY : build/.qt/rcc/qrc_bearbeiten_translations.cpp.s
 
+build/.qt/rcc/qrc_resources.o: build/.qt/rcc/qrc_resources.cpp.o
+.PHONY : build/.qt/rcc/qrc_resources.o
+
+# target to build an object file
+build/.qt/rcc/qrc_resources.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o
+.PHONY : build/.qt/rcc/qrc_resources.cpp.o
+
+build/.qt/rcc/qrc_resources.i: build/.qt/rcc/qrc_resources.cpp.i
+.PHONY : build/.qt/rcc/qrc_resources.i
+
+# target to preprocess a source file
+build/.qt/rcc/qrc_resources.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.i
+.PHONY : build/.qt/rcc/qrc_resources.cpp.i
+
+build/.qt/rcc/qrc_resources.s: build/.qt/rcc/qrc_resources.cpp.s
+.PHONY : build/.qt/rcc/qrc_resources.s
+
+# target to generate assembly for a file
+build/.qt/rcc/qrc_resources.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.s
+.PHONY : build/.qt/rcc/qrc_resources.cpp.s
+
 src/codeeditor.o: src/codeeditor.cpp.o
 .PHONY : src/codeeditor.o
 
@@ -444,6 +468,9 @@ help:
 	@echo "... build/.qt/rcc/qrc_bearbeiten_translations.o"
 	@echo "... build/.qt/rcc/qrc_bearbeiten_translations.i"
 	@echo "... build/.qt/rcc/qrc_bearbeiten_translations.s"
+	@echo "... build/.qt/rcc/qrc_resources.o"
+	@echo "... build/.qt/rcc/qrc_resources.i"
+	@echo "... build/.qt/rcc/qrc_resources.s"
 	@echo "... src/codeeditor.o"
 	@echo "... src/codeeditor.i"
 	@echo "... src/codeeditor.s"

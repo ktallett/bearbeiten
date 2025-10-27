@@ -70,6 +70,14 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "autoSave",
         "onTextChanged",
         "toggleAutoSave",
+        "toggleTheme",
+        "toggleLineWrap",
+        "setLineWrapMode",
+        "mode",
+        "foldCurrentBlock",
+        "unfoldCurrentBlock",
+        "foldAll",
+        "unfoldAll",
         "performFind",
         "text",
         "forward",
@@ -145,20 +153,36 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(29, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'toggleAutoSave'
         QtMocHelpers::SlotData<void()>(30, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'toggleTheme'
+        QtMocHelpers::SlotData<void()>(31, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'toggleLineWrap'
+        QtMocHelpers::SlotData<void()>(32, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'setLineWrapMode'
+        QtMocHelpers::SlotData<void(int)>(33, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 34 },
+        }}),
+        // Slot 'foldCurrentBlock'
+        QtMocHelpers::SlotData<void()>(35, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'unfoldCurrentBlock'
+        QtMocHelpers::SlotData<void()>(36, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'foldAll'
+        QtMocHelpers::SlotData<void()>(37, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'unfoldAll'
+        QtMocHelpers::SlotData<void()>(38, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'performFind'
-        QtMocHelpers::SlotData<void(const QString &, bool, bool, bool, bool)>(31, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 32 }, { QMetaType::Bool, 33 }, { QMetaType::Bool, 34 }, { QMetaType::Bool, 35 },
-            { QMetaType::Bool, 36 },
+        QtMocHelpers::SlotData<void(const QString &, bool, bool, bool, bool)>(39, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 40 }, { QMetaType::Bool, 41 }, { QMetaType::Bool, 42 }, { QMetaType::Bool, 43 },
+            { QMetaType::Bool, 44 },
         }}),
         // Slot 'performReplace'
-        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(37, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 38 }, { QMetaType::QString, 39 }, { QMetaType::Bool, 34 }, { QMetaType::Bool, 35 },
-            { QMetaType::Bool, 36 },
+        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(45, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 46 }, { QMetaType::QString, 47 }, { QMetaType::Bool, 42 }, { QMetaType::Bool, 43 },
+            { QMetaType::Bool, 44 },
         }}),
         // Slot 'performReplaceAll'
-        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(40, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 38 }, { QMetaType::QString, 39 }, { QMetaType::Bool, 34 }, { QMetaType::Bool, 35 },
-            { QMetaType::Bool, 36 },
+        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(48, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 46 }, { QMetaType::QString, 47 }, { QMetaType::Bool, 42 }, { QMetaType::Bool, 43 },
+            { QMetaType::Bool, 44 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -211,9 +235,16 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 23: _t->autoSave(); break;
         case 24: _t->onTextChanged(); break;
         case 25: _t->toggleAutoSave(); break;
-        case 26: _t->performFind((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
-        case 27: _t->performReplace((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
-        case 28: _t->performReplaceAll((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
+        case 26: _t->toggleTheme(); break;
+        case 27: _t->toggleLineWrap(); break;
+        case 28: _t->setLineWrapMode((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 29: _t->foldCurrentBlock(); break;
+        case 30: _t->unfoldCurrentBlock(); break;
+        case 31: _t->foldAll(); break;
+        case 32: _t->unfoldAll(); break;
+        case 33: _t->performFind((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
+        case 34: _t->performReplace((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
+        case 35: _t->performReplaceAll((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
         default: ;
         }
     }
@@ -238,14 +269,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 29)
+        if (_id < 36)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 29;
+        _id -= 36;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 29)
+        if (_id < 36)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 29;
+        _id -= 36;
     }
     return _id;
 }
