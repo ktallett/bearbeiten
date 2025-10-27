@@ -470,11 +470,21 @@ CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.o: \
  /usr/include/qt6/QtWidgets/qgridlayout.h \
  /usr/include/qt6/QtWidgets/QGroupBox \
  /usr/include/qt6/QtWidgets/qgroupbox.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h \
+ /usr/include/qt6/QtWidgets/QListWidget \
+ /usr/include/qt6/QtWidgets/qlistwidget.h \
+ /usr/include/qt6/QtWidgets/qlistview.h \
+ /usr/include/qt6/QtWidgets/qabstractitemview.h \
+ /usr/include/qt6/QtCore/qitemselectionmodel.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.h \
+ /usr/include/qt6/QtWidgets/QTreeWidget \
+ /usr/include/qt6/QtWidgets/qtreewidget.h \
+ /usr/include/qt6/QtWidgets/qtreeview.h \
+ /usr/include/qt6/QtWidgets/qtreewidgetitemiterator.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.h \
  /usr/include/qt6/QtWidgets/QTreeView \
  /usr/include/qt6/QtWidgets/qtreeview.h \
- /usr/include/qt6/QtWidgets/qabstractitemview.h \
- /usr/include/qt6/QtCore/qitemselectionmodel.h \
  /usr/include/qt6/QtGui/QFileSystemModel \
  /usr/include/qt6/QtGui/qfilesystemmodel.h /usr/include/qt6/QtCore/QDir \
  /usr/include/qt6/QtCore/qdir.h /usr/include/qt6/QtWidgets/QHeaderView \

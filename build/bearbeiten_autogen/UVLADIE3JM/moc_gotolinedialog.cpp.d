@@ -1,13 +1,5 @@
-/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/moc_mainwindow.cpp: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/mainwindow.h \
+/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/moc_gotolinedialog.cpp: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.h \
   /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/moc_predefs.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -206,7 +198,6 @@
   /usr/include/c++/15/ext/numeric_traits.h \
   /usr/include/c++/15/ext/string_conversions.h \
   /usr/include/c++/15/ext/type_traits.h \
-  /usr/include/c++/15/filesystem \
   /usr/include/c++/15/functional \
   /usr/include/c++/15/initializer_list \
   /usr/include/c++/15/iosfwd \
@@ -274,22 +265,11 @@
   /usr/include/linux/types.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
-  /usr/include/qt6/QtCore/QDir \
-  /usr/include/qt6/QtCore/QJsonArray \
-  /usr/include/qt6/QtCore/QJsonObject \
   /usr/include/qt6/QtCore/QList \
-  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QRect \
-  /usr/include/qt6/QtCore/QRegularExpression \
-  /usr/include/qt6/QtCore/QSet \
-  /usr/include/qt6/QtCore/QSettings \
   /usr/include/qt6/QtCore/QSize \
   /usr/include/qt6/QtCore/QSizeF \
-  /usr/include/qt6/QtCore/QString \
-  /usr/include/qt6/QtCore/QStringList \
-  /usr/include/qt6/QtCore/QTimer \
-  /usr/include/qt6/QtCore/QVector \
   /usr/include/qt6/QtCore/q17memory.h \
   /usr/include/qt6/QtCore/q20functional.h \
   /usr/include/qt6/QtCore/q20iterator.h \
@@ -298,7 +278,6 @@
   /usr/include/qt6/QtCore/q20utility.h \
   /usr/include/qt6/QtCore/q23utility.h \
   /usr/include/qt6/QtCore/qabstracteventdispatcher.h \
-  /usr/include/qt6/QtCore/qabstractitemmodel.h \
   /usr/include/qt6/QtCore/qalgorithms.h \
   /usr/include/qt6/QtCore/qanystringview.h \
   /usr/include/qt6/QtCore/qarraydata.h \
@@ -314,9 +293,6 @@
   /usr/include/qt6/QtCore/qbytearrayalgorithms.h \
   /usr/include/qt6/QtCore/qbytearraylist.h \
   /usr/include/qt6/QtCore/qbytearrayview.h \
-  /usr/include/qt6/QtCore/qcalendar.h \
-  /usr/include/qt6/QtCore/qcborcommon.h \
-  /usr/include/qt6/QtCore/qcborvalue.h \
   /usr/include/qt6/QtCore/qchar.h \
   /usr/include/qt6/QtCore/qcompare.h \
   /usr/include/qt6/QtCore/qcompare_impl.h \
@@ -334,18 +310,12 @@
   /usr/include/qt6/QtCore/qcoreevent.h \
   /usr/include/qt6/QtCore/qdarwinhelpers.h \
   /usr/include/qt6/QtCore/qdatastream.h \
-  /usr/include/qt6/QtCore/qdatetime.h \
   /usr/include/qt6/QtCore/qdeadlinetimer.h \
   /usr/include/qt6/QtCore/qdebug.h \
-  /usr/include/qt6/QtCore/qdir.h \
-  /usr/include/qt6/QtCore/qdirlisting.h \
   /usr/include/qt6/QtCore/qelapsedtimer.h \
   /usr/include/qt6/QtCore/qendian.h \
   /usr/include/qt6/QtCore/qeventloop.h \
   /usr/include/qt6/QtCore/qexceptionhandling.h \
-  /usr/include/qt6/QtCore/qfile.h \
-  /usr/include/qt6/QtCore/qfiledevice.h \
-  /usr/include/qt6/QtCore/qfileinfo.h \
   /usr/include/qt6/QtCore/qflags.h \
   /usr/include/qt6/QtCore/qfloat16.h \
   /usr/include/qt6/QtCore/qforeach.h \
@@ -358,14 +328,8 @@
   /usr/include/qt6/QtCore/qhashfunctions.h \
   /usr/include/qt6/QtCore/qiodevice.h \
   /usr/include/qt6/QtCore/qiodevicebase.h \
-  /usr/include/qt6/QtCore/qitemselectionmodel.h \
   /usr/include/qt6/QtCore/qiterable.h \
   /usr/include/qt6/QtCore/qiterator.h \
-  /usr/include/qt6/QtCore/qjsonarray.h \
-  /usr/include/qt6/QtCore/qjsondocument.h \
-  /usr/include/qt6/QtCore/qjsonobject.h \
-  /usr/include/qt6/QtCore/qjsonparseerror.h \
-  /usr/include/qt6/QtCore/qjsonvalue.h \
   /usr/include/qt6/QtCore/qlatin1stringview.h \
   /usr/include/qt6/QtCore/qline.h \
   /usr/include/qt6/QtCore/qlist.h \
@@ -391,11 +355,9 @@
   /usr/include/qt6/QtCore/qprocessordetection.h \
   /usr/include/qt6/QtCore/qrect.h \
   /usr/include/qt6/QtCore/qrefcount.h \
-  /usr/include/qt6/QtCore/qregularexpression.h \
   /usr/include/qt6/QtCore/qscopedpointer.h \
   /usr/include/qt6/QtCore/qscopeguard.h \
   /usr/include/qt6/QtCore/qset.h \
-  /usr/include/qt6/QtCore/qsettings.h \
   /usr/include/qt6/QtCore/qshareddata.h \
   /usr/include/qt6/QtCore/qshareddata_impl.h \
   /usr/include/qt6/QtCore/qsharedpointer.h \
@@ -429,8 +391,6 @@
   /usr/include/qt6/QtCore/qtenvironmentvariables.h \
   /usr/include/qt6/QtCore/qtextstream.h \
   /usr/include/qt6/QtCore/qtformat_impl.h \
-  /usr/include/qt6/QtCore/qtimer.h \
-  /usr/include/qt6/QtCore/qtimezone.h \
   /usr/include/qt6/QtCore/qtmetamacros.h \
   /usr/include/qt6/QtCore/qtnoop.h \
   /usr/include/qt6/QtCore/qtpreprocessorsupport.h \
@@ -443,22 +403,11 @@
   /usr/include/qt6/QtCore/qtypes.h \
   /usr/include/qt6/QtCore/qurl.h \
   /usr/include/qt6/QtCore/qutf8stringview.h \
-  /usr/include/qt6/QtCore/quuid.h \
   /usr/include/qt6/QtCore/qvariant.h \
   /usr/include/qt6/QtCore/qvarlengtharray.h \
-  /usr/include/qt6/QtCore/qvector.h \
   /usr/include/qt6/QtCore/qversiontagging.h \
   /usr/include/qt6/QtCore/qxptype_traits.h \
   /usr/include/qt6/QtCore/qyieldcpu.h \
-  /usr/include/qt6/QtGui/QAction \
-  /usr/include/qt6/QtGui/QFileSystemModel \
-  /usr/include/qt6/QtGui/QGuiApplication \
-  /usr/include/qt6/QtGui/QResizeEvent \
-  /usr/include/qt6/QtGui/QScreen \
-  /usr/include/qt6/QtGui/QSyntaxHighlighter \
-  /usr/include/qt6/QtGui/QTextCharFormat \
-  /usr/include/qt6/QtGui/QTextCursor \
-  /usr/include/qt6/QtGui/QTextDocument \
   /usr/include/qt6/QtGui/QTransform \
   /usr/include/qt6/QtGui/qabstracttextdocumentlayout.h \
   /usr/include/qt6/QtGui/qaction.h \
@@ -468,7 +417,6 @@
   /usr/include/qt6/QtGui/qcursor.h \
   /usr/include/qt6/QtGui/qevent.h \
   /usr/include/qt6/QtGui/qeventpoint.h \
-  /usr/include/qt6/QtGui/qfilesystemmodel.h \
   /usr/include/qt6/QtGui/qfont.h \
   /usr/include/qt6/QtGui/qfontdatabase.h \
   /usr/include/qt6/QtGui/qfontinfo.h \
@@ -496,89 +444,39 @@
   /usr/include/qt6/QtGui/qrgba64.h \
   /usr/include/qt6/QtGui/qscreen.h \
   /usr/include/qt6/QtGui/qscreen_platform.h \
-  /usr/include/qt6/QtGui/qsyntaxhighlighter.h \
   /usr/include/qt6/QtGui/qtextcursor.h \
   /usr/include/qt6/QtGui/qtextdocument.h \
   /usr/include/qt6/QtGui/qtextformat.h \
   /usr/include/qt6/QtGui/qtextlayout.h \
-  /usr/include/qt6/QtGui/qtextobject.h \
   /usr/include/qt6/QtGui/qtextoption.h \
   /usr/include/qt6/QtGui/qtgui-config.h \
   /usr/include/qt6/QtGui/qtguiexports.h \
   /usr/include/qt6/QtGui/qtguiglobal.h \
   /usr/include/qt6/QtGui/qtransform.h \
-  /usr/include/qt6/QtGui/qvalidator.h \
   /usr/include/qt6/QtGui/qvector2d.h \
   /usr/include/qt6/QtGui/qvectornd.h \
   /usr/include/qt6/QtGui/qwindowdefs.h \
-  /usr/include/qt6/QtWidgets/QApplication \
-  /usr/include/qt6/QtWidgets/QCheckBox \
-  /usr/include/qt6/QtWidgets/QComboBox \
   /usr/include/qt6/QtWidgets/QDialog \
-  /usr/include/qt6/QtWidgets/QFileDialog \
-  /usr/include/qt6/QtWidgets/QGridLayout \
-  /usr/include/qt6/QtWidgets/QGroupBox \
   /usr/include/qt6/QtWidgets/QHBoxLayout \
-  /usr/include/qt6/QtWidgets/QHeaderView \
   /usr/include/qt6/QtWidgets/QLabel \
   /usr/include/qt6/QtWidgets/QLineEdit \
-  /usr/include/qt6/QtWidgets/QListWidget \
-  /usr/include/qt6/QtWidgets/QMainWindow \
-  /usr/include/qt6/QtWidgets/QMenu \
-  /usr/include/qt6/QtWidgets/QMenuBar \
-  /usr/include/qt6/QtWidgets/QMessageBox \
   /usr/include/qt6/QtWidgets/QPlainTextEdit \
   /usr/include/qt6/QtWidgets/QPushButton \
-  /usr/include/qt6/QtWidgets/QSplitter \
-  /usr/include/qt6/QtWidgets/QStatusBar \
-  /usr/include/qt6/QtWidgets/QTabBar \
-  /usr/include/qt6/QtWidgets/QTabWidget \
-  /usr/include/qt6/QtWidgets/QTreeView \
-  /usr/include/qt6/QtWidgets/QTreeWidget \
   /usr/include/qt6/QtWidgets/QVBoxLayout \
-  /usr/include/qt6/QtWidgets/QWidget \
   /usr/include/qt6/QtWidgets/qabstractbutton.h \
-  /usr/include/qt6/QtWidgets/qabstractitemdelegate.h \
-  /usr/include/qt6/QtWidgets/qabstractitemview.h \
   /usr/include/qt6/QtWidgets/qabstractscrollarea.h \
-  /usr/include/qt6/QtWidgets/qabstractslider.h \
-  /usr/include/qt6/QtWidgets/qabstractspinbox.h \
-  /usr/include/qt6/QtWidgets/qapplication.h \
   /usr/include/qt6/QtWidgets/qboxlayout.h \
-  /usr/include/qt6/QtWidgets/qcheckbox.h \
-  /usr/include/qt6/QtWidgets/qcombobox.h \
   /usr/include/qt6/QtWidgets/qdialog.h \
-  /usr/include/qt6/QtWidgets/qdialogbuttonbox.h \
-  /usr/include/qt6/QtWidgets/qfiledialog.h \
   /usr/include/qt6/QtWidgets/qframe.h \
   /usr/include/qt6/QtWidgets/qgridlayout.h \
-  /usr/include/qt6/QtWidgets/qgroupbox.h \
-  /usr/include/qt6/QtWidgets/qheaderview.h \
   /usr/include/qt6/QtWidgets/qlabel.h \
   /usr/include/qt6/QtWidgets/qlayout.h \
   /usr/include/qt6/QtWidgets/qlayoutitem.h \
   /usr/include/qt6/QtWidgets/qlineedit.h \
-  /usr/include/qt6/QtWidgets/qlistview.h \
-  /usr/include/qt6/QtWidgets/qlistwidget.h \
-  /usr/include/qt6/QtWidgets/qmainwindow.h \
-  /usr/include/qt6/QtWidgets/qmenu.h \
-  /usr/include/qt6/QtWidgets/qmenubar.h \
-  /usr/include/qt6/QtWidgets/qmessagebox.h \
   /usr/include/qt6/QtWidgets/qplaintextedit.h \
   /usr/include/qt6/QtWidgets/qpushbutton.h \
-  /usr/include/qt6/QtWidgets/qrubberband.h \
   /usr/include/qt6/QtWidgets/qsizepolicy.h \
-  /usr/include/qt6/QtWidgets/qslider.h \
-  /usr/include/qt6/QtWidgets/qsplitter.h \
-  /usr/include/qt6/QtWidgets/qstatusbar.h \
-  /usr/include/qt6/QtWidgets/qstyle.h \
-  /usr/include/qt6/QtWidgets/qstyleoption.h \
-  /usr/include/qt6/QtWidgets/qtabbar.h \
-  /usr/include/qt6/QtWidgets/qtabwidget.h \
   /usr/include/qt6/QtWidgets/qtextedit.h \
-  /usr/include/qt6/QtWidgets/qtreeview.h \
-  /usr/include/qt6/QtWidgets/qtreewidget.h \
-  /usr/include/qt6/QtWidgets/qtreewidgetitemiterator.h \
   /usr/include/qt6/QtWidgets/qtwidgets-config.h \
   /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
   /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \

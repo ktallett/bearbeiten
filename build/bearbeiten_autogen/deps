@@ -7,6 +7,8 @@ bearbeiten_autogen/timestamp: \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.h \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.cpp \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.cpp \
@@ -14,8 +16,12 @@ bearbeiten_autogen/timestamp: \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/main.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/mainwindow.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/mainwindow.h \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.cpp \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.h \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.cpp \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/bitsperlong.h \
 	/usr/include/asm-generic/errno-base.h \
@@ -530,6 +536,7 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/qt6/QtWidgets/QHeaderView \
 	/usr/include/qt6/QtWidgets/QLabel \
 	/usr/include/qt6/QtWidgets/QLineEdit \
+	/usr/include/qt6/QtWidgets/QListWidget \
 	/usr/include/qt6/QtWidgets/QMainWindow \
 	/usr/include/qt6/QtWidgets/QMenu \
 	/usr/include/qt6/QtWidgets/QMenuBar \
@@ -541,6 +548,7 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/qt6/QtWidgets/QTabBar \
 	/usr/include/qt6/QtWidgets/QTabWidget \
 	/usr/include/qt6/QtWidgets/QTreeView \
+	/usr/include/qt6/QtWidgets/QTreeWidget \
 	/usr/include/qt6/QtWidgets/QVBoxLayout \
 	/usr/include/qt6/QtWidgets/QWidget \
 	/usr/include/qt6/QtWidgets/qabstractbutton.h \
@@ -564,6 +572,8 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/qt6/QtWidgets/qlayout.h \
 	/usr/include/qt6/QtWidgets/qlayoutitem.h \
 	/usr/include/qt6/QtWidgets/qlineedit.h \
+	/usr/include/qt6/QtWidgets/qlistview.h \
+	/usr/include/qt6/QtWidgets/qlistwidget.h \
 	/usr/include/qt6/QtWidgets/qmainwindow.h \
 	/usr/include/qt6/QtWidgets/qmenu.h \
 	/usr/include/qt6/QtWidgets/qmenubar.h \
@@ -581,6 +591,8 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/qt6/QtWidgets/qtabwidget.h \
 	/usr/include/qt6/QtWidgets/qtextedit.h \
 	/usr/include/qt6/QtWidgets/qtreeview.h \
+	/usr/include/qt6/QtWidgets/qtreewidget.h \
+	/usr/include/qt6/QtWidgets/qtreewidgetitemiterator.h \
 	/usr/include/qt6/QtWidgets/qtwidgets-config.h \
 	/usr/include/qt6/QtWidgets/qtwidgetsexports.h \
 	/usr/include/qt6/QtWidgets/qtwidgetsglobal.h \

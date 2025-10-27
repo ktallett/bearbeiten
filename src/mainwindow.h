@@ -28,6 +28,9 @@
 #include <QResizeEvent>
 #include "jsonsyntaxhighlighter.h"
 #include "finddialog.h"
+#include "gotolinedialog.h"
+#include "symbolsearchdialog.h"
+#include "outlinepanel.h"
 #include "projectpanel.h"
 
 enum class ViewMode {
@@ -69,6 +72,8 @@ private slots:
     void paste();
     void showFindDialog();
     void showReplaceDialog();
+    void showGoToLineDialog();
+    void showSymbolSearchDialog();
 
     void onLanguageChanged(int index);
     void onTabChanged(int index);
@@ -85,6 +90,11 @@ private slots:
     // Project panel slots
     void toggleProjectPanel();
     void openProjectFromPanel(const QString &filePath);
+
+    // Outline panel slots
+    void toggleOutlinePanel();
+    void jumpToSymbolFromOutline(int lineNumber);
+    void updateOutlinePanel();
 
     // Auto-save slots
     void autoSave();
@@ -108,6 +118,13 @@ private slots:
     void performFind(const QString &text, bool forward, bool caseSensitive, bool wholeWords, bool useRegex);
     void performReplace(const QString &findText, const QString &replaceText, bool caseSensitive, bool wholeWords, bool useRegex);
     void performReplaceAll(const QString &findText, const QString &replaceText, bool caseSensitive, bool wholeWords, bool useRegex);
+
+    // Go to Line slots
+    void performGoToLine(int lineNumber);
+    void updateLinePreview(int lineNumber);
+
+    // Symbol search slots
+    void performSymbolJump(int lineNumber);
 
 private:
     void setupMenus();
@@ -164,6 +181,7 @@ private:
     QTabWidget *rightTabWidget;
     QTabWidget *tabWidget; // Points to active tab widget
     ProjectPanel *projectPanel;
+    OutlinePanel *outlinePanel;
 
     // UI components
     QToolBar *mainToolBar;
@@ -182,6 +200,7 @@ private:
     ViewMode currentViewMode;
     QTabWidget *focusedTabWidget;
     bool projectPanelVisible;
+    bool outlinePanelVisible;
     bool isSmallScreen;
 
     // Auto-save components
@@ -200,6 +219,12 @@ private:
 
     // Find/Replace components
     FindDialog *findDialog;
+
+    // Go to Line components
+    GoToLineDialog *goToLineDialog;
+
+    // Symbol search components
+    SymbolSearchDialog *symbolSearchDialog;
 };
 
 #endif // MAINWINDOW_H

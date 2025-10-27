@@ -20,6 +20,12 @@ set(SOURCES
     src/jsonsyntaxhighlighter.h
     src/finddialog.cpp
     src/finddialog.h
+    src/gotolinedialog.cpp
+    src/gotolinedialog.h
+    src/symbolsearchdialog.cpp
+    src/symbolsearchdialog.h
+    src/outlinepanel.cpp
+    src/outlinepanel.h
     src/projectpanel.cpp
     src/projectpanel.h
 )

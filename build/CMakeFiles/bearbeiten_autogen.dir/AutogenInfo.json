@@ -478,6 +478,12 @@
 			null
 		],
 		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.h",
+			"MU",
+			"UVLADIE3JM/moc_gotolinedialog.cpp",
+			null
+		],
+		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.h",
 			"MU",
 			"UVLADIE3JM/moc_jsonsyntaxhighlighter.cpp",
@@ -496,9 +502,21 @@
 			null
 		],
 		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.h",
+			"MU",
+			"UVLADIE3JM/moc_outlinepanel.cpp",
+			null
+		],
+		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.h",
 			"MU",
 			"UVLADIE3JM/moc_projectpanel.cpp",
+			null
+		],
+		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h",
+			"MU",
+			"UVLADIE3JM/moc_symbolsearchdialog.cpp",
 			null
 		]
 	],
@@ -575,6 +593,11 @@
 			null
 		],
 		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.cpp",
 			"MU",
 			null
@@ -595,7 +618,17 @@
 			null
 		],
 		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.cpp",
 			"MU",
 			null
 		]

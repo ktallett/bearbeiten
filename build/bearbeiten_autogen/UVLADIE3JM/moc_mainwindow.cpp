@@ -53,6 +53,8 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "paste",
         "showFindDialog",
         "showReplaceDialog",
+        "showGoToLineDialog",
+        "showSymbolSearchDialog",
         "onLanguageChanged",
         "index",
         "onTabChanged",
@@ -67,6 +69,10 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "toggleProjectPanel",
         "openProjectFromPanel",
         "filePath",
+        "toggleOutlinePanel",
+        "jumpToSymbolFromOutline",
+        "lineNumber",
+        "updateOutlinePanel",
         "autoSave",
         "onTextChanged",
         "toggleAutoSave",
@@ -87,7 +93,10 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "performReplace",
         "findText",
         "replaceText",
-        "performReplaceAll"
+        "performReplaceAll",
+        "performGoToLine",
+        "updateLinePreview",
+        "performSymbolJump"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -115,74 +124,98 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'showReplaceDialog'
         QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'showGoToLineDialog'
+        QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'showSymbolSearchDialog'
+        QtMocHelpers::SlotData<void()>(15, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onLanguageChanged'
-        QtMocHelpers::SlotData<void(int)>(14, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 15 },
+        QtMocHelpers::SlotData<void(int)>(16, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 17 },
         }}),
         // Slot 'onTabChanged'
-        QtMocHelpers::SlotData<void(int)>(16, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 15 },
+        QtMocHelpers::SlotData<void(int)>(18, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 17 },
         }}),
         // Slot 'onTabCloseRequested'
-        QtMocHelpers::SlotData<void(int)>(17, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 15 },
+        QtMocHelpers::SlotData<void(int)>(19, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 17 },
         }}),
         // Slot 'onTabContextMenu'
-        QtMocHelpers::SlotData<void(const QPoint &)>(18, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QPoint, 19 },
+        QtMocHelpers::SlotData<void(const QPoint &)>(20, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QPoint, 21 },
         }}),
         // Slot 'toggleSplitView'
-        QtMocHelpers::SlotData<void()>(20, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'splitHorizontally'
-        QtMocHelpers::SlotData<void()>(21, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'splitVertically'
         QtMocHelpers::SlotData<void()>(22, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'closeSplitView'
+        // Slot 'splitHorizontally'
         QtMocHelpers::SlotData<void()>(23, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onSplitterFocusChanged'
+        // Slot 'splitVertically'
         QtMocHelpers::SlotData<void()>(24, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'toggleProjectPanel'
+        // Slot 'closeSplitView'
         QtMocHelpers::SlotData<void()>(25, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onSplitterFocusChanged'
+        QtMocHelpers::SlotData<void()>(26, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'toggleProjectPanel'
+        QtMocHelpers::SlotData<void()>(27, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'openProjectFromPanel'
-        QtMocHelpers::SlotData<void(const QString &)>(26, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 27 },
+        QtMocHelpers::SlotData<void(const QString &)>(28, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 29 },
         }}),
-        // Slot 'autoSave'
-        QtMocHelpers::SlotData<void()>(28, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onTextChanged'
-        QtMocHelpers::SlotData<void()>(29, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'toggleAutoSave'
+        // Slot 'toggleOutlinePanel'
         QtMocHelpers::SlotData<void()>(30, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'jumpToSymbolFromOutline'
+        QtMocHelpers::SlotData<void(int)>(31, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 32 },
+        }}),
+        // Slot 'updateOutlinePanel'
+        QtMocHelpers::SlotData<void()>(33, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'autoSave'
+        QtMocHelpers::SlotData<void()>(34, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onTextChanged'
+        QtMocHelpers::SlotData<void()>(35, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'toggleAutoSave'
+        QtMocHelpers::SlotData<void()>(36, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'toggleTheme'
-        QtMocHelpers::SlotData<void()>(31, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(37, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'toggleLineWrap'
-        QtMocHelpers::SlotData<void()>(32, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(38, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'setLineWrapMode'
-        QtMocHelpers::SlotData<void(int)>(33, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 34 },
+        QtMocHelpers::SlotData<void(int)>(39, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 40 },
         }}),
         // Slot 'foldCurrentBlock'
-        QtMocHelpers::SlotData<void()>(35, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(41, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'unfoldCurrentBlock'
-        QtMocHelpers::SlotData<void()>(36, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(42, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'foldAll'
-        QtMocHelpers::SlotData<void()>(37, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(43, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'unfoldAll'
-        QtMocHelpers::SlotData<void()>(38, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(44, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'performFind'
-        QtMocHelpers::SlotData<void(const QString &, bool, bool, bool, bool)>(39, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 40 }, { QMetaType::Bool, 41 }, { QMetaType::Bool, 42 }, { QMetaType::Bool, 43 },
-            { QMetaType::Bool, 44 },
+        QtMocHelpers::SlotData<void(const QString &, bool, bool, bool, bool)>(45, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 46 }, { QMetaType::Bool, 47 }, { QMetaType::Bool, 48 }, { QMetaType::Bool, 49 },
+            { QMetaType::Bool, 50 },
         }}),
         // Slot 'performReplace'
-        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(45, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 46 }, { QMetaType::QString, 47 }, { QMetaType::Bool, 42 }, { QMetaType::Bool, 43 },
-            { QMetaType::Bool, 44 },
+        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(51, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 52 }, { QMetaType::QString, 53 }, { QMetaType::Bool, 48 }, { QMetaType::Bool, 49 },
+            { QMetaType::Bool, 50 },
         }}),
         // Slot 'performReplaceAll'
-        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(48, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 46 }, { QMetaType::QString, 47 }, { QMetaType::Bool, 42 }, { QMetaType::Bool, 43 },
-            { QMetaType::Bool, 44 },
+        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(54, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 52 }, { QMetaType::QString, 53 }, { QMetaType::Bool, 48 }, { QMetaType::Bool, 49 },
+            { QMetaType::Bool, 50 },
+        }}),
+        // Slot 'performGoToLine'
+        QtMocHelpers::SlotData<void(int)>(55, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 32 },
+        }}),
+        // Slot 'updateLinePreview'
+        QtMocHelpers::SlotData<void(int)>(56, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 32 },
+        }}),
+        // Slot 'performSymbolJump'
+        QtMocHelpers::SlotData<void(int)>(57, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 32 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -221,30 +254,38 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 9: _t->paste(); break;
         case 10: _t->showFindDialog(); break;
         case 11: _t->showReplaceDialog(); break;
-        case 12: _t->onLanguageChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 13: _t->onTabChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 14: _t->onTabCloseRequested((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 15: _t->onTabContextMenu((*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[1]))); break;
-        case 16: _t->toggleSplitView(); break;
-        case 17: _t->splitHorizontally(); break;
-        case 18: _t->splitVertically(); break;
-        case 19: _t->closeSplitView(); break;
-        case 20: _t->onSplitterFocusChanged(); break;
-        case 21: _t->toggleProjectPanel(); break;
-        case 22: _t->openProjectFromPanel((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 23: _t->autoSave(); break;
-        case 24: _t->onTextChanged(); break;
-        case 25: _t->toggleAutoSave(); break;
-        case 26: _t->toggleTheme(); break;
-        case 27: _t->toggleLineWrap(); break;
-        case 28: _t->setLineWrapMode((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 29: _t->foldCurrentBlock(); break;
-        case 30: _t->unfoldCurrentBlock(); break;
-        case 31: _t->foldAll(); break;
-        case 32: _t->unfoldAll(); break;
-        case 33: _t->performFind((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
-        case 34: _t->performReplace((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
-        case 35: _t->performReplaceAll((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
+        case 12: _t->showGoToLineDialog(); break;
+        case 13: _t->showSymbolSearchDialog(); break;
+        case 14: _t->onLanguageChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 15: _t->onTabChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 16: _t->onTabCloseRequested((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 17: _t->onTabContextMenu((*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[1]))); break;
+        case 18: _t->toggleSplitView(); break;
+        case 19: _t->splitHorizontally(); break;
+        case 20: _t->splitVertically(); break;
+        case 21: _t->closeSplitView(); break;
+        case 22: _t->onSplitterFocusChanged(); break;
+        case 23: _t->toggleProjectPanel(); break;
+        case 24: _t->openProjectFromPanel((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 25: _t->toggleOutlinePanel(); break;
+        case 26: _t->jumpToSymbolFromOutline((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 27: _t->updateOutlinePanel(); break;
+        case 28: _t->autoSave(); break;
+        case 29: _t->onTextChanged(); break;
+        case 30: _t->toggleAutoSave(); break;
+        case 31: _t->toggleTheme(); break;
+        case 32: _t->toggleLineWrap(); break;
+        case 33: _t->setLineWrapMode((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 34: _t->foldCurrentBlock(); break;
+        case 35: _t->unfoldCurrentBlock(); break;
+        case 36: _t->foldAll(); break;
+        case 37: _t->unfoldAll(); break;
+        case 38: _t->performFind((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
+        case 39: _t->performReplace((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
+        case 40: _t->performReplaceAll((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
+        case 41: _t->performGoToLine((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 42: _t->updateLinePreview((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 43: _t->performSymbolJump((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
@@ -269,14 +310,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 36)
+        if (_id < 44)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 36;
+        _id -= 44;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 36)
+        if (_id < 44)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 36;
+        _id -= 44;
     }
     return _id;
 }

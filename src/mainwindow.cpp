@@ -8,11 +8,11 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), mainSplitter(nullptr), editorSplitter(nullptr), leftTabWidget(nullptr), rightTabWidget(nullptr),
-      tabWidget(nullptr), projectPanel(nullptr), mainToolBar(nullptr), languageComboBox(nullptr), syntaxHighlighter(nullptr),
+      tabWidget(nullptr), projectPanel(nullptr), outlinePanel(nullptr), mainToolBar(nullptr), languageComboBox(nullptr), syntaxHighlighter(nullptr),
       lineCountLabel(nullptr), wordCountLabel(nullptr), characterCountLabel(nullptr),
       activeTabInfoMap(nullptr), currentViewMode(ViewMode::Single), focusedTabWidget(nullptr),
-      projectPanelVisible(false), isSmallScreen(false), autoSaveTimer(nullptr), autoSaveEnabled(true), autoSaveInterval(30), autoSaveAction(nullptr),
-      isDarkTheme(false), themeAction(nullptr), lineWrapEnabled(true), lineWrapAction(nullptr), findDialog(nullptr)
+      projectPanelVisible(false), outlinePanelVisible(false), isSmallScreen(false), autoSaveTimer(nullptr), autoSaveEnabled(true), autoSaveInterval(30), autoSaveAction(nullptr),
+      isDarkTheme(false), themeAction(nullptr), lineWrapEnabled(true), lineWrapAction(nullptr), findDialog(nullptr), goToLineDialog(nullptr), symbolSearchDialog(nullptr)
 {
     detectScreenSize();
 
@@ -64,6 +64,15 @@ void MainWindow::setupEditor()
     editorSplitter = new QSplitter(Qt::Horizontal);
     mainSplitter->addWidget(editorSplitter);
 
+    // Create outline panel
+    outlinePanel = new OutlinePanel();
+    outlinePanel->setMaximumWidth(300);
+    outlinePanel->setMinimumWidth(200);
+    mainSplitter->addWidget(outlinePanel);
+
+    // Connect outline panel signals
+    connect(outlinePanel, &OutlinePanel::symbolClicked, this, &MainWindow::jumpToSymbolFromOutline);
+
     // Create left tab widget (main/single view)
     leftTabWidget = new QTabWidget();
     leftTabWidget->setTabsClosable(true);
@@ -78,9 +87,10 @@ void MainWindow::setupEditor()
     rightTabWidget->setDocumentMode(true);
     editorSplitter->addWidget(rightTabWidget);
 
-    // Initially hide the right pane and project panel
+    // Initially hide the right pane, project panel, and outline panel
     rightTabWidget->hide();
     projectPanel->hide();
+    outlinePanel->hide();
 
     // Set initial active tab widget
     tabWidget = leftTabWidget;
@@ -88,10 +98,11 @@ void MainWindow::setupEditor()
     activeTabInfoMap = &leftTabInfoMap;
 
     // Setup splitters
-    mainSplitter->setSizes({250, 600});
+    mainSplitter->setSizes({250, 600, 250});
     editorSplitter->setSizes({400, 400});
     mainSplitter->setCollapsible(0, true);  // Project panel can be collapsed
     mainSplitter->setCollapsible(1, false); // Editor area cannot be collapsed
+    mainSplitter->setCollapsible(2, true);  // Outline panel can be collapsed
     editorSplitter->setCollapsible(0, false);
     editorSplitter->setCollapsible(1, false);
 
@@ -177,6 +188,18 @@ void MainWindow::setupMenus()
     connect(replaceAction, &QAction::triggered, this, &MainWindow::showReplaceDialog);
     editMenu->addAction(replaceAction);
 
+    editMenu->addSeparator();
+
+    QAction *goToLineAction = new QAction(tr("&Go to Line..."), this);
+    goToLineAction->setShortcut(QKeySequence("Ctrl+G"));
+    connect(goToLineAction, &QAction::triggered, this, &MainWindow::showGoToLineDialog);
+    editMenu->addAction(goToLineAction);
+
+    QAction *goToSymbolAction = new QAction(tr("Go to &Symbol..."), this);
+    goToSymbolAction->setShortcut(QKeySequence("Ctrl+Shift+O"));
+    connect(goToSymbolAction, &QAction::triggered, this, &MainWindow::showSymbolSearchDialog);
+    editMenu->addAction(goToSymbolAction);
+
     // View menu for split functionality
     QMenu *viewMenu = menuBar()->addMenu(tr("&View"));
 
@@ -210,6 +233,13 @@ void MainWindow::setupMenus()
     toggleProjectAction->setChecked(projectPanelVisible);
     connect(toggleProjectAction, &QAction::triggered, this, &MainWindow::toggleProjectPanel);
     viewMenu->addAction(toggleProjectAction);
+
+    QAction *toggleOutlineAction = new QAction(tr("&Outline Panel"), this);
+    toggleOutlineAction->setShortcut(QKeySequence("Ctrl+Shift+O"));
+    toggleOutlineAction->setCheckable(true);
+    toggleOutlineAction->setChecked(outlinePanelVisible);
+    connect(toggleOutlineAction, &QAction::triggered, this, &MainWindow::toggleOutlinePanel);
+    viewMenu->addAction(toggleOutlineAction);
 
     viewMenu->addSeparator();
 
@@ -702,6 +732,9 @@ void MainWindow::onTabChanged(int index)
 
         // Update status bar for the new tab
         updateStatusBar();
+
+        // Update outline panel for the new tab
+        updateOutlinePanel();
     }
 }
 
@@ -939,6 +972,9 @@ void MainWindow::onTextChanged()
         stopAutoSaveTimer();
         startAutoSaveTimer();
     }
+
+    // Update outline panel (with debouncing via timer)
+    updateOutlinePanel();
 }
 
 void MainWindow::autoSave()
@@ -1296,6 +1332,182 @@ void MainWindow::performReplaceAll(const QString &findText, const QString &repla
     }
 }
 
+void MainWindow::showGoToLineDialog()
+{
+    CodeEditor* editor = getCurrentEditor();
+    if (!editor) {
+        return;
+    }
+
+    if (!goToLineDialog) {
+        goToLineDialog = new GoToLineDialog(this);
+        connect(goToLineDialog, &GoToLineDialog::goToLineRequested, this, &MainWindow::performGoToLine);
+        connect(goToLineDialog, &GoToLineDialog::lineNumberChanged, this, &MainWindow::updateLinePreview);
+    }
+
+    // Set maximum line number
+    int totalLines = editor->document()->blockCount();
+    goToLineDialog->setMaximumLine(totalLines);
+
+    // Pre-fill with current line
+    int currentLine = editor->textCursor().blockNumber() + 1;
+    goToLineDialog->findChild<QLineEdit*>("lineNumberEdit");
+
+    goToLineDialog->show();
+    goToLineDialog->raise();
+    goToLineDialog->activateWindow();
+}
+
+void MainWindow::performGoToLine(int lineNumber)
+{
+    CodeEditor* editor = getCurrentEditor();
+    if (!editor) {
+        return;
+    }
+
+    // Move cursor to the specified line
+    QTextCursor cursor = editor->textCursor();
+    cursor.movePosition(QTextCursor::Start);
+    cursor.movePosition(QTextCursor::Down, QTextCursor::MoveAnchor, lineNumber - 1);
+
+    editor->setTextCursor(cursor);
+    editor->centerCursor();
+    editor->setFocus();
+}
+
+void MainWindow::updateLinePreview(int lineNumber)
+{
+    CodeEditor* editor = getCurrentEditor();
+    if (!editor || !goToLineDialog) {
+        return;
+    }
+
+    // Get the text at the specified line
+    QTextBlock block = editor->document()->findBlockByLineNumber(lineNumber - 1);
+    if (block.isValid()) {
+        QString lineText = block.text();
+        goToLineDialog->setLinePreview(lineNumber, lineText);
+    }
+}
+
+void MainWindow::showSymbolSearchDialog()
+{
+    CodeEditor* editor = getCurrentEditor();
+    if (!editor) {
+        return;
+    }
+
+    if (!symbolSearchDialog) {
+        symbolSearchDialog = new SymbolSearchDialog(this);
+        connect(symbolSearchDialog, &SymbolSearchDialog::symbolSelected, this, &MainWindow::performSymbolJump);
+    }
+
+    // Extract symbols from the current document
+    QList<SymbolInfo> symbols;
+    QString text = editor->toPlainText();
+    QStringList lines = text.split('\n');
+
+    // Pattern matching for various symbol types
+    QRegularExpression functionPattern(R"(([\w:]+)\s+([\w:]+)\s*\([^)]*\)\s*\{?)"); // C/C++ functions
+    QRegularExpression classPattern(R"(^\s*class\s+([\w:]+))"); // C++ classes
+    QRegularExpression structPattern(R"(^\s*struct\s+([\w:]+))"); // C++ structs
+    QRegularExpression markdownHeaderPattern(R"(^(#{1,6})\s+(.+)$)"); // Markdown headers
+    QRegularExpression pythonFunctionPattern(R"(^\s*def\s+([\w_]+)\s*\()"); // Python functions
+    QRegularExpression pythonClassPattern(R"(^\s*class\s+([\w_]+))"); // Python classes
+    QRegularExpression jsFunctionPattern(R"(^\s*function\s+([\w_]+)\s*\()"); // JavaScript functions
+    QRegularExpression jsClassPattern(R"(^\s*class\s+([\w_]+))"); // JavaScript classes
+
+    for (int i = 0; i < lines.size(); ++i) {
+        QString line = lines[i];
+        int lineNumber = i + 1;
+
+        // Check for C/C++ functions
+        QRegularExpressionMatch match = functionPattern.match(line);
+        if (match.hasMatch()) {
+            QString returnType = match.captured(1);
+            QString functionName = match.captured(2);
+            // Skip common keywords that might be matched
+            if (functionName != "if" && functionName != "while" && functionName != "for" && functionName != "switch") {
+                symbols.append(SymbolInfo(functionName, "Function", lineNumber, line.trimmed()));
+            }
+        }
+
+        // Check for C++ classes
+        match = classPattern.match(line);
+        if (match.hasMatch()) {
+            QString className = match.captured(1);
+            symbols.append(SymbolInfo(className, "Class", lineNumber, line.trimmed()));
+        }
+
+        // Check for C++ structs
+        match = structPattern.match(line);
+        if (match.hasMatch()) {
+            QString structName = match.captured(1);
+            symbols.append(SymbolInfo(structName, "Struct", lineNumber, line.trimmed()));
+        }
+
+        // Check for Markdown headers
+        match = markdownHeaderPattern.match(line);
+        if (match.hasMatch()) {
+            QString level = match.captured(1);
+            QString headerText = match.captured(2);
+            QString type = QString("Header (Level %1)").arg(level.length());
+            symbols.append(SymbolInfo(headerText, type, lineNumber, line.trimmed()));
+        }
+
+        // Check for Python functions
+        match = pythonFunctionPattern.match(line);
+        if (match.hasMatch()) {
+            QString functionName = match.captured(1);
+            symbols.append(SymbolInfo(functionName, "Function (Python)", lineNumber, line.trimmed()));
+        }
+
+        // Check for Python classes
+        match = pythonClassPattern.match(line);
+        if (match.hasMatch()) {
+            QString className = match.captured(1);
+            symbols.append(SymbolInfo(className, "Class (Python)", lineNumber, line.trimmed()));
+        }
+
+        // Check for JavaScript functions
+        match = jsFunctionPattern.match(line);
+        if (match.hasMatch()) {
+            QString functionName = match.captured(1);
+            symbols.append(SymbolInfo(functionName, "Function (JS)", lineNumber, line.trimmed()));
+        }
+
+        // Check for JavaScript classes
+        match = jsClassPattern.match(line);
+        if (match.hasMatch()) {
+            QString className = match.captured(1);
+            symbols.append(SymbolInfo(className, "Class (JS)", lineNumber, line.trimmed()));
+        }
+    }
+
+    symbolSearchDialog->setSymbols(symbols);
+    symbolSearchDialog->clearFilter();
+    symbolSearchDialog->show();
+    symbolSearchDialog->raise();
+    symbolSearchDialog->activateWindow();
+}
+
+void MainWindow::performSymbolJump(int lineNumber)
+{
+    CodeEditor* editor = getCurrentEditor();
+    if (!editor) {
+        return;
+    }
+
+    // Move cursor to the specified line
+    QTextCursor cursor = editor->textCursor();
+    cursor.movePosition(QTextCursor::Start);
+    cursor.movePosition(QTextCursor::Down, QTextCursor::MoveAnchor, lineNumber - 1);
+
+    editor->setTextCursor(cursor);
+    editor->centerCursor();
+    editor->setFocus();
+}
+
 void MainWindow::toggleProjectPanel()
 {
     projectPanelVisible = !projectPanelVisible;
@@ -1313,6 +1525,63 @@ void MainWindow::openProjectFromPanel(const QString &filePath)
 {
     // Open the file in the current active tab widget
     loadFile(filePath);
+}
+
+void MainWindow::toggleOutlinePanel()
+{
+    outlinePanelVisible = !outlinePanelVisible;
+
+    if (outlinePanelVisible) {
+        outlinePanel->show();
+        updateOutlinePanel();
+    } else {
+        outlinePanel->hide();
+    }
+}
+
+void MainWindow::jumpToSymbolFromOutline(int lineNumber)
+{
+    CodeEditor* editor = getCurrentEditor();
+    if (!editor) {
+        return;
+    }
+
+    // Move cursor to the specified line
+    QTextCursor cursor = editor->textCursor();
+    cursor.movePosition(QTextCursor::Start);
+    cursor.movePosition(QTextCursor::Down, QTextCursor::MoveAnchor, lineNumber - 1);
+
+    editor->setTextCursor(cursor);
+    editor->centerCursor();
+    editor->setFocus();
+}
+
+void MainWindow::updateOutlinePanel()
+{
+    if (!outlinePanelVisible || !outlinePanel) {
+        return;
+    }
+
+    CodeEditor* editor = getCurrentEditor();
+    if (!editor) {
+        outlinePanel->clear();
+        return;
+    }
+
+    QString documentText = editor->toPlainText();
+    QString fileName;
+
+    // Get current file name
+    int currentIndex = tabWidget->currentIndex();
+    if (currentIndex >= 0) {
+        fileName = tabWidget->tabText(currentIndex);
+        // Remove the " *" if modified
+        if (fileName.endsWith(" *")) {
+            fileName.chop(2);
+        }
+    }
+
+    outlinePanel->updateOutline(documentText, fileName);
 }
 
 void MainWindow::updateStatusBar()

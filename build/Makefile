@@ -327,6 +327,30 @@ src/finddialog.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/finddialog.cpp.s
 .PHONY : src/finddialog.cpp.s
 
+src/gotolinedialog.o: src/gotolinedialog.cpp.o
+.PHONY : src/gotolinedialog.o
+
+# target to build an object file
+src/gotolinedialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/gotolinedialog.cpp.o
+.PHONY : src/gotolinedialog.cpp.o
+
+src/gotolinedialog.i: src/gotolinedialog.cpp.i
+.PHONY : src/gotolinedialog.i
+
+# target to preprocess a source file
+src/gotolinedialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/gotolinedialog.cpp.i
+.PHONY : src/gotolinedialog.cpp.i
+
+src/gotolinedialog.s: src/gotolinedialog.cpp.s
+.PHONY : src/gotolinedialog.s
+
+# target to generate assembly for a file
+src/gotolinedialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/gotolinedialog.cpp.s
+.PHONY : src/gotolinedialog.cpp.s
+
 src/jsonsyntaxhighlighter.o: src/jsonsyntaxhighlighter.cpp.o
 .PHONY : src/jsonsyntaxhighlighter.o
 
@@ -423,6 +447,30 @@ src/mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.s
 .PHONY : src/mainwindow.cpp.s
 
+src/outlinepanel.o: src/outlinepanel.cpp.o
+.PHONY : src/outlinepanel.o
+
+# target to build an object file
+src/outlinepanel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/outlinepanel.cpp.o
+.PHONY : src/outlinepanel.cpp.o
+
+src/outlinepanel.i: src/outlinepanel.cpp.i
+.PHONY : src/outlinepanel.i
+
+# target to preprocess a source file
+src/outlinepanel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/outlinepanel.cpp.i
+.PHONY : src/outlinepanel.cpp.i
+
+src/outlinepanel.s: src/outlinepanel.cpp.s
+.PHONY : src/outlinepanel.s
+
+# target to generate assembly for a file
+src/outlinepanel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/outlinepanel.cpp.s
+.PHONY : src/outlinepanel.cpp.s
+
 src/projectpanel.o: src/projectpanel.cpp.o
 .PHONY : src/projectpanel.o
 
@@ -446,6 +494,30 @@ src/projectpanel.s: src/projectpanel.cpp.s
 src/projectpanel.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.s
 .PHONY : src/projectpanel.cpp.s
+
+src/symbolsearchdialog.o: src/symbolsearchdialog.cpp.o
+.PHONY : src/symbolsearchdialog.o
+
+# target to build an object file
+src/symbolsearchdialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/symbolsearchdialog.cpp.o
+.PHONY : src/symbolsearchdialog.cpp.o
+
+src/symbolsearchdialog.i: src/symbolsearchdialog.cpp.i
+.PHONY : src/symbolsearchdialog.i
+
+# target to preprocess a source file
+src/symbolsearchdialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/symbolsearchdialog.cpp.i
+.PHONY : src/symbolsearchdialog.cpp.i
+
+src/symbolsearchdialog.s: src/symbolsearchdialog.cpp.s
+.PHONY : src/symbolsearchdialog.s
+
+# target to generate assembly for a file
+src/symbolsearchdialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/symbolsearchdialog.cpp.s
+.PHONY : src/symbolsearchdialog.cpp.s
 
 # Help Target
 help:
@@ -477,6 +549,9 @@ help:
 	@echo "... src/finddialog.o"
 	@echo "... src/finddialog.i"
 	@echo "... src/finddialog.s"
+	@echo "... src/gotolinedialog.o"
+	@echo "... src/gotolinedialog.i"
+	@echo "... src/gotolinedialog.s"
 	@echo "... src/jsonsyntaxhighlighter.o"
 	@echo "... src/jsonsyntaxhighlighter.i"
 	@echo "... src/jsonsyntaxhighlighter.s"
@@ -489,9 +564,15 @@ help:
 	@echo "... src/mainwindow.o"
 	@echo "... src/mainwindow.i"
 	@echo "... src/mainwindow.s"
+	@echo "... src/outlinepanel.o"
+	@echo "... src/outlinepanel.i"
+	@echo "... src/outlinepanel.s"
 	@echo "... src/projectpanel.o"
 	@echo "... src/projectpanel.i"
 	@echo "... src/projectpanel.s"
+	@echo "... src/symbolsearchdialog.o"
+	@echo "... src/symbolsearchdialog.i"
+	@echo "... src/symbolsearchdialog.s"
 .PHONY : help
 
 

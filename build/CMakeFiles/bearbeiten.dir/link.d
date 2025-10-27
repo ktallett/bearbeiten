@@ -9,6 +9,9 @@ bearbeiten: \
   CMakeFiles/bearbeiten.dir/src/languageloader.cpp.o \
   CMakeFiles/bearbeiten.dir/src/jsonsyntaxhighlighter.cpp.o \
   CMakeFiles/bearbeiten.dir/src/finddialog.cpp.o \
+  CMakeFiles/bearbeiten.dir/src/gotolinedialog.cpp.o \
+  CMakeFiles/bearbeiten.dir/src/symbolsearchdialog.cpp.o \
+  CMakeFiles/bearbeiten.dir/src/outlinepanel.cpp.o \
   CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.o \
   CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o \
   CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.o \
@@ -97,6 +100,12 @@ CMakeFiles/bearbeiten.dir/src/languageloader.cpp.o:
 CMakeFiles/bearbeiten.dir/src/jsonsyntaxhighlighter.cpp.o:
 
 CMakeFiles/bearbeiten.dir/src/finddialog.cpp.o:
+
+CMakeFiles/bearbeiten.dir/src/gotolinedialog.cpp.o:
+
+CMakeFiles/bearbeiten.dir/src/symbolsearchdialog.cpp.o:
+
+CMakeFiles/bearbeiten.dir/src/outlinepanel.cpp.o:
 
 CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.o:
 
