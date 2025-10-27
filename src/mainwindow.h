@@ -108,6 +108,10 @@ private slots:
     // Line wrap slots
     void toggleLineWrap();
     void setLineWrapMode(int mode);
+    void toggleWordWrapMode();
+    void toggleColumnRuler();
+    void toggleWrapIndicator();
+    void setWrapColumn();
 
     // Code folding slots
     void foldCurrentBlock();
@@ -216,7 +220,14 @@ private:
 
     // Line wrap components
     bool lineWrapEnabled;
+    bool wordWrapMode;
+    bool showColumnRuler;
+    bool showWrapIndicator;
+    int wrapColumn;
     QAction *lineWrapAction;
+    QAction *wordWrapAction;
+    QAction *columnRulerAction;
+    QAction *wrapIndicatorAction;
 
     // Find/Replace components
     FindDialog *findDialog;

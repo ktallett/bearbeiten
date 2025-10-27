@@ -3,7 +3,8 @@
 #include <QTextBlock>
 #include <QMouseEvent>
 
-CodeEditor::CodeEditor(QWidget *parent) : QPlainTextEdit(parent), compactMode(false)
+CodeEditor::CodeEditor(QWidget *parent) : QPlainTextEdit(parent), compactMode(false),
+    showWrapIndicator(true), showColumnRuler(false), wrapColumn(80)
 {
     lineNumberArea = new LineNumberArea(this);
 
@@ -15,6 +16,9 @@ CodeEditor::CodeEditor(QWidget *parent) : QPlainTextEdit(parent), compactMode(fa
     matchBrackets();
 
     setTabStopDistance(40);
+
+    // Enable word wrap mode by default (wraps at word boundaries)
+    setWordWrapMode(QTextOption::WordWrap);
 
     // Set font using design spec monospace stack
     QFont font;
@@ -146,6 +150,79 @@ void CodeEditor::setCompactMode(bool compact)
 
     // Update line number area width
     updateLineNumberAreaWidth(0);
+}
+
+void CodeEditor::setShowWrapIndicator(bool show)
+{
+    showWrapIndicator = show;
+    viewport()->update();
+}
+
+void CodeEditor::setWrapColumn(int column)
+{
+    wrapColumn = column;
+    if (showColumnRuler) {
+        viewport()->update();
+    }
+}
+
+void CodeEditor::setShowColumnRuler(bool show)
+{
+    showColumnRuler = show;
+    viewport()->update();
+}
+
+void CodeEditor::paintEvent(QPaintEvent *event)
+{
+    // Call base class paint event first
+    QPlainTextEdit::paintEvent(event);
+
+    // Draw column ruler if enabled
+    if (showColumnRuler && wrapColumn > 0) {
+        QPainter painter(viewport());
+
+        // Calculate column position in pixels
+        QFontMetrics metrics(font());
+        int columnX = metrics.horizontalAdvance(QString(wrapColumn, ' ')) + contentOffset().x();
+
+        // Draw a subtle vertical line
+        painter.setPen(QPen(QColor(105, 109, 121, 50), 1, Qt::DashLine)); // --color-fg-secondary with transparency
+        painter.drawLine(columnX, 0, columnX, viewport()->height());
+    }
+
+    // Draw wrap indicators if enabled and line wrap is on
+    if (showWrapIndicator && lineWrapMode() != QPlainTextEdit::NoWrap) {
+        QPainter painter(viewport());
+        painter.setPen(QColor(105, 109, 121, 100)); // Subtle color for wrap indicators
+
+        QTextBlock block = firstVisibleBlock();
+        int blockNumber = block.blockNumber();
+        int top = qRound(blockBoundingGeometry(block).translated(contentOffset()).top());
+        int bottom = top + qRound(blockBoundingRect(block).height());
+
+        while (block.isValid() && top <= event->rect().bottom()) {
+            if (block.isVisible() && bottom >= event->rect().top()) {
+                QTextLayout *layout = block.layout();
+
+                // If this block has multiple lines (wrapped), draw indicators
+                if (layout && layout->lineCount() > 1) {
+                    for (int i = 1; i < layout->lineCount(); ++i) {
+                        QTextLine line = layout->lineAt(i);
+                        int lineY = top + qRound(line.y() + line.height() / 2);
+
+                        // Draw a small arrow/chevron at the left edge
+                        int indicatorX = 2;
+                        painter.drawText(indicatorX, lineY, "↪"); // Wrap indicator symbol
+                    }
+                }
+            }
+
+            block = block.next();
+            top = bottom;
+            bottom = top + qRound(blockBoundingRect(block).height());
+            ++blockNumber;
+        }
+    }
 }
 
 bool CodeEditor::isOpeningBracket(QChar c)

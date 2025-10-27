@@ -80,6 +80,10 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "toggleLineWrap",
         "setLineWrapMode",
         "mode",
+        "toggleWordWrapMode",
+        "toggleColumnRuler",
+        "toggleWrapIndicator",
+        "setWrapColumn",
         "foldCurrentBlock",
         "unfoldCurrentBlock",
         "foldAll",
@@ -182,39 +186,47 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void(int)>(39, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 40 },
         }}),
-        // Slot 'foldCurrentBlock'
+        // Slot 'toggleWordWrapMode'
         QtMocHelpers::SlotData<void()>(41, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'unfoldCurrentBlock'
+        // Slot 'toggleColumnRuler'
         QtMocHelpers::SlotData<void()>(42, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'foldAll'
+        // Slot 'toggleWrapIndicator'
         QtMocHelpers::SlotData<void()>(43, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'unfoldAll'
+        // Slot 'setWrapColumn'
         QtMocHelpers::SlotData<void()>(44, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'foldCurrentBlock'
+        QtMocHelpers::SlotData<void()>(45, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'unfoldCurrentBlock'
+        QtMocHelpers::SlotData<void()>(46, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'foldAll'
+        QtMocHelpers::SlotData<void()>(47, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'unfoldAll'
+        QtMocHelpers::SlotData<void()>(48, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'performFind'
-        QtMocHelpers::SlotData<void(const QString &, bool, bool, bool, bool)>(45, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 46 }, { QMetaType::Bool, 47 }, { QMetaType::Bool, 48 }, { QMetaType::Bool, 49 },
-            { QMetaType::Bool, 50 },
+        QtMocHelpers::SlotData<void(const QString &, bool, bool, bool, bool)>(49, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 50 }, { QMetaType::Bool, 51 }, { QMetaType::Bool, 52 }, { QMetaType::Bool, 53 },
+            { QMetaType::Bool, 54 },
         }}),
         // Slot 'performReplace'
-        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(51, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 52 }, { QMetaType::QString, 53 }, { QMetaType::Bool, 48 }, { QMetaType::Bool, 49 },
-            { QMetaType::Bool, 50 },
+        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(55, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 56 }, { QMetaType::QString, 57 }, { QMetaType::Bool, 52 }, { QMetaType::Bool, 53 },
+            { QMetaType::Bool, 54 },
         }}),
         // Slot 'performReplaceAll'
-        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(54, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 52 }, { QMetaType::QString, 53 }, { QMetaType::Bool, 48 }, { QMetaType::Bool, 49 },
-            { QMetaType::Bool, 50 },
+        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(58, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 56 }, { QMetaType::QString, 57 }, { QMetaType::Bool, 52 }, { QMetaType::Bool, 53 },
+            { QMetaType::Bool, 54 },
         }}),
         // Slot 'performGoToLine'
-        QtMocHelpers::SlotData<void(int)>(55, 2, QMC::AccessPrivate, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(int)>(59, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 32 },
         }}),
         // Slot 'updateLinePreview'
-        QtMocHelpers::SlotData<void(int)>(56, 2, QMC::AccessPrivate, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(int)>(60, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 32 },
         }}),
         // Slot 'performSymbolJump'
-        QtMocHelpers::SlotData<void(int)>(57, 2, QMC::AccessPrivate, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(int)>(61, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 32 },
         }}),
     };
@@ -276,16 +288,20 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 31: _t->toggleTheme(); break;
         case 32: _t->toggleLineWrap(); break;
         case 33: _t->setLineWrapMode((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 34: _t->foldCurrentBlock(); break;
-        case 35: _t->unfoldCurrentBlock(); break;
-        case 36: _t->foldAll(); break;
-        case 37: _t->unfoldAll(); break;
-        case 38: _t->performFind((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
-        case 39: _t->performReplace((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
-        case 40: _t->performReplaceAll((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
-        case 41: _t->performGoToLine((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 42: _t->updateLinePreview((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 43: _t->performSymbolJump((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 34: _t->toggleWordWrapMode(); break;
+        case 35: _t->toggleColumnRuler(); break;
+        case 36: _t->toggleWrapIndicator(); break;
+        case 37: _t->setWrapColumn(); break;
+        case 38: _t->foldCurrentBlock(); break;
+        case 39: _t->unfoldCurrentBlock(); break;
+        case 40: _t->foldAll(); break;
+        case 41: _t->unfoldAll(); break;
+        case 42: _t->performFind((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
+        case 43: _t->performReplace((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
+        case 44: _t->performReplaceAll((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
+        case 45: _t->performGoToLine((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 46: _t->updateLinePreview((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 47: _t->performSymbolJump((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
@@ -310,14 +326,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 44)
+        if (_id < 48)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 44;
+        _id -= 48;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 44)
+        if (_id < 48)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 44;
+        _id -= 48;
     }
     return _id;
 }

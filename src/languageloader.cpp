@@ -90,10 +90,21 @@ LanguageDefinition LanguageLoader::loadLanguageFromFile(const QString &filePath)
         langDef.fileExtensions << ext.toString();
     }
 
-    // Colors
+    // Colors (light theme)
     QJsonObject colors = root["colors"].toObject();
     for (auto it = colors.begin(); it != colors.end(); ++it) {
         langDef.colors[it.key()] = it.value().toString();
+    }
+
+    // Dark colors (dark theme)
+    QJsonObject darkColors = root["darkColors"].toObject();
+    for (auto it = darkColors.begin(); it != darkColors.end(); ++it) {
+        langDef.darkColors[it.key()] = it.value().toString();
+    }
+
+    // If no dark colors specified, use light colors as fallback
+    if (langDef.darkColors.isEmpty()) {
+        langDef.darkColors = langDef.colors;
     }
 
     // Styles
@@ -127,7 +138,7 @@ LanguageDefinition LanguageLoader::loadLanguageFromFile(const QString &filePath)
     return langDef;
 }
 
-QVector<HighlightingRule> LanguageLoader::createHighlightingRules(const LanguageDefinition &langDef) const
+QVector<HighlightingRule> LanguageLoader::createHighlightingRules(const LanguageDefinition &langDef, bool useDarkTheme) const
 {
     QVector<HighlightingRule> rules;
 
@@ -135,16 +146,16 @@ QVector<HighlightingRule> LanguageLoader::createHighlightingRules(const Language
     for (auto it = langDef.patterns.begin(); it != langDef.patterns.end(); ++it) {
         const QString &category = it.key();
         const QStringList &patterns = it.value();
-        processPatternCategory(category, patterns, langDef, rules);
+        processPatternCategory(category, patterns, langDef, rules, useDarkTheme);
     }
 
     return rules;
 }
 
 void LanguageLoader::processPatternCategory(const QString &category, const QStringList &patterns,
-                                          const LanguageDefinition &langDef, QVector<HighlightingRule> &rules) const
+                                          const LanguageDefinition &langDef, QVector<HighlightingRule> &rules, bool useDarkTheme) const
 {
-    QTextCharFormat format = createTextFormat(category, langDef);
+    QTextCharFormat format = createTextFormat(category, langDef, useDarkTheme);
 
     for (const QString &pattern : patterns) {
         HighlightingRule rule;
@@ -155,12 +166,13 @@ void LanguageLoader::processPatternCategory(const QString &category, const QStri
     }
 }
 
-QTextCharFormat LanguageLoader::createTextFormat(const QString &category, const LanguageDefinition &langDef) const
+QTextCharFormat LanguageLoader::createTextFormat(const QString &category, const LanguageDefinition &langDef, bool useDarkTheme) const
 {
     QTextCharFormat format;
 
-    // Set color
-    QString colorStr = langDef.colors.value(category);
+    // Set color based on theme
+    const QMap<QString, QString> &colorMap = useDarkTheme ? langDef.darkColors : langDef.colors;
+    QString colorStr = colorMap.value(category);
     if (!colorStr.isEmpty()) {
         QColor color(colorStr);
         if (color.isValid()) {

@@ -5,6 +5,7 @@
 #include <QToolBar>
 #include <QDebug>
 #include <QFile>
+#include <QInputDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), mainSplitter(nullptr), editorSplitter(nullptr), leftTabWidget(nullptr), rightTabWidget(nullptr),
@@ -12,7 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
       lineCountLabel(nullptr), wordCountLabel(nullptr), characterCountLabel(nullptr),
       activeTabInfoMap(nullptr), currentViewMode(ViewMode::Single), focusedTabWidget(nullptr),
       projectPanelVisible(false), outlinePanelVisible(false), isSmallScreen(false), autoSaveTimer(nullptr), autoSaveEnabled(true), autoSaveInterval(30), autoSaveAction(nullptr),
-      isDarkTheme(false), themeAction(nullptr), lineWrapEnabled(true), lineWrapAction(nullptr), findDialog(nullptr), goToLineDialog(nullptr), symbolSearchDialog(nullptr)
+      isDarkTheme(false), themeAction(nullptr), lineWrapEnabled(true), wordWrapMode(true), showColumnRuler(false), showWrapIndicator(true), wrapColumn(80),
+      lineWrapAction(nullptr), wordWrapAction(nullptr), columnRulerAction(nullptr), wrapIndicatorAction(nullptr), findDialog(nullptr), goToLineDialog(nullptr), symbolSearchDialog(nullptr)
 {
     detectScreenSize();
 
@@ -258,6 +260,32 @@ void MainWindow::setupMenus()
     lineWrapAction->setChecked(lineWrapEnabled);
     connect(lineWrapAction, &QAction::triggered, this, &MainWindow::toggleLineWrap);
     viewMenu->addAction(lineWrapAction);
+
+    wordWrapAction = new QAction(tr("Word Wrap Mode"), this);
+    wordWrapAction->setCheckable(true);
+    wordWrapAction->setChecked(wordWrapMode);
+    wordWrapAction->setToolTip(tr("Wrap at word boundaries (unchecked = wrap anywhere)"));
+    connect(wordWrapAction, &QAction::triggered, this, &MainWindow::toggleWordWrapMode);
+    viewMenu->addAction(wordWrapAction);
+
+    wrapIndicatorAction = new QAction(tr("Show Wrap Indicators"), this);
+    wrapIndicatorAction->setCheckable(true);
+    wrapIndicatorAction->setChecked(showWrapIndicator);
+    wrapIndicatorAction->setToolTip(tr("Show arrow indicators for wrapped lines"));
+    connect(wrapIndicatorAction, &QAction::triggered, this, &MainWindow::toggleWrapIndicator);
+    viewMenu->addAction(wrapIndicatorAction);
+
+    columnRulerAction = new QAction(tr("Show Column Ruler"), this);
+    columnRulerAction->setCheckable(true);
+    columnRulerAction->setChecked(showColumnRuler);
+    columnRulerAction->setToolTip(tr("Show vertical ruler at wrap column"));
+    connect(columnRulerAction, &QAction::triggered, this, &MainWindow::toggleColumnRuler);
+    viewMenu->addAction(columnRulerAction);
+
+    QAction *setWrapColumnAction = new QAction(tr("Set Wrap Column..."), this);
+    setWrapColumnAction->setToolTip(tr("Set the column position for the ruler (default: 80)"));
+    connect(setWrapColumnAction, &QAction::triggered, this, &MainWindow::setWrapColumn);
+    viewMenu->addAction(setWrapColumnAction);
 
     viewMenu->addSeparator();
 
@@ -536,14 +564,23 @@ void MainWindow::createNewTab(const QString &fileName)
     }
     editor->setFont(font);
 
-    // Apply line wrap setting
+    // Apply line wrap settings
     QPlainTextEdit::LineWrapMode wrapMode = lineWrapEnabled ?
         QPlainTextEdit::WidgetWidth : QPlainTextEdit::NoWrap;
     editor->setLineWrapMode(wrapMode);
 
+    QTextOption::WrapMode wordWrap = wordWrapMode ?
+        QTextOption::WordWrap : QTextOption::WrapAnywhere;
+    editor->setWordWrapMode(wordWrap);
+
+    editor->setShowWrapIndicator(showWrapIndicator);
+    editor->setShowColumnRuler(showColumnRuler);
+    editor->setWrapColumn(wrapColumn);
+
     // Create syntax highlighter for this tab
     JsonSyntaxHighlighter *highlighter = new JsonSyntaxHighlighter(editor->document());
     highlighter->loadLanguages("languages");
+    highlighter->setTheme(isDarkTheme);
 
     QString tabTitle = fileName.isEmpty() ? tr("Untitled") : QFileInfo(fileName).fileName();
     int index = tabWidget->addTab(editor, tabTitle);
@@ -1021,6 +1058,20 @@ void MainWindow::toggleTheme()
     }
 
     loadStyleSheet();
+
+    // Update all syntax highlighters with new theme
+    for (auto it = leftTabInfoMap.begin(); it != leftTabInfoMap.end(); ++it) {
+        if (it.value().highlighter) {
+            it.value().highlighter->setTheme(isDarkTheme);
+        }
+    }
+
+    for (auto it = rightTabInfoMap.begin(); it != rightTabInfoMap.end(); ++it) {
+        if (it.value().highlighter) {
+            it.value().highlighter->setTheme(isDarkTheme);
+        }
+    }
+
     saveSettings();
 }
 
@@ -1060,6 +1111,114 @@ void MainWindow::setLineWrapMode(int mode)
     // For now, we just toggle between wrap and no-wrap
     lineWrapEnabled = (mode != 0);
     toggleLineWrap();
+}
+
+void MainWindow::toggleWordWrapMode()
+{
+    wordWrapMode = !wordWrapMode;
+    if (wordWrapAction) {
+        wordWrapAction->setChecked(wordWrapMode);
+    }
+
+    // Apply to all open editors
+    QTextOption::WrapMode wrapMode = wordWrapMode ?
+        QTextOption::WordWrap : QTextOption::WrapAnywhere;
+
+    // Update left tab widget editors
+    for (int i = 0; i < leftTabWidget->count(); ++i) {
+        CodeEditor *editor = qobject_cast<CodeEditor*>(leftTabWidget->widget(i));
+        if (editor) {
+            editor->setWordWrapMode(wrapMode);
+        }
+    }
+
+    // Update right tab widget editors (if in split view)
+    for (int i = 0; i < rightTabWidget->count(); ++i) {
+        CodeEditor *editor = qobject_cast<CodeEditor*>(rightTabWidget->widget(i));
+        if (editor) {
+            editor->setWordWrapMode(wrapMode);
+        }
+    }
+
+    saveSettings();
+}
+
+void MainWindow::toggleColumnRuler()
+{
+    showColumnRuler = !showColumnRuler;
+    if (columnRulerAction) {
+        columnRulerAction->setChecked(showColumnRuler);
+    }
+
+    // Apply to all open editors
+    for (int i = 0; i < leftTabWidget->count(); ++i) {
+        CodeEditor *editor = qobject_cast<CodeEditor*>(leftTabWidget->widget(i));
+        if (editor) {
+            editor->setShowColumnRuler(showColumnRuler);
+        }
+    }
+
+    for (int i = 0; i < rightTabWidget->count(); ++i) {
+        CodeEditor *editor = qobject_cast<CodeEditor*>(rightTabWidget->widget(i));
+        if (editor) {
+            editor->setShowColumnRuler(showColumnRuler);
+        }
+    }
+
+    saveSettings();
+}
+
+void MainWindow::toggleWrapIndicator()
+{
+    showWrapIndicator = !showWrapIndicator;
+    if (wrapIndicatorAction) {
+        wrapIndicatorAction->setChecked(showWrapIndicator);
+    }
+
+    // Apply to all open editors
+    for (int i = 0; i < leftTabWidget->count(); ++i) {
+        CodeEditor *editor = qobject_cast<CodeEditor*>(leftTabWidget->widget(i));
+        if (editor) {
+            editor->setShowWrapIndicator(showWrapIndicator);
+        }
+    }
+
+    for (int i = 0; i < rightTabWidget->count(); ++i) {
+        CodeEditor *editor = qobject_cast<CodeEditor*>(rightTabWidget->widget(i));
+        if (editor) {
+            editor->setShowWrapIndicator(showWrapIndicator);
+        }
+    }
+
+    saveSettings();
+}
+
+void MainWindow::setWrapColumn()
+{
+    bool ok;
+    int newColumn = QInputDialog::getInt(this, tr("Set Wrap Column"),
+                                         tr("Column number (characters):"),
+                                         wrapColumn, 40, 200, 1, &ok);
+    if (ok) {
+        wrapColumn = newColumn;
+
+        // Apply to all open editors
+        for (int i = 0; i < leftTabWidget->count(); ++i) {
+            CodeEditor *editor = qobject_cast<CodeEditor*>(leftTabWidget->widget(i));
+            if (editor) {
+                editor->setWrapColumn(wrapColumn);
+            }
+        }
+
+        for (int i = 0; i < rightTabWidget->count(); ++i) {
+            CodeEditor *editor = qobject_cast<CodeEditor*>(rightTabWidget->widget(i));
+            if (editor) {
+                editor->setWrapColumn(wrapColumn);
+            }
+        }
+
+        saveSettings();
+    }
 }
 
 void MainWindow::foldCurrentBlock()
@@ -1106,6 +1265,10 @@ void MainWindow::saveSettings()
     settings.setValue("autoSaveInterval", autoSaveInterval);
     settings.setValue("isDarkTheme", isDarkTheme);
     settings.setValue("lineWrapEnabled", lineWrapEnabled);
+    settings.setValue("wordWrapMode", wordWrapMode);
+    settings.setValue("showColumnRuler", showColumnRuler);
+    settings.setValue("showWrapIndicator", showWrapIndicator);
+    settings.setValue("wrapColumn", wrapColumn);
 }
 
 void MainWindow::loadSettings()
@@ -1114,6 +1277,10 @@ void MainWindow::loadSettings()
     autoSaveEnabled = settings.value("autoSaveEnabled", true).toBool();
     autoSaveInterval = settings.value("autoSaveInterval", 30).toInt();
     lineWrapEnabled = settings.value("lineWrapEnabled", true).toBool();
+    wordWrapMode = settings.value("wordWrapMode", true).toBool();
+    showColumnRuler = settings.value("showColumnRuler", false).toBool();
+    showWrapIndicator = settings.value("showWrapIndicator", true).toBool();
+    wrapColumn = settings.value("wrapColumn", 80).toInt();
     // isDarkTheme already loaded in constructor before stylesheet
 
     if (autoSaveAction) {
@@ -1126,6 +1293,18 @@ void MainWindow::loadSettings()
 
     if (lineWrapAction) {
         lineWrapAction->setChecked(lineWrapEnabled);
+    }
+
+    if (wordWrapAction) {
+        wordWrapAction->setChecked(wordWrapMode);
+    }
+
+    if (columnRulerAction) {
+        columnRulerAction->setChecked(showColumnRuler);
+    }
+
+    if (wrapIndicatorAction) {
+        wrapIndicatorAction->setChecked(showWrapIndicator);
     }
 
     if (autoSaveEnabled) {

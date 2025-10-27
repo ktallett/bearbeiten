@@ -18,6 +18,22 @@
     "links": "#0000FF",
     "lists": "#800080"
   },
+  "darkColors": {
+    "keywords": "#569CD6",
+    "strings": "#CE9178",
+    "comments": "#6A9955",
+    "numbers": "#B5CEA8",
+    "functions": "#DCDCAA",
+    "classes": "#4EC9B0",
+    "operators": "#D4D4D4",
+    "preprocessor": "#C586C0",
+    "headings": "#569CD6",
+    "bold": "#E0E0E0",
+    "italic": "#E0E0E0",
+    "code": "#CE9178",
+    "links": "#4FC1FF",
+    "lists": "#C586C0"
+  },
   "styles": {
     "keywords": {
       "bold": true,

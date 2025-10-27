@@ -2,7 +2,7 @@
 #include <QDebug>
 
 JsonSyntaxHighlighter::JsonSyntaxHighlighter(QTextDocument *parent)
-    : QSyntaxHighlighter(parent)
+    : QSyntaxHighlighter(parent), useDarkTheme(false)
 {
 }
 
@@ -61,8 +61,20 @@ QString JsonSyntaxHighlighter::getCurrentLanguage() const
 
 void JsonSyntaxHighlighter::updateHighlightingRules()
 {
-    highlightingRules = languageLoader.createHighlightingRules(currentLanguage);
-    qDebug() << "Created" << highlightingRules.size() << "highlighting rules for" << currentLanguage.displayName;
+    highlightingRules = languageLoader.createHighlightingRules(currentLanguage, useDarkTheme);
+    qDebug() << "Created" << highlightingRules.size() << "highlighting rules for" << currentLanguage.displayName
+             << "(dark theme:" << useDarkTheme << ")";
+}
+
+void JsonSyntaxHighlighter::setTheme(bool isDark)
+{
+    if (useDarkTheme != isDark) {
+        useDarkTheme = isDark;
+        if (currentLanguage.isValid()) {
+            updateHighlightingRules();
+            rehighlight();
+        }
+    }
 }
 
 void JsonSyntaxHighlighter::highlightBlock(const QString &text)
@@ -88,7 +100,8 @@ void JsonSyntaxHighlighter::highlightMultilineComments(const QString &text)
 
     // Create format for multiline comments
     QTextCharFormat multiLineCommentFormat;
-    QString commentColor = currentLanguage.colors.value("comments", "#008000");
+    const QMap<QString, QString> &colorMap = useDarkTheme ? currentLanguage.darkColors : currentLanguage.colors;
+    QString commentColor = colorMap.value("comments", useDarkTheme ? "#6A9955" : "#008000");
     multiLineCommentFormat.setForeground(QColor(commentColor));
 
     LanguageStyle commentStyle = currentLanguage.styles.value("comments");

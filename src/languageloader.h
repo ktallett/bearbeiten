@@ -21,7 +21,8 @@ struct LanguageDefinition {
     QString displayName;
     QStringList fileExtensions;
 
-    QMap<QString, QString> colors;
+    QMap<QString, QString> colors;      // Light theme colors
+    QMap<QString, QString> darkColors;  // Dark theme colors
     QMap<QString, LanguageStyle> styles;
     QMap<QString, QStringList> patterns;
 
@@ -53,7 +54,7 @@ public:
     LanguageDefinition getLanguageDefinition(const QString &languageName) const;
 
     // Create highlighting rules from a language definition
-    QVector<HighlightingRule> createHighlightingRules(const LanguageDefinition &langDef) const;
+    QVector<HighlightingRule> createHighlightingRules(const LanguageDefinition &langDef, bool useDarkTheme = false) const;
 
     // Auto-detect language from file extension
     QString detectLanguageFromExtension(const QString &filename) const;
@@ -62,9 +63,9 @@ private:
     QMap<QString, LanguageDefinition> languages;
 
     LanguageDefinition loadLanguageFromFile(const QString &filePath) const;
-    QTextCharFormat createTextFormat(const QString &category, const LanguageDefinition &langDef) const;
+    QTextCharFormat createTextFormat(const QString &category, const LanguageDefinition &langDef, bool useDarkTheme = false) const;
     void processPatternCategory(const QString &category, const QStringList &patterns,
-                              const LanguageDefinition &langDef, QVector<HighlightingRule> &rules) const;
+                              const LanguageDefinition &langDef, QVector<HighlightingRule> &rules, bool useDarkTheme = false) const;
 };
 
 #endif // LANGUAGELOADER_H

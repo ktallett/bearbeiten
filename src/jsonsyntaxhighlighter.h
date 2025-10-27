@@ -29,6 +29,12 @@ public:
     // Get current language name
     QString getCurrentLanguage() const;
 
+    // Set theme (true for dark, false for light)
+    void setTheme(bool isDark);
+
+    // Get current theme
+    bool isDarkTheme() const { return useDarkTheme; }
+
 protected:
     void highlightBlock(const QString &text) override;
 
@@ -37,6 +43,7 @@ private:
     QString currentLanguageName;
     LanguageDefinition currentLanguage;
     QVector<HighlightingRule> highlightingRules;
+    bool useDarkTheme;
 
     void updateHighlightingRules();
     void highlightMultilineComments(const QString &text);

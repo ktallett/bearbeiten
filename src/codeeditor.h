@@ -18,6 +18,14 @@ public:
     int lineNumberAreaWidth();
     void setCompactMode(bool compact);
 
+    // Line wrapping
+    void setShowWrapIndicator(bool show);
+    void setWrapColumn(int column);
+    void setShowColumnRuler(bool show);
+    int getWrapColumn() const { return wrapColumn; }
+    bool isShowingColumnRuler() const { return showColumnRuler; }
+    bool isShowingWrapIndicator() const { return showWrapIndicator; }
+
     // Code folding
     void toggleFold(int lineNumber);
     bool isFoldable(int lineNumber);
@@ -32,6 +40,7 @@ public:
 
 protected:
     void resizeEvent(QResizeEvent *event) override;
+    void paintEvent(QPaintEvent *event) override;
 
 private slots:
     void updateLineNumberAreaWidth(int newBlockCount);
@@ -42,6 +51,11 @@ private slots:
 private:
     QWidget *lineNumberArea;
     bool compactMode;
+
+    // Line wrapping settings
+    bool showWrapIndicator;
+    bool showColumnRuler;
+    int wrapColumn;
 
     struct BracketInfo {
         QChar character;

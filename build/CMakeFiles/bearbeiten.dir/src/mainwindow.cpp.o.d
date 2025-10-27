@@ -500,4 +500,6 @@ CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.o: \
  /usr/include/qt6/QtWidgets/QToolBar \
  /usr/include/qt6/QtWidgets/qtoolbar.h /usr/include/qt6/QtCore/QDebug \
  /usr/include/qt6/QtCore/qdebug.h /usr/include/qt6/QtCore/QFile \
- /usr/include/qt6/QtCore/qfile.h
+ /usr/include/qt6/QtCore/qfile.h /usr/include/qt6/QtWidgets/QInputDialog \
+ /usr/include/qt6/QtWidgets/qinputdialog.h \
+ /usr/include/qt6/QtWidgets/qlineedit.h
