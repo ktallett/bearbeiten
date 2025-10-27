@@ -1,5 +1,6 @@
 /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/moc_outlinepanel.cpp: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.h \
   /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/moc_predefs.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.h \
   /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -266,6 +267,9 @@
   /usr/include/linux/types.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
+  /usr/include/qt6/QtCore/QList \
+  /usr/include/qt6/QtCore/QRegularExpression \
+  /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QTimer \
   /usr/include/qt6/QtCore/q17memory.h \
   /usr/include/qt6/QtCore/q20functional.h \

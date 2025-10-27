@@ -24,6 +24,8 @@ set(SOURCES
     src/gotolinedialog.h
     src/symbolsearchdialog.cpp
     src/symbolsearchdialog.h
+    src/symbolextractor.cpp
+    src/symbolextractor.h
     src/outlinepanel.cpp
     src/outlinepanel.h
     src/projectpanel.cpp

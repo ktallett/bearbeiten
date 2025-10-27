@@ -495,6 +495,30 @@ src/projectpanel.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.s
 .PHONY : src/projectpanel.cpp.s
 
+src/symbolextractor.o: src/symbolextractor.cpp.o
+.PHONY : src/symbolextractor.o
+
+# target to build an object file
+src/symbolextractor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/symbolextractor.cpp.o
+.PHONY : src/symbolextractor.cpp.o
+
+src/symbolextractor.i: src/symbolextractor.cpp.i
+.PHONY : src/symbolextractor.i
+
+# target to preprocess a source file
+src/symbolextractor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/symbolextractor.cpp.i
+.PHONY : src/symbolextractor.cpp.i
+
+src/symbolextractor.s: src/symbolextractor.cpp.s
+.PHONY : src/symbolextractor.s
+
+# target to generate assembly for a file
+src/symbolextractor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/symbolextractor.cpp.s
+.PHONY : src/symbolextractor.cpp.s
+
 src/symbolsearchdialog.o: src/symbolsearchdialog.cpp.o
 .PHONY : src/symbolsearchdialog.o
 
@@ -570,6 +594,9 @@ help:
 	@echo "... src/projectpanel.o"
 	@echo "... src/projectpanel.i"
 	@echo "... src/projectpanel.s"
+	@echo "... src/symbolextractor.o"
+	@echo "... src/symbolextractor.i"
+	@echo "... src/symbolextractor.s"
 	@echo "... src/symbolsearchdialog.o"
 	@echo "... src/symbolsearchdialog.i"
 	@echo "... src/symbolsearchdialog.s"

@@ -481,6 +481,8 @@ CMakeFiles/bearbeiten.dir/src/main.cpp.o: \
  /usr/include/qt6/QtWidgets/qlistview.h \
  /usr/include/qt6/QtWidgets/qabstractitemview.h \
  /usr/include/qt6/QtCore/qitemselectionmodel.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.h \
+ /usr/include/qt6/QtCore/QList \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.h \
  /usr/include/qt6/QtWidgets/QTreeWidget \
  /usr/include/qt6/QtWidgets/qtreewidget.h \

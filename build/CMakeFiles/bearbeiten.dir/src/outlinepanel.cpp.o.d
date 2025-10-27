@@ -369,7 +369,10 @@ CMakeFiles/bearbeiten.dir/src/outlinepanel.cpp.o: \
  /usr/include/qt6/QtWidgets/qlistwidget.h \
  /usr/include/qt6/QtWidgets/qlistview.h \
  /usr/include/qt6/QtWidgets/QHBoxLayout \
- /usr/include/qt6/QtWidgets/QHeaderView \
- /usr/include/qt6/QtWidgets/qheaderview.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.h \
+ /usr/include/qt6/QtCore/QString /usr/include/qt6/QtCore/qstring.h \
+ /usr/include/qt6/QtCore/QList /usr/include/qt6/QtCore/qlist.h \
  /usr/include/qt6/QtCore/QRegularExpression \
- /usr/include/qt6/QtCore/qregularexpression.h
+ /usr/include/qt6/QtCore/qregularexpression.h \
+ /usr/include/qt6/QtWidgets/QHeaderView \
+ /usr/include/qt6/QtWidgets/qheaderview.h

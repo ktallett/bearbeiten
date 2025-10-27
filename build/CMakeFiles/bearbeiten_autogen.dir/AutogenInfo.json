@@ -514,6 +514,12 @@
 			null
 		],
 		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.h",
+			"MU",
+			"UVLADIE3JM/moc_symbolextractor.cpp",
+			null
+		],
+		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h",
 			"MU",
 			"UVLADIE3JM/moc_symbolsearchdialog.cpp",
@@ -624,6 +630,11 @@
 		],
 		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.cpp",
 			"MU",
 			null
 		],

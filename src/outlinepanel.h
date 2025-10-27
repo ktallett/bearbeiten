@@ -8,6 +8,7 @@
 #include <QPushButton>
 #include <QTimer>
 #include "symbolsearchdialog.h"
+#include "symbolextractor.h"
 
 class OutlinePanel : public QWidget
 {
@@ -30,13 +31,13 @@ private slots:
 private:
     void setupUI();
     void populateTree(const QList<SymbolInfo> &symbols);
-    QList<SymbolInfo> extractSymbols(const QString &documentText);
     QString getSymbolIcon(const QString &symbolType);
 
     QTreeWidget *treeWidget;
     QLabel *titleLabel;
     QLabel *statusLabel;
     QString currentFileName;
+    SymbolExtractor symbolExtractor;
 };
 
 #endif // OUTLINEPANEL_H

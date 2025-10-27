@@ -20,6 +20,8 @@ bearbeiten_autogen/timestamp: \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.h \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.cpp \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h \
 	/usr/include/alloca.h \

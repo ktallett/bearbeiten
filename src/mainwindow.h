@@ -30,6 +30,7 @@
 #include "finddialog.h"
 #include "gotolinedialog.h"
 #include "symbolsearchdialog.h"
+#include "symbolextractor.h"
 #include "outlinepanel.h"
 #include "projectpanel.h"
 
@@ -225,6 +226,7 @@ private:
 
     // Symbol search components
     SymbolSearchDialog *symbolSearchDialog;
+    SymbolExtractor symbolExtractor;
 };
 
 #endif // MAINWINDOW_H

@@ -7,6 +7,7 @@
   /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.h \
   /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.h \
   /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.h \
   /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \

@@ -29,6 +29,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/bearbeiten.dir/src/outlinepanel.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.o"
   "CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.o.d"
+  "CMakeFiles/bearbeiten.dir/src/symbolextractor.cpp.o"
+  "CMakeFiles/bearbeiten.dir/src/symbolextractor.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/symbolsearchdialog.cpp.o"
   "CMakeFiles/bearbeiten.dir/src/symbolsearchdialog.cpp.o.d"
   "bearbeiten"

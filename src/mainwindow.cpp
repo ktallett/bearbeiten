@@ -1402,87 +1402,9 @@ void MainWindow::showSymbolSearchDialog()
         connect(symbolSearchDialog, &SymbolSearchDialog::symbolSelected, this, &MainWindow::performSymbolJump);
     }
 
-    // Extract symbols from the current document
-    QList<SymbolInfo> symbols;
+    // Extract symbols from the current document using SymbolExtractor service
     QString text = editor->toPlainText();
-    QStringList lines = text.split('\n');
-
-    // Pattern matching for various symbol types
-    QRegularExpression functionPattern(R"(([\w:]+)\s+([\w:]+)\s*\([^)]*\)\s*\{?)"); // C/C++ functions
-    QRegularExpression classPattern(R"(^\s*class\s+([\w:]+))"); // C++ classes
-    QRegularExpression structPattern(R"(^\s*struct\s+([\w:]+))"); // C++ structs
-    QRegularExpression markdownHeaderPattern(R"(^(#{1,6})\s+(.+)$)"); // Markdown headers
-    QRegularExpression pythonFunctionPattern(R"(^\s*def\s+([\w_]+)\s*\()"); // Python functions
-    QRegularExpression pythonClassPattern(R"(^\s*class\s+([\w_]+))"); // Python classes
-    QRegularExpression jsFunctionPattern(R"(^\s*function\s+([\w_]+)\s*\()"); // JavaScript functions
-    QRegularExpression jsClassPattern(R"(^\s*class\s+([\w_]+))"); // JavaScript classes
-
-    for (int i = 0; i < lines.size(); ++i) {
-        QString line = lines[i];
-        int lineNumber = i + 1;
-
-        // Check for C/C++ functions
-        QRegularExpressionMatch match = functionPattern.match(line);
-        if (match.hasMatch()) {
-            QString returnType = match.captured(1);
-            QString functionName = match.captured(2);
-            // Skip common keywords that might be matched
-            if (functionName != "if" && functionName != "while" && functionName != "for" && functionName != "switch") {
-                symbols.append(SymbolInfo(functionName, "Function", lineNumber, line.trimmed()));
-            }
-        }
-
-        // Check for C++ classes
-        match = classPattern.match(line);
-        if (match.hasMatch()) {
-            QString className = match.captured(1);
-            symbols.append(SymbolInfo(className, "Class", lineNumber, line.trimmed()));
-        }
-
-        // Check for C++ structs
-        match = structPattern.match(line);
-        if (match.hasMatch()) {
-            QString structName = match.captured(1);
-            symbols.append(SymbolInfo(structName, "Struct", lineNumber, line.trimmed()));
-        }
-
-        // Check for Markdown headers
-        match = markdownHeaderPattern.match(line);
-        if (match.hasMatch()) {
-            QString level = match.captured(1);
-            QString headerText = match.captured(2);
-            QString type = QString("Header (Level %1)").arg(level.length());
-            symbols.append(SymbolInfo(headerText, type, lineNumber, line.trimmed()));
-        }
-
-        // Check for Python functions
-        match = pythonFunctionPattern.match(line);
-        if (match.hasMatch()) {
-            QString functionName = match.captured(1);
-            symbols.append(SymbolInfo(functionName, "Function (Python)", lineNumber, line.trimmed()));
-        }
-
-        // Check for Python classes
-        match = pythonClassPattern.match(line);
-        if (match.hasMatch()) {
-            QString className = match.captured(1);
-            symbols.append(SymbolInfo(className, "Class (Python)", lineNumber, line.trimmed()));
-        }
-
-        // Check for JavaScript functions
-        match = jsFunctionPattern.match(line);
-        if (match.hasMatch()) {
-            QString functionName = match.captured(1);
-            symbols.append(SymbolInfo(functionName, "Function (JS)", lineNumber, line.trimmed()));
-        }
-
-        // Check for JavaScript classes
-        match = jsClassPattern.match(line);
-        if (match.hasMatch()) {
-            QString className = match.captured(1);
-            symbols.append(SymbolInfo(className, "Class (JS)", lineNumber, line.trimmed()));
-        }
-    }
+    QList<SymbolInfo> symbols = symbolExtractor.extractSymbols(text);
 
     symbolSearchDialog->setSymbols(symbols);
     symbolSearchDialog->clearFilter();
