@@ -15,7 +15,8 @@ MainWindow::MainWindow(QWidget *parent)
       projectPanelVisible(false), outlinePanelVisible(false), isSmallScreen(false), autoSaveTimer(nullptr), autoSaveEnabled(true), autoSaveInterval(30), autoSaveAction(nullptr),
       isDarkTheme(false), themeAction(nullptr), lineWrapEnabled(true), wordWrapMode(true), showColumnRuler(false), showWrapIndicator(true), wrapColumn(80),
       lineWrapAction(nullptr), wordWrapAction(nullptr), columnRulerAction(nullptr), wrapIndicatorAction(nullptr),
-      minimapEnabled(false), minimapAction(nullptr), findDialog(nullptr), goToLineDialog(nullptr), symbolSearchDialog(nullptr)
+      minimapEnabled(false), minimapAction(nullptr), trimWhitespaceOnSave(true), autoIndentEnabled(true), autoCloseBracketsEnabled(true), smartBackspaceEnabled(true),
+      findDialog(nullptr), goToLineDialog(nullptr), symbolSearchDialog(nullptr)
 {
     detectScreenSize();
 
@@ -431,6 +432,11 @@ bool MainWindow::saveDocument(const QString &fileName)
     CodeEditor *editor = getCurrentEditor();
     if (!editor) return false;
 
+    // Trim trailing whitespace if enabled
+    if (trimWhitespaceOnSave) {
+        editor->trimTrailingWhitespace();
+    }
+
     QFile file(fileName);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::warning(this, "Bearbeiten",
@@ -586,6 +592,11 @@ void MainWindow::createNewTab(const QString &fileName)
     editor->setShowWrapIndicator(showWrapIndicator);
     editor->setShowColumnRuler(showColumnRuler);
     editor->setWrapColumn(wrapColumn);
+
+    // Apply smart editing settings
+    editor->setAutoIndent(autoIndentEnabled);
+    editor->setAutoCloseBrackets(autoCloseBracketsEnabled);
+    editor->setSmartBackspace(smartBackspaceEnabled);
 
     // Create syntax highlighter for this tab
     JsonSyntaxHighlighter *highlighter = new JsonSyntaxHighlighter(editor->document());
@@ -1338,6 +1349,10 @@ void MainWindow::saveSettings()
     settings.setValue("showWrapIndicator", showWrapIndicator);
     settings.setValue("wrapColumn", wrapColumn);
     settings.setValue("minimapEnabled", minimapEnabled);
+    settings.setValue("trimWhitespaceOnSave", trimWhitespaceOnSave);
+    settings.setValue("autoIndentEnabled", autoIndentEnabled);
+    settings.setValue("autoCloseBracketsEnabled", autoCloseBracketsEnabled);
+    settings.setValue("smartBackspaceEnabled", smartBackspaceEnabled);
 }
 
 void MainWindow::loadSettings()
@@ -1351,6 +1366,10 @@ void MainWindow::loadSettings()
     showWrapIndicator = settings.value("showWrapIndicator", true).toBool();
     wrapColumn = settings.value("wrapColumn", 80).toInt();
     minimapEnabled = settings.value("minimapEnabled", false).toBool();
+    trimWhitespaceOnSave = settings.value("trimWhitespaceOnSave", true).toBool();
+    autoIndentEnabled = settings.value("autoIndentEnabled", true).toBool();
+    autoCloseBracketsEnabled = settings.value("autoCloseBracketsEnabled", true).toBool();
+    smartBackspaceEnabled = settings.value("smartBackspaceEnabled", true).toBool();
     // isDarkTheme already loaded in constructor before stylesheet
 
     if (autoSaveAction) {

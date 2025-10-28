@@ -2,9 +2,11 @@
 #include <QPainter>
 #include <QTextBlock>
 #include <QMouseEvent>
+#include <QKeyEvent>
 
 CodeEditor::CodeEditor(QWidget *parent) : QPlainTextEdit(parent), compactMode(false),
-    showWrapIndicator(true), showColumnRuler(false), wrapColumn(80)
+    showWrapIndicator(true), showColumnRuler(false), wrapColumn(80),
+    autoIndent(true), autoCloseBrackets(true), smartBackspace(true)
 {
     lineNumberArea = new LineNumberArea(this);
 
@@ -555,6 +557,211 @@ QRectF CodeEditor::getBlockBoundingRect(const QTextBlock &block) const
 QPointF CodeEditor::getContentOffset() const
 {
     return contentOffset();
+}
+
+// Smart editing features implementation
+
+void CodeEditor::setAutoIndent(bool enable)
+{
+    autoIndent = enable;
+}
+
+void CodeEditor::setAutoCloseBrackets(bool enable)
+{
+    autoCloseBrackets = enable;
+}
+
+void CodeEditor::setSmartBackspace(bool enable)
+{
+    smartBackspace = enable;
+}
+
+QString CodeEditor::getIndentationOfLine(const QString &text)
+{
+    QString indent;
+    for (QChar c : text) {
+        if (c == ' ' || c == '\t') {
+            indent += c;
+        } else {
+            break;
+        }
+    }
+    return indent;
+}
+
+bool CodeEditor::isAutoClosingChar(QChar c)
+{
+    return c == '(' || c == '[' || c == '{' || c == '"' || c == '\'';
+}
+
+QChar CodeEditor::getClosingChar(QChar c)
+{
+    switch (c.toLatin1()) {
+        case '(': return ')';
+        case '[': return ']';
+        case '{': return '}';
+        case '"': return '"';
+        case '\'': return '\'';
+        default: return QChar();
+    }
+}
+
+void CodeEditor::handleAutoIndent()
+{
+    QTextCursor cursor = textCursor();
+    QTextBlock currentBlock = cursor.block();
+    QTextBlock previousBlock = currentBlock.previous();
+
+    if (previousBlock.isValid()) {
+        QString previousText = previousBlock.text();
+        QString indent = getIndentationOfLine(previousText);
+
+        // If previous line ends with opening bracket, add extra indentation
+        QString trimmedPrev = previousText.trimmed();
+        if (!trimmedPrev.isEmpty() && (trimmedPrev.endsWith('{') || trimmedPrev.endsWith('(') || trimmedPrev.endsWith('['))) {
+            // Add one level of indentation (4 spaces or 1 tab)
+            if (indent.contains('\t')) {
+                indent += '\t';
+            } else {
+                indent += "    ";
+            }
+        }
+
+        if (!indent.isEmpty()) {
+            cursor.insertText(indent);
+            setTextCursor(cursor);
+        }
+    }
+}
+
+void CodeEditor::handleAutoCloseBracket(QChar openChar)
+{
+    QChar closeChar = getClosingChar(openChar);
+    if (closeChar.isNull()) {
+        return;
+    }
+
+    QTextCursor cursor = textCursor();
+
+    // For quotes, check if we're next to the same quote (don't double it)
+    if (openChar == '"' || openChar == '\'') {
+        int pos = cursor.position();
+        QString text = toPlainText();
+
+        // If next character is the same quote, just move cursor forward
+        if (pos < text.length() && text[pos] == openChar) {
+            cursor.movePosition(QTextCursor::Right);
+            setTextCursor(cursor);
+            return;
+        }
+    }
+
+    // Insert the closing character and move cursor back
+    cursor.insertText(QString(openChar) + QString(closeChar));
+    cursor.movePosition(QTextCursor::Left);
+    setTextCursor(cursor);
+}
+
+void CodeEditor::handleSmartBackspace()
+{
+    QTextCursor cursor = textCursor();
+
+    // Only apply smart backspace at the beginning of a line (in indentation)
+    int positionInBlock = cursor.positionInBlock();
+    QString currentLineText = cursor.block().text();
+    QString beforeCursor = currentLineText.left(positionInBlock);
+
+    // Check if we're only in whitespace
+    if (beforeCursor.trimmed().isEmpty() && !beforeCursor.isEmpty()) {
+        int indentLevel = getIndentLevel(beforeCursor);
+        int spacesPerIndent = 4; // Standard indent
+
+        // Calculate how many spaces to delete (one indent level or to previous tab stop)
+        int deleteCount = indentLevel % spacesPerIndent;
+        if (deleteCount == 0) {
+            deleteCount = spacesPerIndent;
+        }
+
+        // Don't delete more than we have
+        deleteCount = qMin(deleteCount, positionInBlock);
+
+        // Delete the calculated number of characters
+        cursor.movePosition(QTextCursor::Left, QTextCursor::KeepAnchor, deleteCount);
+        cursor.removeSelectedText();
+        setTextCursor(cursor);
+    } else {
+        // Normal backspace behavior
+        cursor.deletePreviousChar();
+    }
+}
+
+void CodeEditor::keyPressEvent(QKeyEvent *event)
+{
+    // Handle Return/Enter for auto-indent
+    if (autoIndent && (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter)) {
+        QPlainTextEdit::keyPressEvent(event); // Insert newline first
+        handleAutoIndent();
+        return;
+    }
+
+    // Handle Backspace for smart backspace
+    if (smartBackspace && event->key() == Qt::Key_Backspace && !textCursor().hasSelection()) {
+        handleSmartBackspace();
+        return;
+    }
+
+    // Handle auto-closing brackets and quotes
+    if (autoCloseBrackets && event->text().length() == 1) {
+        QChar typedChar = event->text()[0];
+        if (isAutoClosingChar(typedChar) && !textCursor().hasSelection()) {
+            handleAutoCloseBracket(typedChar);
+            return;
+        }
+    }
+
+    // Default behavior for all other keys
+    QPlainTextEdit::keyPressEvent(event);
+}
+
+void CodeEditor::trimTrailingWhitespace()
+{
+    QTextCursor cursor = textCursor();
+    cursor.beginEditBlock();
+
+    // Save current cursor position
+    int originalPosition = cursor.position();
+    int originalBlockNumber = cursor.blockNumber();
+
+    // Iterate through all blocks
+    QTextBlock block = document()->firstBlock();
+    while (block.isValid()) {
+        QString text = block.text();
+
+        // Find trailing whitespace
+        int endPos = text.length();
+        while (endPos > 0 && (text[endPos - 1] == ' ' || text[endPos - 1] == '\t')) {
+            endPos--;
+        }
+
+        // If there's trailing whitespace, remove it
+        if (endPos < text.length()) {
+            QTextCursor blockCursor(block);
+            blockCursor.movePosition(QTextCursor::EndOfBlock);
+            blockCursor.movePosition(QTextCursor::Left, QTextCursor::KeepAnchor, text.length() - endPos);
+            blockCursor.removeSelectedText();
+        }
+
+        block = block.next();
+    }
+
+    // Restore cursor position (approximately, as positions may have shifted)
+    cursor.movePosition(QTextCursor::Start);
+    for (int i = 0; i < originalBlockNumber; ++i) {
+        cursor.movePosition(QTextCursor::NextBlock);
+    }
+
+    cursor.endEditBlock();
+    setTextCursor(cursor);
 }
 
 // LineNumberArea implementation

@@ -38,9 +38,19 @@ public:
     QRectF getBlockBoundingRect(const QTextBlock &block) const;
     QPointF getContentOffset() const;
 
+    // Smart editing features
+    void setAutoIndent(bool enable);
+    void setAutoCloseBrackets(bool enable);
+    void setSmartBackspace(bool enable);
+    void trimTrailingWhitespace();
+    bool isAutoIndentEnabled() const { return autoIndent; }
+    bool isAutoCloseBracketsEnabled() const { return autoCloseBrackets; }
+    bool isSmartBackspaceEnabled() const { return smartBackspace; }
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
     void paintEvent(QPaintEvent *event) override;
+    void keyPressEvent(QKeyEvent *event) override;
 
 private slots:
     void updateLineNumberAreaWidth(int newBlockCount);
@@ -57,6 +67,11 @@ private:
     bool showColumnRuler;
     int wrapColumn;
 
+    // Smart editing settings
+    bool autoIndent;
+    bool autoCloseBrackets;
+    bool smartBackspace;
+
     struct BracketInfo {
         QChar character;
         int position;
@@ -72,6 +87,14 @@ private:
     int findFoldEndLine(int startLine);
     void setBlockVisible(int lineNumber, bool visible);
     bool isBlockFolded(int lineNumber);
+
+    // Smart editing helpers
+    QString getIndentationOfLine(const QString &text);
+    bool isAutoClosingChar(QChar c);
+    QChar getClosingChar(QChar c);
+    void handleAutoIndent();
+    void handleAutoCloseBracket(QChar openChar);
+    void handleSmartBackspace();
 
     QSet<int> foldedBlocks;  // Track which lines are folded
 };

@@ -239,6 +239,12 @@ private:
     bool minimapEnabled;
     QAction *minimapAction;
 
+    // Smart editing components
+    bool trimWhitespaceOnSave;
+    bool autoIndentEnabled;
+    bool autoCloseBracketsEnabled;
+    bool smartBackspaceEnabled;
+
     // Find/Replace components
     FindDialog *findDialog;
 
