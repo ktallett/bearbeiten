@@ -134,6 +134,23 @@ void CodeEditor::lineNumberAreaPaintEvent(QPaintEvent *event)
                 painter.restore();
             }
 
+            // Draw bookmark indicator if bookmarked
+            if (bookmarkedLines.contains(blockNumber)) {
+                int indicatorSize = 8;
+                int indicatorX = lineNumberArea->width() - indicatorSize - 4;
+                int indicatorY = top + (fontMetrics().height() - indicatorSize) / 2;
+
+                painter.save();
+                painter.setRenderHint(QPainter::Antialiasing);
+
+                // Draw bookmark as a blue circle
+                painter.setBrush(QColor(66, 135, 245)); // Blue bookmark color
+                painter.setPen(Qt::NoPen);
+                painter.drawEllipse(indicatorX, indicatorY, indicatorSize, indicatorSize);
+
+                painter.restore();
+            }
+
             painter.drawText(12, top, lineNumberArea->width() - 17, fontMetrics().height(),
                            Qt::AlignRight, number);
         }
@@ -1322,4 +1339,99 @@ void CodeEditor::drawIndentationGuides(QPainter &painter)
         bottom = top + qRound(blockBoundingRect(block).height());
         ++blockNumber;
     }
+}
+
+// Bookmark implementation
+
+void CodeEditor::toggleBookmark()
+{
+    QTextCursor cursor = textCursor();
+    int lineNumber = cursor.blockNumber();
+    toggleBookmarkAtLine(lineNumber);
+}
+
+void CodeEditor::toggleBookmarkAtLine(int lineNumber)
+{
+    if (bookmarkedLines.contains(lineNumber)) {
+        bookmarkedLines.remove(lineNumber);
+    } else {
+        bookmarkedLines.insert(lineNumber);
+    }
+
+    // Trigger repaint of line number area
+    lineNumberArea->update();
+}
+
+void CodeEditor::clearAllBookmarks()
+{
+    bookmarkedLines.clear();
+    lineNumberArea->update();
+}
+
+void CodeEditor::goToNextBookmark()
+{
+    if (bookmarkedLines.isEmpty()) {
+        return;
+    }
+
+    int currentLine = textCursor().blockNumber();
+
+    // Find the next bookmark after the current line
+    int nextBookmark = -1;
+    for (int line : bookmarkedLines) {
+        if (line > currentLine) {
+            if (nextBookmark == -1 || line < nextBookmark) {
+                nextBookmark = line;
+            }
+        }
+    }
+
+    // If no bookmark found after current line, wrap to the first one
+    if (nextBookmark == -1) {
+        nextBookmark = *std::min_element(bookmarkedLines.begin(), bookmarkedLines.end());
+    }
+
+    // Move cursor to the bookmarked line
+    QTextCursor cursor = textCursor();
+    cursor.movePosition(QTextCursor::Start);
+    cursor.movePosition(QTextCursor::Down, QTextCursor::MoveAnchor, nextBookmark);
+    setTextCursor(cursor);
+    centerCursor();
+}
+
+void CodeEditor::goToPreviousBookmark()
+{
+    if (bookmarkedLines.isEmpty()) {
+        return;
+    }
+
+    int currentLine = textCursor().blockNumber();
+
+    // Find the previous bookmark before the current line
+    int prevBookmark = -1;
+    for (int line : bookmarkedLines) {
+        if (line < currentLine) {
+            if (prevBookmark == -1 || line > prevBookmark) {
+                prevBookmark = line;
+            }
+        }
+    }
+
+    // If no bookmark found before current line, wrap to the last one
+    if (prevBookmark == -1) {
+        prevBookmark = *std::max_element(bookmarkedLines.begin(), bookmarkedLines.end());
+    }
+
+    // Move cursor to the bookmarked line
+    QTextCursor cursor = textCursor();
+    cursor.movePosition(QTextCursor::Start);
+    cursor.movePosition(QTextCursor::Down, QTextCursor::MoveAnchor, prevBookmark);
+    setTextCursor(cursor);
+    centerCursor();
+}
+
+void CodeEditor::setBookmarks(const QSet<int> &bookmarks)
+{
+    bookmarkedLines = bookmarks;
+    lineNumberArea->update();
 }

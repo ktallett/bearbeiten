@@ -108,7 +108,11 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "updateBreadcrumbSymbol",
         "showCharacterInspector",
         "changeEncoding",
-        "onEncodingLabelClicked"
+        "onEncodingLabelClicked",
+        "toggleBookmark",
+        "goToNextBookmark",
+        "goToPreviousBookmark",
+        "clearAllBookmarks"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -253,6 +257,14 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(68, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onEncodingLabelClicked'
         QtMocHelpers::SlotData<void()>(69, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'toggleBookmark'
+        QtMocHelpers::SlotData<void()>(70, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'goToNextBookmark'
+        QtMocHelpers::SlotData<void()>(71, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'goToPreviousBookmark'
+        QtMocHelpers::SlotData<void()>(72, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'clearAllBookmarks'
+        QtMocHelpers::SlotData<void()>(73, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -334,6 +346,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 53: _t->showCharacterInspector(); break;
         case 54: _t->changeEncoding(); break;
         case 55: _t->onEncodingLabelClicked(); break;
+        case 56: _t->toggleBookmark(); break;
+        case 57: _t->goToNextBookmark(); break;
+        case 58: _t->goToPreviousBookmark(); break;
+        case 59: _t->clearAllBookmarks(); break;
         default: ;
         }
     }
@@ -358,14 +374,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 56)
+        if (_id < 60)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 56;
+        _id -= 60;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 56)
+        if (_id < 60)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 56;
+        _id -= 60;
     }
     return _id;
 }

@@ -48,6 +48,7 @@ struct TabInfo {
     JsonSyntaxHighlighter *highlighter;
     Minimap *minimap;
     EncodingManager::Encoding encoding;
+    QSet<int> bookmarks;
 
     TabInfo() : highlighter(nullptr), minimap(nullptr), encoding(EncodingManager::Encoding::UTF8) {}
     TabInfo(const QString &path, JsonSyntaxHighlighter *hl, Minimap *mm = nullptr,
@@ -157,6 +158,12 @@ private slots:
     // Encoding slots
     void changeEncoding();
     void onEncodingLabelClicked();
+
+    // Bookmark slots
+    void toggleBookmark();
+    void goToNextBookmark();
+    void goToPreviousBookmark();
+    void clearAllBookmarks();
 
 private:
     void setupMenus();

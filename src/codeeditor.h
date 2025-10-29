@@ -64,6 +64,16 @@ public:
     bool isShowingIndentationGuides() const { return showIndentationGuides; }
     bool isHighlightingActiveIndent() const { return highlightActiveIndent; }
 
+    // Bookmarks
+    void toggleBookmark();
+    void toggleBookmarkAtLine(int lineNumber);
+    void clearAllBookmarks();
+    void goToNextBookmark();
+    void goToPreviousBookmark();
+    QSet<int> getBookmarks() const { return bookmarkedLines; }
+    void setBookmarks(const QSet<int> &bookmarks);
+    bool hasBookmarks() const { return !bookmarkedLines.isEmpty(); }
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
     void paintEvent(QPaintEvent *event) override;
@@ -135,6 +145,7 @@ private:
     void drawIndentationGuides(QPainter &painter);
 
     QSet<int> foldedBlocks;  // Track which lines are folded
+    QSet<int> bookmarkedLines;  // Track which lines are bookmarked
 };
 
 class LineNumberArea : public QWidget

@@ -226,6 +226,31 @@ void MainWindow::setupMenus()
     connect(characterInspectorAction, &QAction::triggered, this, &MainWindow::showCharacterInspector);
     editMenu->addAction(characterInspectorAction);
 
+    editMenu->addSeparator();
+
+    QAction *toggleBookmarkAction = new QAction(tr("Toggle &Bookmark"), this);
+    toggleBookmarkAction->setShortcut(QKeySequence(Qt::Key_F2));
+    toggleBookmarkAction->setToolTip(tr("Toggle bookmark on current line"));
+    connect(toggleBookmarkAction, &QAction::triggered, this, &MainWindow::toggleBookmark);
+    editMenu->addAction(toggleBookmarkAction);
+
+    QAction *nextBookmarkAction = new QAction(tr("Next Bookmar&k"), this);
+    nextBookmarkAction->setShortcut(QKeySequence(Qt::Key_F3));
+    nextBookmarkAction->setToolTip(tr("Go to next bookmark"));
+    connect(nextBookmarkAction, &QAction::triggered, this, &MainWindow::goToNextBookmark);
+    editMenu->addAction(nextBookmarkAction);
+
+    QAction *prevBookmarkAction = new QAction(tr("Pre&vious Bookmark"), this);
+    prevBookmarkAction->setShortcut(QKeySequence(Qt::SHIFT | Qt::Key_F3));
+    prevBookmarkAction->setToolTip(tr("Go to previous bookmark"));
+    connect(prevBookmarkAction, &QAction::triggered, this, &MainWindow::goToPreviousBookmark);
+    editMenu->addAction(prevBookmarkAction);
+
+    QAction *clearBookmarksAction = new QAction(tr("Clear All Bookmarks"), this);
+    clearBookmarksAction->setToolTip(tr("Remove all bookmarks from document"));
+    connect(clearBookmarksAction, &QAction::triggered, this, &MainWindow::clearAllBookmarks);
+    editMenu->addAction(clearBookmarksAction);
+
     // View menu for split functionality
     QMenu *viewMenu = menuBar()->addMenu(tr("&View"));
 
@@ -941,6 +966,14 @@ void MainWindow::onTabChanged(int index)
 
         // Update breadcrumb bar for the new tab
         updateBreadcrumb();
+
+        // Restore bookmarks for the new tab
+        if (activeTabInfoMap->contains(index)) {
+            CodeEditor *editor = getCurrentEditor();
+            if (editor) {
+                editor->setBookmarks((*activeTabInfoMap)[index].bookmarks);
+            }
+        }
     }
 }
 
@@ -2316,4 +2349,56 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event)
     }
 
     return QMainWindow::eventFilter(obj, event);
+}
+
+// Bookmark implementation
+
+void MainWindow::toggleBookmark()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (!editor) {
+        return;
+    }
+
+    // Toggle bookmark in editor
+    editor->toggleBookmark();
+
+    // Save bookmarks to tab info
+    int currentIndex = tabWidget->currentIndex();
+    if (currentIndex >= 0 && activeTabInfoMap->contains(currentIndex)) {
+        (*activeTabInfoMap)[currentIndex].bookmarks = editor->getBookmarks();
+    }
+}
+
+void MainWindow::goToNextBookmark()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (editor) {
+        editor->goToNextBookmark();
+    }
+}
+
+void MainWindow::goToPreviousBookmark()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (editor) {
+        editor->goToPreviousBookmark();
+    }
+}
+
+void MainWindow::clearAllBookmarks()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (!editor) {
+        return;
+    }
+
+    // Clear bookmarks in editor
+    editor->clearAllBookmarks();
+
+    // Clear bookmarks in tab info
+    int currentIndex = tabWidget->currentIndex();
+    if (currentIndex >= 0 && activeTabInfoMap->contains(currentIndex)) {
+        (*activeTabInfoMap)[currentIndex].bookmarks.clear();
+    }
 }
