@@ -394,7 +394,8 @@ CMakeFiles/bearbeiten.dir/src/main.cpp.o: \
  /usr/include/qt6/QtGui/qfontdatabase.h \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
  /usr/include/qt6/QtCore/QSet /usr/include/qt6/QtCore/qset.h \
- /usr/include/qt6/QtWidgets/QMenuBar \
+ /usr/include/qt6/QtCore/QList /usr/include/qt6/QtGui/QTextCursor \
+ /usr/include/qt6/QtGui/qtextcursor.h /usr/include/qt6/QtWidgets/QMenuBar \
  /usr/include/qt6/QtWidgets/qmenubar.h /usr/include/qt6/QtWidgets/qmenu.h \
  /usr/include/qt6/QtWidgets/QFileDialog \
  /usr/include/qt6/QtWidgets/qfiledialog.h /usr/include/qt6/QtCore/qdir.h \
@@ -432,8 +433,7 @@ CMakeFiles/bearbeiten.dir/src/main.cpp.o: \
  /usr/include/qt6/QtWidgets/QSplitter \
  /usr/include/qt6/QtWidgets/qsplitter.h /usr/include/qt6/QtCore/QTimer \
  /usr/include/qt6/QtCore/qtimer.h /usr/include/qt6/QtCore/QSettings \
- /usr/include/qt6/QtCore/qsettings.h /usr/include/qt6/QtGui/QTextCursor \
- /usr/include/qt6/QtGui/qtextcursor.h \
+ /usr/include/qt6/QtCore/qsettings.h \
  /usr/include/qt6/QtCore/QRegularExpression \
  /usr/include/qt6/QtCore/qregularexpression.h \
  /usr/include/qt6/QtGui/QScreen /usr/include/qt6/QtGui/qscreen.h \
@@ -483,7 +483,6 @@ CMakeFiles/bearbeiten.dir/src/main.cpp.o: \
  /usr/include/qt6/QtWidgets/qabstractitemview.h \
  /usr/include/qt6/QtCore/qitemselectionmodel.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.h \
- /usr/include/qt6/QtCore/QList \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.h \
  /usr/include/qt6/QtWidgets/QTreeWidget \
  /usr/include/qt6/QtWidgets/qtreewidget.h \

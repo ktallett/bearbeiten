@@ -430,7 +430,8 @@ CMakeFiles/bearbeiten.dir/bearbeiten_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtGui/qguiapplication_platform.h \
  /usr/include/qt6/QtGui/qglyphrun.h /usr/include/qt6/QtGui/qrawfont.h \
  /usr/include/qt6/QtGui/qfontdatabase.h /usr/include/qt6/QtCore/QSet \
- /usr/include/qt6/QtCore/qset.h \
+ /usr/include/qt6/QtCore/qset.h /usr/include/qt6/QtGui/QTextCursor \
+ /usr/include/qt6/QtGui/qtextcursor.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/moc_finddialog.cpp \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/finddialog.h \
  /usr/include/qt6/QtWidgets/QCheckBox \
@@ -489,8 +490,7 @@ CMakeFiles/bearbeiten.dir/bearbeiten_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtWidgets/QSplitter \
  /usr/include/qt6/QtWidgets/qsplitter.h /usr/include/qt6/QtCore/QTimer \
  /usr/include/qt6/QtCore/qtimer.h /usr/include/qt6/QtCore/QSettings \
- /usr/include/qt6/QtCore/qsettings.h /usr/include/qt6/QtGui/QTextCursor \
- /usr/include/qt6/QtGui/qtextcursor.h /usr/include/qt6/QtGui/QScreen \
+ /usr/include/qt6/QtCore/qsettings.h /usr/include/qt6/QtGui/QScreen \
  /usr/include/qt6/QtGui/qscreen.h /usr/include/qt6/QtGui/QGuiApplication \
  /usr/include/qt6/QtGui/qguiapplication.h \
  /usr/include/qt6/QtGui/QResizeEvent /usr/include/qt6/QtGui/qevent.h \

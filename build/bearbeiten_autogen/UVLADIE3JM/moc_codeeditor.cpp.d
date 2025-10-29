@@ -409,6 +409,7 @@
   /usr/include/qt6/QtCore/qversiontagging.h \
   /usr/include/qt6/QtCore/qxptype_traits.h \
   /usr/include/qt6/QtCore/qyieldcpu.h \
+  /usr/include/qt6/QtGui/QTextCursor \
   /usr/include/qt6/QtGui/QTransform \
   /usr/include/qt6/QtGui/qabstracttextdocumentlayout.h \
   /usr/include/qt6/QtGui/qaction.h \

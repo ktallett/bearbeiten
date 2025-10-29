@@ -360,8 +360,9 @@ CMakeFiles/bearbeiten.dir/src/minimap.cpp.o: \
  /usr/include/qt6/QtGui/qtextdocument.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.h \
  /usr/include/qt6/QtCore/QSet /usr/include/qt6/QtCore/qset.h \
- /usr/include/qt6/QtGui/QPainter /usr/include/qt6/QtGui/qpainter.h \
- /usr/include/qt6/QtWidgets/QScrollBar \
+ /usr/include/qt6/QtCore/QList /usr/include/qt6/QtGui/QTextCursor \
+ /usr/include/qt6/QtGui/qtextcursor.h /usr/include/qt6/QtGui/QPainter \
+ /usr/include/qt6/QtGui/qpainter.h /usr/include/qt6/QtWidgets/QScrollBar \
  /usr/include/qt6/QtWidgets/qscrollbar.h \
  /usr/include/qt6/QtWidgets/qabstractslider.h \
  /usr/include/qt6/QtGui/QTextBlock /usr/include/qt6/QtGui/qtextobject.h \

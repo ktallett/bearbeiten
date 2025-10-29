@@ -3,6 +3,7 @@
 #include <QTextBlock>
 #include <QMouseEvent>
 #include <QKeyEvent>
+#include <algorithm>
 
 CodeEditor::CodeEditor(QWidget *parent) : QPlainTextEdit(parent), compactMode(false),
     showWrapIndicator(true), showColumnRuler(false), wrapColumn(80),
@@ -223,6 +224,27 @@ void CodeEditor::paintEvent(QPaintEvent *event)
             top = bottom;
             bottom = top + qRound(blockBoundingRect(block).height());
             ++blockNumber;
+        }
+    }
+
+    // Draw extra cursors for multiple cursor mode
+    if (!extraCursors.isEmpty()) {
+        QPainter painter(viewport());
+
+        // Draw all extra cursors
+        for (const QTextCursor &cursor : extraCursors) {
+            QRect rect = QPlainTextEdit::cursorRect(cursor);
+            if (!rect.isNull()) {
+                // Draw cursor line
+                painter.setPen(QPen(palette().color(QPalette::Text), 2));
+                painter.drawLine(rect.topLeft(), rect.bottomLeft());
+
+                // If cursor has selection, draw highlight
+                if (cursor.hasSelection()) {
+                    // This will be handled by Qt's default selection rendering
+                    // We just ensure the cursor itself is visible
+                }
+            }
         }
     }
 }
@@ -697,20 +719,108 @@ void CodeEditor::handleSmartBackspace()
 
 void CodeEditor::keyPressEvent(QKeyEvent *event)
 {
-    // Handle Return/Enter for auto-indent
+    // Handle Ctrl+D - Select next occurrence
+    if (event->key() == Qt::Key_D && event->modifiers() == Qt::ControlModifier) {
+        selectNextOccurrence();
+        event->accept();
+        return;
+    }
+
+    // Handle Alt+Shift+Up - Add cursor above
+    if (event->key() == Qt::Key_Up &&
+        (event->modifiers() & Qt::AltModifier) &&
+        (event->modifiers() & Qt::ShiftModifier)) {
+        addCursorAbove();
+        event->accept();
+        return;
+    }
+
+    // Handle Alt+Shift+Down - Add cursor below
+    if (event->key() == Qt::Key_Down &&
+        (event->modifiers() & Qt::AltModifier) &&
+        (event->modifiers() & Qt::ShiftModifier)) {
+        addCursorBelow();
+        event->accept();
+        return;
+    }
+
+    // Handle Escape - Clear multiple cursors
+    if (event->key() == Qt::Key_Escape && !extraCursors.isEmpty()) {
+        clearExtraCursors();
+        event->accept();
+        return;
+    }
+
+    // If we have multiple cursors, handle text input specially
+    if (!extraCursors.isEmpty()) {
+        // Handle backspace at all cursors
+        if (event->key() == Qt::Key_Backspace) {
+            removeTextAtAllCursors(1);
+            event->accept();
+            return;
+        }
+
+        // Handle delete at all cursors
+        if (event->key() == Qt::Key_Delete) {
+            QTextCursor mainCursor = textCursor();
+            mainCursor.beginEditBlock();
+
+            for (int i = extraCursors.size() - 1; i >= 0; --i) {
+                QTextCursor cursor = extraCursors[i];
+                if (cursor.hasSelection()) {
+                    cursor.removeSelectedText();
+                } else {
+                    cursor.deleteChar();
+                }
+                extraCursors[i] = cursor;
+            }
+
+            mainCursor.endEditBlock();
+            if (!extraCursors.isEmpty()) {
+                setTextCursor(extraCursors.last());
+            }
+            viewport()->update();
+            event->accept();
+            return;
+        }
+
+        // Handle regular text input at all cursors
+        if (!event->text().isEmpty() && event->text()[0].isPrint()) {
+            insertTextAtAllCursors(event->text());
+            event->accept();
+            return;
+        }
+
+        // Handle Enter/Return at all cursors
+        if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter) {
+            insertTextAtAllCursors("\n");
+            event->accept();
+            return;
+        }
+
+        // For other keys (like arrows), clear multiple cursors and handle normally
+        if (event->key() == Qt::Key_Left || event->key() == Qt::Key_Right ||
+            event->key() == Qt::Key_Up || event->key() == Qt::Key_Down ||
+            event->key() == Qt::Key_Home || event->key() == Qt::Key_End) {
+            clearExtraCursors();
+            // Fall through to default handling
+        }
+    }
+
+    // Handle Return/Enter for auto-indent (single cursor mode)
     if (autoIndent && (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter)) {
         QPlainTextEdit::keyPressEvent(event); // Insert newline first
         handleAutoIndent();
         return;
     }
 
-    // Handle Backspace for smart backspace
+    // Handle Backspace for smart backspace (single cursor mode)
     if (smartBackspace && event->key() == Qt::Key_Backspace && !textCursor().hasSelection()) {
         handleSmartBackspace();
         return;
     }
 
-    // Handle auto-closing brackets and quotes
+    // Handle auto-closing brackets and quotes (single cursor mode)
     if (autoCloseBrackets && event->text().length() == 1) {
         QChar typedChar = event->text()[0];
         if (isAutoClosingChar(typedChar) && !textCursor().hasSelection()) {
@@ -789,4 +899,301 @@ void LineNumberArea::mousePressEvent(QMouseEvent *event)
     }
 
     QWidget::mousePressEvent(event);
+}
+
+// ============================================================================
+// Multiple Cursors Implementation
+// ============================================================================
+
+void CodeEditor::clearExtraCursors()
+{
+    extraCursors.clear();
+    lastSearchText.clear();
+    viewport()->update();
+}
+
+void CodeEditor::addCursorAtPosition(const QTextCursor &cursor)
+{
+    // Check if cursor already exists at this position
+    for (const QTextCursor &existing : extraCursors) {
+        if (existing.position() == cursor.position()) {
+            return; // Already have a cursor here
+        }
+    }
+
+    // Add the main cursor if this is the first extra cursor
+    if (extraCursors.isEmpty()) {
+        extraCursors.append(textCursor());
+    }
+
+    extraCursors.append(cursor);
+    sortCursors();
+    mergeCursors();
+    viewport()->update();
+}
+
+void CodeEditor::selectNextOccurrence()
+{
+    QTextCursor mainCursor = textCursor();
+    QString selectedText = mainCursor.selectedText();
+
+    // If nothing is selected, select the word under cursor
+    if (selectedText.isEmpty()) {
+        mainCursor.select(QTextCursor::WordUnderCursor);
+        selectedText = mainCursor.selectedText();
+        if (selectedText.isEmpty()) {
+            return; // Nothing to select
+        }
+        setTextCursor(mainCursor);
+        lastSearchText = selectedText;
+        return;
+    }
+
+    // Store the search text from first selection
+    if (lastSearchText.isEmpty()) {
+        lastSearchText = selectedText;
+    }
+
+    // Find next occurrence after the last cursor
+    int searchStart = mainCursor.selectionEnd();
+    if (!extraCursors.isEmpty()) {
+        searchStart = extraCursors.last().selectionEnd();
+    }
+
+    QTextDocument *doc = document();
+    QTextCursor searchCursor(doc);
+    searchCursor.setPosition(searchStart);
+
+    // Search forward
+    searchCursor = doc->find(lastSearchText, searchCursor);
+
+    // If not found forward, wrap around from the beginning
+    if (searchCursor.isNull()) {
+        searchCursor = QTextCursor(doc);
+        searchCursor = doc->find(lastSearchText, searchCursor);
+    }
+
+    if (!searchCursor.isNull()) {
+        // Add the current main cursor to extra cursors if this is the first addition
+        if (extraCursors.isEmpty()) {
+            extraCursors.append(mainCursor);
+        }
+
+        extraCursors.append(searchCursor);
+        sortCursors();
+        mergeCursors();
+
+        // Set the main cursor to the last one for visual feedback
+        setTextCursor(searchCursor);
+        viewport()->update();
+    }
+}
+
+void CodeEditor::addCursorAbove()
+{
+    QTextCursor mainCursor = textCursor();
+    QTextBlock currentBlock = mainCursor.block();
+    int columnPos = mainCursor.position() - currentBlock.position();
+
+    // Move to previous block
+    QTextBlock aboveBlock = currentBlock.previous();
+    if (!aboveBlock.isValid()) {
+        return; // Already at first line
+    }
+
+    // Create cursor at same column position in the line above
+    QTextCursor newCursor(aboveBlock);
+    int targetPos = qMin(columnPos, aboveBlock.length() - 1);
+    newCursor.setPosition(aboveBlock.position() + targetPos);
+
+    // Add the main cursor to extra cursors if this is the first multi-cursor operation
+    if (extraCursors.isEmpty()) {
+        extraCursors.append(mainCursor);
+    }
+
+    extraCursors.append(newCursor);
+    setTextCursor(newCursor); // Move main cursor up
+    sortCursors();
+    mergeCursors();
+    viewport()->update();
+}
+
+void CodeEditor::addCursorBelow()
+{
+    QTextCursor mainCursor = textCursor();
+    QTextBlock currentBlock = mainCursor.block();
+    int columnPos = mainCursor.position() - currentBlock.position();
+
+    // Move to next block
+    QTextBlock belowBlock = currentBlock.next();
+    if (!belowBlock.isValid()) {
+        return; // Already at last line
+    }
+
+    // Create cursor at same column position in the line below
+    QTextCursor newCursor(belowBlock);
+    int targetPos = qMin(columnPos, belowBlock.length() - 1);
+    newCursor.setPosition(belowBlock.position() + targetPos);
+
+    // Add the main cursor to extra cursors if this is the first multi-cursor operation
+    if (extraCursors.isEmpty()) {
+        extraCursors.append(mainCursor);
+    }
+
+    extraCursors.append(newCursor);
+    setTextCursor(newCursor); // Move main cursor down
+    sortCursors();
+    mergeCursors();
+    viewport()->update();
+}
+
+void CodeEditor::sortCursors()
+{
+    std::sort(extraCursors.begin(), extraCursors.end(),
+              [](const QTextCursor &a, const QTextCursor &b) {
+                  return a.position() < b.position();
+              });
+}
+
+void CodeEditor::mergeCursors()
+{
+    if (extraCursors.size() < 2) {
+        return;
+    }
+
+    QList<QTextCursor> merged;
+    merged.append(extraCursors.first());
+
+    for (int i = 1; i < extraCursors.size(); ++i) {
+        QTextCursor &last = merged.last();
+        const QTextCursor &current = extraCursors[i];
+
+        // Check if cursors overlap or are at the same position
+        if (current.position() <= last.selectionEnd() &&
+            current.position() >= last.selectionStart()) {
+            // Merge by extending the selection
+            int newEnd = qMax(last.selectionEnd(), current.selectionEnd());
+            int newStart = qMin(last.selectionStart(), current.selectionStart());
+            last.setPosition(newStart);
+            last.setPosition(newEnd, QTextCursor::KeepAnchor);
+        } else {
+            merged.append(current);
+        }
+    }
+
+    extraCursors = merged;
+}
+
+void CodeEditor::insertTextAtAllCursors(const QString &text)
+{
+    if (extraCursors.isEmpty()) {
+        return; // Normal single cursor behavior handled by default
+    }
+
+    // Start edit block for undo
+    QTextCursor mainCursor = textCursor();
+    mainCursor.beginEditBlock();
+
+    // Insert text at all cursors, starting from the last to preserve positions
+    for (int i = extraCursors.size() - 1; i >= 0; --i) {
+        QTextCursor cursor = extraCursors[i];
+        cursor.insertText(text);
+        extraCursors[i] = cursor;
+    }
+
+    mainCursor.endEditBlock();
+
+    // Update main cursor to last position
+    if (!extraCursors.isEmpty()) {
+        setTextCursor(extraCursors.last());
+    }
+
+    viewport()->update();
+}
+
+void CodeEditor::removeTextAtAllCursors(int length)
+{
+    if (extraCursors.isEmpty()) {
+        return; // Normal single cursor behavior handled by default
+    }
+
+    QTextCursor mainCursor = textCursor();
+    mainCursor.beginEditBlock();
+
+    // Remove text at all cursors, starting from the last to preserve positions
+    for (int i = extraCursors.size() - 1; i >= 0; --i) {
+        QTextCursor cursor = extraCursors[i];
+
+        // Remove selection if any, otherwise remove characters
+        if (cursor.hasSelection()) {
+            cursor.removeSelectedText();
+        } else {
+            // Remove 'length' characters before cursor
+            for (int j = 0; j < length && !cursor.atBlockStart(); ++j) {
+                cursor.deletePreviousChar();
+            }
+        }
+
+        extraCursors[i] = cursor;
+    }
+
+    mainCursor.endEditBlock();
+
+    // Update main cursor to last position
+    if (!extraCursors.isEmpty()) {
+        setTextCursor(extraCursors.last());
+    }
+
+    viewport()->update();
+}
+
+void CodeEditor::drawCursor(QPainter &painter, const QTextCursor &cursor)
+{
+    QRect rect = QPlainTextEdit::cursorRect(cursor);
+    if (rect.isNull()) {
+        return;
+    }
+
+    // Draw cursor line
+    painter.setPen(QPen(palette().color(QPalette::Text), 2));
+    painter.drawLine(rect.topLeft(), rect.bottomLeft());
+
+    // If there's a selection, highlight it
+    if (cursor.hasSelection()) {
+        int start = cursor.selectionStart();
+        int end = cursor.selectionEnd();
+
+        QTextCursor tempCursor(document());
+        tempCursor.setPosition(start);
+        tempCursor.setPosition(end, QTextCursor::KeepAnchor);
+
+        // Get the selection rectangles
+        QList<QTextLayout::FormatRange> selections;
+        QTextLayout::FormatRange selection;
+        selection.start = start;
+        selection.length = end - start;
+        selection.format.setBackground(palette().color(QPalette::Highlight));
+        selection.format.setForeground(palette().color(QPalette::HighlightedText));
+
+        // This is a simplified version - full implementation would need
+        // to handle multi-line selections properly
+    }
+}
+
+void CodeEditor::mousePressEvent(QMouseEvent *event)
+{
+    // Check for Ctrl+Click to add cursor
+    if (event->modifiers() & Qt::ControlModifier) {
+        QTextCursor cursor = cursorForPosition(event->pos());
+        addCursorAtPosition(cursor);
+        event->accept();
+        return;
+    }
+
+    // Clear extra cursors on normal click
+    if (!extraCursors.isEmpty()) {
+        clearExtraCursors();
+    }
+
+    QPlainTextEdit::mousePressEvent(event);
 }

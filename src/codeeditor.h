@@ -4,6 +4,8 @@
 #include <QPlainTextEdit>
 #include <QWidget>
 #include <QSet>
+#include <QList>
+#include <QTextCursor>
 
 class LineNumberArea;
 
@@ -47,10 +49,20 @@ public:
     bool isAutoCloseBracketsEnabled() const { return autoCloseBrackets; }
     bool isSmartBackspaceEnabled() const { return smartBackspace; }
 
+    // Multiple cursors features
+    void addCursorAtPosition(const QTextCursor &cursor);
+    void clearExtraCursors();
+    void selectNextOccurrence();
+    void addCursorAbove();
+    void addCursorBelow();
+    bool hasMultipleCursors() const { return !extraCursors.isEmpty(); }
+    int cursorCount() const { return extraCursors.isEmpty() ? 1 : extraCursors.size() + 1; }
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
     void paintEvent(QPaintEvent *event) override;
     void keyPressEvent(QKeyEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
 
 private slots:
     void updateLineNumberAreaWidth(int newBlockCount);
@@ -71,6 +83,10 @@ private:
     bool autoIndent;
     bool autoCloseBrackets;
     bool smartBackspace;
+
+    // Multiple cursors
+    QList<QTextCursor> extraCursors;
+    QString lastSearchText;
 
     struct BracketInfo {
         QChar character;
@@ -95,6 +111,13 @@ private:
     void handleAutoIndent();
     void handleAutoCloseBracket(QChar openChar);
     void handleSmartBackspace();
+
+    // Multiple cursor helpers
+    void insertTextAtAllCursors(const QString &text);
+    void removeTextAtAllCursors(int length);
+    void drawCursor(QPainter &painter, const QTextCursor &cursor);
+    void sortCursors();
+    void mergeCursors();
 
     QSet<int> foldedBlocks;  // Track which lines are folded
 };
