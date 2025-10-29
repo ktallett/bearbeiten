@@ -58,6 +58,12 @@ public:
     bool hasMultipleCursors() const { return !extraCursors.isEmpty(); }
     int cursorCount() const { return extraCursors.isEmpty() ? 1 : extraCursors.size() + 1; }
 
+    // Indentation guides
+    void setShowIndentationGuides(bool show);
+    void setHighlightActiveIndent(bool highlight);
+    bool isShowingIndentationGuides() const { return showIndentationGuides; }
+    bool isHighlightingActiveIndent() const { return highlightActiveIndent; }
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
     void paintEvent(QPaintEvent *event) override;
@@ -87,6 +93,10 @@ private:
     // Multiple cursors
     QList<QTextCursor> extraCursors;
     QString lastSearchText;
+
+    // Indentation guides
+    bool showIndentationGuides;
+    bool highlightActiveIndent;
 
     struct BracketInfo {
         QChar character;
@@ -118,6 +128,11 @@ private:
     void drawCursor(QPainter &painter, const QTextCursor &cursor);
     void sortCursors();
     void mergeCursors();
+
+    // Indentation guide helpers
+    int getBlockIndentLevel(const QTextBlock &block);
+    int getActiveIndentLevel();
+    void drawIndentationGuides(QPainter &painter);
 
     QSet<int> foldedBlocks;  // Track which lines are folded
 };

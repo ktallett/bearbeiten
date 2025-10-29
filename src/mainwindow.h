@@ -126,6 +126,10 @@ private slots:
     // Minimap slots
     void toggleMinimap();
 
+    // Indentation guide slots
+    void toggleIndentationGuides();
+    void toggleActiveIndentHighlight();
+
     // Find/Replace slots
     void performFind(const QString &text, bool forward, bool caseSensitive, bool wholeWords, bool useRegex);
     void performReplace(const QString &findText, const QString &replaceText, bool caseSensitive, bool wholeWords, bool useRegex);
@@ -244,6 +248,12 @@ private:
     // Minimap components
     bool minimapEnabled;
     QAction *minimapAction;
+
+    // Indentation guide components
+    bool indentationGuidesEnabled;
+    bool activeIndentHighlightEnabled;
+    QAction *indentationGuidesAction;
+    QAction *activeIndentHighlightAction;
 
     // Smart editing components
     bool trimWhitespaceOnSave;

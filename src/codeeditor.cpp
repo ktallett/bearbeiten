@@ -7,7 +7,8 @@
 
 CodeEditor::CodeEditor(QWidget *parent) : QPlainTextEdit(parent), compactMode(false),
     showWrapIndicator(true), showColumnRuler(false), wrapColumn(80),
-    autoIndent(true), autoCloseBrackets(true), smartBackspace(true)
+    autoIndent(true), autoCloseBrackets(true), smartBackspace(true),
+    showIndentationGuides(true), highlightActiveIndent(true)
 {
     lineNumberArea = new LineNumberArea(this);
 
@@ -179,6 +180,12 @@ void CodeEditor::paintEvent(QPaintEvent *event)
 {
     // Call base class paint event first
     QPlainTextEdit::paintEvent(event);
+
+    // Draw indentation guides first (so they appear behind text)
+    if (showIndentationGuides) {
+        QPainter painter(viewport());
+        drawIndentationGuides(painter);
+    }
 
     // Draw column ruler if enabled
     if (showColumnRuler && wrapColumn > 0) {
@@ -1196,4 +1203,123 @@ void CodeEditor::mousePressEvent(QMouseEvent *event)
     }
 
     QPlainTextEdit::mousePressEvent(event);
+}
+
+// ============================================================================
+// Indentation Guides Implementation
+// ============================================================================
+
+void CodeEditor::setShowIndentationGuides(bool show)
+{
+    showIndentationGuides = show;
+    viewport()->update();
+}
+
+void CodeEditor::setHighlightActiveIndent(bool highlight)
+{
+    highlightActiveIndent = highlight;
+    viewport()->update();
+}
+
+int CodeEditor::getBlockIndentLevel(const QTextBlock &block)
+{
+    if (!block.isValid()) {
+        return 0;
+    }
+
+    QString text = block.text();
+    int indentLevel = 0;
+    int tabWidth = 4; // Standard tab width
+
+    for (int i = 0; i < text.length(); ++i) {
+        if (text[i] == ' ') {
+            indentLevel++;
+        } else if (text[i] == '\t') {
+            indentLevel += tabWidth;
+        } else {
+            // First non-whitespace character found
+            break;
+        }
+    }
+
+    return indentLevel;
+}
+
+int CodeEditor::getActiveIndentLevel()
+{
+    QTextCursor cursor = textCursor();
+    QTextBlock currentBlock = cursor.block();
+
+    if (!currentBlock.isValid()) {
+        return 0;
+    }
+
+    // Get the indent level of the current line
+    int currentIndent = getBlockIndentLevel(currentBlock);
+
+    // If we're on a line with no indentation, look at surrounding lines
+    if (currentIndent == 0) {
+        // Check previous non-empty lines
+        QTextBlock prevBlock = currentBlock.previous();
+        while (prevBlock.isValid() && prevBlock.text().trimmed().isEmpty()) {
+            prevBlock = prevBlock.previous();
+        }
+        if (prevBlock.isValid()) {
+            currentIndent = getBlockIndentLevel(prevBlock);
+        }
+    }
+
+    return currentIndent;
+}
+
+void CodeEditor::drawIndentationGuides(QPainter &painter)
+{
+    if (!showIndentationGuides) {
+        return;
+    }
+
+    QFontMetrics metrics(font());
+    int spaceWidth = metrics.horizontalAdvance(' ');
+    int tabWidth = 4; // Standard tab width
+    int indentWidth = spaceWidth * tabWidth;
+
+    // Get active indent level for highlighting
+    int activeIndent = highlightActiveIndent ? getActiveIndentLevel() : -1;
+
+    // Color for normal indent guides (subtle)
+    QColor normalColor = palette().color(QPalette::Mid);
+    normalColor.setAlpha(50);
+
+    // Color for active indent guide (more visible)
+    QColor activeColor = palette().color(QPalette::Highlight);
+    activeColor.setAlpha(100);
+
+    QTextBlock block = firstVisibleBlock();
+    int blockNumber = block.blockNumber();
+    int top = qRound(blockBoundingGeometry(block).translated(contentOffset()).top());
+    int bottom = top + qRound(blockBoundingRect(block).height());
+
+    while (block.isValid() && top <= viewport()->rect().bottom()) {
+        if (block.isVisible() && bottom >= viewport()->rect().top()) {
+            int blockIndent = getBlockIndentLevel(block);
+
+            // Draw vertical lines for each indent level
+            for (int level = indentWidth; level < blockIndent; level += indentWidth) {
+                int x = level + contentOffset().x();
+
+                // Check if this is the active indent level
+                bool isActive = (highlightActiveIndent &&
+                               level >= activeIndent - indentWidth &&
+                               level <= activeIndent);
+
+                painter.setPen(isActive ? activeColor : normalColor);
+                painter.drawLine(x, top, x, bottom);
+            }
+        }
+
+        block = block.next();
+        top = bottom;
+        bottom = top + qRound(blockBoundingRect(block).height());
+        ++blockNumber;
+    }
 }

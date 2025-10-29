@@ -15,7 +15,9 @@ MainWindow::MainWindow(QWidget *parent)
       projectPanelVisible(false), outlinePanelVisible(false), isSmallScreen(false), autoSaveTimer(nullptr), autoSaveEnabled(true), autoSaveInterval(30), autoSaveAction(nullptr),
       isDarkTheme(false), themeAction(nullptr), lineWrapEnabled(true), wordWrapMode(true), showColumnRuler(false), showWrapIndicator(true), wrapColumn(80),
       lineWrapAction(nullptr), wordWrapAction(nullptr), columnRulerAction(nullptr), wrapIndicatorAction(nullptr),
-      minimapEnabled(false), minimapAction(nullptr), trimWhitespaceOnSave(true), autoIndentEnabled(true), autoCloseBracketsEnabled(true), smartBackspaceEnabled(true),
+      minimapEnabled(false), minimapAction(nullptr),
+      indentationGuidesEnabled(true), activeIndentHighlightEnabled(true), indentationGuidesAction(nullptr), activeIndentHighlightAction(nullptr),
+      trimWhitespaceOnSave(true), autoIndentEnabled(true), autoCloseBracketsEnabled(true), smartBackspaceEnabled(true),
       findDialog(nullptr), goToLineDialog(nullptr), symbolSearchDialog(nullptr)
 {
     detectScreenSize();
@@ -332,6 +334,22 @@ void MainWindow::setupMenus()
     connect(minimapAction, &QAction::triggered, this, &MainWindow::toggleMinimap);
     viewMenu->addAction(minimapAction);
 
+    viewMenu->addSeparator();
+
+    indentationGuidesAction = new QAction(tr("Show &Indentation Guides"), this);
+    indentationGuidesAction->setCheckable(true);
+    indentationGuidesAction->setChecked(indentationGuidesEnabled);
+    indentationGuidesAction->setToolTip(tr("Show vertical lines at indentation levels"));
+    connect(indentationGuidesAction, &QAction::triggered, this, &MainWindow::toggleIndentationGuides);
+    viewMenu->addAction(indentationGuidesAction);
+
+    activeIndentHighlightAction = new QAction(tr("Highlight Active Indent"), this);
+    activeIndentHighlightAction->setCheckable(true);
+    activeIndentHighlightAction->setChecked(activeIndentHighlightEnabled);
+    activeIndentHighlightAction->setToolTip(tr("Highlight the indent level at cursor position"));
+    connect(activeIndentHighlightAction, &QAction::triggered, this, &MainWindow::toggleActiveIndentHighlight);
+    viewMenu->addAction(activeIndentHighlightAction);
+
     // Tools menu for auto-save
     QMenu *toolsMenu = menuBar()->addMenu(tr("&Tools"));
 
@@ -609,6 +627,10 @@ void MainWindow::createNewTab(const QString &fileName)
     editor->setAutoIndent(autoIndentEnabled);
     editor->setAutoCloseBrackets(autoCloseBracketsEnabled);
     editor->setSmartBackspace(smartBackspaceEnabled);
+
+    // Apply indentation guide settings
+    editor->setShowIndentationGuides(indentationGuidesEnabled);
+    editor->setHighlightActiveIndent(activeIndentHighlightEnabled);
 
     // Create syntax highlighter for this tab
     JsonSyntaxHighlighter *highlighter = new JsonSyntaxHighlighter(editor->document());
@@ -1355,6 +1377,70 @@ void MainWindow::toggleMinimap()
     saveSettings();
 }
 
+void MainWindow::toggleIndentationGuides()
+{
+    indentationGuidesEnabled = !indentationGuidesEnabled;
+    if (indentationGuidesAction) {
+        indentationGuidesAction->setChecked(indentationGuidesEnabled);
+    }
+
+    // Apply to all open editors in left tab widget
+    for (int i = 0; i < leftTabWidget->count(); ++i) {
+        QWidget *container = leftTabWidget->widget(i);
+        if (container) {
+            CodeEditor *editor = container->findChild<CodeEditor*>();
+            if (editor) {
+                editor->setShowIndentationGuides(indentationGuidesEnabled);
+            }
+        }
+    }
+
+    // Apply to all open editors in right tab widget
+    for (int i = 0; i < rightTabWidget->count(); ++i) {
+        QWidget *container = rightTabWidget->widget(i);
+        if (container) {
+            CodeEditor *editor = container->findChild<CodeEditor*>();
+            if (editor) {
+                editor->setShowIndentationGuides(indentationGuidesEnabled);
+            }
+        }
+    }
+
+    saveSettings();
+}
+
+void MainWindow::toggleActiveIndentHighlight()
+{
+    activeIndentHighlightEnabled = !activeIndentHighlightEnabled;
+    if (activeIndentHighlightAction) {
+        activeIndentHighlightAction->setChecked(activeIndentHighlightEnabled);
+    }
+
+    // Apply to all open editors in left tab widget
+    for (int i = 0; i < leftTabWidget->count(); ++i) {
+        QWidget *container = leftTabWidget->widget(i);
+        if (container) {
+            CodeEditor *editor = container->findChild<CodeEditor*>();
+            if (editor) {
+                editor->setHighlightActiveIndent(activeIndentHighlightEnabled);
+            }
+        }
+    }
+
+    // Apply to all open editors in right tab widget
+    for (int i = 0; i < rightTabWidget->count(); ++i) {
+        QWidget *container = rightTabWidget->widget(i);
+        if (container) {
+            CodeEditor *editor = container->findChild<CodeEditor*>();
+            if (editor) {
+                editor->setHighlightActiveIndent(activeIndentHighlightEnabled);
+            }
+        }
+    }
+
+    saveSettings();
+}
+
 void MainWindow::saveSettings()
 {
     QSettings settings;
@@ -1367,6 +1453,8 @@ void MainWindow::saveSettings()
     settings.setValue("showWrapIndicator", showWrapIndicator);
     settings.setValue("wrapColumn", wrapColumn);
     settings.setValue("minimapEnabled", minimapEnabled);
+    settings.setValue("indentationGuidesEnabled", indentationGuidesEnabled);
+    settings.setValue("activeIndentHighlightEnabled", activeIndentHighlightEnabled);
     settings.setValue("trimWhitespaceOnSave", trimWhitespaceOnSave);
     settings.setValue("autoIndentEnabled", autoIndentEnabled);
     settings.setValue("autoCloseBracketsEnabled", autoCloseBracketsEnabled);
@@ -1384,6 +1472,8 @@ void MainWindow::loadSettings()
     showWrapIndicator = settings.value("showWrapIndicator", true).toBool();
     wrapColumn = settings.value("wrapColumn", 80).toInt();
     minimapEnabled = settings.value("minimapEnabled", false).toBool();
+    indentationGuidesEnabled = settings.value("indentationGuidesEnabled", true).toBool();
+    activeIndentHighlightEnabled = settings.value("activeIndentHighlightEnabled", true).toBool();
     trimWhitespaceOnSave = settings.value("trimWhitespaceOnSave", true).toBool();
     autoIndentEnabled = settings.value("autoIndentEnabled", true).toBool();
     autoCloseBracketsEnabled = settings.value("autoCloseBracketsEnabled", true).toBool();
