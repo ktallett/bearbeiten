@@ -303,6 +303,30 @@ src/breadcrumbbar.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/breadcrumbbar.cpp.s
 .PHONY : src/breadcrumbbar.cpp.s
 
+src/characterinspector.o: src/characterinspector.cpp.o
+.PHONY : src/characterinspector.o
+
+# target to build an object file
+src/characterinspector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/characterinspector.cpp.o
+.PHONY : src/characterinspector.cpp.o
+
+src/characterinspector.i: src/characterinspector.cpp.i
+.PHONY : src/characterinspector.i
+
+# target to preprocess a source file
+src/characterinspector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/characterinspector.cpp.i
+.PHONY : src/characterinspector.cpp.i
+
+src/characterinspector.s: src/characterinspector.cpp.s
+.PHONY : src/characterinspector.s
+
+# target to generate assembly for a file
+src/characterinspector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/characterinspector.cpp.s
+.PHONY : src/characterinspector.cpp.s
+
 src/codeeditor.o: src/codeeditor.cpp.o
 .PHONY : src/codeeditor.o
 
@@ -618,6 +642,9 @@ help:
 	@echo "... src/breadcrumbbar.o"
 	@echo "... src/breadcrumbbar.i"
 	@echo "... src/breadcrumbbar.s"
+	@echo "... src/characterinspector.o"
+	@echo "... src/characterinspector.i"
+	@echo "... src/characterinspector.s"
 	@echo "... src/codeeditor.o"
 	@echo "... src/codeeditor.i"
 	@echo "... src/codeeditor.s"

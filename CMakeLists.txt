@@ -34,6 +34,8 @@ set(SOURCES
     src/minimap.h
     src/breadcrumbbar.cpp
     src/breadcrumbbar.h
+    src/characterinspector.cpp
+    src/characterinspector.h
 )
 
 qt6_add_executable(bearbeiten ${SOURCES})

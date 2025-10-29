@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
       minimapEnabled(false), minimapAction(nullptr),
       indentationGuidesEnabled(true), activeIndentHighlightEnabled(true), indentationGuidesAction(nullptr), activeIndentHighlightAction(nullptr),
       trimWhitespaceOnSave(true), autoIndentEnabled(true), autoCloseBracketsEnabled(true), smartBackspaceEnabled(true),
-      findDialog(nullptr), goToLineDialog(nullptr), symbolSearchDialog(nullptr)
+      findDialog(nullptr), goToLineDialog(nullptr), symbolSearchDialog(nullptr), characterInspector(nullptr)
 {
     detectScreenSize();
 
@@ -217,6 +217,14 @@ void MainWindow::setupMenus()
     goToSymbolAction->setShortcut(QKeySequence("Ctrl+Shift+O"));
     connect(goToSymbolAction, &QAction::triggered, this, &MainWindow::showSymbolSearchDialog);
     editMenu->addAction(goToSymbolAction);
+
+    editMenu->addSeparator();
+
+    QAction *characterInspectorAction = new QAction(tr("&Inspect Character..."), this);
+    characterInspectorAction->setShortcut(QKeySequence("Ctrl+Shift+I"));
+    characterInspectorAction->setToolTip(tr("Show Unicode information for character at cursor"));
+    connect(characterInspectorAction, &QAction::triggered, this, &MainWindow::showCharacterInspector);
+    editMenu->addAction(characterInspectorAction);
 
     // View menu for split functionality
     QMenu *viewMenu = menuBar()->addMenu(tr("&View"));
@@ -2115,4 +2123,30 @@ void MainWindow::resizeEvent(QResizeEvent *event)
             toggleProjectPanel();
         }
     }
+}
+
+void MainWindow::showCharacterInspector()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (!editor) {
+        return;
+    }
+
+    // Create character inspector if it doesn't exist
+    if (!characterInspector) {
+        characterInspector = new CharacterInspector(this);
+    }
+
+    // Get the cursor position
+    QTextCursor cursor = editor->textCursor();
+    int position = cursor.position();
+
+    // Get the document text
+    QString text = editor->toPlainText();
+
+    // Show the character inspector with the character at cursor
+    characterInspector->inspectCharacterAtPosition(text, position);
+    characterInspector->show();
+    characterInspector->raise();
+    characterInspector->activateWindow();
 }

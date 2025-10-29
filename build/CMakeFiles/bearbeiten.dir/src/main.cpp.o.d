@@ -499,4 +499,6 @@ CMakeFiles/bearbeiten.dir/src/main.cpp.o: \
  /usr/include/qt6/QtCore/QFileInfo /usr/include/qt6/QtCore/qfileinfo.h \
  /usr/include/qt6/QtGui/QDesktopServices \
  /usr/include/qt6/QtGui/qdesktopservices.h /usr/include/qt6/QtCore/QUrl \
- /usr/include/qt6/QtCore/qurl.h
+ /usr/include/qt6/QtCore/qurl.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/characterinspector.h \
+ /usr/include/qt6/QtCore/QChar /usr/include/qt6/QtCore/qchar.h

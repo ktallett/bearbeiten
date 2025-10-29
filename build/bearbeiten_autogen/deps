@@ -5,6 +5,8 @@ bearbeiten_autogen/timestamp: \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/moc_predefs.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.h \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/characterinspector.cpp \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/characterinspector.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.cpp \
@@ -294,6 +296,7 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/linux/types.h \
 	/usr/include/locale.h \
 	/usr/include/pthread.h \
+	/usr/include/qt6/QtCore/QChar \
 	/usr/include/qt6/QtCore/QDir \
 	/usr/include/qt6/QtCore/QFileInfo \
 	/usr/include/qt6/QtCore/QJsonArray \

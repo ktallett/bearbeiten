@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/breadcrumbbar.cpp.o"
   "CMakeFiles/bearbeiten.dir/src/breadcrumbbar.cpp.o.d"
+  "CMakeFiles/bearbeiten.dir/src/characterinspector.cpp.o"
+  "CMakeFiles/bearbeiten.dir/src/characterinspector.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/codeeditor.cpp.o"
   "CMakeFiles/bearbeiten.dir/src/codeeditor.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/finddialog.cpp.o"

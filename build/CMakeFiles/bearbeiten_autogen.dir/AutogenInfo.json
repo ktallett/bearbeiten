@@ -472,6 +472,12 @@
 			null
 		],
 		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/characterinspector.h",
+			"MU",
+			"UVLADIE3JM/moc_characterinspector.cpp",
+			null
+		],
+		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.h",
 			"MU",
 			"UVLADIE3JM/moc_codeeditor.cpp",
@@ -602,6 +608,11 @@
 	[
 		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/characterinspector.cpp",
 			"MU",
 			null
 		],

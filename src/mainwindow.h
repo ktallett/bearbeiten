@@ -35,6 +35,7 @@
 #include "outlinepanel.h"
 #include "projectpanel.h"
 #include "breadcrumbbar.h"
+#include "characterinspector.h"
 
 enum class ViewMode {
     Single,
@@ -145,6 +146,9 @@ private slots:
     // Breadcrumb slots
     void updateBreadcrumb();
     void updateBreadcrumbSymbol();
+
+    // Character inspector slots
+    void showCharacterInspector();
 
 private:
     void setupMenus();
@@ -270,6 +274,9 @@ private:
     // Symbol search components
     SymbolSearchDialog *symbolSearchDialog;
     SymbolExtractor symbolExtractor;
+
+    // Character inspector components
+    CharacterInspector *characterInspector;
 };
 
 #endif // MAINWINDOW_H
