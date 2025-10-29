@@ -492,7 +492,11 @@ CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.o: \
  /usr/include/qt6/QtGui/qfilesystemmodel.h /usr/include/qt6/QtCore/QDir \
  /usr/include/qt6/QtCore/qdir.h /usr/include/qt6/QtWidgets/QHeaderView \
  /usr/include/qt6/QtWidgets/qheaderview.h \
- /usr/include/qt6/QtCore/QTextStream \
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.h \
+ /usr/include/qt6/QtCore/QFileInfo /usr/include/qt6/QtCore/qfileinfo.h \
+ /usr/include/qt6/QtGui/QDesktopServices \
+ /usr/include/qt6/QtGui/qdesktopservices.h /usr/include/qt6/QtCore/QUrl \
+ /usr/include/qt6/QtCore/qurl.h /usr/include/qt6/QtCore/QTextStream \
  /usr/include/qt6/QtCore/qtextstream.h \
  /usr/include/qt6/QtCore/QStringConverter \
  /usr/include/qt6/QtCore/qstringconverter.h \

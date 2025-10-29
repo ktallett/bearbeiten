@@ -101,7 +101,9 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "performReplaceAll",
         "performGoToLine",
         "updateLinePreview",
-        "performSymbolJump"
+        "performSymbolJump",
+        "updateBreadcrumb",
+        "updateBreadcrumbSymbol"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -232,6 +234,10 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void(int)>(62, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 32 },
         }}),
+        // Slot 'updateBreadcrumb'
+        QtMocHelpers::SlotData<void()>(63, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'updateBreadcrumbSymbol'
+        QtMocHelpers::SlotData<void()>(64, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -306,6 +312,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 46: _t->performGoToLine((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 47: _t->updateLinePreview((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 48: _t->performSymbolJump((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 49: _t->updateBreadcrumb(); break;
+        case 50: _t->updateBreadcrumbSymbol(); break;
         default: ;
         }
     }
@@ -330,14 +338,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 49)
+        if (_id < 51)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 49;
+        _id -= 51;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 49)
+        if (_id < 51)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 49;
+        _id -= 51;
     }
     return _id;
 }

@@ -9,7 +9,7 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), mainSplitter(nullptr), editorSplitter(nullptr), leftTabWidget(nullptr), rightTabWidget(nullptr),
-      tabWidget(nullptr), projectPanel(nullptr), outlinePanel(nullptr), mainToolBar(nullptr), languageComboBox(nullptr), syntaxHighlighter(nullptr),
+      tabWidget(nullptr), projectPanel(nullptr), outlinePanel(nullptr), breadcrumbBar(nullptr), mainToolBar(nullptr), languageComboBox(nullptr), syntaxHighlighter(nullptr),
       lineCountLabel(nullptr), wordCountLabel(nullptr), characterCountLabel(nullptr),
       activeTabInfoMap(nullptr), currentViewMode(ViewMode::Single), focusedTabWidget(nullptr),
       projectPanelVisible(false), outlinePanelVisible(false), isSmallScreen(false), autoSaveTimer(nullptr), autoSaveEnabled(true), autoSaveInterval(30), autoSaveAction(nullptr),
@@ -64,9 +64,21 @@ void MainWindow::setupEditor()
     // Connect project panel signals
     connect(projectPanel, &ProjectPanel::fileRequested, this, &MainWindow::openProjectFromPanel);
 
+    // Create editor container with breadcrumb
+    QWidget *editorContainer = new QWidget();
+    QVBoxLayout *editorLayout = new QVBoxLayout(editorContainer);
+    editorLayout->setContentsMargins(0, 0, 0, 0);
+    editorLayout->setSpacing(0);
+
+    // Create breadcrumb bar
+    breadcrumbBar = new BreadcrumbBar();
+    editorLayout->addWidget(breadcrumbBar);
+
     // Create editor splitter for side-by-side view
     editorSplitter = new QSplitter(Qt::Horizontal);
-    mainSplitter->addWidget(editorSplitter);
+    editorLayout->addWidget(editorSplitter);
+
+    mainSplitter->addWidget(editorContainer);
 
     // Create outline panel
     outlinePanel = new OutlinePanel();
@@ -629,6 +641,9 @@ void MainWindow::createNewTab(const QString &fileName)
         updateStatusBar(); // Update line/word count
     });
 
+    // Connect cursor position changed signal to update breadcrumb
+    connect(editor, &CodeEditor::cursorPositionChanged, this, &MainWindow::updateBreadcrumbSymbol);
+
     // Set this tab as current
     tabWidget->setCurrentIndex(index);
 }
@@ -828,6 +843,9 @@ void MainWindow::onTabChanged(int index)
 
         // Update outline panel for the new tab
         updateOutlinePanel();
+
+        // Update breadcrumb bar for the new tab
+        updateBreadcrumb();
     }
 }
 
@@ -1927,6 +1945,73 @@ void MainWindow::adaptUIForLargeScreen()
             layout->setContentsMargins(4, 4, 4, 4);
             layout->setSpacing(4);
         }
+    }
+}
+
+void MainWindow::updateBreadcrumb()
+{
+    if (!breadcrumbBar) {
+        return;
+    }
+
+    CodeEditor *editor = getCurrentEditor();
+    if (!editor) {
+        breadcrumbBar->clear();
+        return;
+    }
+
+    int currentIndex = tabWidget->currentIndex();
+    QString filePath = getFilePathAt(currentIndex);
+
+    if (filePath.isEmpty() || filePath == tr("Untitled")) {
+        breadcrumbBar->clear();
+        return;
+    }
+
+    breadcrumbBar->setFilePath(filePath);
+    updateBreadcrumbSymbol();
+}
+
+void MainWindow::updateBreadcrumbSymbol()
+{
+    if (!breadcrumbBar) {
+        return;
+    }
+
+    CodeEditor *editor = getCurrentEditor();
+    if (!editor) {
+        return;
+    }
+
+    // Get current cursor position
+    QTextCursor cursor = editor->textCursor();
+    int currentLine = cursor.blockNumber() + 1;
+
+    // Extract symbols from the current document
+    QString documentText = editor->toPlainText();
+    QList<SymbolInfo> symbols = symbolExtractor.extractSymbols(documentText);
+
+    // Find the symbol that contains the current line
+    QString currentSymbolName;
+    QString currentSymbolType;
+
+    for (const SymbolInfo &symbol : symbols) {
+        if (symbol.lineNumber <= currentLine) {
+            // This is a candidate - the cursor is at or after this symbol
+            // In the absence of scope information, we'll use the most recent symbol
+            currentSymbolName = symbol.name;
+            currentSymbolType = symbol.type;
+        } else {
+            // We've gone past the cursor position
+            break;
+        }
+    }
+
+    if (!currentSymbolName.isEmpty()) {
+        breadcrumbBar->setCurrentSymbol(currentSymbolName, currentSymbolType);
+    } else {
+        // Clear the symbol part but keep the file path
+        breadcrumbBar->setCurrentSymbol("", "");
     }
 }
 

@@ -3,6 +3,8 @@ bearbeiten_autogen/timestamp: \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/3.31.6/CMakeSystem.cmake \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/moc_predefs.h \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.cpp \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.cpp \
@@ -293,6 +295,7 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/locale.h \
 	/usr/include/pthread.h \
 	/usr/include/qt6/QtCore/QDir \
+	/usr/include/qt6/QtCore/QFileInfo \
 	/usr/include/qt6/QtCore/QJsonArray \
 	/usr/include/qt6/QtCore/QJsonObject \
 	/usr/include/qt6/QtCore/QList \
@@ -307,6 +310,7 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/qt6/QtCore/QString \
 	/usr/include/qt6/QtCore/QStringList \
 	/usr/include/qt6/QtCore/QTimer \
+	/usr/include/qt6/QtCore/QUrl \
 	/usr/include/qt6/QtCore/QVector \
 	/usr/include/qt6/QtCore/q17memory.h \
 	/usr/include/qt6/QtCore/q20functional.h \
@@ -469,6 +473,7 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qxptype_traits.h \
 	/usr/include/qt6/QtCore/qyieldcpu.h \
 	/usr/include/qt6/QtGui/QAction \
+	/usr/include/qt6/QtGui/QDesktopServices \
 	/usr/include/qt6/QtGui/QFileSystemModel \
 	/usr/include/qt6/QtGui/QGuiApplication \
 	/usr/include/qt6/QtGui/QResizeEvent \
@@ -484,6 +489,7 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/qt6/QtGui/qbrush.h \
 	/usr/include/qt6/QtGui/qcolor.h \
 	/usr/include/qt6/QtGui/qcursor.h \
+	/usr/include/qt6/QtGui/qdesktopservices.h \
 	/usr/include/qt6/QtGui/qevent.h \
 	/usr/include/qt6/QtGui/qeventpoint.h \
 	/usr/include/qt6/QtGui/qfilesystemmodel.h \

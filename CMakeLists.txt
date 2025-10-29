@@ -32,6 +32,8 @@ set(SOURCES
     src/projectpanel.h
     src/minimap.cpp
     src/minimap.h
+    src/breadcrumbbar.cpp
+    src/breadcrumbbar.h
 )
 
 qt6_add_executable(bearbeiten ${SOURCES})

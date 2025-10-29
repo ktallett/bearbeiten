@@ -279,6 +279,30 @@ build/.qt/rcc/qrc_resources.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.s
 .PHONY : build/.qt/rcc/qrc_resources.cpp.s
 
+src/breadcrumbbar.o: src/breadcrumbbar.cpp.o
+.PHONY : src/breadcrumbbar.o
+
+# target to build an object file
+src/breadcrumbbar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/breadcrumbbar.cpp.o
+.PHONY : src/breadcrumbbar.cpp.o
+
+src/breadcrumbbar.i: src/breadcrumbbar.cpp.i
+.PHONY : src/breadcrumbbar.i
+
+# target to preprocess a source file
+src/breadcrumbbar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/breadcrumbbar.cpp.i
+.PHONY : src/breadcrumbbar.cpp.i
+
+src/breadcrumbbar.s: src/breadcrumbbar.cpp.s
+.PHONY : src/breadcrumbbar.s
+
+# target to generate assembly for a file
+src/breadcrumbbar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/breadcrumbbar.cpp.s
+.PHONY : src/breadcrumbbar.cpp.s
+
 src/codeeditor.o: src/codeeditor.cpp.o
 .PHONY : src/codeeditor.o
 
@@ -591,6 +615,9 @@ help:
 	@echo "... build/.qt/rcc/qrc_resources.o"
 	@echo "... build/.qt/rcc/qrc_resources.i"
 	@echo "... build/.qt/rcc/qrc_resources.s"
+	@echo "... src/breadcrumbbar.o"
+	@echo "... src/breadcrumbbar.i"
+	@echo "... src/breadcrumbbar.s"
 	@echo "... src/codeeditor.o"
 	@echo "... src/codeeditor.i"
 	@echo "... src/codeeditor.s"

@@ -34,6 +34,7 @@
 #include "symbolextractor.h"
 #include "outlinepanel.h"
 #include "projectpanel.h"
+#include "breadcrumbbar.h"
 
 enum class ViewMode {
     Single,
@@ -137,6 +138,10 @@ private slots:
     // Symbol search slots
     void performSymbolJump(int lineNumber);
 
+    // Breadcrumb slots
+    void updateBreadcrumb();
+    void updateBreadcrumbSymbol();
+
 private:
     void setupMenus();
     void setupEditor();
@@ -193,6 +198,7 @@ private:
     QTabWidget *tabWidget; // Points to active tab widget
     ProjectPanel *projectPanel;
     OutlinePanel *outlinePanel;
+    BreadcrumbBar *breadcrumbBar;
 
     // UI components
     QToolBar *mainToolBar;

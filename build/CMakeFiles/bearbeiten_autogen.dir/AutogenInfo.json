@@ -466,6 +466,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.h",
+			"MU",
+			"UVLADIE3JM/moc_breadcrumbbar.cpp",
+			null
+		],
+		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.h",
 			"MU",
 			"UVLADIE3JM/moc_codeeditor.cpp",
@@ -594,6 +600,11 @@
 	"SETTINGS_FILE" : "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/bearbeiten_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.cpp",
+			"MU",
+			null
+		],
 		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.cpp",
 			"MU",
