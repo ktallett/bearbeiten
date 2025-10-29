@@ -498,6 +498,8 @@ CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.o: \
  /usr/include/qt6/QtCore/qurl.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/characterinspector.h \
  /usr/include/qt6/QtCore/QChar /usr/include/qt6/QtCore/qchar.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.h \
+ /usr/include/qt6/QtCore/QByteArray /usr/include/qt6/QtCore/qbytearray.h \
  /usr/include/qt6/QtCore/QTextStream \
  /usr/include/qt6/QtCore/qtextstream.h \
  /usr/include/qt6/QtCore/QStringConverter \

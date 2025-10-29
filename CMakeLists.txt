@@ -36,6 +36,8 @@ set(SOURCES
     src/breadcrumbbar.h
     src/characterinspector.cpp
     src/characterinspector.h
+    src/encodingmanager.cpp
+    src/encodingmanager.h
 )
 
 qt6_add_executable(bearbeiten ${SOURCES})

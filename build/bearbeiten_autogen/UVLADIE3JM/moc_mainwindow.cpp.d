@@ -3,6 +3,7 @@
   /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.h \
   /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/characterinspector.h \
   /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.h \
   /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.h \
   /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.h \
   /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.h \
@@ -278,6 +279,7 @@
   /usr/include/linux/types.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
+  /usr/include/qt6/QtCore/QByteArray \
   /usr/include/qt6/QtCore/QChar \
   /usr/include/qt6/QtCore/QDir \
   /usr/include/qt6/QtCore/QFileInfo \

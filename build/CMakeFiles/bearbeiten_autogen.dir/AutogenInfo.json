@@ -484,6 +484,12 @@
 			null
 		],
 		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.h",
+			"MU",
+			"UVLADIE3JM/moc_encodingmanager.cpp",
+			null
+		],
+		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.h",
 			"MU",
 			"UVLADIE3JM/moc_finddialog.cpp",
@@ -618,6 +624,11 @@
 		],
 		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.cpp",
 			"MU",
 			null
 		],

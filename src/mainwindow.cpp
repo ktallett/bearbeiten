@@ -10,7 +10,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), mainSplitter(nullptr), editorSplitter(nullptr), leftTabWidget(nullptr), rightTabWidget(nullptr),
       tabWidget(nullptr), projectPanel(nullptr), outlinePanel(nullptr), breadcrumbBar(nullptr), mainToolBar(nullptr), languageComboBox(nullptr), syntaxHighlighter(nullptr),
-      lineCountLabel(nullptr), wordCountLabel(nullptr), characterCountLabel(nullptr),
+      lineCountLabel(nullptr), wordCountLabel(nullptr), characterCountLabel(nullptr), encodingLabel(nullptr),
       activeTabInfoMap(nullptr), currentViewMode(ViewMode::Single), focusedTabWidget(nullptr),
       projectPanelVisible(false), outlinePanelVisible(false), isSmallScreen(false), autoSaveTimer(nullptr), autoSaveEnabled(true), autoSaveInterval(30), autoSaveAction(nullptr),
       isDarkTheme(false), themeAction(nullptr), lineWrapEnabled(true), wordWrapMode(true), showColumnRuler(false), showWrapIndicator(true), wrapColumn(80),
@@ -269,6 +269,13 @@ void MainWindow::setupMenus()
 
     viewMenu->addSeparator();
 
+    QAction *changeEncodingAction = new QAction(tr("Change &Encoding..."), this);
+    changeEncodingAction->setToolTip(tr("Change file encoding"));
+    connect(changeEncodingAction, &QAction::triggered, this, &MainWindow::changeEncoding);
+    viewMenu->addAction(changeEncodingAction);
+
+    viewMenu->addSeparator();
+
     themeAction = new QAction(tr("&Dark Theme"), this);
     themeAction->setShortcut(QKeySequence("Ctrl+Shift+T"));
     themeAction->setCheckable(true);
@@ -475,8 +482,36 @@ bool MainWindow::saveDocument(const QString &fileName)
         editor->trimTrailingWhitespace();
     }
 
+    // Get current tab encoding
+    int currentIndex = tabWidget->currentIndex();
+    EncodingManager::Encoding encoding = EncodingManager::Encoding::UTF8;
+    if (currentIndex >= 0 && activeTabInfoMap->contains(currentIndex)) {
+        encoding = (*activeTabInfoMap)[currentIndex].encoding;
+    }
+
+    // Encode text using the selected encoding
+    QString text = editor->toPlainText();
+    QByteArray encodedData = EncodingManager::encode(text, encoding, false);
+
+    // Check if encoding failed (incompatible characters)
+    if (encodedData.isEmpty() && !text.isEmpty()) {
+        QMessageBox::StandardButton reply = QMessageBox::warning(this,
+            tr("Encoding Error"),
+            tr("The document contains characters incompatible with %1.\n\n"
+               "Would you like to change the encoding or cancel the save?")
+            .arg(EncodingManager::encodingName(encoding)),
+            QMessageBox::Save | QMessageBox::Cancel);
+
+        if (reply == QMessageBox::Save) {
+            // Save with lossy encoding (replace incompatible chars)
+            encodedData = EncodingManager::encode(text, encoding, true);
+        } else {
+            return false;
+        }
+    }
+
     QFile file(fileName);
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+    if (!file.open(QIODevice::WriteOnly)) {
         QMessageBox::warning(this, "Bearbeiten",
             QString("Cannot write file %1:\n%2")
             .arg(fileName)
@@ -484,9 +519,15 @@ bool MainWindow::saveDocument(const QString &fileName)
         return false;
     }
 
-    QTextStream out(&file);
-    out.setEncoding(QStringConverter::Utf8);
-    out << editor->toPlainText();
+    // Write BOM if applicable
+    QByteArray bom = EncodingManager::getBOM(encoding);
+    if (!bom.isEmpty() && encoding != EncodingManager::Encoding::UTF8) {
+        // Only write BOM for non-UTF8 encodings (UTF-8 BOM is optional and often avoided)
+        file.write(bom);
+    }
+
+    file.write(encodedData);
+    file.close();
 
     setCurrentFile(fileName);
     return true;
@@ -495,7 +536,7 @@ bool MainWindow::saveDocument(const QString &fileName)
 void MainWindow::loadFile(const QString &fileName)
 {
     QFile file(fileName);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    if (!file.open(QIODevice::ReadOnly)) {
         QMessageBox::warning(this, "Bearbeiten",
             QString("Cannot read file %1:\n%2")
             .arg(fileName)
@@ -503,20 +544,32 @@ void MainWindow::loadFile(const QString &fileName)
         return;
     }
 
+    // Read file as raw bytes for encoding detection
+    QByteArray data = file.readAll();
+    file.close();
+
+    // Detect encoding
+    EncodingManager::Encoding detectedEncoding = EncodingManager::detectEncoding(data);
+
+    // Decode file content using detected encoding
+    QString content = EncodingManager::decode(data, detectedEncoding);
+
     // Create new tab for this file
     createNewTab(fileName);
 
     CodeEditor *editor = getCurrentEditor();
     if (editor) {
-        QTextStream in(&file);
-        in.setEncoding(QStringConverter::Utf8);
-        editor->setPlainText(in.readAll());
+        editor->setPlainText(content);
 
         setCurrentFile(fileName);
 
-        // Auto-detect and set syntax highlighting based on file extension
+        // Store detected encoding
         int currentTabIndex = tabWidget->currentIndex();
         if (currentTabIndex >= 0 && activeTabInfoMap->contains(currentTabIndex)) {
+            (*activeTabInfoMap)[currentTabIndex].encoding = detectedEncoding;
+            updateEncodingLabel();
+
+            // Auto-detect and set syntax highlighting based on file extension
             JsonSyntaxHighlighter *highlighter = (*activeTabInfoMap)[currentTabIndex].highlighter;
             if (highlighter) {
                 highlighter->setLanguageFromFilename(fileName);
@@ -588,6 +641,18 @@ void MainWindow::setupStatusBar()
 
     // Add the widget to the status bar
     statusBar()->addPermanentWidget(statusWidget);
+
+    // Create encoding label with clickable behavior
+    encodingLabel = new QLabel(tr("UTF-8"));
+    encodingLabel->setToolTip(tr("Click to change encoding"));
+    encodingLabel->setCursor(Qt::PointingHandCursor);
+    encodingLabel->setStyleSheet("QLabel { padding: 0 8px; }");
+
+    // Make it clickable using mouse tracking
+    encodingLabel->installEventFilter(this);
+    encodingLabel->setProperty("isEncodingLabel", true);
+
+    statusBar()->addPermanentWidget(encodingLabel);
 }
 
 void MainWindow::onLanguageChanged(int index)
@@ -1920,6 +1985,9 @@ void MainWindow::updateStatusBar()
     lineCountLabel->setText(tr("Lines: %1").arg(lineCount));
     wordCountLabel->setText(tr("Words: %1").arg(wordCount));
     characterCountLabel->setText(tr("Characters: %1").arg(charCount));
+
+    // Update encoding label
+    updateEncodingLabel();
 }
 
 // Responsive UI Methods
@@ -2149,4 +2217,103 @@ void MainWindow::showCharacterInspector()
     characterInspector->show();
     characterInspector->raise();
     characterInspector->activateWindow();
+}
+
+void MainWindow::updateEncodingLabel()
+{
+    if (!encodingLabel) {
+        return;
+    }
+
+    int currentIndex = tabWidget->currentIndex();
+    if (currentIndex >= 0 && activeTabInfoMap->contains(currentIndex)) {
+        EncodingManager::Encoding encoding = (*activeTabInfoMap)[currentIndex].encoding;
+        QString encodingName = EncodingManager::encodingName(encoding);
+        encodingLabel->setText(encodingName);
+    } else {
+        encodingLabel->setText(tr("UTF-8"));
+    }
+}
+
+void MainWindow::changeEncoding()
+{
+    int currentIndex = tabWidget->currentIndex();
+    if (currentIndex < 0) {
+        return;
+    }
+
+    // Get current encoding
+    EncodingManager::Encoding currentEncoding = EncodingManager::Encoding::UTF8;
+    if (activeTabInfoMap->contains(currentIndex)) {
+        currentEncoding = (*activeTabInfoMap)[currentIndex].encoding;
+    }
+
+    QString currentEncodingName = EncodingManager::encodingName(currentEncoding);
+
+    // Show dialog to select new encoding
+    QStringList encodings = EncodingManager::supportedEncodings();
+    bool ok;
+    QString selectedEncoding = QInputDialog::getItem(this,
+                                                      tr("Change Encoding"),
+                                                      tr("Select file encoding:"),
+                                                      encodings,
+                                                      encodings.indexOf(currentEncodingName),
+                                                      false,
+                                                      &ok);
+
+    if (ok && !selectedEncoding.isEmpty()) {
+        EncodingManager::Encoding newEncoding = EncodingManager::encodingFromName(selectedEncoding);
+
+        // Check if current content is compatible with new encoding
+        CodeEditor *editor = getCurrentEditor();
+        if (editor) {
+            QString text = editor->toPlainText();
+            if (!EncodingManager::isCompatible(text, newEncoding)) {
+                QList<QPair<int, QChar>> incompatible = EncodingManager::findIncompatibleCharacters(text, newEncoding);
+
+                QString warningMsg = tr("The current document contains %1 character(s) that cannot be represented in %2.\n\n"
+                                       "If you save with this encoding, these characters will be replaced with '?'.\n\n"
+                                       "Do you want to continue?")
+                                       .arg(incompatible.size())
+                                       .arg(selectedEncoding);
+
+                QMessageBox::StandardButton reply = QMessageBox::warning(this,
+                                                                         tr("Encoding Compatibility Warning"),
+                                                                         warningMsg,
+                                                                         QMessageBox::Yes | QMessageBox::No);
+
+                if (reply == QMessageBox::No) {
+                    return;
+                }
+            }
+        }
+
+        // Update encoding for current tab
+        if (activeTabInfoMap->contains(currentIndex)) {
+            (*activeTabInfoMap)[currentIndex].encoding = newEncoding;
+            updateEncodingLabel();
+
+            // Mark document as modified since encoding change
+            setTabModified(currentIndex, true);
+        }
+    }
+}
+
+void MainWindow::onEncodingLabelClicked()
+{
+    changeEncoding();
+}
+
+bool MainWindow::eventFilter(QObject *obj, QEvent *event)
+{
+    // Handle click on encoding label
+    if (obj == encodingLabel && event->type() == QEvent::MouseButtonPress) {
+        QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(event);
+        if (mouseEvent->button() == Qt::LeftButton) {
+            onEncodingLabelClicked();
+            return true;
+        }
+    }
+
+    return QMainWindow::eventFilter(obj, event);
 }

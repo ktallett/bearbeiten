@@ -515,6 +515,8 @@ CMakeFiles/bearbeiten.dir/bearbeiten_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtWidgets/qheaderview.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/breadcrumbbar.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/characterinspector.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/encodingmanager.h \
+ /usr/include/qt6/QtCore/QByteArray /usr/include/qt6/QtCore/qbytearray.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/moc_minimap.cpp \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/minimap.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/moc_outlinepanel.cpp \

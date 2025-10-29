@@ -351,6 +351,30 @@ src/codeeditor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/codeeditor.cpp.s
 .PHONY : src/codeeditor.cpp.s
 
+src/encodingmanager.o: src/encodingmanager.cpp.o
+.PHONY : src/encodingmanager.o
+
+# target to build an object file
+src/encodingmanager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.o
+.PHONY : src/encodingmanager.cpp.o
+
+src/encodingmanager.i: src/encodingmanager.cpp.i
+.PHONY : src/encodingmanager.i
+
+# target to preprocess a source file
+src/encodingmanager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.i
+.PHONY : src/encodingmanager.cpp.i
+
+src/encodingmanager.s: src/encodingmanager.cpp.s
+.PHONY : src/encodingmanager.s
+
+# target to generate assembly for a file
+src/encodingmanager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.s
+.PHONY : src/encodingmanager.cpp.s
+
 src/finddialog.o: src/finddialog.cpp.o
 .PHONY : src/finddialog.o
 
@@ -648,6 +672,9 @@ help:
 	@echo "... src/codeeditor.o"
 	@echo "... src/codeeditor.i"
 	@echo "... src/codeeditor.s"
+	@echo "... src/encodingmanager.o"
+	@echo "... src/encodingmanager.i"
+	@echo "... src/encodingmanager.s"
 	@echo "... src/finddialog.o"
 	@echo "... src/finddialog.i"
 	@echo "... src/finddialog.s"

@@ -106,7 +106,9 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "performSymbolJump",
         "updateBreadcrumb",
         "updateBreadcrumbSymbol",
-        "showCharacterInspector"
+        "showCharacterInspector",
+        "changeEncoding",
+        "onEncodingLabelClicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -247,6 +249,10 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(66, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'showCharacterInspector'
         QtMocHelpers::SlotData<void()>(67, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'changeEncoding'
+        QtMocHelpers::SlotData<void()>(68, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onEncodingLabelClicked'
+        QtMocHelpers::SlotData<void()>(69, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -326,6 +332,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 51: _t->updateBreadcrumb(); break;
         case 52: _t->updateBreadcrumbSymbol(); break;
         case 53: _t->showCharacterInspector(); break;
+        case 54: _t->changeEncoding(); break;
+        case 55: _t->onEncodingLabelClicked(); break;
         default: ;
         }
     }
@@ -350,14 +358,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 54)
+        if (_id < 56)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 54;
+        _id -= 56;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 54)
+        if (_id < 56)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 54;
+        _id -= 56;
     }
     return _id;
 }

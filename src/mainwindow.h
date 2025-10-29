@@ -36,6 +36,7 @@
 #include "projectpanel.h"
 #include "breadcrumbbar.h"
 #include "characterinspector.h"
+#include "encodingmanager.h"
 
 enum class ViewMode {
     Single,
@@ -46,10 +47,12 @@ struct TabInfo {
     QString filePath;
     JsonSyntaxHighlighter *highlighter;
     Minimap *minimap;
+    EncodingManager::Encoding encoding;
 
-    TabInfo() : highlighter(nullptr), minimap(nullptr) {}
-    TabInfo(const QString &path, JsonSyntaxHighlighter *hl, Minimap *mm = nullptr)
-        : filePath(path), highlighter(hl), minimap(mm) {}
+    TabInfo() : highlighter(nullptr), minimap(nullptr), encoding(EncodingManager::Encoding::UTF8) {}
+    TabInfo(const QString &path, JsonSyntaxHighlighter *hl, Minimap *mm = nullptr,
+            EncodingManager::Encoding enc = EncodingManager::Encoding::UTF8)
+        : filePath(path), highlighter(hl), minimap(mm), encoding(enc) {}
 };
 
 class MainWindow : public QMainWindow
@@ -62,6 +65,7 @@ public:
 
 protected:
     void resizeEvent(QResizeEvent *event) override;
+    bool eventFilter(QObject *obj, QEvent *event) override;
 
 private slots:
     void newFile();
@@ -150,6 +154,10 @@ private slots:
     // Character inspector slots
     void showCharacterInspector();
 
+    // Encoding slots
+    void changeEncoding();
+    void onEncodingLabelClicked();
+
 private:
     void setupMenus();
     void setupEditor();
@@ -191,6 +199,7 @@ private:
 
     // Status bar methods
     void updateStatusBar();
+    void updateEncodingLabel();
 
     // Responsive UI methods
     void detectScreenSize();
@@ -215,6 +224,7 @@ private:
     QLabel *lineCountLabel;
     QLabel *wordCountLabel;
     QLabel *characterCountLabel;
+    QLabel *encodingLabel;
 
     // Data management
     QMap<int, TabInfo> leftTabInfoMap;
