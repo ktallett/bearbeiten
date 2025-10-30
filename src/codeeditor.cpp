@@ -1713,3 +1713,233 @@ void CodeEditor::sortLinesDescending()
 
     cursor.endEditBlock();
 }
+
+// Comment operations implementation
+
+void CodeEditor::setCurrentLanguage(const QString &language)
+{
+    currentLanguage = language;
+}
+
+QString CodeEditor::getLineCommentSyntax() const
+{
+    // Map languages to their line comment syntax
+    static QMap<QString, QString> lineComments = {
+        {"c", "//"},
+        {"cpp", "//"},
+        {"c++", "//"},
+        {"java", "//"},
+        {"javascript", "//"},
+        {"typescript", "//"},
+        {"go", "//"},
+        {"rust", "//"},
+        {"swift", "//"},
+        {"kotlin", "//"},
+        {"csharp", "//"},
+        {"c#", "//"},
+        {"php", "//"},
+        {"python", "#"},
+        {"ruby", "#"},
+        {"perl", "#"},
+        {"shell", "#"},
+        {"bash", "#"},
+        {"sh", "#"},
+        {"yaml", "#"},
+        {"toml", "#"},
+        {"r", "#"},
+        {"lua", "--"},
+        {"sql", "--"},
+        {"haskell", "--"},
+        {"html", "<!--"},
+        {"xml", "<!--"},
+        {"css", "/*"},
+        {"markdown", "<!--"}
+    };
+
+    QString lang = currentLanguage.toLower();
+    return lineComments.value(lang, "//"); // Default to C-style
+}
+
+QPair<QString, QString> CodeEditor::getBlockCommentSyntax() const
+{
+    // Map languages to their block comment syntax (start, end)
+    static QMap<QString, QPair<QString, QString>> blockComments = {
+        {"c", {"/*", "*/"}},
+        {"cpp", {"/*", "*/"}},
+        {"c++", {"/*", "*/"}},
+        {"java", {"/*", "*/"}},
+        {"javascript", {"/*", "*/"}},
+        {"typescript", {"/*", "*/"}},
+        {"go", {"/*", "*/"}},
+        {"rust", {"/*", "*/"}},
+        {"swift", {"/*", "*/"}},
+        {"kotlin", {"/*", "*/"}},
+        {"csharp", {"/*", "*/"}},
+        {"c#", {"/*", "*/"}},
+        {"php", {"/*", "*/"}},
+        {"css", {"/*", "*/"}},
+        {"python", {"\"\"\"", "\"\"\""}},
+        {"html", {"<!--", "-->"}},
+        {"xml", {"<!--", "-->"}},
+        {"markdown", {"<!--", "-->"}},
+        {"lua", {"--[[", "]]"}},
+        {"haskell", {"{-", "-}"}}
+    };
+
+    QString lang = currentLanguage.toLower();
+    return blockComments.value(lang, {"/*", "*/"}); // Default to C-style
+}
+
+bool CodeEditor::isLineCommented(const QString &line, const QString &commentSyntax) const
+{
+    QString trimmed = line.trimmed();
+    return trimmed.startsWith(commentSyntax);
+}
+
+void CodeEditor::toggleLineComment()
+{
+    QString commentSyntax = getLineCommentSyntax();
+    if (commentSyntax.isEmpty()) {
+        return;
+    }
+
+    QTextCursor cursor = textCursor();
+    cursor.beginEditBlock();
+
+    if (hasMultipleCursors()) {
+        // Handle multiple cursors
+        QSet<int> linesToToggle;
+        linesToToggle.insert(cursor.blockNumber());
+        for (const QTextCursor &c : extraCursors) {
+            linesToToggle.insert(c.blockNumber());
+        }
+
+        // Check if all lines are commented
+        bool allCommented = true;
+        for (int lineNumber : linesToToggle) {
+            QTextBlock block = document()->findBlockByNumber(lineNumber);
+            if (block.isValid()) {
+                if (!isLineCommented(block.text(), commentSyntax)) {
+                    allCommented = false;
+                    break;
+                }
+            }
+        }
+
+        // Toggle comments on all lines
+        for (int lineNumber : linesToToggle) {
+            QTextBlock block = document()->findBlockByNumber(lineNumber);
+            if (!block.isValid()) continue;
+
+            cursor.setPosition(block.position());
+            cursor.movePosition(QTextCursor::StartOfBlock);
+
+            if (allCommented) {
+                // Uncomment: find and remove comment syntax
+                QString line = block.text();
+                int commentPos = line.indexOf(commentSyntax);
+                if (commentPos != -1) {
+                    cursor.movePosition(QTextCursor::Right, QTextCursor::MoveAnchor, commentPos);
+                    cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor, commentSyntax.length());
+                    // Also remove one space after comment if present
+                    if (cursor.position() < block.position() + block.length() - 1) {
+                        QChar nextChar = document()->characterAt(cursor.position());
+                        if (nextChar == ' ') {
+                            cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
+                        }
+                    }
+                    cursor.removeSelectedText();
+                }
+            } else {
+                // Comment: add comment syntax at start
+                cursor.insertText(commentSyntax + " ");
+            }
+        }
+    } else {
+        // Single cursor - toggle current line
+        cursor.movePosition(QTextCursor::StartOfBlock);
+        int startPos = cursor.position();
+        cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+        QString lineText = cursor.selectedText();
+
+        cursor.setPosition(startPos);
+
+        if (isLineCommented(lineText, commentSyntax)) {
+            // Uncomment: find and remove comment syntax
+            int commentPos = lineText.indexOf(commentSyntax);
+            if (commentPos != -1) {
+                cursor.movePosition(QTextCursor::Right, QTextCursor::MoveAnchor, commentPos);
+                cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor, commentSyntax.length());
+                // Also remove one space after comment if present
+                if (cursor.position() < startPos + lineText.length()) {
+                    QChar nextChar = document()->characterAt(cursor.position());
+                    if (nextChar == ' ') {
+                        cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
+                    }
+                }
+                cursor.removeSelectedText();
+            }
+        } else {
+            // Comment: add comment syntax at start
+            cursor.insertText(commentSyntax + " ");
+        }
+    }
+
+    cursor.endEditBlock();
+    setTextCursor(cursor);
+}
+
+void CodeEditor::toggleBlockComment()
+{
+    QPair<QString, QString> blockSyntax = getBlockCommentSyntax();
+    if (blockSyntax.first.isEmpty() || blockSyntax.second.isEmpty()) {
+        return;
+    }
+
+    QTextCursor cursor = textCursor();
+
+    // If there's a selection, toggle block comment on selection
+    if (cursor.hasSelection()) {
+        int start = cursor.selectionStart();
+        int end = cursor.selectionEnd();
+
+        cursor.setPosition(start);
+        cursor.setPosition(end, QTextCursor::KeepAnchor);
+        QString selectedText = cursor.selectedText();
+
+        cursor.beginEditBlock();
+
+        // Check if selection is already block commented
+        if (selectedText.startsWith(blockSyntax.first) && selectedText.endsWith(blockSyntax.second)) {
+            // Uncomment: remove block comment markers
+            cursor.setPosition(start);
+            cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor, blockSyntax.first.length());
+            cursor.removeSelectedText();
+
+            // Adjust end position after removing start marker
+            end -= blockSyntax.first.length();
+
+            cursor.setPosition(end - blockSyntax.second.length());
+            cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor, blockSyntax.second.length());
+            cursor.removeSelectedText();
+
+            cursor.setPosition(start);
+        } else {
+            // Comment: wrap selection with block comment markers
+            cursor.setPosition(start);
+            cursor.insertText(blockSyntax.first);
+            cursor.setPosition(end + blockSyntax.first.length());
+            cursor.insertText(blockSyntax.second);
+
+            // Select the commented region
+            cursor.setPosition(start);
+            cursor.setPosition(end + blockSyntax.first.length() + blockSyntax.second.length(), QTextCursor::KeepAnchor);
+        }
+
+        cursor.endEditBlock();
+        setTextCursor(cursor);
+    } else {
+        // No selection - toggle block comment on current line (same as line comment)
+        toggleLineComment();
+    }
+}

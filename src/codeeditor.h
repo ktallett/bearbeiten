@@ -82,6 +82,12 @@ public:
     void sortLinesAscending();
     void sortLinesDescending();
 
+    // Comment operations
+    void toggleLineComment();
+    void toggleBlockComment();
+    void setCurrentLanguage(const QString &language);
+    QString getCurrentLanguage() const { return currentLanguage; }
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
     void paintEvent(QPaintEvent *event) override;
@@ -152,8 +158,14 @@ private:
     int getActiveIndentLevel();
     void drawIndentationGuides(QPainter &painter);
 
+    // Comment helpers
+    QString getLineCommentSyntax() const;
+    QPair<QString, QString> getBlockCommentSyntax() const;
+    bool isLineCommented(const QString &line, const QString &commentSyntax) const;
+
     QSet<int> foldedBlocks;  // Track which lines are folded
     QSet<int> bookmarkedLines;  // Track which lines are bookmarked
+    QString currentLanguage;  // Current language for comment syntax
 };
 
 class LineNumberArea : public QWidget

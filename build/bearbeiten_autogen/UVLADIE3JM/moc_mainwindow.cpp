@@ -118,7 +118,11 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "moveLineUp",
         "moveLineDown",
         "sortLinesAscending",
-        "sortLinesDescending"
+        "sortLinesDescending",
+        "toggleLineComment",
+        "toggleBlockComment",
+        "openRecentFile",
+        "clearRecentFiles"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -283,6 +287,14 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(78, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'sortLinesDescending'
         QtMocHelpers::SlotData<void()>(79, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'toggleLineComment'
+        QtMocHelpers::SlotData<void()>(80, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'toggleBlockComment'
+        QtMocHelpers::SlotData<void()>(81, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'openRecentFile'
+        QtMocHelpers::SlotData<void()>(82, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'clearRecentFiles'
+        QtMocHelpers::SlotData<void()>(83, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -374,6 +386,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 63: _t->moveLineDown(); break;
         case 64: _t->sortLinesAscending(); break;
         case 65: _t->sortLinesDescending(); break;
+        case 66: _t->toggleLineComment(); break;
+        case 67: _t->toggleBlockComment(); break;
+        case 68: _t->openRecentFile(); break;
+        case 69: _t->clearRecentFiles(); break;
         default: ;
         }
     }
@@ -398,14 +414,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 66)
+        if (_id < 70)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 66;
+        _id -= 70;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 66)
+        if (_id < 70)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 66;
+        _id -= 70;
     }
     return _id;
 }

@@ -173,6 +173,14 @@ private slots:
     void sortLinesAscending();
     void sortLinesDescending();
 
+    // Comment operation slots
+    void toggleLineComment();
+    void toggleBlockComment();
+
+    // Recent files slots
+    void openRecentFile();
+    void clearRecentFiles();
+
 private:
     void setupMenus();
     void setupEditor();
@@ -215,6 +223,16 @@ private:
     // Status bar methods
     void updateStatusBar();
     void updateEncodingLabel();
+    void updateCursorPosition();
+    void updateSelectionInfo();
+    void updateFileSize();
+    QString formatFileSize(qint64 bytes);
+
+    // Recent files methods
+    void addToRecentFiles(const QString &filePath);
+    void updateRecentFilesMenu();
+    void loadRecentFiles();
+    void saveRecentFiles();
 
     // Responsive UI methods
     void detectScreenSize();
@@ -240,11 +258,19 @@ private:
     QLabel *wordCountLabel;
     QLabel *characterCountLabel;
     QLabel *encodingLabel;
+    QLabel *cursorPositionLabel;
+    QLabel *selectionInfoLabel;
+    QLabel *fileSizeLabel;
 
     // Data management
     QMap<int, TabInfo> leftTabInfoMap;
     QMap<int, TabInfo> rightTabInfoMap;
     QMap<int, TabInfo> *activeTabInfoMap; // Points to active map
+
+    // Recent files
+    QStringList recentFiles;
+    QMenu *recentFilesMenu;
+    static const int MaxRecentFiles = 10;
 
     // State
     ViewMode currentViewMode;

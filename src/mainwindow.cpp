@@ -11,7 +11,8 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), mainSplitter(nullptr), editorSplitter(nullptr), leftTabWidget(nullptr), rightTabWidget(nullptr),
       tabWidget(nullptr), projectPanel(nullptr), outlinePanel(nullptr), breadcrumbBar(nullptr), mainToolBar(nullptr), languageComboBox(nullptr), syntaxHighlighter(nullptr),
       lineCountLabel(nullptr), wordCountLabel(nullptr), characterCountLabel(nullptr), encodingLabel(nullptr),
-      activeTabInfoMap(nullptr), currentViewMode(ViewMode::Single), focusedTabWidget(nullptr),
+      cursorPositionLabel(nullptr), selectionInfoLabel(nullptr), fileSizeLabel(nullptr),
+      activeTabInfoMap(nullptr), recentFilesMenu(nullptr), currentViewMode(ViewMode::Single), focusedTabWidget(nullptr),
       projectPanelVisible(false), outlinePanelVisible(false), isSmallScreen(false), autoSaveTimer(nullptr), autoSaveEnabled(true), autoSaveInterval(30), autoSaveAction(nullptr),
       isDarkTheme(false), themeAction(nullptr), lineWrapEnabled(true), wordWrapMode(true), showColumnRuler(false), showWrapIndicator(true), wrapColumn(80),
       lineWrapAction(nullptr), wordWrapAction(nullptr), columnRulerAction(nullptr), wrapIndicatorAction(nullptr),
@@ -34,6 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
     setupAutoSave();
     setupResponsiveUI();
     loadSettings();
+    loadRecentFiles();
 
     setWindowTitle(tr("Bearbeiten"));
     resize(800, 600);
@@ -144,6 +146,11 @@ void MainWindow::setupMenus()
     openAction->setShortcut(QKeySequence::Open);
     connect(openAction, &QAction::triggered, this, &MainWindow::openFile);
     fileMenu->addAction(openAction);
+
+    // Recent Files submenu
+    recentFilesMenu = new QMenu(tr("Open &Recent"), this);
+    fileMenu->addMenu(recentFilesMenu);
+    updateRecentFilesMenu();
 
     fileMenu->addSeparator();
 
@@ -288,6 +295,20 @@ void MainWindow::setupMenus()
     sortDescAction->setToolTip(tr("Sort lines reverse alphabetically (Z-A)"));
     connect(sortDescAction, &QAction::triggered, this, &MainWindow::sortLinesDescending);
     editMenu->addAction(sortDescAction);
+
+    editMenu->addSeparator();
+
+    QAction *toggleLineCommentAction = new QAction(tr("Toggle Line &Comment"), this);
+    toggleLineCommentAction->setShortcut(QKeySequence("Ctrl+/"));
+    toggleLineCommentAction->setToolTip(tr("Toggle line comment on current line or selection"));
+    connect(toggleLineCommentAction, &QAction::triggered, this, &MainWindow::toggleLineComment);
+    editMenu->addAction(toggleLineCommentAction);
+
+    QAction *toggleBlockCommentAction = new QAction(tr("Toggle &Block Comment"), this);
+    toggleBlockCommentAction->setShortcut(QKeySequence("Ctrl+Shift+/"));
+    toggleBlockCommentAction->setToolTip(tr("Toggle block comment on selection"));
+    connect(toggleBlockCommentAction, &QAction::triggered, this, &MainWindow::toggleBlockComment);
+    editMenu->addAction(toggleBlockCommentAction);
 
     // View menu for split functionality
     QMenu *viewMenu = menuBar()->addMenu(tr("&View"));
@@ -626,6 +647,9 @@ void MainWindow::loadFile(const QString &fileName)
 
         setCurrentFile(fileName);
 
+        // Add to recent files
+        addToRecentFiles(fileName);
+
         // Store detected encoding
         int currentTabIndex = tabWidget->currentIndex();
         if (currentTabIndex >= 0 && activeTabInfoMap->contains(currentTabIndex)) {
@@ -640,6 +664,9 @@ void MainWindow::loadFile(const QString &fileName)
                 // Update the combo box to show the detected language
                 QString detectedLanguage = highlighter->getCurrentLanguage();
                 if (!detectedLanguage.isEmpty()) {
+                    // Set language in editor for comment operations
+                    editor->setCurrentLanguage(detectedLanguage);
+
                     for (int i = 0; i < languageComboBox->count(); ++i) {
                         if (languageComboBox->itemData(i).toString().toLower() == detectedLanguage.toLower()) {
                             languageComboBox->setCurrentIndex(i);
@@ -705,6 +732,24 @@ void MainWindow::setupStatusBar()
     // Add the widget to the status bar
     statusBar()->addPermanentWidget(statusWidget);
 
+    // Create cursor position label
+    cursorPositionLabel = new QLabel(tr("Ln 1, Col 1"));
+    cursorPositionLabel->setStyleSheet("QLabel { padding: 0 8px; }");
+    cursorPositionLabel->setMinimumWidth(100);
+    statusBar()->addPermanentWidget(cursorPositionLabel);
+
+    // Create selection info label
+    selectionInfoLabel = new QLabel(tr(""));
+    selectionInfoLabel->setStyleSheet("QLabel { padding: 0 8px; }");
+    selectionInfoLabel->setMinimumWidth(80);
+    statusBar()->addPermanentWidget(selectionInfoLabel);
+
+    // Create file size label
+    fileSizeLabel = new QLabel(tr("0 bytes"));
+    fileSizeLabel->setStyleSheet("QLabel { padding: 0 8px; }");
+    fileSizeLabel->setMinimumWidth(80);
+    statusBar()->addPermanentWidget(fileSizeLabel);
+
     // Create encoding label with clickable behavior
     encodingLabel = new QLabel(tr("UTF-8"));
     encodingLabel->setToolTip(tr("Click to change encoding"));
@@ -726,6 +771,12 @@ void MainWindow::onLanguageChanged(int index)
         JsonSyntaxHighlighter *highlighter = (*activeTabInfoMap)[currentTabIndex].highlighter;
         if (highlighter) {
             highlighter->setLanguage(languageName);
+        }
+
+        // Also set language in editor for comment operations
+        CodeEditor *editor = getCurrentEditor();
+        if (editor) {
+            editor->setCurrentLanguage(languageName);
         }
     }
 }
@@ -796,11 +847,15 @@ void MainWindow::createNewTab(const QString &fileName)
     connect(editor, &CodeEditor::textChanged, [this, index]() {
         setTabModified(index, true);
         onTextChanged(); // Trigger auto-save timer reset
-        updateStatusBar(); // Update line/word count
+        updateStatusBar(); // Update line/word count and other status info
     });
 
-    // Connect cursor position changed signal to update breadcrumb
+    // Connect cursor position changed signal to update breadcrumb and cursor position
     connect(editor, &CodeEditor::cursorPositionChanged, this, &MainWindow::updateBreadcrumbSymbol);
+    connect(editor, &CodeEditor::cursorPositionChanged, this, &MainWindow::updateCursorPosition);
+
+    // Connect selection changed signal to update selection info
+    connect(editor, &CodeEditor::selectionChanged, this, &MainWindow::updateSelectionInfo);
 
     // Set this tab as current
     tabWidget->setCurrentIndex(index);
@@ -985,6 +1040,12 @@ void MainWindow::onTabChanged(int index)
             JsonSyntaxHighlighter *highlighter = (*activeTabInfoMap)[index].highlighter;
             if (highlighter) {
                 QString currentLanguage = highlighter->getCurrentLanguage();
+
+                // Set language in editor for comment operations
+                CodeEditor *editor = getCurrentEditor();
+                if (editor) {
+                    editor->setCurrentLanguage(currentLanguage);
+                }
 
                 // Update combo box selection
                 for (int i = 0; i < languageComboBox->count(); ++i) {
@@ -2059,6 +2120,11 @@ void MainWindow::updateStatusBar()
 
     // Update encoding label
     updateEncodingLabel();
+
+    // Update cursor position, selection info, and file size
+    updateCursorPosition();
+    updateSelectionInfo();
+    updateFileSize();
 }
 
 // Responsive UI Methods
@@ -2488,5 +2554,219 @@ void MainWindow::sortLinesDescending()
     CodeEditor *editor = getCurrentEditor();
     if (editor) {
         editor->sortLinesDescending();
+    }
+}
+
+// Comment operation implementation
+
+void MainWindow::toggleLineComment()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (editor) {
+        editor->toggleLineComment();
+    }
+}
+
+void MainWindow::toggleBlockComment()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (editor) {
+        editor->toggleBlockComment();
+    }
+}
+
+// Recent files implementation
+
+void MainWindow::addToRecentFiles(const QString &filePath)
+{
+    // Remove if already exists (to move it to top)
+    recentFiles.removeAll(filePath);
+
+    // Add to the front
+    recentFiles.prepend(filePath);
+
+    // Limit to MaxRecentFiles
+    while (recentFiles.size() > MaxRecentFiles) {
+        recentFiles.removeLast();
+    }
+
+    // Update menu and save
+    updateRecentFilesMenu();
+    saveRecentFiles();
+}
+
+void MainWindow::updateRecentFilesMenu()
+{
+    if (!recentFilesMenu) {
+        return;
+    }
+
+    recentFilesMenu->clear();
+
+    // Add each recent file as an action
+    for (int i = 0; i < recentFiles.size(); ++i) {
+        const QString &filePath = recentFiles.at(i);
+
+        // Check if file still exists
+        if (!QFile::exists(filePath)) {
+            continue;
+        }
+
+        // Create action with just the filename for display
+        QString displayName = QFileInfo(filePath).fileName();
+        QAction *action = new QAction(QString("%1. %2").arg(i + 1).arg(displayName), this);
+        action->setData(filePath);
+        action->setToolTip(filePath); // Show full path in tooltip
+        action->setStatusTip(filePath);
+
+        connect(action, &QAction::triggered, this, &MainWindow::openRecentFile);
+        recentFilesMenu->addAction(action);
+    }
+
+    // Add separator and Clear Recent Files if there are items
+    if (!recentFiles.isEmpty()) {
+        recentFilesMenu->addSeparator();
+        QAction *clearAction = new QAction(tr("Clear Recent Files"), this);
+        connect(clearAction, &QAction::triggered, this, &MainWindow::clearRecentFiles);
+        recentFilesMenu->addAction(clearAction);
+    }
+
+    // Disable menu if empty
+    recentFilesMenu->setEnabled(!recentFiles.isEmpty());
+}
+
+void MainWindow::openRecentFile()
+{
+    QAction *action = qobject_cast<QAction*>(sender());
+    if (action) {
+        QString filePath = action->data().toString();
+        if (QFile::exists(filePath)) {
+            loadFile(filePath);
+        } else {
+            QMessageBox::warning(this, tr("File Not Found"),
+                               tr("The file '%1' no longer exists.").arg(filePath));
+            // Remove from recent files
+            recentFiles.removeAll(filePath);
+            updateRecentFilesMenu();
+            saveRecentFiles();
+        }
+    }
+}
+
+void MainWindow::clearRecentFiles()
+{
+    recentFiles.clear();
+    updateRecentFilesMenu();
+    saveRecentFiles();
+}
+
+void MainWindow::loadRecentFiles()
+{
+    QSettings settings;
+    recentFiles = settings.value("recentFiles").toStringList();
+
+    // Remove any files that no longer exist
+    QStringList validFiles;
+    for (const QString &file : recentFiles) {
+        if (QFile::exists(file)) {
+            validFiles.append(file);
+        }
+    }
+    recentFiles = validFiles;
+
+    updateRecentFilesMenu();
+}
+
+void MainWindow::saveRecentFiles()
+{
+    QSettings settings;
+    settings.setValue("recentFiles", recentFiles);
+}
+
+// Status bar enhancements implementation
+
+void MainWindow::updateCursorPosition()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (!editor || !cursorPositionLabel) {
+        return;
+    }
+
+    QTextCursor cursor = editor->textCursor();
+    int line = cursor.blockNumber() + 1;
+    int column = cursor.positionInBlock() + 1;
+
+    cursorPositionLabel->setText(tr("Ln %1, Col %2").arg(line).arg(column));
+}
+
+void MainWindow::updateSelectionInfo()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (!editor || !selectionInfoLabel) {
+        return;
+    }
+
+    QTextCursor cursor = editor->textCursor();
+
+    if (cursor.hasSelection()) {
+        QString selectedText = cursor.selectedText();
+        int charCount = selectedText.length();
+        int lineCount = selectedText.count(QChar::ParagraphSeparator) + 1;
+
+        if (lineCount > 1) {
+            selectionInfoLabel->setText(tr("%1 chars, %2 lines").arg(charCount).arg(lineCount));
+        } else {
+            selectionInfoLabel->setText(tr("%1 chars").arg(charCount));
+        }
+    } else {
+        selectionInfoLabel->setText(tr(""));
+    }
+}
+
+void MainWindow::updateFileSize()
+{
+    if (!fileSizeLabel) {
+        return;
+    }
+
+    int currentIndex = tabWidget->currentIndex();
+    if (currentIndex < 0) {
+        fileSizeLabel->setText(tr("0 bytes"));
+        return;
+    }
+
+    QString filePath = getFilePathAt(currentIndex);
+
+    if (filePath.isEmpty()) {
+        // New unsaved file
+        CodeEditor *editor = getCurrentEditor();
+        if (editor) {
+            qint64 size = editor->toPlainText().toUtf8().size();
+            fileSizeLabel->setText(formatFileSize(size));
+        } else {
+            fileSizeLabel->setText(tr("0 bytes"));
+        }
+    } else {
+        // Existing file
+        QFileInfo fileInfo(filePath);
+        if (fileInfo.exists()) {
+            qint64 size = fileInfo.size();
+            fileSizeLabel->setText(formatFileSize(size));
+        } else {
+            fileSizeLabel->setText(tr("0 bytes"));
+        }
+    }
+}
+
+QString MainWindow::formatFileSize(qint64 bytes)
+{
+    if (bytes < 1024) {
+        return tr("%1 bytes").arg(bytes);
+    } else if (bytes < 1024 * 1024) {
+        return tr("%1 KB").arg(bytes / 1024.0, 0, 'f', 1);
+    } else if (bytes < 1024 * 1024 * 1024) {
+        return tr("%1 MB").arg(bytes / (1024.0 * 1024.0), 0, 'f', 1);
+    } else {
+        return tr("%1 GB").arg(bytes / (1024.0 * 1024.0 * 1024.0), 0, 'f', 1);
     }
 }
