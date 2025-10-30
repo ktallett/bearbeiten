@@ -74,6 +74,14 @@ public:
     void setBookmarks(const QSet<int> &bookmarks);
     bool hasBookmarks() const { return !bookmarkedLines.isEmpty(); }
 
+    // Line operations
+    void duplicateLine();
+    void deleteLine();
+    void moveLineUp();
+    void moveLineDown();
+    void sortLinesAscending();
+    void sortLinesDescending();
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
     void paintEvent(QPaintEvent *event) override;

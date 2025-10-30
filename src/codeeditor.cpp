@@ -1435,3 +1435,281 @@ void CodeEditor::setBookmarks(const QSet<int> &bookmarks)
     bookmarkedLines = bookmarks;
     lineNumberArea->update();
 }
+
+// Line operations implementation
+
+void CodeEditor::duplicateLine()
+{
+    QTextCursor cursor = textCursor();
+
+    if (hasMultipleCursors()) {
+        // Handle multiple cursors
+        cursor.beginEditBlock();
+
+        // Duplicate lines for each cursor
+        QList<QTextCursor> allCursors;
+        allCursors.append(cursor);
+        allCursors.append(extraCursors);
+
+        // Sort by position (reverse order to avoid position shifts)
+        std::sort(allCursors.begin(), allCursors.end(), [](const QTextCursor &a, const QTextCursor &b) {
+            return a.blockNumber() > b.blockNumber();
+        });
+
+        for (QTextCursor &c : allCursors) {
+            c.movePosition(QTextCursor::StartOfBlock);
+            c.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+            QString lineText = c.selectedText();
+            c.movePosition(QTextCursor::EndOfBlock);
+            c.insertText("\n" + lineText);
+        }
+
+        cursor.endEditBlock();
+    } else {
+        // Single cursor
+        cursor.beginEditBlock();
+        cursor.movePosition(QTextCursor::StartOfBlock);
+        cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+        QString lineText = cursor.selectedText();
+        cursor.movePosition(QTextCursor::EndOfBlock);
+        cursor.insertText("\n" + lineText);
+        cursor.endEditBlock();
+    }
+
+    setTextCursor(cursor);
+}
+
+void CodeEditor::deleteLine()
+{
+    QTextCursor cursor = textCursor();
+
+    if (hasMultipleCursors()) {
+        // Handle multiple cursors
+        cursor.beginEditBlock();
+
+        // Collect unique line numbers to delete
+        QSet<int> linesToDelete;
+        linesToDelete.insert(cursor.blockNumber());
+        for (const QTextCursor &c : extraCursors) {
+            linesToDelete.insert(c.blockNumber());
+        }
+
+        // Delete lines in reverse order
+        QList<int> sortedLines = linesToDelete.values();
+        std::sort(sortedLines.begin(), sortedLines.end(), std::greater<int>());
+
+        for (int lineNumber : sortedLines) {
+            QTextBlock block = document()->findBlockByNumber(lineNumber);
+            if (block.isValid()) {
+                cursor.setPosition(block.position());
+                cursor.movePosition(QTextCursor::StartOfBlock);
+                cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+
+                // Also delete the newline if not the last line
+                if (block.next().isValid()) {
+                    cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
+                } else if (block.previous().isValid()) {
+                    // If last line, delete the preceding newline
+                    cursor.setPosition(block.position() - 1);
+                    cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+                }
+
+                cursor.removeSelectedText();
+            }
+        }
+
+        clearExtraCursors();
+        cursor.endEditBlock();
+    } else {
+        // Single cursor
+        cursor.beginEditBlock();
+        cursor.movePosition(QTextCursor::StartOfBlock);
+        cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+
+        // Also delete the newline if not the last line
+        QTextBlock block = cursor.block();
+        if (block.next().isValid()) {
+            cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
+        } else if (block.previous().isValid()) {
+            // If last line, delete the preceding newline
+            cursor.setPosition(block.position() - 1);
+            cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+        }
+
+        cursor.removeSelectedText();
+        cursor.endEditBlock();
+    }
+
+    setTextCursor(cursor);
+}
+
+void CodeEditor::moveLineUp()
+{
+    QTextCursor cursor = textCursor();
+    QTextBlock currentBlock = cursor.block();
+
+    // Can't move up if already at first line
+    if (currentBlock.blockNumber() == 0) {
+        return;
+    }
+
+    cursor.beginEditBlock();
+
+    // Get current line text
+    cursor.movePosition(QTextCursor::StartOfBlock);
+    cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+    QString currentLineText = cursor.selectedText();
+    int cursorPositionInLine = textCursor().positionInBlock();
+
+    // Delete current line (including newline)
+    cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
+    cursor.removeSelectedText();
+
+    // Move to previous line and insert
+    cursor.movePosition(QTextCursor::Up);
+    cursor.movePosition(QTextCursor::StartOfBlock);
+    cursor.insertText(currentLineText + "\n");
+
+    // Restore cursor position
+    cursor.movePosition(QTextCursor::Up);
+    cursor.movePosition(QTextCursor::StartOfBlock);
+    cursor.movePosition(QTextCursor::Right, QTextCursor::MoveAnchor, cursorPositionInLine);
+
+    cursor.endEditBlock();
+    setTextCursor(cursor);
+}
+
+void CodeEditor::moveLineDown()
+{
+    QTextCursor cursor = textCursor();
+    QTextBlock currentBlock = cursor.block();
+
+    // Can't move down if already at last line
+    if (!currentBlock.next().isValid()) {
+        return;
+    }
+
+    cursor.beginEditBlock();
+
+    // Get current line text
+    cursor.movePosition(QTextCursor::StartOfBlock);
+    cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+    QString currentLineText = cursor.selectedText();
+    int cursorPositionInLine = textCursor().positionInBlock();
+
+    // Delete current line (including newline)
+    cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
+    cursor.removeSelectedText();
+
+    // Move to end of next line and insert
+    cursor.movePosition(QTextCursor::EndOfBlock);
+    cursor.insertText("\n" + currentLineText);
+
+    // Restore cursor position
+    cursor.movePosition(QTextCursor::StartOfBlock);
+    cursor.movePosition(QTextCursor::Right, QTextCursor::MoveAnchor, cursorPositionInLine);
+
+    cursor.endEditBlock();
+    setTextCursor(cursor);
+}
+
+void CodeEditor::sortLinesAscending()
+{
+    QTextCursor cursor = textCursor();
+
+    // Determine range to sort
+    int startLine, endLine;
+
+    if (cursor.hasSelection()) {
+        // Sort selected lines
+        int start = cursor.selectionStart();
+        int end = cursor.selectionEnd();
+
+        QTextBlock startBlock = document()->findBlock(start);
+        QTextBlock endBlock = document()->findBlock(end);
+
+        startLine = startBlock.blockNumber();
+        endLine = endBlock.blockNumber();
+    } else {
+        // Sort entire document
+        startLine = 0;
+        endLine = document()->blockCount() - 1;
+    }
+
+    // Collect lines
+    QStringList lines;
+    for (int i = startLine; i <= endLine; ++i) {
+        QTextBlock block = document()->findBlockByNumber(i);
+        if (block.isValid()) {
+            lines.append(block.text());
+        }
+    }
+
+    // Sort lines
+    lines.sort(Qt::CaseInsensitive);
+
+    // Replace lines
+    cursor.beginEditBlock();
+
+    for (int i = 0; i < lines.size(); ++i) {
+        QTextBlock block = document()->findBlockByNumber(startLine + i);
+        if (block.isValid()) {
+            cursor.setPosition(block.position());
+            cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+            cursor.insertText(lines[i]);
+        }
+    }
+
+    cursor.endEditBlock();
+}
+
+void CodeEditor::sortLinesDescending()
+{
+    QTextCursor cursor = textCursor();
+
+    // Determine range to sort
+    int startLine, endLine;
+
+    if (cursor.hasSelection()) {
+        // Sort selected lines
+        int start = cursor.selectionStart();
+        int end = cursor.selectionEnd();
+
+        QTextBlock startBlock = document()->findBlock(start);
+        QTextBlock endBlock = document()->findBlock(end);
+
+        startLine = startBlock.blockNumber();
+        endLine = endBlock.blockNumber();
+    } else {
+        // Sort entire document
+        startLine = 0;
+        endLine = document()->blockCount() - 1;
+    }
+
+    // Collect lines
+    QStringList lines;
+    for (int i = startLine; i <= endLine; ++i) {
+        QTextBlock block = document()->findBlockByNumber(i);
+        if (block.isValid()) {
+            lines.append(block.text());
+        }
+    }
+
+    // Sort lines descending
+    lines.sort(Qt::CaseInsensitive);
+    std::reverse(lines.begin(), lines.end());
+
+    // Replace lines
+    cursor.beginEditBlock();
+
+    for (int i = 0; i < lines.size(); ++i) {
+        QTextBlock block = document()->findBlockByNumber(startLine + i);
+        if (block.isValid()) {
+            cursor.setPosition(block.position());
+            cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+            cursor.insertText(lines[i]);
+        }
+    }
+
+    cursor.endEditBlock();
+}

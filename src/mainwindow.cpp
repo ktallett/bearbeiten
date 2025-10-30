@@ -251,6 +251,44 @@ void MainWindow::setupMenus()
     connect(clearBookmarksAction, &QAction::triggered, this, &MainWindow::clearAllBookmarks);
     editMenu->addAction(clearBookmarksAction);
 
+    editMenu->addSeparator();
+
+    QAction *duplicateLineAction = new QAction(tr("&Duplicate Line"), this);
+    duplicateLineAction->setShortcut(QKeySequence("Ctrl+D"));
+    duplicateLineAction->setToolTip(tr("Duplicate current line or selection"));
+    connect(duplicateLineAction, &QAction::triggered, this, &MainWindow::duplicateLine);
+    editMenu->addAction(duplicateLineAction);
+
+    QAction *deleteLineAction = new QAction(tr("Delete Li&ne"), this);
+    deleteLineAction->setShortcut(QKeySequence("Ctrl+Shift+K"));
+    deleteLineAction->setToolTip(tr("Delete current line"));
+    connect(deleteLineAction, &QAction::triggered, this, &MainWindow::deleteLine);
+    editMenu->addAction(deleteLineAction);
+
+    QAction *moveLineUpAction = new QAction(tr("Move Line &Up"), this);
+    moveLineUpAction->setShortcut(QKeySequence("Alt+Up"));
+    moveLineUpAction->setToolTip(tr("Move current line up"));
+    connect(moveLineUpAction, &QAction::triggered, this, &MainWindow::moveLineUp);
+    editMenu->addAction(moveLineUpAction);
+
+    QAction *moveLineDownAction = new QAction(tr("Move Line &Down"), this);
+    moveLineDownAction->setShortcut(QKeySequence("Alt+Down"));
+    moveLineDownAction->setToolTip(tr("Move current line down"));
+    connect(moveLineDownAction, &QAction::triggered, this, &MainWindow::moveLineDown);
+    editMenu->addAction(moveLineDownAction);
+
+    editMenu->addSeparator();
+
+    QAction *sortAscAction = new QAction(tr("Sort Lines &Ascending"), this);
+    sortAscAction->setToolTip(tr("Sort lines alphabetically (A-Z)"));
+    connect(sortAscAction, &QAction::triggered, this, &MainWindow::sortLinesAscending);
+    editMenu->addAction(sortAscAction);
+
+    QAction *sortDescAction = new QAction(tr("Sort Lines D&escending"), this);
+    sortDescAction->setToolTip(tr("Sort lines reverse alphabetically (Z-A)"));
+    connect(sortDescAction, &QAction::triggered, this, &MainWindow::sortLinesDescending);
+    editMenu->addAction(sortDescAction);
+
     // View menu for split functionality
     QMenu *viewMenu = menuBar()->addMenu(tr("&View"));
 
@@ -2400,5 +2438,55 @@ void MainWindow::clearAllBookmarks()
     int currentIndex = tabWidget->currentIndex();
     if (currentIndex >= 0 && activeTabInfoMap->contains(currentIndex)) {
         (*activeTabInfoMap)[currentIndex].bookmarks.clear();
+    }
+}
+
+// Line operation implementation
+
+void MainWindow::duplicateLine()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (editor) {
+        editor->duplicateLine();
+    }
+}
+
+void MainWindow::deleteLine()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (editor) {
+        editor->deleteLine();
+    }
+}
+
+void MainWindow::moveLineUp()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (editor) {
+        editor->moveLineUp();
+    }
+}
+
+void MainWindow::moveLineDown()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (editor) {
+        editor->moveLineDown();
+    }
+}
+
+void MainWindow::sortLinesAscending()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (editor) {
+        editor->sortLinesAscending();
+    }
+}
+
+void MainWindow::sortLinesDescending()
+{
+    CodeEditor *editor = getCurrentEditor();
+    if (editor) {
+        editor->sortLinesDescending();
     }
 }

@@ -112,7 +112,13 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "toggleBookmark",
         "goToNextBookmark",
         "goToPreviousBookmark",
-        "clearAllBookmarks"
+        "clearAllBookmarks",
+        "duplicateLine",
+        "deleteLine",
+        "moveLineUp",
+        "moveLineDown",
+        "sortLinesAscending",
+        "sortLinesDescending"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -265,6 +271,18 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(72, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'clearAllBookmarks'
         QtMocHelpers::SlotData<void()>(73, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'duplicateLine'
+        QtMocHelpers::SlotData<void()>(74, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'deleteLine'
+        QtMocHelpers::SlotData<void()>(75, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'moveLineUp'
+        QtMocHelpers::SlotData<void()>(76, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'moveLineDown'
+        QtMocHelpers::SlotData<void()>(77, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'sortLinesAscending'
+        QtMocHelpers::SlotData<void()>(78, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'sortLinesDescending'
+        QtMocHelpers::SlotData<void()>(79, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -350,6 +368,12 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 57: _t->goToNextBookmark(); break;
         case 58: _t->goToPreviousBookmark(); break;
         case 59: _t->clearAllBookmarks(); break;
+        case 60: _t->duplicateLine(); break;
+        case 61: _t->deleteLine(); break;
+        case 62: _t->moveLineUp(); break;
+        case 63: _t->moveLineDown(); break;
+        case 64: _t->sortLinesAscending(); break;
+        case 65: _t->sortLinesDescending(); break;
         default: ;
         }
     }
@@ -374,14 +398,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 60)
+        if (_id < 66)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 60;
+        _id -= 66;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 60)
+        if (_id < 66)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 60;
+        _id -= 66;
     }
     return _id;
 }

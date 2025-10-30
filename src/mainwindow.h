@@ -165,6 +165,14 @@ private slots:
     void goToPreviousBookmark();
     void clearAllBookmarks();
 
+    // Line operation slots
+    void duplicateLine();
+    void deleteLine();
+    void moveLineUp();
+    void moveLineDown();
+    void sortLinesAscending();
+    void sortLinesDescending();
+
 private:
     void setupMenus();
     void setupEditor();
