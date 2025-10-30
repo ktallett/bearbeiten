@@ -43,7 +43,6 @@ template <> constexpr inline auto CodeEditor::qt_create_metaobjectdata<qt_meta_t
         "updateLineNumberAreaWidth",
         "",
         "newBlockCount",
-        "highlightCurrentLine",
         "updateLineNumberArea",
         "rect",
         "dy",
@@ -55,14 +54,12 @@ template <> constexpr inline auto CodeEditor::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void(int)>(1, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 3 },
         }}),
-        // Slot 'highlightCurrentLine'
-        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'updateLineNumberArea'
-        QtMocHelpers::SlotData<void(const QRect &, int)>(5, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QRect, 6 }, { QMetaType::Int, 7 },
+        QtMocHelpers::SlotData<void(const QRect &, int)>(4, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QRect, 5 }, { QMetaType::Int, 6 },
         }}),
         // Slot 'matchBrackets'
-        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -87,9 +84,8 @@ void CodeEditor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->updateLineNumberAreaWidth((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 1: _t->highlightCurrentLine(); break;
-        case 2: _t->updateLineNumberArea((*reinterpret_cast< std::add_pointer_t<QRect>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
-        case 3: _t->matchBrackets(); break;
+        case 1: _t->updateLineNumberArea((*reinterpret_cast< std::add_pointer_t<QRect>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
+        case 2: _t->matchBrackets(); break;
         default: ;
         }
     }
@@ -114,14 +110,14 @@ int CodeEditor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 3;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 3)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 3;
     }
     return _id;
 }

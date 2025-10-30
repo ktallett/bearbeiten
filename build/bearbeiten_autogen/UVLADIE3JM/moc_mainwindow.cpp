@@ -66,7 +66,6 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "splitHorizontally",
         "splitVertically",
         "closeSplitView",
-        "onSplitterFocusChanged",
         "toggleProjectPanel",
         "openProjectFromPanel",
         "filePath",
@@ -186,135 +185,133 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(25, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'closeSplitView'
         QtMocHelpers::SlotData<void()>(26, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onSplitterFocusChanged'
-        QtMocHelpers::SlotData<void()>(27, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'toggleProjectPanel'
-        QtMocHelpers::SlotData<void()>(28, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(27, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'openProjectFromPanel'
-        QtMocHelpers::SlotData<void(const QString &)>(29, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 30 },
+        QtMocHelpers::SlotData<void(const QString &)>(28, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 29 },
         }}),
         // Slot 'toggleOutlinePanel'
-        QtMocHelpers::SlotData<void()>(31, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(30, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'jumpToSymbolFromOutline'
-        QtMocHelpers::SlotData<void(int)>(32, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 33 },
+        QtMocHelpers::SlotData<void(int)>(31, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 32 },
         }}),
         // Slot 'updateOutlinePanel'
-        QtMocHelpers::SlotData<void()>(34, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(33, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'autoSave'
-        QtMocHelpers::SlotData<void()>(35, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(34, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onTextChanged'
-        QtMocHelpers::SlotData<void()>(36, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(35, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'toggleAutoSave'
-        QtMocHelpers::SlotData<void()>(37, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(36, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'toggleTheme'
-        QtMocHelpers::SlotData<void()>(38, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(37, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'toggleLineWrap'
-        QtMocHelpers::SlotData<void()>(39, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(38, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'setLineWrapMode'
-        QtMocHelpers::SlotData<void(int)>(40, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 41 },
+        QtMocHelpers::SlotData<void(int)>(39, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 40 },
         }}),
         // Slot 'toggleWordWrapMode'
-        QtMocHelpers::SlotData<void()>(42, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(41, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'toggleColumnRuler'
-        QtMocHelpers::SlotData<void()>(43, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(42, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'toggleWrapIndicator'
-        QtMocHelpers::SlotData<void()>(44, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(43, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'setWrapColumn'
-        QtMocHelpers::SlotData<void()>(45, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(44, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'foldCurrentBlock'
-        QtMocHelpers::SlotData<void()>(46, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(45, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'unfoldCurrentBlock'
-        QtMocHelpers::SlotData<void()>(47, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(46, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'foldAll'
-        QtMocHelpers::SlotData<void()>(48, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(47, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'unfoldAll'
-        QtMocHelpers::SlotData<void()>(49, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(48, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'toggleMinimap'
-        QtMocHelpers::SlotData<void()>(50, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(49, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'toggleIndentationGuides'
-        QtMocHelpers::SlotData<void()>(51, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(50, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'toggleActiveIndentHighlight'
-        QtMocHelpers::SlotData<void()>(52, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(51, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'performFind'
-        QtMocHelpers::SlotData<void(const QString &, bool, bool, bool, bool)>(53, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 54 }, { QMetaType::Bool, 55 }, { QMetaType::Bool, 56 }, { QMetaType::Bool, 57 },
-            { QMetaType::Bool, 58 },
+        QtMocHelpers::SlotData<void(const QString &, bool, bool, bool, bool)>(52, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 53 }, { QMetaType::Bool, 54 }, { QMetaType::Bool, 55 }, { QMetaType::Bool, 56 },
+            { QMetaType::Bool, 57 },
         }}),
         // Slot 'performReplace'
-        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(59, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 60 }, { QMetaType::QString, 61 }, { QMetaType::Bool, 56 }, { QMetaType::Bool, 57 },
-            { QMetaType::Bool, 58 },
+        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(58, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 59 }, { QMetaType::QString, 60 }, { QMetaType::Bool, 55 }, { QMetaType::Bool, 56 },
+            { QMetaType::Bool, 57 },
         }}),
         // Slot 'performReplaceAll'
-        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(62, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 60 }, { QMetaType::QString, 61 }, { QMetaType::Bool, 56 }, { QMetaType::Bool, 57 },
-            { QMetaType::Bool, 58 },
+        QtMocHelpers::SlotData<void(const QString &, const QString &, bool, bool, bool)>(61, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 59 }, { QMetaType::QString, 60 }, { QMetaType::Bool, 55 }, { QMetaType::Bool, 56 },
+            { QMetaType::Bool, 57 },
         }}),
         // Slot 'performGoToLine'
-        QtMocHelpers::SlotData<void(int)>(63, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 33 },
+        QtMocHelpers::SlotData<void(int)>(62, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 32 },
         }}),
         // Slot 'updateLinePreview'
-        QtMocHelpers::SlotData<void(int)>(64, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 33 },
+        QtMocHelpers::SlotData<void(int)>(63, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 32 },
         }}),
         // Slot 'performSymbolJump'
-        QtMocHelpers::SlotData<void(int)>(65, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 33 },
+        QtMocHelpers::SlotData<void(int)>(64, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 32 },
         }}),
         // Slot 'openFileFromFindInFiles'
-        QtMocHelpers::SlotData<void(const QString &, int)>(66, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 30 }, { QMetaType::Int, 33 },
+        QtMocHelpers::SlotData<void(const QString &, int)>(65, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 29 }, { QMetaType::Int, 32 },
         }}),
         // Slot 'updateBreadcrumb'
-        QtMocHelpers::SlotData<void()>(67, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(66, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'updateBreadcrumbSymbol'
-        QtMocHelpers::SlotData<void()>(68, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(67, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'showCharacterInspector'
-        QtMocHelpers::SlotData<void()>(69, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(68, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'changeEncoding'
-        QtMocHelpers::SlotData<void()>(70, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(69, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onEncodingLabelClicked'
-        QtMocHelpers::SlotData<void()>(71, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(70, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'toggleBookmark'
-        QtMocHelpers::SlotData<void()>(72, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(71, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'goToNextBookmark'
-        QtMocHelpers::SlotData<void()>(73, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(72, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'goToPreviousBookmark'
-        QtMocHelpers::SlotData<void()>(74, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(73, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'clearAllBookmarks'
-        QtMocHelpers::SlotData<void()>(75, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(74, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'duplicateLine'
-        QtMocHelpers::SlotData<void()>(76, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(75, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'deleteLine'
-        QtMocHelpers::SlotData<void()>(77, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(76, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'moveLineUp'
-        QtMocHelpers::SlotData<void()>(78, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(77, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'moveLineDown'
-        QtMocHelpers::SlotData<void()>(79, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(78, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'sortLinesAscending'
-        QtMocHelpers::SlotData<void()>(80, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(79, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'sortLinesDescending'
-        QtMocHelpers::SlotData<void()>(81, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(80, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'toggleLineComment'
-        QtMocHelpers::SlotData<void()>(82, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(81, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'toggleBlockComment'
-        QtMocHelpers::SlotData<void()>(83, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(82, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'saveSession'
-        QtMocHelpers::SlotData<void()>(84, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(83, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'loadSession'
-        QtMocHelpers::SlotData<void()>(85, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(84, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'saveSessionAs'
-        QtMocHelpers::SlotData<void()>(86, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(85, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'showCommandPalette'
-        QtMocHelpers::SlotData<void()>(87, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(86, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'openRecentFile'
-        QtMocHelpers::SlotData<void()>(88, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(87, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'clearRecentFiles'
-        QtMocHelpers::SlotData<void()>(89, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(88, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -363,59 +360,58 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 20: _t->splitHorizontally(); break;
         case 21: _t->splitVertically(); break;
         case 22: _t->closeSplitView(); break;
-        case 23: _t->onSplitterFocusChanged(); break;
-        case 24: _t->toggleProjectPanel(); break;
-        case 25: _t->openProjectFromPanel((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 26: _t->toggleOutlinePanel(); break;
-        case 27: _t->jumpToSymbolFromOutline((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 28: _t->updateOutlinePanel(); break;
-        case 29: _t->autoSave(); break;
-        case 30: _t->onTextChanged(); break;
-        case 31: _t->toggleAutoSave(); break;
-        case 32: _t->toggleTheme(); break;
-        case 33: _t->toggleLineWrap(); break;
-        case 34: _t->setLineWrapMode((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 35: _t->toggleWordWrapMode(); break;
-        case 36: _t->toggleColumnRuler(); break;
-        case 37: _t->toggleWrapIndicator(); break;
-        case 38: _t->setWrapColumn(); break;
-        case 39: _t->foldCurrentBlock(); break;
-        case 40: _t->unfoldCurrentBlock(); break;
-        case 41: _t->foldAll(); break;
-        case 42: _t->unfoldAll(); break;
-        case 43: _t->toggleMinimap(); break;
-        case 44: _t->toggleIndentationGuides(); break;
-        case 45: _t->toggleActiveIndentHighlight(); break;
-        case 46: _t->performFind((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
-        case 47: _t->performReplace((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
-        case 48: _t->performReplaceAll((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
-        case 49: _t->performGoToLine((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 50: _t->updateLinePreview((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 51: _t->performSymbolJump((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 52: _t->openFileFromFindInFiles((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
-        case 53: _t->updateBreadcrumb(); break;
-        case 54: _t->updateBreadcrumbSymbol(); break;
-        case 55: _t->showCharacterInspector(); break;
-        case 56: _t->changeEncoding(); break;
-        case 57: _t->onEncodingLabelClicked(); break;
-        case 58: _t->toggleBookmark(); break;
-        case 59: _t->goToNextBookmark(); break;
-        case 60: _t->goToPreviousBookmark(); break;
-        case 61: _t->clearAllBookmarks(); break;
-        case 62: _t->duplicateLine(); break;
-        case 63: _t->deleteLine(); break;
-        case 64: _t->moveLineUp(); break;
-        case 65: _t->moveLineDown(); break;
-        case 66: _t->sortLinesAscending(); break;
-        case 67: _t->sortLinesDescending(); break;
-        case 68: _t->toggleLineComment(); break;
-        case 69: _t->toggleBlockComment(); break;
-        case 70: _t->saveSession(); break;
-        case 71: _t->loadSession(); break;
-        case 72: _t->saveSessionAs(); break;
-        case 73: _t->showCommandPalette(); break;
-        case 74: _t->openRecentFile(); break;
-        case 75: _t->clearRecentFiles(); break;
+        case 23: _t->toggleProjectPanel(); break;
+        case 24: _t->openProjectFromPanel((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 25: _t->toggleOutlinePanel(); break;
+        case 26: _t->jumpToSymbolFromOutline((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 27: _t->updateOutlinePanel(); break;
+        case 28: _t->autoSave(); break;
+        case 29: _t->onTextChanged(); break;
+        case 30: _t->toggleAutoSave(); break;
+        case 31: _t->toggleTheme(); break;
+        case 32: _t->toggleLineWrap(); break;
+        case 33: _t->setLineWrapMode((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 34: _t->toggleWordWrapMode(); break;
+        case 35: _t->toggleColumnRuler(); break;
+        case 36: _t->toggleWrapIndicator(); break;
+        case 37: _t->setWrapColumn(); break;
+        case 38: _t->foldCurrentBlock(); break;
+        case 39: _t->unfoldCurrentBlock(); break;
+        case 40: _t->foldAll(); break;
+        case 41: _t->unfoldAll(); break;
+        case 42: _t->toggleMinimap(); break;
+        case 43: _t->toggleIndentationGuides(); break;
+        case 44: _t->toggleActiveIndentHighlight(); break;
+        case 45: _t->performFind((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
+        case 46: _t->performReplace((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
+        case 47: _t->performReplaceAll((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5]))); break;
+        case 48: _t->performGoToLine((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 49: _t->updateLinePreview((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 50: _t->performSymbolJump((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 51: _t->openFileFromFindInFiles((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
+        case 52: _t->updateBreadcrumb(); break;
+        case 53: _t->updateBreadcrumbSymbol(); break;
+        case 54: _t->showCharacterInspector(); break;
+        case 55: _t->changeEncoding(); break;
+        case 56: _t->onEncodingLabelClicked(); break;
+        case 57: _t->toggleBookmark(); break;
+        case 58: _t->goToNextBookmark(); break;
+        case 59: _t->goToPreviousBookmark(); break;
+        case 60: _t->clearAllBookmarks(); break;
+        case 61: _t->duplicateLine(); break;
+        case 62: _t->deleteLine(); break;
+        case 63: _t->moveLineUp(); break;
+        case 64: _t->moveLineDown(); break;
+        case 65: _t->sortLinesAscending(); break;
+        case 66: _t->sortLinesDescending(); break;
+        case 67: _t->toggleLineComment(); break;
+        case 68: _t->toggleBlockComment(); break;
+        case 69: _t->saveSession(); break;
+        case 70: _t->loadSession(); break;
+        case 71: _t->saveSessionAs(); break;
+        case 72: _t->showCommandPalette(); break;
+        case 73: _t->openRecentFile(); break;
+        case 74: _t->clearRecentFiles(); break;
         default: ;
         }
     }
@@ -440,14 +436,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 76)
+        if (_id < 75)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 76;
+        _id -= 75;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 76)
+        if (_id < 75)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 76;
+        _id -= 75;
     }
     return _id;
 }

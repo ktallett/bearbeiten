@@ -1275,11 +1275,6 @@ void MainWindow::closeSplitView()
     }
 }
 
-void MainWindow::onSplitterFocusChanged()
-{
-    syncLanguageComboBox();
-}
-
 void MainWindow::updateViewMode()
 {
     if (currentViewMode == ViewMode::SideBySide) {

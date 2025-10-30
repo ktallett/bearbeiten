@@ -25,6 +25,7 @@ public:
     bool useRegex() const;
 
     void setFindText(const QString &text);
+    void setStatus(const QString &message);
 
 public slots:
     void findNext();

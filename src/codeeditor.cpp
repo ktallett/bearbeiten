@@ -78,13 +78,6 @@ void CodeEditor::resizeEvent(QResizeEvent *e)
     lineNumberArea->setGeometry(QRect(cr.left(), cr.top(), lineNumberAreaWidth(), cr.height()));
 }
 
-void CodeEditor::highlightCurrentLine()
-{
-    // This method is kept for compatibility but functionality
-    // has been merged into matchBrackets() for efficiency
-    matchBrackets();
-}
-
 void CodeEditor::lineNumberAreaPaintEvent(QPaintEvent *event)
 {
     QPainter painter(lineNumberArea);
@@ -1169,39 +1162,6 @@ void CodeEditor::removeTextAtAllCursors(int length)
     }
 
     viewport()->update();
-}
-
-void CodeEditor::drawCursor(QPainter &painter, const QTextCursor &cursor)
-{
-    QRect rect = QPlainTextEdit::cursorRect(cursor);
-    if (rect.isNull()) {
-        return;
-    }
-
-    // Draw cursor line
-    painter.setPen(QPen(palette().color(QPalette::Text), 2));
-    painter.drawLine(rect.topLeft(), rect.bottomLeft());
-
-    // If there's a selection, highlight it
-    if (cursor.hasSelection()) {
-        int start = cursor.selectionStart();
-        int end = cursor.selectionEnd();
-
-        QTextCursor tempCursor(document());
-        tempCursor.setPosition(start);
-        tempCursor.setPosition(end, QTextCursor::KeepAnchor);
-
-        // Get the selection rectangles
-        QList<QTextLayout::FormatRange> selections;
-        QTextLayout::FormatRange selection;
-        selection.start = start;
-        selection.length = end - start;
-        selection.format.setBackground(palette().color(QPalette::Highlight));
-        selection.format.setForeground(palette().color(QPalette::HighlightedText));
-
-        // This is a simplified version - full implementation would need
-        // to handle multi-line selections properly
-    }
 }
 
 void CodeEditor::mousePressEvent(QMouseEvent *event)

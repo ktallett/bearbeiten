@@ -109,6 +109,11 @@ void FindDialog::setFindText(const QString &text)
     findLineEdit->selectAll();
 }
 
+void FindDialog::setStatus(const QString &message)
+{
+    statusLabel->setText(message);
+}
+
 void FindDialog::findNext()
 {
     if (!findText().isEmpty()) {

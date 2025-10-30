@@ -96,7 +96,6 @@ protected:
 
 private slots:
     void updateLineNumberAreaWidth(int newBlockCount);
-    void highlightCurrentLine();
     void updateLineNumberArea(const QRect &rect, int dy);
     void matchBrackets();
 
@@ -149,7 +148,6 @@ private:
     // Multiple cursor helpers
     void insertTextAtAllCursors(const QString &text);
     void removeTextAtAllCursors(int length);
-    void drawCursor(QPainter &painter, const QTextCursor &cursor);
     void sortCursors();
     void mergeCursors();
 

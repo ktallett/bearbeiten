@@ -99,7 +99,6 @@ private slots:
     void splitHorizontally();
     void splitVertically();
     void closeSplitView();
-    void onSplitterFocusChanged();
 
     // Project panel slots
     void toggleProjectPanel();
