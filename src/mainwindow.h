@@ -177,6 +177,11 @@ private slots:
     void toggleLineComment();
     void toggleBlockComment();
 
+    // Session management slots
+    void saveSession();
+    void loadSession();
+    void saveSessionAs();
+
     // Recent files slots
     void openRecentFile();
     void clearRecentFiles();
@@ -233,6 +238,14 @@ private:
     void updateRecentFilesMenu();
     void loadRecentFiles();
     void saveRecentFiles();
+
+    // Session management methods
+    void saveSessionToFile(const QString &sessionPath);
+    void loadSessionFromFile(const QString &sessionPath);
+    void autoSaveSession();
+    void autoRestoreSession();
+    QJsonObject createSessionData();
+    void restoreSessionData(const QJsonObject &sessionData);
 
     // Responsive UI methods
     void detectScreenSize();
