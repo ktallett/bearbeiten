@@ -23,6 +23,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/finddialog.cpp.o"
   "CMakeFiles/bearbeiten.dir/src/finddialog.cpp.o.d"
+  "CMakeFiles/bearbeiten.dir/src/findinfilesdialog.cpp.o"
+  "CMakeFiles/bearbeiten.dir/src/findinfilesdialog.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/gotolinedialog.cpp.o"
   "CMakeFiles/bearbeiten.dir/src/gotolinedialog.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/jsonsyntaxhighlighter.cpp.o"

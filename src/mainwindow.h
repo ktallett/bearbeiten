@@ -28,6 +28,7 @@
 #include <QResizeEvent>
 #include "jsonsyntaxhighlighter.h"
 #include "finddialog.h"
+#include "findinfilesdialog.h"
 #include "minimap.h"
 #include "gotolinedialog.h"
 #include "symbolsearchdialog.h"
@@ -84,6 +85,7 @@ private slots:
     void paste();
     void showFindDialog();
     void showReplaceDialog();
+    void showFindInFilesDialog();
     void showGoToLineDialog();
     void showSymbolSearchDialog();
 
@@ -148,6 +150,9 @@ private slots:
 
     // Symbol search slots
     void performSymbolJump(int lineNumber);
+
+    // Find in Files slots
+    void openFileFromFindInFiles(const QString &filePath, int lineNumber);
 
     // Breadcrumb slots
     void updateBreadcrumb();
@@ -342,6 +347,7 @@ private:
 
     // Find/Replace components
     FindDialog *findDialog;
+    FindInFilesDialog *findInFilesDialog;
 
     // Go to Line components
     GoToLineDialog *goToLineDialog;

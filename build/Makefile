@@ -423,6 +423,30 @@ src/finddialog.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/finddialog.cpp.s
 .PHONY : src/finddialog.cpp.s
 
+src/findinfilesdialog.o: src/findinfilesdialog.cpp.o
+.PHONY : src/findinfilesdialog.o
+
+# target to build an object file
+src/findinfilesdialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/findinfilesdialog.cpp.o
+.PHONY : src/findinfilesdialog.cpp.o
+
+src/findinfilesdialog.i: src/findinfilesdialog.cpp.i
+.PHONY : src/findinfilesdialog.i
+
+# target to preprocess a source file
+src/findinfilesdialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/findinfilesdialog.cpp.i
+.PHONY : src/findinfilesdialog.cpp.i
+
+src/findinfilesdialog.s: src/findinfilesdialog.cpp.s
+.PHONY : src/findinfilesdialog.s
+
+# target to generate assembly for a file
+src/findinfilesdialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/findinfilesdialog.cpp.s
+.PHONY : src/findinfilesdialog.cpp.s
+
 src/gotolinedialog.o: src/gotolinedialog.cpp.o
 .PHONY : src/gotolinedialog.o
 
@@ -705,6 +729,9 @@ help:
 	@echo "... src/finddialog.o"
 	@echo "... src/finddialog.i"
 	@echo "... src/finddialog.s"
+	@echo "... src/findinfilesdialog.o"
+	@echo "... src/findinfilesdialog.i"
+	@echo "... src/findinfilesdialog.s"
 	@echo "... src/gotolinedialog.o"
 	@echo "... src/gotolinedialog.i"
 	@echo "... src/gotolinedialog.s"

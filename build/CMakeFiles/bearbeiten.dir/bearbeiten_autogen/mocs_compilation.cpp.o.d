@@ -448,6 +448,21 @@ CMakeFiles/bearbeiten.dir/bearbeiten_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtWidgets/qcheckbox.h \
  /usr/include/qt6/QtWidgets/QGridLayout \
  /usr/include/qt6/QtWidgets/qgridlayout.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/moc_findinfilesdialog.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/findinfilesdialog.h \
+ /usr/include/qt6/QtWidgets/QTreeWidget \
+ /usr/include/qt6/QtWidgets/qtreewidget.h \
+ /usr/include/qt6/QtWidgets/qtreeview.h \
+ /usr/include/qt6/QtWidgets/qtreewidgetitemiterator.h \
+ /usr/include/qt6/QtWidgets/QProgressBar \
+ /usr/include/qt6/QtWidgets/qprogressbar.h \
+ /usr/include/qt6/QtCore/QThread /usr/include/qt6/QtCore/qthread.h \
+ /usr/include/c++/15/future /usr/include/c++/15/mutex \
+ /usr/include/c++/15/bits/std_mutex.h \
+ /usr/include/c++/15/bits/unique_lock.h \
+ /usr/include/c++/15/condition_variable \
+ /usr/include/c++/15/bits/atomic_futex.h \
+ /usr/include/c++/15/bits/std_thread.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/moc_gotolinedialog.cpp \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/gotolinedialog.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/moc_jsonsyntaxhighlighter.cpp \
@@ -504,13 +519,10 @@ CMakeFiles/bearbeiten.dir/bearbeiten_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtGui/QResizeEvent /usr/include/qt6/QtGui/qevent.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/jsonsyntaxhighlighter.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/finddialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/findinfilesdialog.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/minimap.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/gotolinedialog.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/outlinepanel.h \
- /usr/include/qt6/QtWidgets/QTreeWidget \
- /usr/include/qt6/QtWidgets/qtreewidget.h \
- /usr/include/qt6/QtWidgets/qtreeview.h \
- /usr/include/qt6/QtWidgets/qtreewidgetitemiterator.h \
  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/UVLADIE3JM/../../../src/projectpanel.h \
  /usr/include/qt6/QtWidgets/QTreeView \
  /usr/include/qt6/QtWidgets/qtreeview.h \

@@ -18,6 +18,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.cpp" "CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o.d"
   "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.cpp" "CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.o.d"
   "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.cpp" "CMakeFiles/bearbeiten.dir/src/finddialog.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/finddialog.cpp.o.d"
+  "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/findinfilesdialog.cpp" "CMakeFiles/bearbeiten.dir/src/findinfilesdialog.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/findinfilesdialog.cpp.o.d"
   "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.cpp" "CMakeFiles/bearbeiten.dir/src/gotolinedialog.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/gotolinedialog.cpp.o.d"
   "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.cpp" "CMakeFiles/bearbeiten.dir/src/jsonsyntaxhighlighter.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/jsonsyntaxhighlighter.cpp.o.d"
   "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.cpp" "CMakeFiles/bearbeiten.dir/src/languageloader.cpp.o" "gcc" "CMakeFiles/bearbeiten.dir/src/languageloader.cpp.o.d"

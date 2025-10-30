@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
       minimapEnabled(false), minimapAction(nullptr),
       indentationGuidesEnabled(true), activeIndentHighlightEnabled(true), indentationGuidesAction(nullptr), activeIndentHighlightAction(nullptr),
       trimWhitespaceOnSave(true), autoIndentEnabled(true), autoCloseBracketsEnabled(true), smartBackspaceEnabled(true),
-      findDialog(nullptr), goToLineDialog(nullptr), symbolSearchDialog(nullptr), characterInspector(nullptr), commandPalette(nullptr)
+      findDialog(nullptr), findInFilesDialog(nullptr), goToLineDialog(nullptr), symbolSearchDialog(nullptr), characterInspector(nullptr), commandPalette(nullptr)
 {
     detectScreenSize();
 
@@ -223,6 +223,11 @@ void MainWindow::setupMenus()
     replaceAction->setShortcut(QKeySequence::Replace);
     connect(replaceAction, &QAction::triggered, this, &MainWindow::showReplaceDialog);
     editMenu->addAction(replaceAction);
+
+    QAction *findInFilesAction = new QAction(tr("Find in &Files..."), this);
+    findInFilesAction->setShortcut(QKeySequence("Ctrl+Shift+F"));
+    connect(findInFilesAction, &QAction::triggered, this, &MainWindow::showFindInFilesDialog);
+    editMenu->addAction(findInFilesAction);
 
     editMenu->addSeparator();
 
@@ -1815,6 +1820,58 @@ void MainWindow::showFindDialog()
 void MainWindow::showReplaceDialog()
 {
     showFindDialog(); // Same dialog handles both find and replace
+}
+
+void MainWindow::showFindInFilesDialog()
+{
+    if (!findInFilesDialog) {
+        findInFilesDialog = new FindInFilesDialog(this);
+        connect(findInFilesDialog, &FindInFilesDialog::fileOpenRequested,
+                this, &MainWindow::openFileFromFindInFiles);
+    }
+
+    // Set default directory to the current file's directory or project directory
+    QString defaultDir;
+    CodeEditor *editor = getCurrentEditor();
+    if (editor) {
+        QString currentFile = getFilePathAt(tabWidget->currentIndex());
+        if (!currentFile.isEmpty()) {
+            QFileInfo fileInfo(currentFile);
+            defaultDir = fileInfo.absolutePath();
+        }
+    }
+
+    if (defaultDir.isEmpty()) {
+        defaultDir = QDir::currentPath();
+    }
+
+    findInFilesDialog->setSearchDirectory(defaultDir);
+
+    // If text is selected, use it as the search text
+    if (editor && editor->textCursor().hasSelection()) {
+        findInFilesDialog->setSearchText(editor->textCursor().selectedText());
+    }
+
+    findInFilesDialog->show();
+    findInFilesDialog->raise();
+    findInFilesDialog->activateWindow();
+}
+
+void MainWindow::openFileFromFindInFiles(const QString &filePath, int lineNumber)
+{
+    // Open the file
+    loadFile(filePath);
+
+    // Jump to the specified line
+    CodeEditor *editor = getCurrentEditor();
+    if (editor && lineNumber > 0) {
+        QTextCursor cursor = editor->textCursor();
+        cursor.movePosition(QTextCursor::Start);
+        cursor.movePosition(QTextCursor::Down, QTextCursor::MoveAnchor, lineNumber - 1);
+        editor->setTextCursor(cursor);
+        editor->centerCursor();
+        editor->setFocus();
+    }
 }
 
 void MainWindow::performFind(const QString &text, bool forward, bool caseSensitive, bool wholeWords, bool useRegex)

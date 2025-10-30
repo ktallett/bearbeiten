@@ -19,6 +19,7 @@ bearbeiten: \
   CMakeFiles/bearbeiten.dir/src/characterinspector.cpp.o \
   CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.o \
   CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o \
+  CMakeFiles/bearbeiten.dir/src/findinfilesdialog.cpp.o \
   CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o \
   CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.o \
   /usr/lib64/libQt6Widgets.so.6.9.2 \
@@ -126,6 +127,8 @@ CMakeFiles/bearbeiten.dir/src/characterinspector.cpp.o:
 CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.o:
 
 CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o:
+
+CMakeFiles/bearbeiten.dir/src/findinfilesdialog.cpp.o:
 
 CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o:
 

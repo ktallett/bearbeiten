@@ -40,6 +40,8 @@ set(SOURCES
     src/encodingmanager.h
     src/commandpalette.cpp
     src/commandpalette.h
+    src/findinfilesdialog.cpp
+    src/findinfilesdialog.h
 )
 
 qt6_add_executable(bearbeiten ${SOURCES})

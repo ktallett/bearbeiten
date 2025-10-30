@@ -15,6 +15,8 @@ bearbeiten_autogen/timestamp: \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.h \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/findinfilesdialog.cpp \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/findinfilesdialog.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.cpp \
@@ -124,6 +126,7 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/c++/15/bits/allocated_ptr.h \
 	/usr/include/c++/15/bits/allocator.h \
 	/usr/include/c++/15/bits/atomic_base.h \
+	/usr/include/c++/15/bits/atomic_futex.h \
 	/usr/include/c++/15/bits/atomic_lockfree_defines.h \
 	/usr/include/c++/15/bits/basic_string.h \
 	/usr/include/c++/15/bits/basic_string.tcc \
@@ -170,6 +173,8 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/c++/15/bits/specfun.h \
 	/usr/include/c++/15/bits/std_abs.h \
 	/usr/include/c++/15/bits/std_function.h \
+	/usr/include/c++/15/bits/std_mutex.h \
+	/usr/include/c++/15/bits/std_thread.h \
 	/usr/include/c++/15/bits/stl_algo.h \
 	/usr/include/c++/15/bits/stl_algobase.h \
 	/usr/include/c++/15/bits/stl_bvector.h \
@@ -198,6 +203,7 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/c++/15/bits/string_view.tcc \
 	/usr/include/c++/15/bits/stringfwd.h \
 	/usr/include/c++/15/bits/uniform_int_dist.h \
+	/usr/include/c++/15/bits/unique_lock.h \
 	/usr/include/c++/15/bits/unique_ptr.h \
 	/usr/include/c++/15/bits/unordered_map.h \
 	/usr/include/c++/15/bits/unordered_set.h \
@@ -215,6 +221,7 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/c++/15/cmath \
 	/usr/include/c++/15/compare \
 	/usr/include/c++/15/concepts \
+	/usr/include/c++/15/condition_variable \
 	/usr/include/c++/15/cstddef \
 	/usr/include/c++/15/cstdint \
 	/usr/include/c++/15/cstdio \
@@ -234,6 +241,7 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/c++/15/ext/type_traits.h \
 	/usr/include/c++/15/filesystem \
 	/usr/include/c++/15/functional \
+	/usr/include/c++/15/future \
 	/usr/include/c++/15/initializer_list \
 	/usr/include/c++/15/iosfwd \
 	/usr/include/c++/15/iterator \
@@ -241,6 +249,7 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/c++/15/list \
 	/usr/include/c++/15/map \
 	/usr/include/c++/15/memory \
+	/usr/include/c++/15/mutex \
 	/usr/include/c++/15/new \
 	/usr/include/c++/15/numeric \
 	/usr/include/c++/15/optional \
@@ -317,6 +326,7 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/qt6/QtCore/QSizeF \
 	/usr/include/qt6/QtCore/QString \
 	/usr/include/qt6/QtCore/QStringList \
+	/usr/include/qt6/QtCore/QThread \
 	/usr/include/qt6/QtCore/QTimer \
 	/usr/include/qt6/QtCore/QUrl \
 	/usr/include/qt6/QtCore/QVector \
@@ -459,6 +469,7 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qtenvironmentvariables.h \
 	/usr/include/qt6/QtCore/qtextstream.h \
 	/usr/include/qt6/QtCore/qtformat_impl.h \
+	/usr/include/qt6/QtCore/qthread.h \
 	/usr/include/qt6/QtCore/qtimer.h \
 	/usr/include/qt6/QtCore/qtimezone.h \
 	/usr/include/qt6/QtCore/qtmetamacros.h \
@@ -560,6 +571,7 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/qt6/QtWidgets/QMenuBar \
 	/usr/include/qt6/QtWidgets/QMessageBox \
 	/usr/include/qt6/QtWidgets/QPlainTextEdit \
+	/usr/include/qt6/QtWidgets/QProgressBar \
 	/usr/include/qt6/QtWidgets/QPushButton \
 	/usr/include/qt6/QtWidgets/QSplitter \
 	/usr/include/qt6/QtWidgets/QStatusBar \
@@ -597,6 +609,7 @@ bearbeiten_autogen/timestamp: \
 	/usr/include/qt6/QtWidgets/qmenubar.h \
 	/usr/include/qt6/QtWidgets/qmessagebox.h \
 	/usr/include/qt6/QtWidgets/qplaintextedit.h \
+	/usr/include/qt6/QtWidgets/qprogressbar.h \
 	/usr/include/qt6/QtWidgets/qpushbutton.h \
 	/usr/include/qt6/QtWidgets/qrubberband.h \
 	/usr/include/qt6/QtWidgets/qsizepolicy.h \
@@ -781,6 +794,10 @@ bearbeiten_autogen/timestamp: \
 	/usr/lib64/cmake/Qt6Gui/Qt6QGtk3ThemePluginConfig.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QGtk3ThemePluginTargets-relwithdebinfo.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QGtk3ThemePluginTargets.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QICNSPluginAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QICNSPluginConfig.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QICNSPluginTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QICNSPluginTargets.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QICOPluginAdditionalTargetInfo.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QICOPluginTargets-relwithdebinfo.cmake \
@@ -789,6 +806,10 @@ bearbeiten_autogen/timestamp: \
 	/usr/lib64/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginConfig.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginTargets-relwithdebinfo.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginTargets.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QJp2PluginAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QJp2PluginConfig.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QJp2PluginTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QJp2PluginTargets.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QJpegPluginAdditionalTargetInfo.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QJpegPluginConfig.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QJpegPluginTargets-relwithdebinfo.cmake \
@@ -809,10 +830,22 @@ bearbeiten_autogen/timestamp: \
 	/usr/lib64/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginConfig.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets-relwithdebinfo.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QMngPluginAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QMngPluginConfig.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QMngPluginTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QMngPluginTargets.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginAdditionalTargetInfo.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginConfig.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets-relwithdebinfo.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QTgaPluginAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QTgaPluginConfig.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QTgaPluginTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QTgaPluginTargets.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QTiffPluginAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QTiffPluginConfig.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QTiffPluginTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QTiffPluginTargets.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QTsLibPluginAdditionalTargetInfo.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QTsLibPluginConfig.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QTsLibPluginTargets-relwithdebinfo.cmake \
@@ -829,6 +862,14 @@ bearbeiten_autogen/timestamp: \
 	/usr/lib64/cmake/Qt6Gui/Qt6QVncIntegrationPluginConfig.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QVncIntegrationPluginTargets-relwithdebinfo.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QVncIntegrationPluginTargets.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QWbmpPluginAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QWbmpPluginConfig.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QWbmpPluginTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QWbmpPluginTargets.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QWebpPluginAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QWebpPluginConfig.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QWebpPluginTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Gui/Qt6QWebpPluginTargets.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginAdditionalTargetInfo.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginConfig.cmake \
 	/usr/lib64/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginTargets-relwithdebinfo.cmake \
