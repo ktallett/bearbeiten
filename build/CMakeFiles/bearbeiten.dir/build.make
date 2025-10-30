@@ -134,7 +134,7 @@ bearbeiten_autogen/timestamp: /usr/lib64/qt6/libexec/moc
 bearbeiten_autogen/timestamp: /usr/lib64/qt6/libexec/uic
 bearbeiten_autogen/timestamp: CMakeFiles/bearbeiten.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Automatic MOC and UIC for target bearbeiten"
-	/usr/bin/cmake -E cmake_autogen /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/bearbeiten_autogen.dir/AutogenInfo.json ""
+	/usr/bin/cmake -E cmake_autogen /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/bearbeiten_autogen.dir/AutogenInfo.json Release
 	/usr/bin/cmake -E touch /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/timestamp
 
 CMakeFiles/bearbeiten.dir/codegen:
@@ -364,10 +364,24 @@ CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.s"
 	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.cpp -o CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.s
 
+CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o: CMakeFiles/bearbeiten.dir/flags.make
+CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.cpp
+CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o: CMakeFiles/bearbeiten.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o -MF CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o.d -o CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.cpp
+
+CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.i"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.cpp > CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.i
+
+CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.s"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.cpp -o CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.s
+
 CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o: CMakeFiles/bearbeiten.dir/flags.make
 CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o: .qt/rcc/qrc_resources.cpp
 CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o: CMakeFiles/bearbeiten.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o"
 	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o -MF CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o.d -o CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_resources.cpp
 
 CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.i: cmake_force
@@ -381,7 +395,7 @@ CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.s: cmake_force
 CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.o: CMakeFiles/bearbeiten.dir/flags.make
 CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.o: .qt/rcc/qrc_bearbeiten_translations.cpp
 CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.o: CMakeFiles/bearbeiten.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.o"
 	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.o -MF CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.o.d -o CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_bearbeiten_translations.cpp
 
 CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.i: cmake_force
@@ -410,6 +424,7 @@ bearbeiten_OBJECTS = \
 "CMakeFiles/bearbeiten.dir/src/breadcrumbbar.cpp.o" \
 "CMakeFiles/bearbeiten.dir/src/characterinspector.cpp.o" \
 "CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.o" \
+"CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o" \
 "CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o" \
 "CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.o"
 
@@ -432,6 +447,7 @@ bearbeiten: CMakeFiles/bearbeiten.dir/src/minimap.cpp.o
 bearbeiten: CMakeFiles/bearbeiten.dir/src/breadcrumbbar.cpp.o
 bearbeiten: CMakeFiles/bearbeiten.dir/src/characterinspector.cpp.o
 bearbeiten: CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.o
+bearbeiten: CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o
 bearbeiten: CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o
 bearbeiten: CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.o
 bearbeiten: CMakeFiles/bearbeiten.dir/build.make
@@ -442,7 +458,7 @@ bearbeiten: /usr/lib64/libGLX.so
 bearbeiten: /usr/lib64/libOpenGL.so
 bearbeiten: /usr/lib64/libQt6Core.so.6.9.2
 bearbeiten: CMakeFiles/bearbeiten.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking CXX executable bearbeiten"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Linking CXX executable bearbeiten"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bearbeiten.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

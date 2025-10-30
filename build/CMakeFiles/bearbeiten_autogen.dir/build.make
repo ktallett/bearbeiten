@@ -72,7 +72,7 @@ bearbeiten_autogen/timestamp: /usr/lib64/qt6/libexec/moc
 bearbeiten_autogen/timestamp: /usr/lib64/qt6/libexec/uic
 bearbeiten_autogen/timestamp: CMakeFiles/bearbeiten_autogen.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target bearbeiten"
-	/usr/bin/cmake -E cmake_autogen /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/bearbeiten_autogen.dir/AutogenInfo.json ""
+	/usr/bin/cmake -E cmake_autogen /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/bearbeiten_autogen.dir/AutogenInfo.json Release
 	/usr/bin/cmake -E touch /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/bearbeiten_autogen/timestamp
 
 CMakeFiles/bearbeiten_autogen.dir/codegen:

@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/bearbeiten.dir/src/characterinspector.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/codeeditor.cpp.o"
   "CMakeFiles/bearbeiten.dir/src/codeeditor.cpp.o.d"
+  "CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o"
+  "CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.o"
   "CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.o.d"
   "CMakeFiles/bearbeiten.dir/src/finddialog.cpp.o"

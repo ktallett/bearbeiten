@@ -2,6 +2,7 @@
 #include "UVLADIE3JM/moc_breadcrumbbar.cpp"
 #include "UVLADIE3JM/moc_characterinspector.cpp"
 #include "UVLADIE3JM/moc_codeeditor.cpp"
+#include "UVLADIE3JM/moc_commandpalette.cpp"
 #include "UVLADIE3JM/moc_finddialog.cpp"
 #include "UVLADIE3JM/moc_gotolinedialog.cpp"
 #include "UVLADIE3JM/moc_jsonsyntaxhighlighter.cpp"

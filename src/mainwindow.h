@@ -37,6 +37,7 @@
 #include "breadcrumbbar.h"
 #include "characterinspector.h"
 #include "encodingmanager.h"
+#include "commandpalette.h"
 
 enum class ViewMode {
     Single,
@@ -182,6 +183,9 @@ private slots:
     void loadSession();
     void saveSessionAs();
 
+    // Command palette slots
+    void showCommandPalette();
+
     // Recent files slots
     void openRecentFile();
     void clearRecentFiles();
@@ -247,6 +251,9 @@ private:
     QJsonObject createSessionData();
     void restoreSessionData(const QJsonObject &sessionData);
 
+    // Command palette methods
+    QList<QAction*> getAllActions();
+
     // Responsive UI methods
     void detectScreenSize();
     void setupResponsiveUI();
@@ -298,6 +305,10 @@ private:
     int autoSaveInterval; // in seconds
     QAction *autoSaveAction;
 
+    // Session management components
+    bool autoRestoreSessionEnabled;
+    QString currentSessionPath;
+
     // Theme components
     bool isDarkTheme;
     QAction *themeAction;
@@ -341,6 +352,9 @@ private:
 
     // Character inspector components
     CharacterInspector *characterInspector;
+
+    // Command palette components
+    CommandPalette *commandPalette;
 };
 
 #endif // MAINWINDOW_H

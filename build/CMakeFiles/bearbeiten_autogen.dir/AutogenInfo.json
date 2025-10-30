@@ -484,6 +484,12 @@
 			null
 		],
 		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.h",
+			"MU",
+			"UVLADIE3JM/moc_commandpalette.cpp",
+			null
+		],
+		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.h",
 			"MU",
 			"UVLADIE3JM/moc_encodingmanager.cpp",
@@ -624,6 +630,11 @@
 		],
 		[
 			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.cpp",
 			"MU",
 			null
 		],

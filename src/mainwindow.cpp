@@ -6,6 +6,10 @@
 #include <QDebug>
 #include <QFile>
 #include <QInputDialog>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QFileDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), mainSplitter(nullptr), editorSplitter(nullptr), leftTabWidget(nullptr), rightTabWidget(nullptr),
@@ -14,12 +18,13 @@ MainWindow::MainWindow(QWidget *parent)
       cursorPositionLabel(nullptr), selectionInfoLabel(nullptr), fileSizeLabel(nullptr),
       activeTabInfoMap(nullptr), recentFilesMenu(nullptr), currentViewMode(ViewMode::Single), focusedTabWidget(nullptr),
       projectPanelVisible(false), outlinePanelVisible(false), isSmallScreen(false), autoSaveTimer(nullptr), autoSaveEnabled(true), autoSaveInterval(30), autoSaveAction(nullptr),
+      autoRestoreSessionEnabled(true),
       isDarkTheme(false), themeAction(nullptr), lineWrapEnabled(true), wordWrapMode(true), showColumnRuler(false), showWrapIndicator(true), wrapColumn(80),
       lineWrapAction(nullptr), wordWrapAction(nullptr), columnRulerAction(nullptr), wrapIndicatorAction(nullptr),
       minimapEnabled(false), minimapAction(nullptr),
       indentationGuidesEnabled(true), activeIndentHighlightEnabled(true), indentationGuidesAction(nullptr), activeIndentHighlightAction(nullptr),
       trimWhitespaceOnSave(true), autoIndentEnabled(true), autoCloseBracketsEnabled(true), smartBackspaceEnabled(true),
-      findDialog(nullptr), goToLineDialog(nullptr), symbolSearchDialog(nullptr), characterInspector(nullptr)
+      findDialog(nullptr), goToLineDialog(nullptr), symbolSearchDialog(nullptr), characterInspector(nullptr), commandPalette(nullptr)
 {
     detectScreenSize();
 
@@ -42,10 +47,16 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Create first tab
     createNewTab();
+
+    // Auto-restore session if enabled
+    autoRestoreSession();
 }
 
 MainWindow::~MainWindow()
 {
+    // Auto-save session before closing
+    autoSaveSession();
+
     saveSettings();
     if (autoSaveTimer) {
         autoSaveTimer->stop();
@@ -225,6 +236,12 @@ void MainWindow::setupMenus()
     connect(goToSymbolAction, &QAction::triggered, this, &MainWindow::showSymbolSearchDialog);
     editMenu->addAction(goToSymbolAction);
 
+    QAction *commandPaletteAction = new QAction(tr("Command &Palette..."), this);
+    commandPaletteAction->setShortcut(QKeySequence("Ctrl+Shift+P"));
+    commandPaletteAction->setToolTip(tr("Show command palette"));
+    connect(commandPaletteAction, &QAction::triggered, this, &MainWindow::showCommandPalette);
+    editMenu->addAction(commandPaletteAction);
+
     editMenu->addSeparator();
 
     QAction *characterInspectorAction = new QAction(tr("&Inspect Character..."), this);
@@ -309,6 +326,24 @@ void MainWindow::setupMenus()
     toggleBlockCommentAction->setToolTip(tr("Toggle block comment on selection"));
     connect(toggleBlockCommentAction, &QAction::triggered, this, &MainWindow::toggleBlockComment);
     editMenu->addAction(toggleBlockCommentAction);
+
+    // Session menu
+    QMenu *sessionMenu = menuBar()->addMenu(tr("&Session"));
+
+    QAction *saveSessionAction = new QAction(tr("&Save Session"), this);
+    saveSessionAction->setToolTip(tr("Save current workspace session"));
+    connect(saveSessionAction, &QAction::triggered, this, &MainWindow::saveSession);
+    sessionMenu->addAction(saveSessionAction);
+
+    QAction *saveSessionAsAction = new QAction(tr("Save Session &As..."), this);
+    saveSessionAsAction->setToolTip(tr("Save current workspace session to a new file"));
+    connect(saveSessionAsAction, &QAction::triggered, this, &MainWindow::saveSessionAs);
+    sessionMenu->addAction(saveSessionAsAction);
+
+    QAction *loadSessionAction = new QAction(tr("&Load Session..."), this);
+    loadSessionAction->setToolTip(tr("Load a saved workspace session"));
+    connect(loadSessionAction, &QAction::triggered, this, &MainWindow::loadSession);
+    sessionMenu->addAction(loadSessionAction);
 
     // View menu for split functionality
     QMenu *viewMenu = menuBar()->addMenu(tr("&View"));
@@ -2356,6 +2391,54 @@ void MainWindow::showCharacterInspector()
     characterInspector->activateWindow();
 }
 
+QList<QAction*> MainWindow::getAllActions()
+{
+    QList<QAction*> actions;
+
+    // Get all actions from menu bar
+    QMenuBar *menuBar = this->menuBar();
+    if (menuBar) {
+        // Iterate through all top-level menus
+        QList<QAction*> menuActions = menuBar->actions();
+        for (QAction *menuAction : menuActions) {
+            QMenu *menu = menuAction->menu();
+            if (menu) {
+                // Recursively get all actions from this menu
+                QList<QAction*> menuActionsList = menu->actions();
+                for (QAction *action : menuActionsList) {
+                    if (action->menu()) {
+                        // If this action has a submenu, get its actions too
+                        actions.append(action->menu()->actions());
+                    } else {
+                        actions.append(action);
+                    }
+                }
+            }
+        }
+    }
+
+    return actions;
+}
+
+void MainWindow::showCommandPalette()
+{
+    // Create command palette if it doesn't exist
+    if (!commandPalette) {
+        commandPalette = new CommandPalette(this);
+    }
+
+    // Get all actions from menus
+    QList<QAction*> actions = getAllActions();
+
+    // Set the actions in the palette
+    commandPalette->setActions(actions);
+
+    // Show the palette
+    commandPalette->show();
+    commandPalette->raise();
+    commandPalette->activateWindow();
+}
+
 void MainWindow::updateEncodingLabel()
 {
     if (!encodingLabel) {
@@ -2768,5 +2851,291 @@ QString MainWindow::formatFileSize(qint64 bytes)
         return tr("%1 MB").arg(bytes / (1024.0 * 1024.0), 0, 'f', 1);
     } else {
         return tr("%1 GB").arg(bytes / (1024.0 * 1024.0 * 1024.0), 0, 'f', 1);
+    }
+}
+
+// Session management implementation
+
+QJsonObject MainWindow::createSessionData()
+{
+    QJsonObject sessionData;
+
+    // Save view mode
+    sessionData["viewMode"] = static_cast<int>(currentViewMode);
+
+    // Save panel visibility
+    sessionData["projectPanelVisible"] = projectPanelVisible;
+    sessionData["outlinePanelVisible"] = outlinePanelVisible;
+
+    // Save current tab index
+    sessionData["currentTab"] = tabWidget->currentIndex();
+
+    // Save open files with their state
+    QJsonArray filesArray;
+    for (int i = 0; i < tabWidget->count(); ++i) {
+        QString filePath = getFilePathAt(i);
+        if (filePath.isEmpty()) {
+            continue; // Skip unsaved files
+        }
+
+        QJsonObject fileData;
+        fileData["path"] = filePath;
+        fileData["modified"] = isTabModified(i);
+
+        // Get editor for this tab
+        QWidget *tabContainer = tabWidget->widget(i);
+        if (tabContainer) {
+            CodeEditor *editor = tabContainer->findChild<CodeEditor*>();
+            if (editor) {
+                // Save cursor position
+                QTextCursor cursor = editor->textCursor();
+                fileData["cursorLine"] = cursor.blockNumber();
+                fileData["cursorColumn"] = cursor.positionInBlock();
+
+                // Save bookmarks
+                QSet<int> bookmarks = editor->getBookmarks();
+                if (!bookmarks.isEmpty()) {
+                    QJsonArray bookmarksArray;
+                    for (int bookmark : bookmarks) {
+                        bookmarksArray.append(bookmark);
+                    }
+                    fileData["bookmarks"] = bookmarksArray;
+                }
+
+                // Save current language
+                fileData["language"] = editor->getCurrentLanguage();
+            }
+        }
+
+        // Save encoding
+        if (activeTabInfoMap->contains(i)) {
+            EncodingManager::Encoding encoding = (*activeTabInfoMap)[i].encoding;
+            fileData["encoding"] = static_cast<int>(encoding);
+        }
+
+        filesArray.append(fileData);
+    }
+    sessionData["files"] = filesArray;
+
+    return sessionData;
+}
+
+void MainWindow::restoreSessionData(const QJsonObject &sessionData)
+{
+    // Close all existing tabs except the first empty one
+    while (tabWidget->count() > 1) {
+        closeTab(tabWidget->count() - 1);
+    }
+    if (tabWidget->count() == 1) {
+        QString filePath = getFilePathAt(0);
+        if (filePath.isEmpty() && !isTabModified(0)) {
+            closeTab(0);
+        }
+    }
+
+    // Restore view mode
+    if (sessionData.contains("viewMode")) {
+        currentViewMode = static_cast<ViewMode>(sessionData["viewMode"].toInt());
+        // Note: Split view restoration would be handled here
+    }
+
+    // Restore panel visibility
+    if (sessionData.contains("projectPanelVisible")) {
+        bool shouldBeVisible = sessionData["projectPanelVisible"].toBool();
+        if (shouldBeVisible != projectPanelVisible) {
+            toggleProjectPanel();
+        }
+    }
+
+    if (sessionData.contains("outlinePanelVisible")) {
+        bool shouldBeVisible = sessionData["outlinePanelVisible"].toBool();
+        if (shouldBeVisible != outlinePanelVisible) {
+            toggleOutlinePanel();
+        }
+    }
+
+    // Restore files
+    if (sessionData.contains("files")) {
+        QJsonArray filesArray = sessionData["files"].toArray();
+        int targetTabIndex = -1;
+
+        for (const QJsonValue &value : filesArray) {
+            QJsonObject fileData = value.toObject();
+            QString filePath = fileData["path"].toString();
+
+            if (filePath.isEmpty() || !QFile::exists(filePath)) {
+                continue;
+            }
+
+            // Load the file
+            loadFile(filePath);
+
+            int currentTab = tabWidget->currentIndex();
+            if (currentTab >= 0) {
+                // Restore cursor position
+                if (fileData.contains("cursorLine")) {
+                    CodeEditor *editor = getCurrentEditor();
+                    if (editor) {
+                        int line = fileData["cursorLine"].toInt();
+                        int column = fileData["cursorColumn"].toInt();
+
+                        QTextCursor cursor = editor->textCursor();
+                        cursor.movePosition(QTextCursor::Start);
+                        cursor.movePosition(QTextCursor::Down, QTextCursor::MoveAnchor, line);
+                        cursor.movePosition(QTextCursor::Right, QTextCursor::MoveAnchor, column);
+                        editor->setTextCursor(cursor);
+                        editor->centerCursor();
+                    }
+                }
+
+                // Restore bookmarks
+                if (fileData.contains("bookmarks")) {
+                    CodeEditor *editor = getCurrentEditor();
+                    if (editor) {
+                        QJsonArray bookmarksArray = fileData["bookmarks"].toArray();
+                        QSet<int> bookmarks;
+                        for (const QJsonValue &bm : bookmarksArray) {
+                            bookmarks.insert(bm.toInt());
+                        }
+                        editor->setBookmarks(bookmarks);
+                        if (activeTabInfoMap->contains(currentTab)) {
+                            (*activeTabInfoMap)[currentTab].bookmarks = bookmarks;
+                        }
+                    }
+                }
+
+                // Restore encoding
+                if (fileData.contains("encoding") && activeTabInfoMap->contains(currentTab)) {
+                    int encodingValue = fileData["encoding"].toInt();
+                    (*activeTabInfoMap)[currentTab].encoding = static_cast<EncodingManager::Encoding>(encodingValue);
+                    updateEncodingLabel();
+                }
+
+                // Restore language
+                if (fileData.contains("language")) {
+                    CodeEditor *editor = getCurrentEditor();
+                    if (editor) {
+                        QString language = fileData["language"].toString();
+                        editor->setCurrentLanguage(language);
+                    }
+                }
+
+                // Mark as unmodified if it was saved
+                if (!fileData["modified"].toBool()) {
+                    setTabModified(currentTab, false);
+                }
+            }
+        }
+
+        // Restore active tab
+        if (sessionData.contains("currentTab")) {
+            int targetTab = sessionData["currentTab"].toInt();
+            if (targetTab >= 0 && targetTab < tabWidget->count()) {
+                tabWidget->setCurrentIndex(targetTab);
+            }
+        }
+    }
+}
+
+void MainWindow::saveSession()
+{
+    if (currentSessionPath.isEmpty()) {
+        saveSessionAs();
+    } else {
+        saveSessionToFile(currentSessionPath);
+    }
+}
+
+void MainWindow::saveSessionAs()
+{
+    QString defaultPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+    QString fileName = QFileDialog::getSaveFileName(this,
+        tr("Save Session"),
+        defaultPath + "/session.json",
+        tr("Session Files (*.json);;All Files (*)"));
+
+    if (!fileName.isEmpty()) {
+        currentSessionPath = fileName;
+        saveSessionToFile(fileName);
+    }
+}
+
+void MainWindow::loadSession()
+{
+    QString defaultPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+    QString fileName = QFileDialog::getOpenFileName(this,
+        tr("Load Session"),
+        defaultPath,
+        tr("Session Files (*.json);;All Files (*)"));
+
+    if (!fileName.isEmpty()) {
+        currentSessionPath = fileName;
+        loadSessionFromFile(fileName);
+    }
+}
+
+void MainWindow::saveSessionToFile(const QString &sessionPath)
+{
+    QJsonObject sessionData = createSessionData();
+    QJsonDocument doc(sessionData);
+
+    QFile file(sessionPath);
+    if (file.open(QIODevice::WriteOnly)) {
+        file.write(doc.toJson());
+        file.close();
+        statusBar()->showMessage(tr("Session saved"), 3000);
+    } else {
+        QMessageBox::warning(this, tr("Save Session"),
+            tr("Could not save session to %1").arg(sessionPath));
+    }
+}
+
+void MainWindow::loadSessionFromFile(const QString &sessionPath)
+{
+    QFile file(sessionPath);
+    if (!file.open(QIODevice::ReadOnly)) {
+        QMessageBox::warning(this, tr("Load Session"),
+            tr("Could not open session file %1").arg(sessionPath));
+        return;
+    }
+
+    QByteArray data = file.readAll();
+    file.close();
+
+    QJsonDocument doc = QJsonDocument::fromJson(data);
+    if (doc.isNull() || !doc.isObject()) {
+        QMessageBox::warning(this, tr("Load Session"),
+            tr("Invalid session file format"));
+        return;
+    }
+
+    restoreSessionData(doc.object());
+    statusBar()->showMessage(tr("Session loaded"), 3000);
+}
+
+void MainWindow::autoSaveSession()
+{
+    if (!autoRestoreSessionEnabled) {
+        return;
+    }
+
+    QString sessionPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QDir().mkpath(sessionPath);
+    sessionPath += "/autosave-session.json";
+
+    saveSessionToFile(sessionPath);
+}
+
+void MainWindow::autoRestoreSession()
+{
+    if (!autoRestoreSessionEnabled) {
+        return;
+    }
+
+    QString sessionPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    sessionPath += "/autosave-session.json";
+
+    if (QFile::exists(sessionPath)) {
+        loadSessionFromFile(sessionPath);
     }
 }

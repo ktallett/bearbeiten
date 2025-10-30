@@ -351,6 +351,30 @@ src/codeeditor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/codeeditor.cpp.s
 .PHONY : src/codeeditor.cpp.s
 
+src/commandpalette.o: src/commandpalette.cpp.o
+.PHONY : src/commandpalette.o
+
+# target to build an object file
+src/commandpalette.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o
+.PHONY : src/commandpalette.cpp.o
+
+src/commandpalette.i: src/commandpalette.cpp.i
+.PHONY : src/commandpalette.i
+
+# target to preprocess a source file
+src/commandpalette.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.i
+.PHONY : src/commandpalette.cpp.i
+
+src/commandpalette.s: src/commandpalette.cpp.s
+.PHONY : src/commandpalette.s
+
+# target to generate assembly for a file
+src/commandpalette.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.s
+.PHONY : src/commandpalette.cpp.s
+
 src/encodingmanager.o: src/encodingmanager.cpp.o
 .PHONY : src/encodingmanager.o
 
@@ -672,6 +696,9 @@ help:
 	@echo "... src/codeeditor.o"
 	@echo "... src/codeeditor.i"
 	@echo "... src/codeeditor.s"
+	@echo "... src/commandpalette.o"
+	@echo "... src/commandpalette.i"
+	@echo "... src/commandpalette.s"
 	@echo "... src/encodingmanager.o"
 	@echo "... src/encodingmanager.i"
 	@echo "... src/encodingmanager.s"

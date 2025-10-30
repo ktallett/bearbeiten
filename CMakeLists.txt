@@ -38,6 +38,8 @@ set(SOURCES
     src/characterinspector.h
     src/encodingmanager.cpp
     src/encodingmanager.h
+    src/commandpalette.cpp
+    src/commandpalette.h
 )
 
 qt6_add_executable(bearbeiten ${SOURCES})

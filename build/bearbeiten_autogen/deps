@@ -9,6 +9,8 @@ bearbeiten_autogen/timestamp: \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/characterinspector.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.h \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.cpp \
+	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.cpp \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.h \
 	/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.cpp \
