@@ -1,9 +1,9 @@
-/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/bearbeiten.dir
-/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/bearbeiten_lupdate.dir
+/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/eddy.dir
+/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/eddy_lupdate.dir
 /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/update_translations.dir
-/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/bearbeiten_lrelease.dir
+/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/eddy_lrelease.dir
 /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/release_translations.dir
 /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/edit_cache.dir
 /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/rebuild_cache.dir
-/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/bearbeiten_autogen_timestamp_deps.dir
-/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/bearbeiten_autogen.dir
+/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/eddy_autogen_timestamp_deps.dir
+/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/eddy_autogen.dir

@@ -42,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent)
     loadSettings();
     loadRecentFiles();
 
-    setWindowTitle(tr("Bearbeiten"));
+    setWindowTitle(tr("Eddy"));
     resize(800, 600);
 
     // Create first tab
@@ -636,7 +636,7 @@ bool MainWindow::saveDocument(const QString &fileName)
 
     QFile file(fileName);
     if (!file.open(QIODevice::WriteOnly)) {
-        QMessageBox::warning(this, "Bearbeiten",
+        QMessageBox::warning(this, "Eddy",
             QString("Cannot write file %1:\n%2")
             .arg(fileName)
             .arg(file.errorString()));
@@ -661,7 +661,7 @@ void MainWindow::loadFile(const QString &fileName)
 {
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly)) {
-        QMessageBox::warning(this, "Bearbeiten",
+        QMessageBox::warning(this, "Eddy",
             QString("Cannot read file %1:\n%2")
             .arg(fileName)
             .arg(file.errorString()));
@@ -1022,7 +1022,7 @@ void MainWindow::setTabModified(int index, bool modified)
     if (index == tabWidget->currentIndex()) {
         QString filePath = getFilePathAt(index);
         QString fileName = filePath.isEmpty() ? "Untitled" : QFileInfo(filePath).fileName();
-        setWindowTitle(QString("Bearbeiten - %1%2").arg(fileName).arg(modified ? " *" : ""));
+        setWindowTitle(QString("Eddy - %1%2").arg(fileName).arg(modified ? " *" : ""));
     }
 }
 
@@ -1036,7 +1036,7 @@ void MainWindow::updateTabTitle(int index)
 
     // Update window title if this is the current tab
     if (index == tabWidget->currentIndex()) {
-        setWindowTitle(QString("Bearbeiten - %1%2").arg(fileName).arg(modified ? " *" : ""));
+        setWindowTitle(QString("Eddy - %1%2").arg(fileName).arg(modified ? " *" : ""));
     }
 }
 
@@ -1050,7 +1050,7 @@ bool MainWindow::maybeSaveTab(int tabIndex)
     QString displayName = fileName.isEmpty() ? "Untitled" : QFileInfo(fileName).fileName();
 
     QMessageBox::StandardButton result = QMessageBox::warning(this,
-        "Bearbeiten",
+        "Eddy",
         QString("The document '%1' has been modified.\nDo you want to save your changes?").arg(displayName),
         QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
 

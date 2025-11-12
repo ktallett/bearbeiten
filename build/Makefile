@@ -117,30 +117,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named bearbeiten
+# Target rules for targets named eddy
 
 # Build rule for target.
-bearbeiten: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bearbeiten
-.PHONY : bearbeiten
+eddy: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 eddy
+.PHONY : eddy
 
 # fast build rule for target.
-bearbeiten/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/build
-.PHONY : bearbeiten/fast
+eddy/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/build
+.PHONY : eddy/fast
 
 #=============================================================================
-# Target rules for targets named bearbeiten_lupdate
+# Target rules for targets named eddy_lupdate
 
 # Build rule for target.
-bearbeiten_lupdate: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bearbeiten_lupdate
-.PHONY : bearbeiten_lupdate
+eddy_lupdate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 eddy_lupdate
+.PHONY : eddy_lupdate
 
 # fast build rule for target.
-bearbeiten_lupdate/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten_lupdate.dir/build.make CMakeFiles/bearbeiten_lupdate.dir/build
-.PHONY : bearbeiten_lupdate/fast
+eddy_lupdate/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy_lupdate.dir/build.make CMakeFiles/eddy_lupdate.dir/build
+.PHONY : eddy_lupdate/fast
 
 #=============================================================================
 # Target rules for targets named update_translations
@@ -156,17 +156,17 @@ update_translations/fast:
 .PHONY : update_translations/fast
 
 #=============================================================================
-# Target rules for targets named bearbeiten_lrelease
+# Target rules for targets named eddy_lrelease
 
 # Build rule for target.
-bearbeiten_lrelease: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bearbeiten_lrelease
-.PHONY : bearbeiten_lrelease
+eddy_lrelease: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 eddy_lrelease
+.PHONY : eddy_lrelease
 
 # fast build rule for target.
-bearbeiten_lrelease/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten_lrelease.dir/build.make CMakeFiles/bearbeiten_lrelease.dir/build
-.PHONY : bearbeiten_lrelease/fast
+eddy_lrelease/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy_lrelease.dir/build.make CMakeFiles/eddy_lrelease.dir/build
+.PHONY : eddy_lrelease/fast
 
 #=============================================================================
 # Target rules for targets named release_translations
@@ -182,85 +182,61 @@ release_translations/fast:
 .PHONY : release_translations/fast
 
 #=============================================================================
-# Target rules for targets named bearbeiten_autogen_timestamp_deps
+# Target rules for targets named eddy_autogen_timestamp_deps
 
 # Build rule for target.
-bearbeiten_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bearbeiten_autogen_timestamp_deps
-.PHONY : bearbeiten_autogen_timestamp_deps
+eddy_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 eddy_autogen_timestamp_deps
+.PHONY : eddy_autogen_timestamp_deps
 
 # fast build rule for target.
-bearbeiten_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten_autogen_timestamp_deps.dir/build.make CMakeFiles/bearbeiten_autogen_timestamp_deps.dir/build
-.PHONY : bearbeiten_autogen_timestamp_deps/fast
+eddy_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy_autogen_timestamp_deps.dir/build.make CMakeFiles/eddy_autogen_timestamp_deps.dir/build
+.PHONY : eddy_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named bearbeiten_autogen
+# Target rules for targets named eddy_autogen
 
 # Build rule for target.
-bearbeiten_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bearbeiten_autogen
-.PHONY : bearbeiten_autogen
+eddy_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 eddy_autogen
+.PHONY : eddy_autogen
 
 # fast build rule for target.
-bearbeiten_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten_autogen.dir/build.make CMakeFiles/bearbeiten_autogen.dir/build
-.PHONY : bearbeiten_autogen/fast
+eddy_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy_autogen.dir/build.make CMakeFiles/eddy_autogen.dir/build
+.PHONY : eddy_autogen/fast
 
-bearbeiten_autogen/mocs_compilation.o: bearbeiten_autogen/mocs_compilation.cpp.o
-.PHONY : bearbeiten_autogen/mocs_compilation.o
-
-# target to build an object file
-bearbeiten_autogen/mocs_compilation.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/bearbeiten_autogen/mocs_compilation.cpp.o
-.PHONY : bearbeiten_autogen/mocs_compilation.cpp.o
-
-bearbeiten_autogen/mocs_compilation.i: bearbeiten_autogen/mocs_compilation.cpp.i
-.PHONY : bearbeiten_autogen/mocs_compilation.i
-
-# target to preprocess a source file
-bearbeiten_autogen/mocs_compilation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/bearbeiten_autogen/mocs_compilation.cpp.i
-.PHONY : bearbeiten_autogen/mocs_compilation.cpp.i
-
-bearbeiten_autogen/mocs_compilation.s: bearbeiten_autogen/mocs_compilation.cpp.s
-.PHONY : bearbeiten_autogen/mocs_compilation.s
-
-# target to generate assembly for a file
-bearbeiten_autogen/mocs_compilation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/bearbeiten_autogen/mocs_compilation.cpp.s
-.PHONY : bearbeiten_autogen/mocs_compilation.cpp.s
-
-build/.qt/rcc/qrc_bearbeiten_translations.o: build/.qt/rcc/qrc_bearbeiten_translations.cpp.o
-.PHONY : build/.qt/rcc/qrc_bearbeiten_translations.o
+build/.qt/rcc/qrc_eddy_translations.o: build/.qt/rcc/qrc_eddy_translations.cpp.o
+.PHONY : build/.qt/rcc/qrc_eddy_translations.o
 
 # target to build an object file
-build/.qt/rcc/qrc_bearbeiten_translations.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.o
-.PHONY : build/.qt/rcc/qrc_bearbeiten_translations.cpp.o
+build/.qt/rcc/qrc_eddy_translations.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.o
+.PHONY : build/.qt/rcc/qrc_eddy_translations.cpp.o
 
-build/.qt/rcc/qrc_bearbeiten_translations.i: build/.qt/rcc/qrc_bearbeiten_translations.cpp.i
-.PHONY : build/.qt/rcc/qrc_bearbeiten_translations.i
+build/.qt/rcc/qrc_eddy_translations.i: build/.qt/rcc/qrc_eddy_translations.cpp.i
+.PHONY : build/.qt/rcc/qrc_eddy_translations.i
 
 # target to preprocess a source file
-build/.qt/rcc/qrc_bearbeiten_translations.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.i
-.PHONY : build/.qt/rcc/qrc_bearbeiten_translations.cpp.i
+build/.qt/rcc/qrc_eddy_translations.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.i
+.PHONY : build/.qt/rcc/qrc_eddy_translations.cpp.i
 
-build/.qt/rcc/qrc_bearbeiten_translations.s: build/.qt/rcc/qrc_bearbeiten_translations.cpp.s
-.PHONY : build/.qt/rcc/qrc_bearbeiten_translations.s
+build/.qt/rcc/qrc_eddy_translations.s: build/.qt/rcc/qrc_eddy_translations.cpp.s
+.PHONY : build/.qt/rcc/qrc_eddy_translations.s
 
 # target to generate assembly for a file
-build/.qt/rcc/qrc_bearbeiten_translations.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_bearbeiten_translations.cpp.s
-.PHONY : build/.qt/rcc/qrc_bearbeiten_translations.cpp.s
+build/.qt/rcc/qrc_eddy_translations.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.s
+.PHONY : build/.qt/rcc/qrc_eddy_translations.cpp.s
 
 build/.qt/rcc/qrc_resources.o: build/.qt/rcc/qrc_resources.cpp.o
 .PHONY : build/.qt/rcc/qrc_resources.o
 
 # target to build an object file
 build/.qt/rcc/qrc_resources.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.o
 .PHONY : build/.qt/rcc/qrc_resources.cpp.o
 
 build/.qt/rcc/qrc_resources.i: build/.qt/rcc/qrc_resources.cpp.i
@@ -268,7 +244,7 @@ build/.qt/rcc/qrc_resources.i: build/.qt/rcc/qrc_resources.cpp.i
 
 # target to preprocess a source file
 build/.qt/rcc/qrc_resources.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.i
 .PHONY : build/.qt/rcc/qrc_resources.cpp.i
 
 build/.qt/rcc/qrc_resources.s: build/.qt/rcc/qrc_resources.cpp.s
@@ -276,15 +252,39 @@ build/.qt/rcc/qrc_resources.s: build/.qt/rcc/qrc_resources.cpp.s
 
 # target to generate assembly for a file
 build/.qt/rcc/qrc_resources.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/build/.qt/rcc/qrc_resources.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.s
 .PHONY : build/.qt/rcc/qrc_resources.cpp.s
+
+eddy_autogen/mocs_compilation.o: eddy_autogen/mocs_compilation.cpp.o
+.PHONY : eddy_autogen/mocs_compilation.o
+
+# target to build an object file
+eddy_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o
+.PHONY : eddy_autogen/mocs_compilation.cpp.o
+
+eddy_autogen/mocs_compilation.i: eddy_autogen/mocs_compilation.cpp.i
+.PHONY : eddy_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+eddy_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.i
+.PHONY : eddy_autogen/mocs_compilation.cpp.i
+
+eddy_autogen/mocs_compilation.s: eddy_autogen/mocs_compilation.cpp.s
+.PHONY : eddy_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+eddy_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.s
+.PHONY : eddy_autogen/mocs_compilation.cpp.s
 
 src/breadcrumbbar.o: src/breadcrumbbar.cpp.o
 .PHONY : src/breadcrumbbar.o
 
 # target to build an object file
 src/breadcrumbbar.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/breadcrumbbar.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.o
 .PHONY : src/breadcrumbbar.cpp.o
 
 src/breadcrumbbar.i: src/breadcrumbbar.cpp.i
@@ -292,7 +292,7 @@ src/breadcrumbbar.i: src/breadcrumbbar.cpp.i
 
 # target to preprocess a source file
 src/breadcrumbbar.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/breadcrumbbar.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.i
 .PHONY : src/breadcrumbbar.cpp.i
 
 src/breadcrumbbar.s: src/breadcrumbbar.cpp.s
@@ -300,7 +300,7 @@ src/breadcrumbbar.s: src/breadcrumbbar.cpp.s
 
 # target to generate assembly for a file
 src/breadcrumbbar.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/breadcrumbbar.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.s
 .PHONY : src/breadcrumbbar.cpp.s
 
 src/characterinspector.o: src/characterinspector.cpp.o
@@ -308,7 +308,7 @@ src/characterinspector.o: src/characterinspector.cpp.o
 
 # target to build an object file
 src/characterinspector.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/characterinspector.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/characterinspector.cpp.o
 .PHONY : src/characterinspector.cpp.o
 
 src/characterinspector.i: src/characterinspector.cpp.i
@@ -316,7 +316,7 @@ src/characterinspector.i: src/characterinspector.cpp.i
 
 # target to preprocess a source file
 src/characterinspector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/characterinspector.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/characterinspector.cpp.i
 .PHONY : src/characterinspector.cpp.i
 
 src/characterinspector.s: src/characterinspector.cpp.s
@@ -324,7 +324,7 @@ src/characterinspector.s: src/characterinspector.cpp.s
 
 # target to generate assembly for a file
 src/characterinspector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/characterinspector.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/characterinspector.cpp.s
 .PHONY : src/characterinspector.cpp.s
 
 src/codeeditor.o: src/codeeditor.cpp.o
@@ -332,7 +332,7 @@ src/codeeditor.o: src/codeeditor.cpp.o
 
 # target to build an object file
 src/codeeditor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/codeeditor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/codeeditor.cpp.o
 .PHONY : src/codeeditor.cpp.o
 
 src/codeeditor.i: src/codeeditor.cpp.i
@@ -340,7 +340,7 @@ src/codeeditor.i: src/codeeditor.cpp.i
 
 # target to preprocess a source file
 src/codeeditor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/codeeditor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/codeeditor.cpp.i
 .PHONY : src/codeeditor.cpp.i
 
 src/codeeditor.s: src/codeeditor.cpp.s
@@ -348,7 +348,7 @@ src/codeeditor.s: src/codeeditor.cpp.s
 
 # target to generate assembly for a file
 src/codeeditor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/codeeditor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/codeeditor.cpp.s
 .PHONY : src/codeeditor.cpp.s
 
 src/commandpalette.o: src/commandpalette.cpp.o
@@ -356,7 +356,7 @@ src/commandpalette.o: src/commandpalette.cpp.o
 
 # target to build an object file
 src/commandpalette.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/commandpalette.cpp.o
 .PHONY : src/commandpalette.cpp.o
 
 src/commandpalette.i: src/commandpalette.cpp.i
@@ -364,7 +364,7 @@ src/commandpalette.i: src/commandpalette.cpp.i
 
 # target to preprocess a source file
 src/commandpalette.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/commandpalette.cpp.i
 .PHONY : src/commandpalette.cpp.i
 
 src/commandpalette.s: src/commandpalette.cpp.s
@@ -372,7 +372,7 @@ src/commandpalette.s: src/commandpalette.cpp.s
 
 # target to generate assembly for a file
 src/commandpalette.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/commandpalette.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/commandpalette.cpp.s
 .PHONY : src/commandpalette.cpp.s
 
 src/encodingmanager.o: src/encodingmanager.cpp.o
@@ -380,7 +380,7 @@ src/encodingmanager.o: src/encodingmanager.cpp.o
 
 # target to build an object file
 src/encodingmanager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/encodingmanager.cpp.o
 .PHONY : src/encodingmanager.cpp.o
 
 src/encodingmanager.i: src/encodingmanager.cpp.i
@@ -388,7 +388,7 @@ src/encodingmanager.i: src/encodingmanager.cpp.i
 
 # target to preprocess a source file
 src/encodingmanager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/encodingmanager.cpp.i
 .PHONY : src/encodingmanager.cpp.i
 
 src/encodingmanager.s: src/encodingmanager.cpp.s
@@ -396,7 +396,7 @@ src/encodingmanager.s: src/encodingmanager.cpp.s
 
 # target to generate assembly for a file
 src/encodingmanager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/encodingmanager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/encodingmanager.cpp.s
 .PHONY : src/encodingmanager.cpp.s
 
 src/finddialog.o: src/finddialog.cpp.o
@@ -404,7 +404,7 @@ src/finddialog.o: src/finddialog.cpp.o
 
 # target to build an object file
 src/finddialog.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/finddialog.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/finddialog.cpp.o
 .PHONY : src/finddialog.cpp.o
 
 src/finddialog.i: src/finddialog.cpp.i
@@ -412,7 +412,7 @@ src/finddialog.i: src/finddialog.cpp.i
 
 # target to preprocess a source file
 src/finddialog.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/finddialog.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/finddialog.cpp.i
 .PHONY : src/finddialog.cpp.i
 
 src/finddialog.s: src/finddialog.cpp.s
@@ -420,7 +420,7 @@ src/finddialog.s: src/finddialog.cpp.s
 
 # target to generate assembly for a file
 src/finddialog.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/finddialog.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/finddialog.cpp.s
 .PHONY : src/finddialog.cpp.s
 
 src/findinfilesdialog.o: src/findinfilesdialog.cpp.o
@@ -428,7 +428,7 @@ src/findinfilesdialog.o: src/findinfilesdialog.cpp.o
 
 # target to build an object file
 src/findinfilesdialog.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/findinfilesdialog.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.o
 .PHONY : src/findinfilesdialog.cpp.o
 
 src/findinfilesdialog.i: src/findinfilesdialog.cpp.i
@@ -436,7 +436,7 @@ src/findinfilesdialog.i: src/findinfilesdialog.cpp.i
 
 # target to preprocess a source file
 src/findinfilesdialog.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/findinfilesdialog.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.i
 .PHONY : src/findinfilesdialog.cpp.i
 
 src/findinfilesdialog.s: src/findinfilesdialog.cpp.s
@@ -444,7 +444,7 @@ src/findinfilesdialog.s: src/findinfilesdialog.cpp.s
 
 # target to generate assembly for a file
 src/findinfilesdialog.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/findinfilesdialog.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.s
 .PHONY : src/findinfilesdialog.cpp.s
 
 src/gotolinedialog.o: src/gotolinedialog.cpp.o
@@ -452,7 +452,7 @@ src/gotolinedialog.o: src/gotolinedialog.cpp.o
 
 # target to build an object file
 src/gotolinedialog.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/gotolinedialog.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/gotolinedialog.cpp.o
 .PHONY : src/gotolinedialog.cpp.o
 
 src/gotolinedialog.i: src/gotolinedialog.cpp.i
@@ -460,7 +460,7 @@ src/gotolinedialog.i: src/gotolinedialog.cpp.i
 
 # target to preprocess a source file
 src/gotolinedialog.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/gotolinedialog.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/gotolinedialog.cpp.i
 .PHONY : src/gotolinedialog.cpp.i
 
 src/gotolinedialog.s: src/gotolinedialog.cpp.s
@@ -468,7 +468,7 @@ src/gotolinedialog.s: src/gotolinedialog.cpp.s
 
 # target to generate assembly for a file
 src/gotolinedialog.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/gotolinedialog.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/gotolinedialog.cpp.s
 .PHONY : src/gotolinedialog.cpp.s
 
 src/jsonsyntaxhighlighter.o: src/jsonsyntaxhighlighter.cpp.o
@@ -476,7 +476,7 @@ src/jsonsyntaxhighlighter.o: src/jsonsyntaxhighlighter.cpp.o
 
 # target to build an object file
 src/jsonsyntaxhighlighter.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/jsonsyntaxhighlighter.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.o
 .PHONY : src/jsonsyntaxhighlighter.cpp.o
 
 src/jsonsyntaxhighlighter.i: src/jsonsyntaxhighlighter.cpp.i
@@ -484,7 +484,7 @@ src/jsonsyntaxhighlighter.i: src/jsonsyntaxhighlighter.cpp.i
 
 # target to preprocess a source file
 src/jsonsyntaxhighlighter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/jsonsyntaxhighlighter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.i
 .PHONY : src/jsonsyntaxhighlighter.cpp.i
 
 src/jsonsyntaxhighlighter.s: src/jsonsyntaxhighlighter.cpp.s
@@ -492,7 +492,7 @@ src/jsonsyntaxhighlighter.s: src/jsonsyntaxhighlighter.cpp.s
 
 # target to generate assembly for a file
 src/jsonsyntaxhighlighter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/jsonsyntaxhighlighter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.s
 .PHONY : src/jsonsyntaxhighlighter.cpp.s
 
 src/languageloader.o: src/languageloader.cpp.o
@@ -500,7 +500,7 @@ src/languageloader.o: src/languageloader.cpp.o
 
 # target to build an object file
 src/languageloader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/languageloader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/languageloader.cpp.o
 .PHONY : src/languageloader.cpp.o
 
 src/languageloader.i: src/languageloader.cpp.i
@@ -508,7 +508,7 @@ src/languageloader.i: src/languageloader.cpp.i
 
 # target to preprocess a source file
 src/languageloader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/languageloader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/languageloader.cpp.i
 .PHONY : src/languageloader.cpp.i
 
 src/languageloader.s: src/languageloader.cpp.s
@@ -516,7 +516,7 @@ src/languageloader.s: src/languageloader.cpp.s
 
 # target to generate assembly for a file
 src/languageloader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/languageloader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/languageloader.cpp.s
 .PHONY : src/languageloader.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -524,7 +524,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -532,7 +532,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -540,7 +540,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/mainwindow.o: src/mainwindow.cpp.o
@@ -548,7 +548,7 @@ src/mainwindow.o: src/mainwindow.cpp.o
 
 # target to build an object file
 src/mainwindow.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/mainwindow.cpp.o
 .PHONY : src/mainwindow.cpp.o
 
 src/mainwindow.i: src/mainwindow.cpp.i
@@ -556,7 +556,7 @@ src/mainwindow.i: src/mainwindow.cpp.i
 
 # target to preprocess a source file
 src/mainwindow.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/mainwindow.cpp.i
 .PHONY : src/mainwindow.cpp.i
 
 src/mainwindow.s: src/mainwindow.cpp.s
@@ -564,7 +564,7 @@ src/mainwindow.s: src/mainwindow.cpp.s
 
 # target to generate assembly for a file
 src/mainwindow.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/mainwindow.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/mainwindow.cpp.s
 .PHONY : src/mainwindow.cpp.s
 
 src/minimap.o: src/minimap.cpp.o
@@ -572,7 +572,7 @@ src/minimap.o: src/minimap.cpp.o
 
 # target to build an object file
 src/minimap.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/minimap.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/minimap.cpp.o
 .PHONY : src/minimap.cpp.o
 
 src/minimap.i: src/minimap.cpp.i
@@ -580,7 +580,7 @@ src/minimap.i: src/minimap.cpp.i
 
 # target to preprocess a source file
 src/minimap.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/minimap.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/minimap.cpp.i
 .PHONY : src/minimap.cpp.i
 
 src/minimap.s: src/minimap.cpp.s
@@ -588,7 +588,7 @@ src/minimap.s: src/minimap.cpp.s
 
 # target to generate assembly for a file
 src/minimap.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/minimap.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/minimap.cpp.s
 .PHONY : src/minimap.cpp.s
 
 src/outlinepanel.o: src/outlinepanel.cpp.o
@@ -596,7 +596,7 @@ src/outlinepanel.o: src/outlinepanel.cpp.o
 
 # target to build an object file
 src/outlinepanel.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/outlinepanel.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/outlinepanel.cpp.o
 .PHONY : src/outlinepanel.cpp.o
 
 src/outlinepanel.i: src/outlinepanel.cpp.i
@@ -604,7 +604,7 @@ src/outlinepanel.i: src/outlinepanel.cpp.i
 
 # target to preprocess a source file
 src/outlinepanel.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/outlinepanel.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/outlinepanel.cpp.i
 .PHONY : src/outlinepanel.cpp.i
 
 src/outlinepanel.s: src/outlinepanel.cpp.s
@@ -612,7 +612,7 @@ src/outlinepanel.s: src/outlinepanel.cpp.s
 
 # target to generate assembly for a file
 src/outlinepanel.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/outlinepanel.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/outlinepanel.cpp.s
 .PHONY : src/outlinepanel.cpp.s
 
 src/projectpanel.o: src/projectpanel.cpp.o
@@ -620,7 +620,7 @@ src/projectpanel.o: src/projectpanel.cpp.o
 
 # target to build an object file
 src/projectpanel.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/projectpanel.cpp.o
 .PHONY : src/projectpanel.cpp.o
 
 src/projectpanel.i: src/projectpanel.cpp.i
@@ -628,7 +628,7 @@ src/projectpanel.i: src/projectpanel.cpp.i
 
 # target to preprocess a source file
 src/projectpanel.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/projectpanel.cpp.i
 .PHONY : src/projectpanel.cpp.i
 
 src/projectpanel.s: src/projectpanel.cpp.s
@@ -636,7 +636,7 @@ src/projectpanel.s: src/projectpanel.cpp.s
 
 # target to generate assembly for a file
 src/projectpanel.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/projectpanel.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/projectpanel.cpp.s
 .PHONY : src/projectpanel.cpp.s
 
 src/symbolextractor.o: src/symbolextractor.cpp.o
@@ -644,7 +644,7 @@ src/symbolextractor.o: src/symbolextractor.cpp.o
 
 # target to build an object file
 src/symbolextractor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/symbolextractor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/symbolextractor.cpp.o
 .PHONY : src/symbolextractor.cpp.o
 
 src/symbolextractor.i: src/symbolextractor.cpp.i
@@ -652,7 +652,7 @@ src/symbolextractor.i: src/symbolextractor.cpp.i
 
 # target to preprocess a source file
 src/symbolextractor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/symbolextractor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/symbolextractor.cpp.i
 .PHONY : src/symbolextractor.cpp.i
 
 src/symbolextractor.s: src/symbolextractor.cpp.s
@@ -660,7 +660,7 @@ src/symbolextractor.s: src/symbolextractor.cpp.s
 
 # target to generate assembly for a file
 src/symbolextractor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/symbolextractor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/symbolextractor.cpp.s
 .PHONY : src/symbolextractor.cpp.s
 
 src/symbolsearchdialog.o: src/symbolsearchdialog.cpp.o
@@ -668,7 +668,7 @@ src/symbolsearchdialog.o: src/symbolsearchdialog.cpp.o
 
 # target to build an object file
 src/symbolsearchdialog.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/symbolsearchdialog.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.o
 .PHONY : src/symbolsearchdialog.cpp.o
 
 src/symbolsearchdialog.i: src/symbolsearchdialog.cpp.i
@@ -676,7 +676,7 @@ src/symbolsearchdialog.i: src/symbolsearchdialog.cpp.i
 
 # target to preprocess a source file
 src/symbolsearchdialog.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/symbolsearchdialog.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.i
 .PHONY : src/symbolsearchdialog.cpp.i
 
 src/symbolsearchdialog.s: src/symbolsearchdialog.cpp.s
@@ -684,7 +684,7 @@ src/symbolsearchdialog.s: src/symbolsearchdialog.cpp.s
 
 # target to generate assembly for a file
 src/symbolsearchdialog.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bearbeiten.dir/build.make CMakeFiles/bearbeiten.dir/src/symbolsearchdialog.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eddy.dir/build.make CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.s
 .PHONY : src/symbolsearchdialog.cpp.s
 
 # Help Target
@@ -695,22 +695,22 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... bearbeiten_autogen"
-	@echo "... bearbeiten_autogen_timestamp_deps"
-	@echo "... bearbeiten_lrelease"
-	@echo "... bearbeiten_lupdate"
+	@echo "... eddy_autogen"
+	@echo "... eddy_autogen_timestamp_deps"
+	@echo "... eddy_lrelease"
+	@echo "... eddy_lupdate"
 	@echo "... release_translations"
 	@echo "... update_translations"
-	@echo "... bearbeiten"
-	@echo "... bearbeiten_autogen/mocs_compilation.o"
-	@echo "... bearbeiten_autogen/mocs_compilation.i"
-	@echo "... bearbeiten_autogen/mocs_compilation.s"
-	@echo "... build/.qt/rcc/qrc_bearbeiten_translations.o"
-	@echo "... build/.qt/rcc/qrc_bearbeiten_translations.i"
-	@echo "... build/.qt/rcc/qrc_bearbeiten_translations.s"
+	@echo "... eddy"
+	@echo "... build/.qt/rcc/qrc_eddy_translations.o"
+	@echo "... build/.qt/rcc/qrc_eddy_translations.i"
+	@echo "... build/.qt/rcc/qrc_eddy_translations.s"
 	@echo "... build/.qt/rcc/qrc_resources.o"
 	@echo "... build/.qt/rcc/qrc_resources.i"
 	@echo "... build/.qt/rcc/qrc_resources.s"
+	@echo "... eddy_autogen/mocs_compilation.o"
+	@echo "... eddy_autogen/mocs_compilation.i"
+	@echo "... eddy_autogen/mocs_compilation.s"
 	@echo "... src/breadcrumbbar.o"
 	@echo "... src/breadcrumbbar.i"
 	@echo "... src/breadcrumbbar.s"

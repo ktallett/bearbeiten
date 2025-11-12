@@ -1,4 +1,4 @@
-# Bearbeiten - Text Editor
+# Eddy - Text Editor
 
 A lightweight text editor built with C++ and Qt 6 for developers and writers.
 
@@ -33,7 +33,7 @@ sudo apt install qt6-base-dev qt6-tools-dev cmake build-essential
 cd build
 cmake ..
 make -j4
-./bearbeiten
+./eddy
 ```
 
 ### Linux (Fedora/CentOS)
@@ -44,7 +44,7 @@ sudo dnf install qt6-qtbase-devel qt6-qttools-devel cmake gcc-c++
 cd build
 cmake ..
 make -j4
-./bearbeiten
+./eddy
 ```
 
 ### macOS
@@ -55,7 +55,7 @@ brew install qt@6 cmake
 cd build
 cmake -DCMAKE_PREFIX_PATH=/opt/homebrew/opt/qt@6 ..
 make -j4
-./bearbeiten
+./eddy
 ```
 
 ### Windows

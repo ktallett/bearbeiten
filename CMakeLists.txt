@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(bearbeiten VERSION 1.0.0 LANGUAGES CXX)
+project(eddy VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -44,34 +44,34 @@ set(SOURCES
     src/findinfilesdialog.h
 )
 
-qt6_add_executable(bearbeiten ${SOURCES})
+qt6_add_executable(eddy ${SOURCES})
 
-qt6_add_resources(bearbeiten "resources"
+qt6_add_resources(eddy "resources"
     PREFIX "/"
     FILES
         src/stylesheet.qss
         src/stylesheet-dark.qss
 )
 
-target_link_libraries(bearbeiten PRIVATE Qt6::Core Qt6::Widgets)
+target_link_libraries(eddy PRIVATE Qt6::Core Qt6::Widgets)
 
 # Translation support
 set(TS_FILES
-    translations/bearbeiten_de.ts
-    translations/bearbeiten_fr.ts
-    translations/bearbeiten_es.ts
-    translations/bearbeiten_it.ts
-    translations/bearbeiten_ja.ts
-    translations/bearbeiten_zh.ts
-    translations/bearbeiten_ru.ts
+    translations/eddy_de.ts
+    translations/eddy_fr.ts
+    translations/eddy_es.ts
+    translations/eddy_it.ts
+    translations/eddy_ja.ts
+    translations/eddy_zh.ts
+    translations/eddy_ru.ts
 )
 
-qt6_add_translations(bearbeiten TS_FILES ${TS_FILES})
+qt6_add_translations(eddy TS_FILES ${TS_FILES})
 
 # Create translations directory
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/translations)
 
-set_target_properties(bearbeiten PROPERTIES
+set_target_properties(eddy PROPERTIES
     WIN32_EXECUTABLE ON
     MACOSX_BUNDLE ON
 )
