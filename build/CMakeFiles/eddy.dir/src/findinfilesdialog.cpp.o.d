@@ -1,7 +1,7 @@
 CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.o: \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/findinfilesdialog.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/findinfilesdialog.cpp \
  /usr/include/stdc-predef.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/findinfilesdialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/findinfilesdialog.h \
  /usr/include/qt6/QtWidgets/QDialog /usr/include/qt6/QtWidgets/qdialog.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
  /usr/include/qt6/QtGui/qtguiglobal.h /usr/include/qt6/QtCore/qglobal.h \

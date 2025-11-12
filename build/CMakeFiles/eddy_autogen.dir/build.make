@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten
+CMAKE_SOURCE_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/eddy
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
+CMAKE_BINARY_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
 
 # Utility rule file for eddy_autogen.
 
@@ -71,9 +71,9 @@ CMakeFiles/eddy_autogen: eddy_autogen/timestamp
 eddy_autogen/timestamp: /usr/lib64/qt6/libexec/moc
 eddy_autogen/timestamp: /usr/lib64/qt6/libexec/uic
 eddy_autogen/timestamp: CMakeFiles/eddy_autogen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target eddy"
-	/usr/bin/cmake -E cmake_autogen /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/eddy_autogen.dir/AutogenInfo.json ""
-	/usr/bin/cmake -E touch /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target eddy"
+	/usr/bin/cmake -E cmake_autogen /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles/eddy_autogen.dir/AutogenInfo.json ""
+	/usr/bin/cmake -E touch /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/timestamp
 
 CMakeFiles/eddy_autogen.dir/codegen:
 .PHONY : CMakeFiles/eddy_autogen.dir/codegen
@@ -92,6 +92,6 @@ CMakeFiles/eddy_autogen.dir/clean:
 .PHONY : CMakeFiles/eddy_autogen.dir/clean
 
 CMakeFiles/eddy_autogen.dir/depend:
-	cd /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/eddy_autogen.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kerntallett/Dropbox/mnt_reform/projects/eddy /home/kerntallett/Dropbox/mnt_reform/projects/eddy /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles/eddy_autogen.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/eddy_autogen.dir/depend
 

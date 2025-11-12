@@ -1,5 +1,5 @@
-/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_symbolsearchdialog.cpp: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/moc_predefs.h \
+/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_symbolsearchdialog.cpp: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolsearchdialog.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/moc_predefs.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \

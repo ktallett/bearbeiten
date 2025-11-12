@@ -1,7 +1,7 @@
 CMakeFiles/eddy.dir/src/symbolextractor.cpp.o: \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolextractor.cpp \
  /usr/include/stdc-predef.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolextractor.h \
  /usr/include/qt6/QtCore/QString /usr/include/qt6/QtCore/qstring.h \
  /usr/include/qt6/QtCore/qchar.h /usr/include/qt6/QtCore/qglobal.h \
  /usr/include/c++/15/type_traits \
@@ -304,7 +304,7 @@ CMakeFiles/eddy.dir/src/symbolextractor.cpp.o: \
  /usr/include/qt6/QtCore/q20utility.h /usr/include/qt6/QtCore/qobject.h \
  /usr/include/qt6/QtCore/qobject_impl.h \
  /usr/include/qt6/QtCore/qbindingstorage.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolsearchdialog.h \
  /usr/include/qt6/QtWidgets/QDialog /usr/include/qt6/QtWidgets/qdialog.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
  /usr/include/qt6/QtGui/qtguiglobal.h \

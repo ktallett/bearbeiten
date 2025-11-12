@@ -1,7 +1,7 @@
 CMakeFiles/eddy.dir/src/encodingmanager.cpp.o: \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/encodingmanager.cpp \
  /usr/include/stdc-predef.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/encodingmanager.h \
  /usr/include/qt6/QtCore/QString /usr/include/qt6/QtCore/qstring.h \
  /usr/include/qt6/QtCore/qchar.h /usr/include/qt6/QtCore/qglobal.h \
  /usr/include/c++/15/type_traits \

@@ -1,7 +1,7 @@
 CMakeFiles/eddy.dir/src/codeeditor.cpp.o: \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/codeeditor.cpp \
  /usr/include/stdc-predef.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/codeeditor.h \
  /usr/include/qt6/QtWidgets/QPlainTextEdit \
  /usr/include/qt6/QtWidgets/qplaintextedit.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \

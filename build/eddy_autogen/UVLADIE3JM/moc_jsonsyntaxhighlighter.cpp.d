@@ -1,6 +1,6 @@
-/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_jsonsyntaxhighlighter.cpp: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/moc_predefs.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.h \
+/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_jsonsyntaxhighlighter.cpp: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/jsonsyntaxhighlighter.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/moc_predefs.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/languageloader.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \

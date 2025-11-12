@@ -1,7 +1,7 @@
 CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.o: \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/jsonsyntaxhighlighter.cpp \
  /usr/include/stdc-predef.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/jsonsyntaxhighlighter.h \
  /usr/include/qt6/QtGui/QSyntaxHighlighter \
  /usr/include/qt6/QtGui/qsyntaxhighlighter.h \
  /usr/include/qt6/QtGui/qtguiglobal.h /usr/include/qt6/QtCore/qglobal.h \
@@ -349,7 +349,7 @@ CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.o: \
  /usr/include/qt6/QtCore/qregularexpression.h \
  /usr/include/qt6/QtGui/QTextCharFormat \
  /usr/include/qt6/QtGui/qtextformat.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/languageloader.h \
  /usr/include/qt6/QtCore/QString /usr/include/qt6/QtCore/qstring.h \
  /usr/include/qt6/QtCore/QStringList \
  /usr/include/qt6/QtCore/qstringlist.h \

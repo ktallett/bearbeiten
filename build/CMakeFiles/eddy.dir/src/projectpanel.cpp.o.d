@@ -1,7 +1,7 @@
 CMakeFiles/eddy.dir/src/projectpanel.cpp.o: \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/projectpanel.cpp \
  /usr/include/stdc-predef.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/projectpanel.h \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
  /usr/include/qt6/QtGui/qtguiglobal.h /usr/include/qt6/QtCore/qglobal.h \

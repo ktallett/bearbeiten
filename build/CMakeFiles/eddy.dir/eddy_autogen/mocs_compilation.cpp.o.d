@@ -1,8 +1,8 @@
 CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o: \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/mocs_compilation.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/mocs_compilation.cpp \
  /usr/include/stdc-predef.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_breadcrumbbar.cpp \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/breadcrumbbar.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_breadcrumbbar.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/breadcrumbbar.h \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
  /usr/include/qt6/QtGui/qtguiglobal.h /usr/include/qt6/QtCore/qglobal.h \
@@ -367,10 +367,10 @@ CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtGui/QDesktopServices \
  /usr/include/qt6/QtGui/qdesktopservices.h /usr/include/qt6/QtCore/QUrl \
  /usr/include/qt6/QtCore/qurl.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/symbolextractor.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/symbolextractor.h \
  /usr/include/qt6/QtCore/QRegularExpression \
  /usr/include/qt6/QtCore/qregularexpression.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/symbolsearchdialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/symbolsearchdialog.h \
  /usr/include/qt6/QtWidgets/QDialog /usr/include/qt6/QtWidgets/qdialog.h \
  /usr/include/qt6/QtWidgets/QLineEdit \
  /usr/include/qt6/QtWidgets/qlineedit.h \
@@ -399,13 +399,13 @@ CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtCore/qtmocconstants.h \
  /usr/include/qt6/QtCore/q20algorithm.h \
  /usr/include/qt6/QtCore/q23type_traits.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_characterinspector.cpp \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/characterinspector.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_characterinspector.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/characterinspector.h \
  /usr/include/qt6/QtWidgets/QGroupBox \
  /usr/include/qt6/QtWidgets/qgroupbox.h /usr/include/qt6/QtCore/QChar \
  /usr/include/qt6/QtCore/qchar.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_codeeditor.cpp \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/codeeditor.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_codeeditor.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/codeeditor.h \
  /usr/include/qt6/QtWidgets/QPlainTextEdit \
  /usr/include/qt6/QtWidgets/qplaintextedit.h \
  /usr/include/qt6/QtWidgets/qtextedit.h \
@@ -437,17 +437,17 @@ CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtGui/qfontdatabase.h /usr/include/qt6/QtCore/QSet \
  /usr/include/qt6/QtCore/qset.h /usr/include/qt6/QtGui/QTextCursor \
  /usr/include/qt6/QtGui/qtextcursor.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_commandpalette.cpp \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/commandpalette.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_commandpalette.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/commandpalette.h \
  /usr/include/qt6/QtGui/QAction /usr/include/qt6/QtGui/qaction.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_finddialog.cpp \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/finddialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_finddialog.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/finddialog.h \
  /usr/include/qt6/QtWidgets/QCheckBox \
  /usr/include/qt6/QtWidgets/qcheckbox.h \
  /usr/include/qt6/QtWidgets/QGridLayout \
  /usr/include/qt6/QtWidgets/qgridlayout.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_findinfilesdialog.cpp \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/findinfilesdialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_findinfilesdialog.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/findinfilesdialog.h \
  /usr/include/qt6/QtWidgets/QTreeWidget \
  /usr/include/qt6/QtWidgets/qtreewidget.h \
  /usr/include/qt6/QtWidgets/qtreeview.h \
@@ -461,10 +461,10 @@ CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/15/condition_variable \
  /usr/include/c++/15/bits/atomic_futex.h \
  /usr/include/c++/15/bits/std_thread.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_gotolinedialog.cpp \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/gotolinedialog.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_jsonsyntaxhighlighter.cpp \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/jsonsyntaxhighlighter.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_gotolinedialog.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/gotolinedialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_jsonsyntaxhighlighter.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/jsonsyntaxhighlighter.h \
  /usr/include/qt6/QtGui/QSyntaxHighlighter \
  /usr/include/qt6/QtGui/qsyntaxhighlighter.h \
  /usr/include/qt6/QtGui/qtextobject.h \
@@ -472,7 +472,7 @@ CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtGui/qtextdocument.h \
  /usr/include/qt6/QtGui/QTextCharFormat \
  /usr/include/qt6/QtGui/qtextformat.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/languageloader.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/languageloader.h \
  /usr/include/qt6/QtCore/QStringList \
  /usr/include/qt6/QtCore/qstringlist.h \
  /usr/include/qt6/QtCore/QJsonObject \
@@ -485,11 +485,11 @@ CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtCore/QJsonArray /usr/include/qt6/QtCore/qjsonarray.h \
  /usr/include/qt6/QtCore/QVector /usr/include/qt6/QtCore/qvector.h \
  /usr/include/qt6/QtCore/QMap /usr/include/qt6/QtCore/qmap.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_mainwindow.cpp \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/mainwindow.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_mainwindow.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/mainwindow.h \
  /usr/include/qt6/QtWidgets/QMainWindow \
  /usr/include/qt6/QtWidgets/qmainwindow.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/codeeditor.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/codeeditor.h \
  /usr/include/qt6/QtWidgets/QMenuBar \
  /usr/include/qt6/QtWidgets/qmenubar.h /usr/include/qt6/QtWidgets/qmenu.h \
  /usr/include/qt6/QtWidgets/QFileDialog \
@@ -515,29 +515,29 @@ CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtGui/qscreen.h /usr/include/qt6/QtGui/QGuiApplication \
  /usr/include/qt6/QtGui/qguiapplication.h \
  /usr/include/qt6/QtGui/QResizeEvent /usr/include/qt6/QtGui/qevent.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/jsonsyntaxhighlighter.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/finddialog.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/findinfilesdialog.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/minimap.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/gotolinedialog.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/outlinepanel.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/projectpanel.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/jsonsyntaxhighlighter.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/finddialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/findinfilesdialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/minimap.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/gotolinedialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/outlinepanel.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/projectpanel.h \
  /usr/include/qt6/QtWidgets/QTreeView \
  /usr/include/qt6/QtWidgets/qtreeview.h \
  /usr/include/qt6/QtGui/QFileSystemModel \
  /usr/include/qt6/QtGui/qfilesystemmodel.h \
  /usr/include/qt6/QtWidgets/QHeaderView \
  /usr/include/qt6/QtWidgets/qheaderview.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/breadcrumbbar.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/characterinspector.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/encodingmanager.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/breadcrumbbar.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/characterinspector.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/encodingmanager.h \
  /usr/include/qt6/QtCore/QByteArray /usr/include/qt6/QtCore/qbytearray.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/commandpalette.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_minimap.cpp \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/minimap.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_outlinepanel.cpp \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/outlinepanel.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_projectpanel.cpp \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/projectpanel.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_symbolsearchdialog.cpp \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/../../../src/symbolsearchdialog.h
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/commandpalette.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_minimap.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/minimap.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_outlinepanel.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/outlinepanel.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_projectpanel.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/projectpanel.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_symbolsearchdialog.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/../../../src/symbolsearchdialog.h

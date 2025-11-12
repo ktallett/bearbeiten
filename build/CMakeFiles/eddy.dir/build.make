@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten
+CMAKE_SOURCE_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/eddy
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
+CMAKE_BINARY_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/eddy.dir/depend.make
@@ -69,54 +69,54 @@ include CMakeFiles/eddy.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/eddy.dir/flags.make
 
-.qt/rcc/qrc_resources.cpp: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/stylesheet.qss
-.qt/rcc/qrc_resources.cpp: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/stylesheet-dark.qss
+.qt/rcc/qrc_resources.cpp: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/stylesheet.qss
+.qt/rcc/qrc_resources.cpp: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/stylesheet-dark.qss
 .qt/rcc/qrc_resources.cpp: .qt/rcc/resources.qrc
 .qt/rcc/qrc_resources.cpp: /usr/lib64/qt6/libexec/rcc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running rcc for resource resources"
-	/usr/lib64/qt6/libexec/rcc --output /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_resources.cpp --name resources /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/resources.qrc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running rcc for resource resources"
+	/usr/lib64/qt6/libexec/rcc --output /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.qt/rcc/qrc_resources.cpp --name resources /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.qt/rcc/resources.qrc
 
 eddy_de.qm: /usr/lib64/qt6/bin/lrelease
-eddy_de.qm: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_de.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating eddy_de.qm"
-	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
-	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_de.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_de.qm
+eddy_de.qm: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_de.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating eddy_de.qm"
+	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
+	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_de.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_de.qm
 
 eddy_fr.qm: /usr/lib64/qt6/bin/lrelease
-eddy_fr.qm: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_fr.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating eddy_fr.qm"
-	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
-	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_fr.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_fr.qm
+eddy_fr.qm: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_fr.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating eddy_fr.qm"
+	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
+	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_fr.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_fr.qm
 
 eddy_es.qm: /usr/lib64/qt6/bin/lrelease
-eddy_es.qm: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_es.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating eddy_es.qm"
-	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
-	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_es.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_es.qm
+eddy_es.qm: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_es.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating eddy_es.qm"
+	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
+	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_es.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_es.qm
 
 eddy_it.qm: /usr/lib64/qt6/bin/lrelease
-eddy_it.qm: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_it.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating eddy_it.qm"
-	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
-	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_it.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_it.qm
+eddy_it.qm: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_it.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating eddy_it.qm"
+	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
+	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_it.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_it.qm
 
 eddy_ja.qm: /usr/lib64/qt6/bin/lrelease
-eddy_ja.qm: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_ja.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating eddy_ja.qm"
-	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
-	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_ja.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_ja.qm
+eddy_ja.qm: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_ja.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating eddy_ja.qm"
+	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
+	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_ja.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_ja.qm
 
 eddy_zh.qm: /usr/lib64/qt6/bin/lrelease
-eddy_zh.qm: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_zh.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating eddy_zh.qm"
-	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
-	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_zh.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_zh.qm
+eddy_zh.qm: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_zh.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating eddy_zh.qm"
+	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
+	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_zh.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_zh.qm
 
 eddy_ru.qm: /usr/lib64/qt6/bin/lrelease
-eddy_ru.qm: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_ru.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating eddy_ru.qm"
-	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
-	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_ru.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_ru.qm
+eddy_ru.qm: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_ru.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating eddy_ru.qm"
+	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
+	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_ru.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_ru.qm
 
 .qt/rcc/qrc_eddy_translations.cpp: eddy_de.qm
 .qt/rcc/qrc_eddy_translations.cpp: eddy_fr.qm
@@ -127,15 +127,15 @@ eddy_ru.qm: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translation
 .qt/rcc/qrc_eddy_translations.cpp: eddy_ru.qm
 .qt/rcc/qrc_eddy_translations.cpp: .qt/rcc/eddy_translations.qrc
 .qt/rcc/qrc_eddy_translations.cpp: /usr/lib64/qt6/libexec/rcc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Running rcc for resource eddy_translations"
-	/usr/lib64/qt6/libexec/rcc --output /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_eddy_translations.cpp --name eddy_translations /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/eddy_translations.qrc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Running rcc for resource eddy_translations"
+	/usr/lib64/qt6/libexec/rcc --output /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.qt/rcc/qrc_eddy_translations.cpp --name eddy_translations /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.qt/rcc/eddy_translations.qrc
 
 eddy_autogen/timestamp: /usr/lib64/qt6/libexec/moc
 eddy_autogen/timestamp: /usr/lib64/qt6/libexec/uic
 eddy_autogen/timestamp: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Automatic MOC and UIC for target eddy"
-	/usr/bin/cmake -E cmake_autogen /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/eddy_autogen.dir/AutogenInfo.json ""
-	/usr/bin/cmake -E touch /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Automatic MOC and UIC for target eddy"
+	/usr/bin/cmake -E cmake_autogen /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles/eddy_autogen.dir/AutogenInfo.json ""
+	/usr/bin/cmake -E touch /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/timestamp
 
 CMakeFiles/eddy.dir/codegen:
 .PHONY : CMakeFiles/eddy.dir/codegen
@@ -143,282 +143,282 @@ CMakeFiles/eddy.dir/codegen:
 CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o: CMakeFiles/eddy.dir/flags.make
 CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o: eddy_autogen/mocs_compilation.cpp
 CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o -MF CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o -MF CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/mocs_compilation.cpp
 
 CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/mocs_compilation.cpp > CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/mocs_compilation.cpp > CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/mocs_compilation.cpp -o CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/mocs_compilation.cpp -o CMakeFiles/eddy.dir/eddy_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/eddy.dir/src/main.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/main.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/main.cpp
+CMakeFiles/eddy.dir/src/main.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/main.cpp
 CMakeFiles/eddy.dir/src/main.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/eddy.dir/src/main.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/main.cpp.o -MF CMakeFiles/eddy.dir/src/main.cpp.o.d -o CMakeFiles/eddy.dir/src/main.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/eddy.dir/src/main.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/main.cpp.o -MF CMakeFiles/eddy.dir/src/main.cpp.o.d -o CMakeFiles/eddy.dir/src/main.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/main.cpp
 
 CMakeFiles/eddy.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/main.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/main.cpp > CMakeFiles/eddy.dir/src/main.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/main.cpp > CMakeFiles/eddy.dir/src/main.cpp.i
 
 CMakeFiles/eddy.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/main.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/main.cpp -o CMakeFiles/eddy.dir/src/main.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/main.cpp -o CMakeFiles/eddy.dir/src/main.cpp.s
 
 CMakeFiles/eddy.dir/src/mainwindow.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/mainwindow.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/mainwindow.cpp
+CMakeFiles/eddy.dir/src/mainwindow.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/mainwindow.cpp
 CMakeFiles/eddy.dir/src/mainwindow.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/eddy.dir/src/mainwindow.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/mainwindow.cpp.o -MF CMakeFiles/eddy.dir/src/mainwindow.cpp.o.d -o CMakeFiles/eddy.dir/src/mainwindow.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/mainwindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/eddy.dir/src/mainwindow.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/mainwindow.cpp.o -MF CMakeFiles/eddy.dir/src/mainwindow.cpp.o.d -o CMakeFiles/eddy.dir/src/mainwindow.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/mainwindow.cpp
 
 CMakeFiles/eddy.dir/src/mainwindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/mainwindow.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/mainwindow.cpp > CMakeFiles/eddy.dir/src/mainwindow.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/mainwindow.cpp > CMakeFiles/eddy.dir/src/mainwindow.cpp.i
 
 CMakeFiles/eddy.dir/src/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/mainwindow.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/mainwindow.cpp -o CMakeFiles/eddy.dir/src/mainwindow.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/mainwindow.cpp -o CMakeFiles/eddy.dir/src/mainwindow.cpp.s
 
 CMakeFiles/eddy.dir/src/codeeditor.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/codeeditor.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.cpp
+CMakeFiles/eddy.dir/src/codeeditor.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/codeeditor.cpp
 CMakeFiles/eddy.dir/src/codeeditor.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/eddy.dir/src/codeeditor.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/codeeditor.cpp.o -MF CMakeFiles/eddy.dir/src/codeeditor.cpp.o.d -o CMakeFiles/eddy.dir/src/codeeditor.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/eddy.dir/src/codeeditor.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/codeeditor.cpp.o -MF CMakeFiles/eddy.dir/src/codeeditor.cpp.o.d -o CMakeFiles/eddy.dir/src/codeeditor.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/codeeditor.cpp
 
 CMakeFiles/eddy.dir/src/codeeditor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/codeeditor.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.cpp > CMakeFiles/eddy.dir/src/codeeditor.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/codeeditor.cpp > CMakeFiles/eddy.dir/src/codeeditor.cpp.i
 
 CMakeFiles/eddy.dir/src/codeeditor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/codeeditor.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.cpp -o CMakeFiles/eddy.dir/src/codeeditor.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/codeeditor.cpp -o CMakeFiles/eddy.dir/src/codeeditor.cpp.s
 
 CMakeFiles/eddy.dir/src/languageloader.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/languageloader.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.cpp
+CMakeFiles/eddy.dir/src/languageloader.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/languageloader.cpp
 CMakeFiles/eddy.dir/src/languageloader.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/eddy.dir/src/languageloader.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/languageloader.cpp.o -MF CMakeFiles/eddy.dir/src/languageloader.cpp.o.d -o CMakeFiles/eddy.dir/src/languageloader.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/eddy.dir/src/languageloader.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/languageloader.cpp.o -MF CMakeFiles/eddy.dir/src/languageloader.cpp.o.d -o CMakeFiles/eddy.dir/src/languageloader.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/languageloader.cpp
 
 CMakeFiles/eddy.dir/src/languageloader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/languageloader.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.cpp > CMakeFiles/eddy.dir/src/languageloader.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/languageloader.cpp > CMakeFiles/eddy.dir/src/languageloader.cpp.i
 
 CMakeFiles/eddy.dir/src/languageloader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/languageloader.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.cpp -o CMakeFiles/eddy.dir/src/languageloader.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/languageloader.cpp -o CMakeFiles/eddy.dir/src/languageloader.cpp.s
 
 CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.cpp
+CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/jsonsyntaxhighlighter.cpp
 CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.o -MF CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.o.d -o CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.o -MF CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.o.d -o CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/jsonsyntaxhighlighter.cpp
 
 CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.cpp > CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/jsonsyntaxhighlighter.cpp > CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.i
 
 CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.cpp -o CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/jsonsyntaxhighlighter.cpp -o CMakeFiles/eddy.dir/src/jsonsyntaxhighlighter.cpp.s
 
 CMakeFiles/eddy.dir/src/finddialog.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/finddialog.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.cpp
+CMakeFiles/eddy.dir/src/finddialog.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/finddialog.cpp
 CMakeFiles/eddy.dir/src/finddialog.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/eddy.dir/src/finddialog.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/finddialog.cpp.o -MF CMakeFiles/eddy.dir/src/finddialog.cpp.o.d -o CMakeFiles/eddy.dir/src/finddialog.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/eddy.dir/src/finddialog.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/finddialog.cpp.o -MF CMakeFiles/eddy.dir/src/finddialog.cpp.o.d -o CMakeFiles/eddy.dir/src/finddialog.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/finddialog.cpp
 
 CMakeFiles/eddy.dir/src/finddialog.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/finddialog.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.cpp > CMakeFiles/eddy.dir/src/finddialog.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/finddialog.cpp > CMakeFiles/eddy.dir/src/finddialog.cpp.i
 
 CMakeFiles/eddy.dir/src/finddialog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/finddialog.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.cpp -o CMakeFiles/eddy.dir/src/finddialog.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/finddialog.cpp -o CMakeFiles/eddy.dir/src/finddialog.cpp.s
 
 CMakeFiles/eddy.dir/src/gotolinedialog.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/gotolinedialog.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.cpp
+CMakeFiles/eddy.dir/src/gotolinedialog.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/gotolinedialog.cpp
 CMakeFiles/eddy.dir/src/gotolinedialog.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/eddy.dir/src/gotolinedialog.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/gotolinedialog.cpp.o -MF CMakeFiles/eddy.dir/src/gotolinedialog.cpp.o.d -o CMakeFiles/eddy.dir/src/gotolinedialog.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/eddy.dir/src/gotolinedialog.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/gotolinedialog.cpp.o -MF CMakeFiles/eddy.dir/src/gotolinedialog.cpp.o.d -o CMakeFiles/eddy.dir/src/gotolinedialog.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/gotolinedialog.cpp
 
 CMakeFiles/eddy.dir/src/gotolinedialog.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/gotolinedialog.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.cpp > CMakeFiles/eddy.dir/src/gotolinedialog.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/gotolinedialog.cpp > CMakeFiles/eddy.dir/src/gotolinedialog.cpp.i
 
 CMakeFiles/eddy.dir/src/gotolinedialog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/gotolinedialog.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.cpp -o CMakeFiles/eddy.dir/src/gotolinedialog.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/gotolinedialog.cpp -o CMakeFiles/eddy.dir/src/gotolinedialog.cpp.s
 
 CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.cpp
+CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolsearchdialog.cpp
 CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.o -MF CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.o.d -o CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.o -MF CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.o.d -o CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolsearchdialog.cpp
 
 CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.cpp > CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolsearchdialog.cpp > CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.i
 
 CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.cpp -o CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolsearchdialog.cpp -o CMakeFiles/eddy.dir/src/symbolsearchdialog.cpp.s
 
 CMakeFiles/eddy.dir/src/symbolextractor.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/symbolextractor.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.cpp
+CMakeFiles/eddy.dir/src/symbolextractor.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolextractor.cpp
 CMakeFiles/eddy.dir/src/symbolextractor.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/eddy.dir/src/symbolextractor.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/symbolextractor.cpp.o -MF CMakeFiles/eddy.dir/src/symbolextractor.cpp.o.d -o CMakeFiles/eddy.dir/src/symbolextractor.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/eddy.dir/src/symbolextractor.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/symbolextractor.cpp.o -MF CMakeFiles/eddy.dir/src/symbolextractor.cpp.o.d -o CMakeFiles/eddy.dir/src/symbolextractor.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolextractor.cpp
 
 CMakeFiles/eddy.dir/src/symbolextractor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/symbolextractor.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.cpp > CMakeFiles/eddy.dir/src/symbolextractor.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolextractor.cpp > CMakeFiles/eddy.dir/src/symbolextractor.cpp.i
 
 CMakeFiles/eddy.dir/src/symbolextractor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/symbolextractor.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.cpp -o CMakeFiles/eddy.dir/src/symbolextractor.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolextractor.cpp -o CMakeFiles/eddy.dir/src/symbolextractor.cpp.s
 
 CMakeFiles/eddy.dir/src/outlinepanel.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/outlinepanel.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.cpp
+CMakeFiles/eddy.dir/src/outlinepanel.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/outlinepanel.cpp
 CMakeFiles/eddy.dir/src/outlinepanel.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/eddy.dir/src/outlinepanel.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/outlinepanel.cpp.o -MF CMakeFiles/eddy.dir/src/outlinepanel.cpp.o.d -o CMakeFiles/eddy.dir/src/outlinepanel.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/eddy.dir/src/outlinepanel.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/outlinepanel.cpp.o -MF CMakeFiles/eddy.dir/src/outlinepanel.cpp.o.d -o CMakeFiles/eddy.dir/src/outlinepanel.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/outlinepanel.cpp
 
 CMakeFiles/eddy.dir/src/outlinepanel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/outlinepanel.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.cpp > CMakeFiles/eddy.dir/src/outlinepanel.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/outlinepanel.cpp > CMakeFiles/eddy.dir/src/outlinepanel.cpp.i
 
 CMakeFiles/eddy.dir/src/outlinepanel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/outlinepanel.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.cpp -o CMakeFiles/eddy.dir/src/outlinepanel.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/outlinepanel.cpp -o CMakeFiles/eddy.dir/src/outlinepanel.cpp.s
 
 CMakeFiles/eddy.dir/src/projectpanel.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/projectpanel.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.cpp
+CMakeFiles/eddy.dir/src/projectpanel.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/projectpanel.cpp
 CMakeFiles/eddy.dir/src/projectpanel.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/eddy.dir/src/projectpanel.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/projectpanel.cpp.o -MF CMakeFiles/eddy.dir/src/projectpanel.cpp.o.d -o CMakeFiles/eddy.dir/src/projectpanel.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/eddy.dir/src/projectpanel.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/projectpanel.cpp.o -MF CMakeFiles/eddy.dir/src/projectpanel.cpp.o.d -o CMakeFiles/eddy.dir/src/projectpanel.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/projectpanel.cpp
 
 CMakeFiles/eddy.dir/src/projectpanel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/projectpanel.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.cpp > CMakeFiles/eddy.dir/src/projectpanel.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/projectpanel.cpp > CMakeFiles/eddy.dir/src/projectpanel.cpp.i
 
 CMakeFiles/eddy.dir/src/projectpanel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/projectpanel.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.cpp -o CMakeFiles/eddy.dir/src/projectpanel.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/projectpanel.cpp -o CMakeFiles/eddy.dir/src/projectpanel.cpp.s
 
 CMakeFiles/eddy.dir/src/minimap.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/minimap.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/minimap.cpp
+CMakeFiles/eddy.dir/src/minimap.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/minimap.cpp
 CMakeFiles/eddy.dir/src/minimap.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/eddy.dir/src/minimap.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/minimap.cpp.o -MF CMakeFiles/eddy.dir/src/minimap.cpp.o.d -o CMakeFiles/eddy.dir/src/minimap.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/minimap.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/eddy.dir/src/minimap.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/minimap.cpp.o -MF CMakeFiles/eddy.dir/src/minimap.cpp.o.d -o CMakeFiles/eddy.dir/src/minimap.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/minimap.cpp
 
 CMakeFiles/eddy.dir/src/minimap.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/minimap.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/minimap.cpp > CMakeFiles/eddy.dir/src/minimap.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/minimap.cpp > CMakeFiles/eddy.dir/src/minimap.cpp.i
 
 CMakeFiles/eddy.dir/src/minimap.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/minimap.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/minimap.cpp -o CMakeFiles/eddy.dir/src/minimap.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/minimap.cpp -o CMakeFiles/eddy.dir/src/minimap.cpp.s
 
 CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.cpp
+CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/breadcrumbbar.cpp
 CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.o -MF CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.o.d -o CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.o -MF CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.o.d -o CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/breadcrumbbar.cpp
 
 CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.cpp > CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/breadcrumbbar.cpp > CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.i
 
 CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.cpp -o CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/breadcrumbbar.cpp -o CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.s
 
 CMakeFiles/eddy.dir/src/characterinspector.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/characterinspector.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/characterinspector.cpp
+CMakeFiles/eddy.dir/src/characterinspector.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/characterinspector.cpp
 CMakeFiles/eddy.dir/src/characterinspector.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/eddy.dir/src/characterinspector.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/characterinspector.cpp.o -MF CMakeFiles/eddy.dir/src/characterinspector.cpp.o.d -o CMakeFiles/eddy.dir/src/characterinspector.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/characterinspector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/eddy.dir/src/characterinspector.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/characterinspector.cpp.o -MF CMakeFiles/eddy.dir/src/characterinspector.cpp.o.d -o CMakeFiles/eddy.dir/src/characterinspector.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/characterinspector.cpp
 
 CMakeFiles/eddy.dir/src/characterinspector.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/characterinspector.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/characterinspector.cpp > CMakeFiles/eddy.dir/src/characterinspector.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/characterinspector.cpp > CMakeFiles/eddy.dir/src/characterinspector.cpp.i
 
 CMakeFiles/eddy.dir/src/characterinspector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/characterinspector.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/characterinspector.cpp -o CMakeFiles/eddy.dir/src/characterinspector.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/characterinspector.cpp -o CMakeFiles/eddy.dir/src/characterinspector.cpp.s
 
 CMakeFiles/eddy.dir/src/encodingmanager.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/encodingmanager.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.cpp
+CMakeFiles/eddy.dir/src/encodingmanager.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/encodingmanager.cpp
 CMakeFiles/eddy.dir/src/encodingmanager.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/eddy.dir/src/encodingmanager.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/encodingmanager.cpp.o -MF CMakeFiles/eddy.dir/src/encodingmanager.cpp.o.d -o CMakeFiles/eddy.dir/src/encodingmanager.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/eddy.dir/src/encodingmanager.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/encodingmanager.cpp.o -MF CMakeFiles/eddy.dir/src/encodingmanager.cpp.o.d -o CMakeFiles/eddy.dir/src/encodingmanager.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/encodingmanager.cpp
 
 CMakeFiles/eddy.dir/src/encodingmanager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/encodingmanager.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.cpp > CMakeFiles/eddy.dir/src/encodingmanager.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/encodingmanager.cpp > CMakeFiles/eddy.dir/src/encodingmanager.cpp.i
 
 CMakeFiles/eddy.dir/src/encodingmanager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/encodingmanager.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.cpp -o CMakeFiles/eddy.dir/src/encodingmanager.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/encodingmanager.cpp -o CMakeFiles/eddy.dir/src/encodingmanager.cpp.s
 
 CMakeFiles/eddy.dir/src/commandpalette.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/commandpalette.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.cpp
+CMakeFiles/eddy.dir/src/commandpalette.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/commandpalette.cpp
 CMakeFiles/eddy.dir/src/commandpalette.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/eddy.dir/src/commandpalette.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/commandpalette.cpp.o -MF CMakeFiles/eddy.dir/src/commandpalette.cpp.o.d -o CMakeFiles/eddy.dir/src/commandpalette.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/eddy.dir/src/commandpalette.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/commandpalette.cpp.o -MF CMakeFiles/eddy.dir/src/commandpalette.cpp.o.d -o CMakeFiles/eddy.dir/src/commandpalette.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/commandpalette.cpp
 
 CMakeFiles/eddy.dir/src/commandpalette.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/commandpalette.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.cpp > CMakeFiles/eddy.dir/src/commandpalette.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/commandpalette.cpp > CMakeFiles/eddy.dir/src/commandpalette.cpp.i
 
 CMakeFiles/eddy.dir/src/commandpalette.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/commandpalette.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.cpp -o CMakeFiles/eddy.dir/src/commandpalette.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/commandpalette.cpp -o CMakeFiles/eddy.dir/src/commandpalette.cpp.s
 
 CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.o: CMakeFiles/eddy.dir/flags.make
-CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/findinfilesdialog.cpp
+CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.o: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/findinfilesdialog.cpp
 CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.o -MF CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.o.d -o CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/findinfilesdialog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.o -MF CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.o.d -o CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/findinfilesdialog.cpp
 
 CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/findinfilesdialog.cpp > CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/findinfilesdialog.cpp > CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.i
 
 CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/findinfilesdialog.cpp -o CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/findinfilesdialog.cpp -o CMakeFiles/eddy.dir/src/findinfilesdialog.cpp.s
 
 CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.o: CMakeFiles/eddy.dir/flags.make
 CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.o: .qt/rcc/qrc_resources.cpp
 CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.o -MF CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.o.d -o CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_resources.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.o -MF CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.o.d -o CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.qt/rcc/qrc_resources.cpp
 
 CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_resources.cpp > CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.qt/rcc/qrc_resources.cpp > CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.i
 
 CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_resources.cpp -o CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.qt/rcc/qrc_resources.cpp -o CMakeFiles/eddy.dir/build/.qt/rcc/qrc_resources.cpp.s
 
 CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.o: CMakeFiles/eddy.dir/flags.make
 CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.o: .qt/rcc/qrc_eddy_translations.cpp
 CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.o: CMakeFiles/eddy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.o"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.o -MF CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.o.d -o CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_eddy_translations.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.o"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.o -MF CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.o.d -o CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.o -c /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.qt/rcc/qrc_eddy_translations.cpp
 
 CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_eddy_translations.cpp > CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.i
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.qt/rcc/qrc_eddy_translations.cpp > CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.i
 
 CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_eddy_translations.cpp -o CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.s
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.qt/rcc/qrc_eddy_translations.cpp -o CMakeFiles/eddy.dir/build/.qt/rcc/qrc_eddy_translations.cpp.s
 
 # Object files for target eddy
 eddy_OBJECTS = \
@@ -474,7 +474,7 @@ eddy: /usr/lib64/libGLX.so
 eddy: /usr/lib64/libOpenGL.so
 eddy: /usr/lib64/libQt6Core.so.6.9.3
 eddy: CMakeFiles/eddy.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Linking CXX executable eddy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Linking CXX executable eddy"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/eddy.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -495,6 +495,6 @@ CMakeFiles/eddy.dir/depend: eddy_it.qm
 CMakeFiles/eddy.dir/depend: eddy_ja.qm
 CMakeFiles/eddy.dir/depend: eddy_ru.qm
 CMakeFiles/eddy.dir/depend: eddy_zh.qm
-	cd /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/eddy.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kerntallett/Dropbox/mnt_reform/projects/eddy /home/kerntallett/Dropbox/mnt_reform/projects/eddy /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles/eddy.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/eddy.dir/depend
 

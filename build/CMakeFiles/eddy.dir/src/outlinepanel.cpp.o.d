@@ -1,7 +1,7 @@
 CMakeFiles/eddy.dir/src/outlinepanel.cpp.o: \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/outlinepanel.cpp \
  /usr/include/stdc-predef.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/outlinepanel.h \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
  /usr/include/qt6/QtGui/qtguiglobal.h /usr/include/qt6/QtCore/qglobal.h \
@@ -358,7 +358,7 @@ CMakeFiles/eddy.dir/src/outlinepanel.cpp.o: \
  /usr/include/qt6/QtCore/qeventloop.h \
  /usr/include/qt6/QtCore/qdeadlinetimer.h \
  /usr/include/qt6/QtCore/qelapsedtimer.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolsearchdialog.h \
  /usr/include/qt6/QtWidgets/QDialog /usr/include/qt6/QtWidgets/qdialog.h \
  /usr/include/qt6/QtWidgets/QLineEdit \
  /usr/include/qt6/QtWidgets/qlineedit.h \
@@ -369,7 +369,7 @@ CMakeFiles/eddy.dir/src/outlinepanel.cpp.o: \
  /usr/include/qt6/QtWidgets/qlistwidget.h \
  /usr/include/qt6/QtWidgets/qlistview.h \
  /usr/include/qt6/QtWidgets/QHBoxLayout \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolextractor.h \
  /usr/include/qt6/QtCore/QString /usr/include/qt6/QtCore/qstring.h \
  /usr/include/qt6/QtCore/QList /usr/include/qt6/QtCore/qlist.h \
  /usr/include/qt6/QtCore/QRegularExpression \

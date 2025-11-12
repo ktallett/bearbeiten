@@ -1,15 +1,15 @@
 {
-	"BUILD_DIR" : "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen",
-	"CMAKE_BINARY_DIR" : "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build",
-	"CMAKE_CURRENT_BINARY_DIR" : "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten",
+	"BUILD_DIR" : "/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen",
+	"CMAKE_BINARY_DIR" : "/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/kerntallett/Dropbox/mnt_reform/projects/eddy",
 	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
-		"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/CMakeLists.txt",
+		"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/CMakeLists.txt",
 		"/usr/share/cmake/Modules/CMakeDetermineSystem.cmake",
 		"/usr/share/cmake/Modules/CMakeSystem.cmake.in",
-		"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/3.31.6/CMakeSystem.cmake",
+		"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles/3.31.6/CMakeSystem.cmake",
 		"/usr/share/cmake/Modules/CMakeUnixFindMake.cmake",
 		"/usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake",
 		"/usr/share/cmake/Modules/Platform/Linux-Initialize.cmake",
@@ -63,7 +63,7 @@
 		"/usr/share/cmake/Modules/CMakeFindBinUtils.cmake",
 		"/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake",
 		"/usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in",
-		"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/3.31.6/CMakeCXXCompiler.cmake",
+		"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles/3.31.6/CMakeCXXCompiler.cmake",
 		"/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake",
 		"/usr/share/cmake/Modules/CMakeGenericSystem.cmake",
 		"/usr/share/cmake/Modules/CMakeInitializeConfigs.cmake",
@@ -89,7 +89,7 @@
 		"/usr/share/cmake/Modules/CMakeDetermineCompilerSupport.cmake",
 		"/usr/share/cmake/Modules/Internal/FeatureTesting.cmake",
 		"/usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in",
-		"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/3.31.6/CMakeCXXCompiler.cmake",
+		"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles/3.31.6/CMakeCXXCompiler.cmake",
 		"/usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake",
 		"/usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake",
 		"/usr/share/cmake/Modules/Linker/GNU-CXX.cmake",
@@ -560,112 +560,112 @@
 		"/usr/lib64/cmake/Qt6/Qt6Dependencies.cmake",
 		"/usr/lib64/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in"
 	],
-	"CMAKE_SOURCE_DIR" : "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten",
+	"CMAKE_SOURCE_DIR" : "/home/kerntallett/Dropbox/mnt_reform/projects/eddy",
 	"CROSS_CONFIG" : false,
-	"DEP_FILE" : "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/deps",
+	"DEP_FILE" : "/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "eddy_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.h",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/breadcrumbbar.h",
 			"MU",
 			"UVLADIE3JM/moc_breadcrumbbar.cpp",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/characterinspector.h",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/characterinspector.h",
 			"MU",
 			"UVLADIE3JM/moc_characterinspector.cpp",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.h",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/codeeditor.h",
 			"MU",
 			"UVLADIE3JM/moc_codeeditor.cpp",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.h",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/commandpalette.h",
 			"MU",
 			"UVLADIE3JM/moc_commandpalette.cpp",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.h",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/encodingmanager.h",
 			"MU",
 			"UVLADIE3JM/moc_encodingmanager.cpp",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.h",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/finddialog.h",
 			"MU",
 			"UVLADIE3JM/moc_finddialog.cpp",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/findinfilesdialog.h",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/findinfilesdialog.h",
 			"MU",
 			"UVLADIE3JM/moc_findinfilesdialog.cpp",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.h",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/gotolinedialog.h",
 			"MU",
 			"UVLADIE3JM/moc_gotolinedialog.cpp",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.h",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/jsonsyntaxhighlighter.h",
 			"MU",
 			"UVLADIE3JM/moc_jsonsyntaxhighlighter.cpp",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.h",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/languageloader.h",
 			"MU",
 			"UVLADIE3JM/moc_languageloader.cpp",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/mainwindow.h",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/mainwindow.h",
 			"MU",
 			"UVLADIE3JM/moc_mainwindow.cpp",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/minimap.h",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/minimap.h",
 			"MU",
 			"UVLADIE3JM/moc_minimap.cpp",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.h",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/outlinepanel.h",
 			"MU",
 			"UVLADIE3JM/moc_outlinepanel.cpp",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.h",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/projectpanel.h",
 			"MU",
 			"UVLADIE3JM/moc_projectpanel.cpp",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.h",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolextractor.h",
 			"MU",
 			"UVLADIE3JM/moc_symbolextractor.cpp",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolsearchdialog.h",
 			"MU",
 			"UVLADIE3JM/moc_symbolsearchdialog.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/include",
-	"MOC_COMPILATION_FILE" : "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NO_DEBUG", "QT_WIDGETS_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
@@ -708,105 +708,105 @@
 		"-c",
 		"/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : 
 	[
-		"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_eddy_translations.cpp",
-		"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_resources.cpp"
+		"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.qt/rcc/qrc_eddy_translations.cpp",
+		"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.qt/rcc/qrc_resources.cpp"
 	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 6,
-	"PARSE_CACHE_FILE" : "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/eddy_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles/eddy_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/lib64/qt6/libexec/moc",
 	"QT_UIC_EXECUTABLE" : "/usr/lib64/qt6/libexec/uic",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 9,
-	"SETTINGS_FILE" : "/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/eddy_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles/eddy_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/breadcrumbbar.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/characterinspector.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/characterinspector.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/codeeditor.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/commandpalette.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/encodingmanager.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/finddialog.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/findinfilesdialog.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/findinfilesdialog.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/gotolinedialog.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/jsonsyntaxhighlighter.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/languageloader.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/main.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/main.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/mainwindow.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/mainwindow.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/minimap.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/minimap.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/outlinepanel.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/projectpanel.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolextractor.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.cpp",
+			"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolsearchdialog.cpp",
 			"MU",
 			null
 		]
@@ -815,8 +815,8 @@
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : 
 	[
-		"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_eddy_translations.cpp",
-		"/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.qt/rcc/qrc_resources.cpp"
+		"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.qt/rcc/qrc_eddy_translations.cpp",
+		"/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.qt/rcc/qrc_resources.cpp"
 	],
 	"UIC_UI_FILES" : [],
 	"USE_BETTER_GRAPH" : true,

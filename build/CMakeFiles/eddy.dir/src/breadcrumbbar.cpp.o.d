@@ -1,7 +1,7 @@
 CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.o: \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/breadcrumbbar.cpp \
  /usr/include/stdc-predef.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/breadcrumbbar.h \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
  /usr/include/qt6/QtGui/qtguiglobal.h /usr/include/qt6/QtCore/qglobal.h \
@@ -366,10 +366,10 @@ CMakeFiles/eddy.dir/src/breadcrumbbar.cpp.o: \
  /usr/include/qt6/QtGui/QDesktopServices \
  /usr/include/qt6/QtGui/qdesktopservices.h /usr/include/qt6/QtCore/QUrl \
  /usr/include/qt6/QtCore/qurl.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolextractor.h \
  /usr/include/qt6/QtCore/QRegularExpression \
  /usr/include/qt6/QtCore/qregularexpression.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolsearchdialog.h \
  /usr/include/qt6/QtWidgets/QDialog /usr/include/qt6/QtWidgets/qdialog.h \
  /usr/include/qt6/QtWidgets/QLineEdit \
  /usr/include/qt6/QtWidgets/qlineedit.h \

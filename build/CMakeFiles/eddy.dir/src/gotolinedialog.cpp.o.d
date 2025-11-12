@@ -1,7 +1,7 @@
 CMakeFiles/eddy.dir/src/gotolinedialog.cpp.o: \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/gotolinedialog.cpp \
  /usr/include/stdc-predef.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/gotolinedialog.h \
  /usr/include/qt6/QtWidgets/QDialog /usr/include/qt6/QtWidgets/qdialog.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
  /usr/include/qt6/QtGui/qtguiglobal.h /usr/include/qt6/QtCore/qglobal.h \

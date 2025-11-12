@@ -1,5 +1,5 @@
 CMakeFiles/eddy.dir/src/main.cpp.o: \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/main.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/main.cpp \
  /usr/include/stdc-predef.h /usr/include/qt6/QtWidgets/QApplication \
  /usr/include/qt6/QtWidgets/qapplication.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -356,7 +356,7 @@ CMakeFiles/eddy.dir/src/main.cpp.o: \
  /usr/include/c++/15/bits/sstream.tcc /usr/include/c++/15/codecvt \
  /usr/include/c++/15/bits/fs_dir.h /usr/include/c++/15/bits/fs_ops.h \
  /usr/include/qt6/QtCore/qfileinfo.h /usr/include/qt6/QtCore/qtimezone.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/mainwindow.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/mainwindow.h \
  /usr/include/qt6/QtWidgets/QMainWindow \
  /usr/include/qt6/QtWidgets/qmainwindow.h \
  /usr/include/qt6/QtWidgets/qwidget.h /usr/include/qt6/QtGui/qaction.h \
@@ -367,7 +367,7 @@ CMakeFiles/eddy.dir/src/main.cpp.o: \
  /usr/include/qt6/QtGui/qfontvariableaxis.h \
  /usr/include/qt6/QtWidgets/qsizepolicy.h \
  /usr/include/qt6/QtWidgets/qtabwidget.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/codeeditor.h \
  /usr/include/qt6/QtWidgets/QPlainTextEdit \
  /usr/include/qt6/QtWidgets/qplaintextedit.h \
  /usr/include/qt6/QtWidgets/qtextedit.h \
@@ -440,7 +440,7 @@ CMakeFiles/eddy.dir/src/main.cpp.o: \
  /usr/include/qt6/QtGui/QGuiApplication \
  /usr/include/qt6/QtGui/qguiapplication.h \
  /usr/include/qt6/QtGui/QResizeEvent /usr/include/qt6/QtGui/qevent.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/jsonsyntaxhighlighter.h \
  /usr/include/qt6/QtGui/QSyntaxHighlighter \
  /usr/include/qt6/QtGui/qsyntaxhighlighter.h \
  /usr/include/qt6/QtGui/qtextobject.h \
@@ -448,7 +448,7 @@ CMakeFiles/eddy.dir/src/main.cpp.o: \
  /usr/include/qt6/QtGui/qtextdocument.h \
  /usr/include/qt6/QtGui/QTextCharFormat \
  /usr/include/qt6/QtGui/qtextformat.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/languageloader.h \
  /usr/include/qt6/QtCore/QString /usr/include/qt6/QtCore/qstring.h \
  /usr/include/qt6/QtCore/QStringList \
  /usr/include/qt6/QtCore/qstringlist.h \
@@ -461,7 +461,7 @@ CMakeFiles/eddy.dir/src/main.cpp.o: \
  /usr/include/qt6/QtCore/qjsonparseerror.h \
  /usr/include/qt6/QtCore/QJsonArray /usr/include/qt6/QtCore/qjsonarray.h \
  /usr/include/qt6/QtCore/QVector /usr/include/qt6/QtCore/qvector.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/finddialog.h \
  /usr/include/qt6/QtWidgets/QDialog /usr/include/qt6/QtWidgets/qdialog.h \
  /usr/include/qt6/QtWidgets/QLineEdit \
  /usr/include/qt6/QtWidgets/qlineedit.h \
@@ -474,7 +474,7 @@ CMakeFiles/eddy.dir/src/main.cpp.o: \
  /usr/include/qt6/QtWidgets/qgridlayout.h \
  /usr/include/qt6/QtWidgets/QGroupBox \
  /usr/include/qt6/QtWidgets/qgroupbox.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/findinfilesdialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/findinfilesdialog.h \
  /usr/include/qt6/QtWidgets/QTreeWidget \
  /usr/include/qt6/QtWidgets/qtreewidget.h \
  /usr/include/qt6/QtWidgets/qtreeview.h \
@@ -490,28 +490,28 @@ CMakeFiles/eddy.dir/src/main.cpp.o: \
  /usr/include/c++/15/condition_variable \
  /usr/include/c++/15/bits/atomic_futex.h \
  /usr/include/c++/15/bits/std_thread.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/minimap.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/minimap.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/gotolinedialog.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolsearchdialog.h \
  /usr/include/qt6/QtWidgets/QListWidget \
  /usr/include/qt6/QtWidgets/qlistwidget.h \
  /usr/include/qt6/QtWidgets/qlistview.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolextractor.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/outlinepanel.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/projectpanel.h \
  /usr/include/qt6/QtWidgets/QTreeView \
  /usr/include/qt6/QtWidgets/qtreeview.h \
  /usr/include/qt6/QtGui/QFileSystemModel \
  /usr/include/qt6/QtGui/qfilesystemmodel.h \
  /usr/include/qt6/QtWidgets/QHeaderView \
  /usr/include/qt6/QtWidgets/qheaderview.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/breadcrumbbar.h \
  /usr/include/qt6/QtCore/QFileInfo /usr/include/qt6/QtCore/qfileinfo.h \
  /usr/include/qt6/QtGui/QDesktopServices \
  /usr/include/qt6/QtGui/qdesktopservices.h /usr/include/qt6/QtCore/QUrl \
  /usr/include/qt6/QtCore/qurl.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/characterinspector.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/characterinspector.h \
  /usr/include/qt6/QtCore/QChar /usr/include/qt6/QtCore/qchar.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/encodingmanager.h \
  /usr/include/qt6/QtCore/QByteArray /usr/include/qt6/QtCore/qbytearray.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.h
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/commandpalette.h

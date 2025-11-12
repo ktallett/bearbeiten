@@ -1,7 +1,7 @@
-/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_outlinepanel.cpp: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/moc_predefs.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h \
+/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_outlinepanel.cpp: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/outlinepanel.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/moc_predefs.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolextractor.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolsearchdialog.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \

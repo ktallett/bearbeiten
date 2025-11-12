@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten
+CMAKE_SOURCE_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/eddy
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
+CMAKE_BINARY_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
 
 # Utility rule file for eddy_lupdate.
 
@@ -67,8 +67,8 @@ include CMakeFiles/eddy_lupdate.dir/compiler_depend.make
 include CMakeFiles/eddy_lupdate.dir/progress.make
 
 CMakeFiles/eddy_lupdate: /usr/lib64/qt6/bin/lupdate
-	/usr/bin/cmake -DIN_FILE=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.lupdate/eddy_lupdate_project.cmake -DOUT_FILE=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.lupdate/eddy_lupdate_project.json -P /usr/lib64/cmake/Qt6LinguistTools/GenerateLUpdateProject.cmake
-	/usr/lib64/qt6/bin/lupdate -project /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/.lupdate/eddy_lupdate_project.json
+	/usr/bin/cmake -DIN_FILE=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.lupdate/eddy_lupdate_project.cmake -DOUT_FILE=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.lupdate/eddy_lupdate_project.json -P /usr/lib64/cmake/Qt6LinguistTools/GenerateLUpdateProject.cmake
+	/usr/lib64/qt6/bin/lupdate -project /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/.lupdate/eddy_lupdate_project.json
 
 CMakeFiles/eddy_lupdate.dir/codegen:
 .PHONY : CMakeFiles/eddy_lupdate.dir/codegen
@@ -86,6 +86,6 @@ CMakeFiles/eddy_lupdate.dir/clean:
 .PHONY : CMakeFiles/eddy_lupdate.dir/clean
 
 CMakeFiles/eddy_lupdate.dir/depend:
-	cd /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/eddy_lupdate.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kerntallett/Dropbox/mnt_reform/projects/eddy /home/kerntallett/Dropbox/mnt_reform/projects/eddy /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles/eddy_lupdate.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/eddy_lupdate.dir/depend
 

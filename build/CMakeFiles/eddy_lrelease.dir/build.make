@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten
+CMAKE_SOURCE_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/eddy
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
+CMAKE_BINARY_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
 
 # Utility rule file for eddy_lrelease.
 
@@ -75,46 +75,46 @@ CMakeFiles/eddy_lrelease: eddy_zh.qm
 CMakeFiles/eddy_lrelease: eddy_ru.qm
 
 eddy_de.qm: /usr/lib64/qt6/bin/lrelease
-eddy_de.qm: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_de.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating eddy_de.qm"
-	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
-	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_de.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_de.qm
+eddy_de.qm: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_de.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating eddy_de.qm"
+	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
+	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_de.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_de.qm
 
 eddy_es.qm: /usr/lib64/qt6/bin/lrelease
-eddy_es.qm: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_es.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating eddy_es.qm"
-	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
-	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_es.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_es.qm
+eddy_es.qm: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_es.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating eddy_es.qm"
+	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
+	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_es.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_es.qm
 
 eddy_fr.qm: /usr/lib64/qt6/bin/lrelease
-eddy_fr.qm: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_fr.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating eddy_fr.qm"
-	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
-	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_fr.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_fr.qm
+eddy_fr.qm: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_fr.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating eddy_fr.qm"
+	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
+	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_fr.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_fr.qm
 
 eddy_it.qm: /usr/lib64/qt6/bin/lrelease
-eddy_it.qm: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_it.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating eddy_it.qm"
-	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
-	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_it.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_it.qm
+eddy_it.qm: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_it.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating eddy_it.qm"
+	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
+	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_it.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_it.qm
 
 eddy_ja.qm: /usr/lib64/qt6/bin/lrelease
-eddy_ja.qm: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_ja.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating eddy_ja.qm"
-	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
-	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_ja.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_ja.qm
+eddy_ja.qm: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_ja.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating eddy_ja.qm"
+	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
+	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_ja.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_ja.qm
 
 eddy_ru.qm: /usr/lib64/qt6/bin/lrelease
-eddy_ru.qm: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_ru.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating eddy_ru.qm"
-	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
-	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_ru.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_ru.qm
+eddy_ru.qm: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_ru.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating eddy_ru.qm"
+	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
+	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_ru.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_ru.qm
 
 eddy_zh.qm: /usr/lib64/qt6/bin/lrelease
-eddy_zh.qm: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_zh.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating eddy_zh.qm"
-	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
-	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/translations/eddy_zh.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_zh.qm
+eddy_zh.qm: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_zh.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating eddy_zh.qm"
+	/usr/bin/cmake -E make_directory /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
+	/usr/lib64/qt6/bin/lrelease /home/kerntallett/Dropbox/mnt_reform/projects/eddy/translations/eddy_zh.ts -qm /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_zh.qm
 
 CMakeFiles/eddy_lrelease.dir/codegen:
 .PHONY : CMakeFiles/eddy_lrelease.dir/codegen
@@ -139,6 +139,6 @@ CMakeFiles/eddy_lrelease.dir/clean:
 .PHONY : CMakeFiles/eddy_lrelease.dir/clean
 
 CMakeFiles/eddy_lrelease.dir/depend:
-	cd /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/eddy_lrelease.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kerntallett/Dropbox/mnt_reform/projects/eddy /home/kerntallett/Dropbox/mnt_reform/projects/eddy /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles/eddy_lrelease.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/eddy_lrelease.dir/depend
 

@@ -1,7 +1,7 @@
 CMakeFiles/eddy.dir/src/minimap.cpp.o: \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/minimap.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/minimap.cpp \
  /usr/include/stdc-predef.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/minimap.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/minimap.h \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
  /usr/include/qt6/QtGui/qtguiglobal.h /usr/include/qt6/QtCore/qglobal.h \
@@ -358,7 +358,7 @@ CMakeFiles/eddy.dir/src/minimap.cpp.o: \
  /usr/include/qt6/QtGui/qfontdatabase.h \
  /usr/include/qt6/QtGui/QTextDocument \
  /usr/include/qt6/QtGui/qtextdocument.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/codeeditor.h \
  /usr/include/qt6/QtCore/QSet /usr/include/qt6/QtCore/qset.h \
  /usr/include/qt6/QtCore/QList /usr/include/qt6/QtGui/QTextCursor \
  /usr/include/qt6/QtGui/qtextcursor.h /usr/include/qt6/QtGui/QPainter \

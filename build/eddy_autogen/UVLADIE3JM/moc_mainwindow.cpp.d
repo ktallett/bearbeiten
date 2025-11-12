@@ -1,20 +1,20 @@
-/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/UVLADIE3JM/moc_mainwindow.cpp: /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/mainwindow.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_autogen/moc_predefs.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/breadcrumbbar.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/characterinspector.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/codeeditor.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/commandpalette.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/encodingmanager.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/finddialog.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/findinfilesdialog.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/gotolinedialog.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/jsonsyntaxhighlighter.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/minimap.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/outlinepanel.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/projectpanel.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolextractor.h \
-  /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/symbolsearchdialog.h \
+/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/UVLADIE3JM/moc_mainwindow.cpp: /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/mainwindow.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_autogen/moc_predefs.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/breadcrumbbar.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/characterinspector.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/codeeditor.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/commandpalette.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/encodingmanager.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/finddialog.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/findinfilesdialog.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/gotolinedialog.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/jsonsyntaxhighlighter.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/languageloader.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/minimap.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/outlinepanel.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/projectpanel.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolextractor.h \
+  /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/symbolsearchdialog.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \

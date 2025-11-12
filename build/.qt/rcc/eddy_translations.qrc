@@ -1,12 +1,12 @@
 <RCC>
   <qresource prefix="/i18n">
-    <file alias="eddy_de.qm">/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_de.qm</file>
-    <file alias="eddy_fr.qm">/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_fr.qm</file>
-    <file alias="eddy_es.qm">/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_es.qm</file>
-    <file alias="eddy_it.qm">/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_it.qm</file>
-    <file alias="eddy_ja.qm">/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_ja.qm</file>
-    <file alias="eddy_zh.qm">/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_zh.qm</file>
-    <file alias="eddy_ru.qm">/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/eddy_ru.qm</file>
+    <file alias="eddy_de.qm">/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_de.qm</file>
+    <file alias="eddy_fr.qm">/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_fr.qm</file>
+    <file alias="eddy_es.qm">/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_es.qm</file>
+    <file alias="eddy_it.qm">/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_it.qm</file>
+    <file alias="eddy_ja.qm">/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_ja.qm</file>
+    <file alias="eddy_zh.qm">/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_zh.qm</file>
+    <file alias="eddy_ru.qm">/home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/eddy_ru.qm</file>
   </qresource>
 </RCC>
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten
+CMAKE_SOURCE_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/eddy
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build
+CMAKE_BINARY_DIR = /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build
 
 # Utility rule file for eddy_autogen_timestamp_deps.
 
@@ -81,6 +81,6 @@ CMakeFiles/eddy_autogen_timestamp_deps.dir/clean:
 .PHONY : CMakeFiles/eddy_autogen_timestamp_deps.dir/clean
 
 CMakeFiles/eddy_autogen_timestamp_deps.dir/depend:
-	cd /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/build/CMakeFiles/eddy_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kerntallett/Dropbox/mnt_reform/projects/eddy /home/kerntallett/Dropbox/mnt_reform/projects/eddy /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build /home/kerntallett/Dropbox/mnt_reform/projects/eddy/build/CMakeFiles/eddy_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/eddy_autogen_timestamp_deps.dir/depend
 

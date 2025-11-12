@@ -1,7 +1,7 @@
 CMakeFiles/eddy.dir/src/languageloader.cpp.o: \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.cpp \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/languageloader.cpp \
  /usr/include/stdc-predef.h \
- /home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/languageloader.h \
+ /home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/languageloader.h \
  /usr/include/qt6/QtCore/QString /usr/include/qt6/QtCore/qstring.h \
  /usr/include/qt6/QtCore/qchar.h /usr/include/qt6/QtCore/qglobal.h \
  /usr/include/c++/15/type_traits \

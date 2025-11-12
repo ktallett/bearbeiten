@@ -1,7 +1,7 @@
 <RCC>
   <qresource prefix="/">
-    <file alias="src/stylesheet.qss">/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/stylesheet.qss</file>
-    <file alias="src/stylesheet-dark.qss">/home/kerntallett/Dropbox/mnt_reform/projects/bearbeiten/src/stylesheet-dark.qss</file>
+    <file alias="src/stylesheet.qss">/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/stylesheet.qss</file>
+    <file alias="src/stylesheet-dark.qss">/home/kerntallett/Dropbox/mnt_reform/projects/eddy/src/stylesheet-dark.qss</file>
   </qresource>
 </RCC>
 
